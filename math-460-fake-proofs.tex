@@ -3,9 +3,9 @@
 \usetheme{Boadilla} %{Rochester}
 
 \setbeamertemplate{footline}[text line]{%
-\parbox{\linewidth}{\vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
+\parbox{\linewidth}{\vspace*{8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
 \setbeamertemplate{navigation symbols}{}
-%\author[BW]{Dr.\ Barton Willis}
+%\author[BW]{Barton Willis}
 \usepackage{amsmath}\usepackage{amsthm}
 \usepackage{isomath}
 \usepackage{upgreek}
@@ -39,7 +39,7 @@
 \newtheorem{mydef}{Definition}
 \newtheorem{myqdef}{Quasi-definition}
 \newtheorem{myex}{Example}
-\newtheorem{myth}{Theorem} 
+\newtheorem{myth}{Theorem}
 \newtheorem{myfact}{Fact}
 \newtheorem{metathm}{Meta Theorem}
 \newtheorem{Question}{Question}
@@ -50,9 +50,6 @@
 \newtheorem{mybadformproof}{Bad Form Proof}
 
 \newtheorem{hurestic}{Hurestic}
-
-%\usepackage{array}   % for \newcolumntype macro
-%\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
 
 \newenvironment{alphalist}{
   \vspace{-0.4in}
@@ -65,10 +62,6 @@
   \begin{enumerate}[\textleaf]
     \addtolength{\itemsep}{-1.2\itemsep}}
   {\end{enumerate}}
-
-
-
-
 
 \newenvironment{checklist}{
   \begin{enumerate}[\ding{52}]
@@ -89,24 +82,6 @@
 \newcolumntype{C}{>$c<$}
 
 \newcommand{\llnot}{\lnot \,} % is accepted
-\DeclareMathOperator{\3F2}{{}_3  F_2}
-\newcommand\pochhammer[2]{\left[\genfrac..{0pt}{}{#1}{#2}\right]}
-\newmuskip\pFqmuskip
-
-\newcommand*\pFq[6][8]{%
-  \begingroup % only local assignments
-  \pFqmuskip=#1mu\relax
-  % make the comma math active
-  % \mathcode`\,=\string"8000
-  % and define it to be \pFqcomma
-  \begingroup\lccode`\~=`\,
-  \lowercase{\endgroup\let~}\pFqcomma
-  % typeset the formula
-      {}_{#2}\!\F_{#3}{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}   %\F{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}  %alt: {}_{#2}\F_{#3}{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}
-  \endgroup
-}
-
-\newcommand{\pFqcomma}{\mskip \pFqmuskip}
 \newcommand{\mydash}{\text{--}}
 
 
@@ -121,26 +96,10 @@
   ``If you can't prove what you want to prove, demonstrate something else and pretend that they are the same.''  \\   \vspace{0.15in}{Darrell Huff} \\ \vspace{0.15in} \emph{How to Lie with Statistics}
    }
   \date{}
- 
-
-\usepackage{courier}
-%\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
-%\lstset{framextopmargin=50pt,frame=bottomline}
-
-
-%\begin{document}
-
-
-
-%--------
-%usepackage[usenames,dvipsnames,svgnames,table]{color}
-
-
 
 \begin{document}
 
 \frame{\titlepage}
-
 
 \begin{frame}{Prove a special case}
 
@@ -189,7 +148,7 @@ Therefore, \(F\) has an antiderivative.
 
 \item Assuming that \(F\) is a polynomial is assuming facts not  in evidence.
 
-\item Arguably, this fake proof falls under the ``Prove a special case'' category. 
+\item Arguably, this fake proof falls under the ``Prove a special case'' category.
 \end{enumerate}
 \end{frame}
 
@@ -200,14 +159,14 @@ Therefore, \(F\) has an antiderivative.
 
 \begin{myth}  For every \(a,b \in \reals \) with \(a \neq b\) there is  \(x \in \reals\) such that \( \min(a,b) < x < \max(a,b) \).  \end{myth}
 
-\begin{mybadformproof}    
-We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defense, promote the general Welfare, and secure the 
-Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.  Choose \(x = \frac{a+b}{2} \). 
+\begin{mybadformproof}
+We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defense, promote the general Welfare, and secure the
+Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.  Choose \(x = \frac{a+b}{2} \).
 
 \quad Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.  We have
-\( x = \frac{a+b}{2} < \frac{ \max(a,b)  +  \max(a,b) }{2} =  \max(a,b)\). 
+\( x = \frac{a+b}{2} < \frac{ \max(a,b)  +  \max(a,b) }{2} =  \max(a,b)\).
 
-\quad We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. Similarly \(\min(a,b) < x\). Therefore  \( \min(a,b) < x < \max(a,b) \). 
+\quad We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. Similarly \(\min(a,b) < x\). Therefore  \( \min(a,b) < x < \max(a,b) \).
 
 \end{mybadformproof}
 \end{frame}
@@ -224,7 +183,7 @@ Blessings of Liberty to ourselves and our Posterity, do ordain and establish thi
 \[
    \left [ | \frac{x}{x+1} | \leq m |x| \right] \equiv  \left [\left| \frac{x}{x+1} \right| \leq \left| \frac{x}{x+1} \right| \right] \equiv \mbox{True}.
 \]
-\end{myfakeproof}    
+\end{myfakeproof}
 \begin{enumerate}
 
 \item We proved that  \( \left (\forall x \in  \reals_{> 0}) \left (\exists m \in \reals_{> 0} \right)  (\left| \frac{x}{x+1} \right| \leq m |x| \right) \).
@@ -236,15 +195,15 @@ Blessings of Liberty to ourselves and our Posterity, do ordain and establish thi
 \end{frame}
 \begin{frame}{Working backwards}
 
-\begin{myth} We have \(3^{1/3} > 5^{1/5} \). \end{myth} 
+\begin{myth} We have \(3^{1/3} > 5^{1/5} \). \end{myth}
 
-\begin{myfakeproof}    
+\begin{myfakeproof}
 We have
 \small
 \[
    3^{1/3} > 5^{1/5} \implies (3^{1/3})^{15} > (5^{1/5})^{15} \implies 3^5> 5^3 \implies 243 > 125  =  \mathrm{true!}
 \]
-\end{myfakeproof}    
+\end{myfakeproof}
 
 \begin{enumerate}
 \item Congratulations--we just proved that if  \(3^{1/3} > 5^{1/5}\) then \( 243 > 125\).
@@ -286,25 +245,24 @@ We have
 
 \begin{mybadformproof}
    \begin{center}  \( A \setminus B \) \end{center}
-   
+
      \begin{center}  \( A \setminus B \)  takes away from \(A\) \end{center}
-     
+
      \begin{center}  So   \end{center}
-     
+
      \begin{center}    \(A \setminus B \subset A\)  \end{center}
-   
+
 \end{mybadformproof}
 
 \begin{enumerate}
 
 \item Proofs aren't poems, so don't formate them as poetry.
 
-\item Using a phrase such as `` takes away from'' is poetic license.  Let's stick to using mathematical terminology. 
+\item Using a phrase such as `` takes away from'' is poetic license.  Let's stick to using mathematical terminology.
 \end{enumerate}
 \end{frame}
 \end{document}
 
 https://www.quora.com/What-are-the-most-common-mistakes-people-make-when-writing-mathematical-proofs
 
-"All other proofs contain numerous sentence fragments, formulas floating in outer space, non sequiturs, and the depressingly ubiquitous unquantified variables. Those are xs and vs and ϵs that make an appearance without the the crucial bits of "For any real number x", "we can find some ϵ such that" or "we can now define v to be the". 
-
+"All other proofs contain numerous sentence fragments, formulas floating in outer space, non sequiturs, and the depressingly ubiquitous unquantified variables. Those are xs and vs and ϵs that make an appearance without the the crucial bits of "For any real number x", "we can find some ϵ such that" or "we can now define v to be the".
