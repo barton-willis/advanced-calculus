@@ -1,4 +1,4 @@
 # advanced-calculus
 class notes for MATH 460, fall 2020
 
-These are some slides that I might use for my fall 2020 course in elementary real analysis.
+These are some slides that I might use for my fall 2020 course in elementary real analysis at the University of Nebraska at Kearney.
