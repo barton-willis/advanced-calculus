@@ -1,0 +1,628 @@
+\documentclass[fleqn]{beamer}
+%\usetheme[height=7mm]{Rochester}
+\usetheme{Boadilla} %{Rochester}
+
+\setbeamertemplate{footline}[text line]{%
+\parbox{\linewidth}{\vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+%\author[BW]{Dr.\ Barton Willis}
+\usepackage{amsmath}\usepackage{amsthm}
+\usepackage{isomath}
+\usepackage{upgreek}
+\usepackage{comment,enumerate,xcolor}
+
+\usepackage[english]{babel}
+\usepackage[final,babel]{microtype}%\usepackage[dvipsnames]{color}
+\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\integers}{\mathbf{Z}}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\domain}{dom}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\codomain}{codomain}
+\DeclareMathOperator{\sspan}{span}
+\DeclareMathOperator{\F}{F}
+\DeclareMathOperator{\G}{G}
+\DeclareMathOperator{\B}{B}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ball}{ball}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\DeclareMathOperator{\nullspace}{nullity}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+\newtheorem{myqdef}{Quasi-definition}
+\newtheorem{myex}{Example}
+\newtheorem{myth}{Theorem} 
+\newtheorem{myfact}{Fact}
+\newtheorem{metathm}{Meta Theorem}
+\newtheorem{Question}{Question}
+\newtheorem{Answer}{Answer}
+\newtheorem{myproof}{Proof}
+
+\newtheorem{mycounterexample}{Counterexample}
+\newtheorem{hurestic}{Hurestic}
+
+%\usepackage{array}   % for \newcolumntype macro
+%\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+
+\newenvironment{alphalist}{
+  \vspace{-0.4in}
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{1.0\itemsep}}
+  {\end{enumerate}}
+
+
+
+\usepackage{pifont}
+
+\newenvironment{checklist}{
+  \begin{enumerate}[\ding{51}]
+    \addtolength{\itemsep}{-0.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{numberlist}
+   {\begin{enumerate}[(1)]
+       \addtolength{\itemsep}{-0.5\itemsep}}
+     {\end{enumerate}}
+\usepackage{amsfonts}
+\makeatletter
+\def\amsbb{\use@mathgroup \M@U \symAMSb}
+\makeatother
+\usepackage{bbold}
+
+
+
+\newcommand{\llnot}{\lnot \,} % is accepted
+
+
+\subtitle{Lesson 3}
+\title{\textbf{Sets}}
+%\author[Barton Willis] % (optional, for multiple authors)
+%{Barton~Willis}%
+%\institute[UNK] % (optional)
+
+%{
+ % \inst{1}%
+%  ``The secret of getting ahead is getting started.'' Mark Twain
+%   }
+  \date{}
+ 
+
+%\usepackage{courier}
+%\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+%\lstset{framextopmargin=50pt,frame=bottomline}
+
+
+%\begin{document}
+
+
+
+%--------
+%usepackage[usenames,dvipsnames,svgnames,table]{color}
+
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}{Named Sets}
+
+We'll use the following names for subsets of real numbers:
+\begin{align*}
+&\reals = \mbox{the set of real numbers}, \\
+& \amsbb{R} =  \mbox{the set of real numbers for handwritten text}, \\
+&\reals_{> 0} = \{x \in \reals  \mid  x > 0\}, \\
+&\reals_{\neq 0}  =  \{x \in \reals  \mid   x \neq 0\},  \mbox{(and similarly for other subscripts)} \\
+&\integers = \mbox{the set of integers}, \\
+& \amsbb{Z} = \mbox{ the set of integers for handwritten text}, \\
+&\mathbf{Q} = \mbox{the set of rational numbers}, \\
+& \amsbb{Q} = \mbox{ the set of rational numbers for handwritten text}, \\
+&\varnothing = \mbox{A set with no members, that is the empty set}
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}{Set Operators} 
+
+\begin{mydef}
+Let \(A\) and \(B\) be sets. Define the set \emph{union, intersection}, and \emph{difference}
+\begin{align*}
+   A \cap B &= \{x  \mid  (x \in A)\land (x \in B) \}, \\
+   A \cup B &= \{x  \mid (x \in A) \lor (x \in B) \}, \\
+   A \setminus B &= \{x  \mid  (x \in A) \land (x \notin B) \},
+\end{align*}
+respectively.
+\end{mydef}
+\end{frame}
+
+\begin{frame}{Set (an) example}
+
+\begin{myex}
+We have
+\begin{align*}
+   \{6, 107\} \cap  \{28,107\} &= \{107\}, \\
+      \{6, 107\} \cup  \{28,107\} &= \{6,28, 107\}, \\
+         \{6, 107\} \setminus  \{28,107\} &= \{6\}, \\
+            \{28, 107\} \setminus  \{6,107\} &= \{28\}.
+\end{align*}
+\end{myex}
+
+\begin{checklist}
+
+\item The last two examples show that in  general  \(A \setminus B \neq B \setminus A\).
+
+\item The set difference is so much like real number subtraction, sometimes the symbol "-" is used instead of \(\setminus\).
+
+\end{checklist}
+\end{frame}
+
+
+\begin{frame}{Set predicates} 
+
+\begin{mydef}
+Let \(A\) and \(B\) be sets. Define
+\begin{align*}
+   A \subset B &\equiv (\forall x \in A)(x \in B),\\
+   A = B &\equiv  (A \subset B) \land (B \subset A).
+\end{align*}
+\end{mydef}
+
+Specializing \(A \subset B\) to \(A = \varnothing\) gives
+\[
+   \left[\varnothing \subset B \right] \equiv  (\forall x \in \varnothing)(x \in B) \equiv \mbox{true}.
+\]
+We've shown that: 
+
+\begin{myth} Thus for all sets \(A\) and for any empty set \(\varnothing\), we have \(\varnothing \subset A\).  \end{myth}
+
+
+\end{frame}
+
+\begin{frame}{Set equality}
+
+To show that sets \(A\) and \(B\) are equal, we almost always prove that \(A \subset B\) and \(B \subset A\).  If a proposition has the form
+
+\begin{myth} If \(H_1, H_2, \dots\), and \( H_n\), then \(A = B\). \end{myth}
+
+where  \(H_1, H_2, \dots H_n\) is the hypothesis, a template for proving the theorem is
+\begin{myproof} Suppose \(x \in A\).  We'll show that \(x \in B\).  Since  \(x \in A, H_1, H_2, \dots\) and \( H_n\),  we have \dots; therefore \(x \in B\).
+
+\quad Suppose \(x \in B\).  We'll show that \(x \in A\).  Since  \(x \in B, H_1, H_2, \dots\) and  \(H_n\),  we have \dots; therefore \(x \in A\).
+
+\end{myproof}
+
+\begin{enumerate}
+
+\item Notice how in the first case we append \(x \in A\) to the hypothesis; and in the second case, we append \(x \in B\).
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Establish notation}
+
+\begin{myth} The set union is associative. \end{myth}
+
+\begin{myproof}  Let \(A,B\), and \(C\) be sets.  We'll show that \(A \cup (B \cup C) = (A \cup B) \cup C\).   Our proof uses the fact that
+the disjunction is associative; we have
+\begin{align*}
+A \cup (B \cup C) &= \{x \mid (x \in A) \lor (x \in B \cup C) \}, \\
+                                &= \{x \mid (x \in A) \lor (x \in B)  \lor  (x \in  C) \}, \\
+                                            &= \{x \mid   ((x \in A) \lor  (x \in B))   \lor x \in C) \}, \\
+                                &= (A \cup B) \cup C.
+ \end{align*}
+  \end{myproof}
+  
+  \begin{checklist}
+  
+  \item The statement of the proposition doesn't introduce notation, so the proof must do so.
+  
+  \item Alternatively, we can show that   \(  A \cup (B \cup C)  \subset  (A \cup B) \cup C) \) and  \( (A \cup B) \cup C) \subset A \cup (B \cup C)\).
+  
+  \end{checklist}
+
+\end{frame}
+
+\begin{frame}{Alternative proofs}
+
+
+\begin{myproof}  Let \(A,B\), and \(C\) be sets.  We'll show that \(A \cup (B \cup C) =  (A \cup B) \cup C\).  
+We have 
+\begin{align*}
+  x \in A \cup (B \cup C)  &\implies (x \in A) \lor (x \in B \cup C), \\
+                                            &\implies  (x \in A) \lor ( (x \in  B) \lor (x \in C)), \\
+                                           &  \implies  (  (x \in A) \lor  (x \in  B) ) \lor (x \in C), \\
+                                           & \implies x \in  ( A \cup B)  \cup C.
+\end{align*}
+Similarly, we can show that \(   x \in (A \cup B) \cup C \implies x \in A \cup (B \cup C)\).
+\end{myproof}
+
+\end{frame}
+\begin{frame}{The uniqueness of emptiness}
+
+\begin{myth} There is at most one empty set. \end{myth}
+
+\begin{myproof} Let \(O\) and \(O^\prime\) be empty sets.  Since  \(O\) is empty, we have \(O \subset O^\prime\). Similarly since   \(O^\prime \) is empty, we have \(O^\prime  \subset O\). We have shown that \(O \subset O^\prime\) and \(O^\prime  \subset O\); therefore \(O = O^\prime\). \end{myproof} 
+
+\begin{enumerate}
+
+\item With impunity, we can now refer to  \textbf{the} empty set. 
+
+\item A clumsy  way to proof this is by contradiction. The proof assumes that there are empty sets \(O\) and \(O^\prime\), but \(O \neq O^\prime\).
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Conflation}
+
+\textbf{Question:}  True or false:  \(\varnothing = \{\varnothing \}\).
+
+
+\vspace{0.2in}
+
+\textbf{Answer:} It's false.  The set   \( \{\varnothing \}\) is a set that has (exactly) one member, namely its member is the empty set.  But the empty set has no members, so
+\(
+     \varnothing \neq  \{\varnothing \}
+\)
+
+\vspace{0.2in}
+
+We can write this as
+
+\vspace{0.2in}
+
+\begin{mycounterexample}[  \( \varnothing = \{\varnothing \}\)]   We have  \( \varnothing \in  \{\varnothing \}\), but \( \varnothing  \notin  \varnothing\); therefore
+  \( \varnothing \neq  \{\varnothing \}\).
+\end{mycounterexample}
+
+
+\begin{checklist}
+
+\item A  \emph{counterexample} is a proof of the negation of some statement.  Usually to be considered a counter example, the proof examines one particular case.
+
+\end{checklist}
+
+\end{frame}
+
+\begin{frame}{A unique template}
+
+If a proposition has the form
+\begin{myth} If \(H_1, H_2, \dots\), and \( H_n\), there is at most one object \(X\). \end{myth}
+
+A template for its proof is
+
+\begin{myproof} Let \(X\) and \(X^\prime\) be such objects. Since \(H_1, H_2, \dots\), and \( H_n\), we have \dots.  ; therefore \(X = X^\prime\). \end{myproof} 
+
+
+
+\begin{enumerate}
+
+\item When \(X\) and \(X^\prime \) are real numbers, we might prove \(X = X^\prime\) by showing that both \(X \leq X^\prime\) and  \(X^\prime  \leq X\) are true. Together,
+these inequalities prove that  \(X = X^\prime\).
+\end{enumerate}
+
+\end{frame}
+\begin{comment}
+\begin{frame}{Generalized disjunctions}
+
+
+Let \(I\) be a set. And suppose that every member of \(I\) is a statement. Define 
+\[
+       \underset{x \in I}{\lor} x  \equiv (\exists x \in I)(x).
+\]
+In this context, the set \(I\) is called an \emph{index set}. When \(I\) is a finite set, say \(I = \{P_1, P_2, \dots P_n\}\), we have
+\[
+       \underset{x \in I}{\lor} x  \equiv  P_1 \lor  P_2 \lor \cdots \lor P_n.
+\]
+The disjunction is associative and commutative, so we don't need to parenthesize   \( P_1 \lor  P_2 \lor \cdots \lor P_n \).
+
+
+\begin{myth}  Let \(I\) and \(I^\prime\) be sets, and suppose that every member of \(I\) is a statement and every member of \(I^\prime \) is a statement.
+Then
+\[
+  \underset{x \in I \cup I^\prime}{\lor} x  \equiv    \left ( \underset{x \in I}{\lor}  x \right) \lor \left ( \underset{x \in I^\prime}{\lor} x \right).
+\] 
+ \end{myth}
+
+
+\end{frame}
+
+
+\begin{frame}{Vacuous unions}
+
+We have
+\[
+      \underset{x \in \varnothing}{\lor} x  \equiv (\exists x \in \varnothing)(x) \equiv \mbox{false}.
+\]
+Thus we have
+\begin{align*}
+     \underset{x \in I }{\lor} x \in I   &\equiv   \underset{x \in I  \cup \varnothing}{\lor} x \in I, \\
+                                                               &\equiv  \left( \underset{x \in I }{\lor} x \in I \right)  \lor  \left( \underset{x \in \varnothing }{\lor} x \in I \right), \\
+                                                               &\equiv  \left(  \underset{x \in I }{\lor} x \in I \right)  \lor  \mbox{ false }, \\
+                                                               &\equiv  \underset{x \in I }{\lor} x \in I.
+\end{align*}
+Comparing the first and the last, we have the tautology 
+\[
+    \underset{x \in I }{\lor} x \in I  \equiv \underset{x \in I }{\lor} x \in I .
+    \]
+\end{frame}
+\end{comment}
+\begin{frame}{Generalized unions}
+
+Let \(I\) be a set. And suppose that every member of \(I\) is a set.  Since every member of \(I\) is a set, we can find the union of all of its members. We define
+\[
+    \underset{x \in I}{\cup} x  = \{ a  \, \,  | \, \, (\exists x \in I)(a \in x) \}.
+\]
+In this context, we say that the set \(I\) is an \emph{index set.}
+
+\begin{myex}  Define \(I = \{ \{1,2\}, \{107\} \} \). Then \(I\) is a set and each member of \(I\) is a set. We have
+\begin{align*}
+ \underset{x \in I}{\cup} x  &= \{ a  \, \,  | \, \, (\exists x \in I)(a \in x) \}, \\
+                                                   &= \{ a  \, \,  | \, \,   a \in   \{1,2\}  \lor    a \in   \{107\} \}, \\
+                                                   &= \{1,2\}  \cup \{107\}, \\
+                                                   &= \{1,2,107\}.
+\end{align*}
+
+\end{myex}
+\end{frame}
+
+\begin{frame}{Finite unions}
+\begin{myth} Let \(A_1, A_2, \dots, A_n\) be sets.  Define an index set \(I\) by  \(I = \{A_1, A_2, \dots, A_n \} \). Then
+\[
+   \underset{x \in I}{\cup} x = A_1 \cup A_2 \cup \cdots \cup A_n.
+\]
+\end{myth}
+\begin{enumerate}
+  \item The set union is associative and commutative, so  the meaning of \(A_1 \cup A_2 \cup \cdots \cup A_n \) unambiguous. 
+  
+  \item An index set neededn't be finite.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Nonfinite unions}
+
+\begin{myex}  The index set needn't be finite--here is an example.  For \(x \in \reals\), define \( I = \{ (-\infty, x) \,\, | \,\, x \in \reals \} \). Our index set is a set of open intervals. 
+We claim that
+\[
+    \underset{x \in I}{\cup} x  = \reals.
+\]
+\end{myex} 
+
+\begin{myproof}  Suppose \(a \in   \underset{x \in I}{\cup} x  \).  We'll show that \(a \in \reals\).  Since  \(a \in   \underset{x \in I}{\cup} x  \), there is \(z \in I\) such that \(a \in z\).  But \(z \subset \reals\), so \(a \in \reals\); we've shown that   \( \underset{x \in I}{\cup} x  \subset \reals\).
+
+\quad Suppose \(a \in   \reals\).   We'll show that \(a \in  \underset{x \in I}{\cup} x  \).  We have \(a \in (-\infty, a + 1)\). Further  \( (-\infty, a + 1) \in I\); therefore  \(a \in  \underset{x \in I}{\cup} x \).
+\end{myproof}
+
+\begin{enumerate} 
+
+\item Notice that \( a \not \in  (-\infty, a)\).  But it is true that \(a \in (-\infty, a + 1)\).
+
+\item It's also true that  \(a \in (-\infty, a + 107 \, \uppi^2)\).
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Generalized intersections}
+Let \(I\) be a set. And suppose that every member of \(I\) is a set.  Since every member of \(I\) is a set, we can find the union of all of its members. We define
+\[
+    \underset{x \in I}{\cap} x  = \{ a  \, \,  | \, \, (\forall x \in I)(a \in x) \}.
+\]
+
+
+\begin{myex}  Define \(I = \{ \{1,2\}, \{107\} \} \). Then \(I\) is a set and each member of \(I\) is a set. We have
+\begin{align*}
+ \underset{x \in I}{\cap} x  &= \{ a  \, \,  | \, \, (\forall x \in I)(a \in x) \}, \\
+                                                   &= \{ a  \, \,  | \, \,   a \in   \{1,2\}  \land    a \in   \{107\} \}, \\
+                                                   &= \{1,2\}  \cap \{107\}, \\
+                                                   &=  \varnothing.
+\end{align*}
+
+\end{myex}
+\end{frame}
+
+\begin{frame}{Finite intersections}
+\begin{myth} Let \(A_1, A_2, \dots, A_n\) be sets.  Define an index set \(I\) by  \(I = \{A_1, A_2, \dots, A_n \} \). Then
+\[
+   \underset{x \in I}{\cap} x = A_1 \cap A_2 \cap  \cdots \cap A_n.
+\]
+\end{myth}
+\begin{enumerate}
+  \item The set intersection  is associative and commutative, so  the meaning of \(A_1 \cap A_2 \cap \cdots \cap A_n \) unambiguous. 
+  
+  \item An index set needn't be finite.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Nonfinite intersections}
+
+\begin{myex}  For \(x \in \reals\), define \( I = \{ (-\infty, x) \,\, | \,\, x \in \reals \} \). Our index set is a set of open intervals. 
+We claim that
+\[
+    \underset{x \in I}{\cap} x  = \varnothing.
+\]
+\end{myex} 
+
+\begin{myproof}   We'll prove this using contradiction.  Suppose  \( \underset{x \in I}{\cap} x \) has at least one member; say \(a \in  \underset{x \in I}{\cap} x \). We have 
+\[
+    (\forall x \in \reals)(a \in (-\infty, x)).
+\]
+In particular, we have \(a \in (-\infty, a)\).  But \(a \in (-\infty, a)\) is false; therefore \( \underset{x \in I}{\cap} x \) cannot have a member, so \( \underset{x \in I}{\cap} x \)  is the empty set.
+\end{myproof}
+
+
+
+\end{frame}
+
+\begin{frame}{Alternative notation}
+
+Sometimes we take the index set to be a subset of \(\reals\) and we denote the sets members by subscripts. Say \(I \subset \reals\) and  \(A_x\) is a set for each \(x \in I\).  This notation is particlarly
+popular when \(I = \integers_{> 0}\).  For example
+\[
+  \underset{k  \in \integers_{> 0}} {\cap} A_k   = \{ a \,\, | \,\, (\forall n \in  \integers_{> 0})(a \in A_n) \}
+\]
+And 
+\[
+  \underset{k  \in \integers_{> 0}} {\cup} A_k   = \{ a \,\, | \,\, (\exists  n \in  \integers_{> 0})(a \in A_n) \}
+\]
+When the index set is uncountable, maybe it's just me, but definitions such as
+\[
+   A_x = (-\infty, x)   \mbox{  for all } x \in \reals
+\]
+are semi-bazaar looking. For such cases, I think it's more clear to define the index set to be a set of sets:
+\[
+   I  =  \{ (-\infty, x)   \,\, | \,\, x \in \reals\}.
+\]
+
+
+\end{frame}
+
+\begin{comment}
+
+\begin{frame}{Vacuous Truth}  Let \(T\) be a boolean valued function. Consider the statement
+\[
+   (\exists x \in \varnothing)(T(x)).
+\]
+To show that it's true, you would have to find a member of the empty set that makes \(T\) true. There are no members of the empty set, so for any predicate \(T\), we have
+\[
+     (\exists x \in \varnothing)(T(x)) \equiv \mbox{false}.
+\]
+Thus it's negation is true; that is
+\[
+    (\exists x \in \varnothing)(\lnot T(x)) \equiv \mbox{true}.
+\]
+\begin{myfact} For any boolean valued function \(T\), we have
+ \begin{align*}
+  (\exists x \in \varnothing)(T(x)) \equiv \mbox{false}, \\
+   (\forall x \in \varnothing)(T(x)) \equiv \mbox{true}. 
+    \end{align*}
+\end{myfact}
+
+\end{frame}
+\end{comment}
+
+\begin{frame}{Functions}
+
+To define a function \(F\) with domain \(A\) and formula \(\mbox{blob}\), we can write
+\[
+  F = x \in A \mapsto \mbox{blob}.
+\]
+In the rare cases that it's important to give the function a codomain, we can write
+\[
+  F = x \in A \mapsto \mbox{blob} \in B,
+\]
+where \(\codomain(F) = B\). Generically for a function \(F\) with domain \(A\) and codomain \(B\),  we say that \(F\) is a function from \(A\) to \(B\).
+
+\begin{example} The notation
+\[
+   F = x \in [-1,1] \mapsto 2 x + 1
+\]
+is our compact way of writing: Define \(F(x) = 2x + 1 \), for \( -1 \leq x \leq 1\).
+\end{example}
+\end{frame}
+
+\begin{frame}{Function signature}
+
+The notation \(F : A \to B\) means
+
+\begin{enumerate}
+
+\item \(F\) is a function.
+\item \(\dom(F) = A \).
+\item  \(\codomain(F) = B\).
+\end{enumerate}
+
+\vspace{0.1in}
+
+
+We'll say that  \(A \to B\) is the \emph{signature} of a function.  The signature of a function doesn't tell us its formula. It does tell us the domain of a function and it indicates what the outputs of the function can be.
+
+
+\end{frame}
+\begin{frame}{Range}
+\begin{definition} For any function, we define
+\[
+   \range(F) = \left \{F(x) | x \in \domain(F)  \right \}.
+\]
+Thus \(\range(F)\) is the set of all outputs.
+\end{definition}
+
+\begin{myfact} Let \(F\) be a function. Then
+\[
+     \left[ y \in \range(F)  \right] \equiv  \left(\exists x \in \domain(F) \right)(y = F(x)).
+ \]
+\end{myfact}
+
+\begin{example} Define \(F = x \in [-1,1] \mapsto 2 x + 1\). Then \(\frac{3}{2} \in \range(F)\) because \(\frac{1}{4} \in \domain(F)\) and \(F(\frac{1}{4}) = \frac{3}{2}\).
+
+\end{example}
+\end{frame}
+\begin{frame}{Ontoness}
+
+The codomain of a function tells us something about its outputs, but remember that the range and the codomain of a function need not be the same. For all functions \(F\), we have
+\[
+   \range{F} \subset \codomain(F).
+\]
+
+\begin{mydef} A function is \emph{onto} if its range and codomain are equal. \end{mydef}
+
+\begin{myex} \textbf{Question}: Is the sine function onto?  \textbf{Answer} It is if its codomain is \([-1,1]\).  But if its codomain is \(\reals\), then no it's not onto. There is no standard value for the codomain of the trigonometric functions, so the asking ``Is the sine function onto?'' is  rubbish.\end{myex}
+\end{frame}
+\begin{frame}{Equality}
+
+\begin{mydef} Functions \(F\) and \(G\) are \emph{equal }  \(\dom(F) = \dom(G)\) and for all \(x \in \dom(F) \), we have \(F(x) = G(x)\).  Equivalently
+\[
+  (F = G) \equiv (\dom(F) = \dom(G)) \land (\forall  x \in \dom(F))(F(x) = G(x)).
+\]
+\end{mydef}
+
+\begin{enumerate}
+\item The definition of function equality does not involve the codomain of the function. Thus two functions can be equal, but have unequal codomains. 
+\end{enumerate}
+
+\begin{myex}  The functions \(F = x \in [-1,1] \mapsto x \in [-1,1]\) and  \(G = x \in [-1,1] \mapsto x \in \reals \)  are equal, but \(F\) is onto and \(G\) is not onto. Thus
+ontoness isn't a  property of a function. \end{myex}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Apply a function to a set}
+
+\begin{mydef}  Let \(F : A \to B\).  For any subset \(A^\prime\) of \(A\) define
+\[
+    F(A^\prime) = \{ F(x) | x \in A^\prime \}.
+\]
+Equivalently, we have
+\[
+  y \in F(A^\prime)  \equiv (\exists x \in A^\prime)(y = F(x)).
+\]
+\end{mydef}  
+
+\begin{myth} For all functions \(F\), we have \(F(\dom{F}) = \range(F) \).   Further \(F(\varnothing) = \varnothing \). \end{myth}
+
+
+\end{frame}
+
+\begin{frame}{Inverse image}
+
+\begin{mydef}  Let \(F : A \to B\).  For any subset \(B^\prime\) of \(B\) define
+\[
+    F^{-1} (B^\prime) = \{ x \in A  | F(x) \in B \}.
+\]
+Equivalently, we have
+\[
+  x  \in F^{-1} (B^\prime)  \equiv F(x) \in B.
+\]
+\end{mydef}
+\end{frame}  
+\end{document}

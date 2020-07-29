@@ -1,0 +1,764 @@
+\documentclass[fleqn]{beamer}
+%\usetheme[height=7mm]{Rochester}
+\usetheme{Boadilla} %{Rochester}
+
+\setbeamertemplate{footline}[text line]{%
+\parbox{\linewidth}{\vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+%\author[BW]{Dr.\ Barton Willis}
+\usepackage{amsmath}\usepackage{amsthm}
+\usepackage{isomath}
+\usepackage{upgreek}
+\usepackage{comment,enumerate}
+
+\usepackage[english]{babel}
+\usepackage[final,babel]{microtype}%\usepackage[dvipsnames]{color}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\integers}{\mathbf{Z}}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\domain}{dom}
+\DeclareMathOperator{\codomain}{codomain}
+\DeclareMathOperator{\sspan}{span}
+\DeclareMathOperator{\F}{F}
+\DeclareMathOperator{\G}{G}
+\DeclareMathOperator{\B}{B}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ball}{ball}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\DeclareMathOperator{\nullspace}{nullity}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+\newtheorem{myqdef}{Quasi-definition}
+\newtheorem{myex}{Example}
+\newtheorem{myth}{Theorem} 
+\newtheorem{myfact}{Fact}
+\newtheorem{metathm}{Meta Theorem}
+\newtheorem{Question}{Question}
+\newtheorem{Answer}{Answer}
+\newtheorem{myproof}{Proof}
+\newtheorem{hurestic}{Hurestic}
+
+%\usepackage{array}   % for \newcolumntype macro
+%\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+
+\newenvironment{alphalist}{
+  \vspace{-0.4in}
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{snowflakelist}{
+  \vspace{-0.4in}
+  \begin{enumerate}[{\color{green} \textleaf}]
+    \addtolength{\itemsep}{-1.2\itemsep}}
+  {\end{enumerate}}
+
+
+
+\newenvironment{handlist}{
+ \vspace{-0.2in}
+  \begin{enumerate}[{\color{green} \leftthumbsup}]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{checklist}{
+  \begin{enumerate}[\ding{52}]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{numberlist}
+   {\begin{enumerate}[(1)]
+       \addtolength{\itemsep}{-0.5\itemsep}}
+     {\end{enumerate}}
+\usepackage{amsfonts}
+\makeatletter
+\def\amsbb{\use@mathgroup \M@U \symAMSb}
+\makeatother
+\usepackage{bbold}
+
+\usepackage{array}
+\newcolumntype{C}{>$c<$}
+
+\newcommand{\llnot}{\lnot \,} % is accepted
+\DeclareMathOperator{\3F2}{{}_3  F_2}
+\newcommand\pochhammer[2]{\left[\genfrac..{0pt}{}{#1}{#2}\right]}
+\newmuskip\pFqmuskip
+
+\newcommand*\pFq[6][8]{%
+  \begingroup % only local assignments
+  \pFqmuskip=#1mu\relax
+  % make the comma math active
+  % \mathcode`\,=\string"8000
+  % and define it to be \pFqcomma
+  \begingroup\lccode`\~=`\,
+  \lowercase{\endgroup\let~}\pFqcomma
+  % typeset the formula
+      {}_{#2}\!\F_{#3}{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}   %\F{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}  %alt: {}_{#2}\F_{#3}{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}
+  \endgroup
+}
+
+\newcommand{\pFqcomma}{\mskip \pFqmuskip}
+\newcommand{\mydash}{\text{--}}
+
+
+%------------------
+
+\subtitle{Lesson 1}
+\title{\textbf{Boolean Logic}}
+%\author[Barton Willis] % (optional, for multiple authors)
+%{Barton~Willis}%
+%\institute[UNK] % (optional)
+
+%{
+ % \inst{1}%
+%  ``The secret of getting ahead is getting started.'' Mark Twain
+%   }
+  \date{}
+ 
+
+\usepackage{courier}
+%\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+%\lstset{framextopmargin=50pt,frame=bottomline}
+
+
+%\begin{document}
+
+
+
+%--------
+%usepackage[usenames,dvipsnames,svgnames,table]{color}
+
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Statements}
+
+\begin{myqdef}  A \emph{statement}, also known as a \emph{proposition}, is a sentence that has a truth value of either true or false.  A \emph{theorem} is a statement that  has a truth value of true.  
+\end{myqdef}
+
+\vspace{1cm}
+
+\begin{enumerate}
+
+\item Boolean logic is named in honor of \textbf{ George Boole} (1815 -- 1864).
+
+\item In boolean logic, the truth values are either \textbf{true} or \textbf{false}.
+
+\item A statement is a concept that we can describe, but  don't define.  
+
+\item An \emph{axiom} is a statement that is \emph{assumed} to have a truth value of true. 
+Generally, the truth value of an axiom cannot be determined by the truth value of other theorems.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\begin{example} Examples of statements:
+\begin{enumerate} 
+\item \( 1 = 1\).
+\item Every square is a rectangle.
+\item Some integers are divisible by 42.
+\end{enumerate}
+
+
+\vspace{0.2in}
+Examples of non-statements:
+\begin{enumerate} 
+\item Square houses are boring.
+\item Please make your bed, brush your teeth, and take out the garbage.
+\end{enumerate}
+\end{example}
+
+
+
+\end{frame}
+
+
+\begin{frame}{Logical notation}
+
+We'll use the ISO standard names for logical functions.  These names are
+
+\begin{center}
+\begin{tabular}[h]{| l | l | }
+\hline 
+negation  &  \(\lnot \)   \\
+and &  \( \land  \) \\
+or  &   \(\lor   \) \\
+implies &  \( \implies  \) \\
+equivalent &  \( \equiv  \) \\ 
+for all & \( \forall \) \\
+there exists & \(\exists\)  \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item For a quick review of these functions, see \url{https://en.wikipedia.org/wiki/Boolean_algebra}.
+
+\item For additional ISO math symbols, see \url{https://en.wikipedia.org/wiki/ISO_31-11}.
+
+\item In mathematics, for statements \(P\) and \(Q\), the statement \(P \lor Q\) is true when both \(P \) and \(Q\) are true; that is, we use the  disjunction inclusive.
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Negation}   
+
+\begin{mydef}
+For  a statement \(P\), we define its \emph{logical negation}, denoted  by \(\lnot P\), with the \emph{truth table}
+\[
+\begin{array}{|C|C|} \hline 
+$P$ & $\lnot P$\\
+\hline
+T & F \\
+F & T    \\ \hline 
+\end{array} \, .
+\]
+ 
+\end{mydef}
+\begin{enumerate}
+
+
+\item We'll use the ISO  symbols  for logical functions; see \url{https://en.wikipedia.org/wiki/ISO_31-11}.
+%\item The standard identifier for logical negation is \(\lnot\), not \(\llnot\) .  We'll try to use the notation in our textbook.
+
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Equality} 
+
+\begin{mydef}
+Let \(P\) and \(Q\) be statements.  We define  \emph{equivalence} \(P \equiv Q\) by the truth table
+\[
+\begin{array}{|C|C|C|} \hline 
+$P$ & $Q$ & $P \equiv Q$\\
+\hline
+T & T  & T\\
+T & F  & F  \\
+F & T  & F \\
+F & F   & T \\ \hline
+\end{array} \, .
+\]
+\end{mydef}
+\begin{enumerate}
+
+\item Statements \(P\) and \(Q\) are equivalent provided the statements have the same truth value. 
+
+\item Since both \(P\) and \(Q\) have two possible values, the truth table has \(4  (= 2 \times 2\) rows.
+
+\item \(P \equiv Q\) is an example of a \emph{compound statement}.  Its constituent parts are the statements \(P\) and \(Q\).
+\end{enumerate}
+\end{frame}
+
+\begin{comment}
+\begin{frame}{Example}
+
+\begin{example}
+The statements \(1 = 1\) and ``Every square is quadrilateral''  are both true, so
+\[
+    (1=1) \equiv \mbox{Every square is quadrilateral}
+\]
+is  true statement, but its constituent parts aren't related to each other.  Also the statements \(5 > 7\) and
+``Every square has five sides'' are both false, so 
+\[
+    (5 > 7) \equiv \mbox{Every square has five sides}
+\]
+is  true statement, but again the constituent parts are unrelated.
+\end{example}
+
+\end{frame}
+\end{comment}
+
+
+
+%\begin{frame}
+%\begin{myfact} Let \(P\)  be a statement.  Then \( \llnot (\llnot P) \equiv P \). That is, logical negation is its own inverse.  Any function that is %its own inverse is
+%an \emph{involution}.
+%\end{myfact}
+
+%\end{frame}
+
+\begin{frame}{Disjunctions}  
+
+\begin{mydef}
+Let \(P\) and \(Q\) be  statements.  The \emph{disjunction} of \(P\) with \(Q\), denoted by  \(P \lor Q\), is a statement whose truth value is given by
+\[
+\begin{array}{|C|C|C|} \hline 
+$P$ & $Q$ & $P \lor Q$\\
+\hline
+T & T  & T\\
+T & F  & T  \\
+F & T  & T \\
+F & F   & F \\ \hline
+\end{array} \, .
+\]
+\end{mydef}
+
+
+
+\begin{enumerate}
+
+\item That is \(P \lor Q\) is false when both \(P\) and \(Q\) are false; otherwise \(P \lor Q\) is true.  
+
+\item \(P \lor Q\) is another  example of a \emph{compound  statement}.
+
+\item In mathematical logic, notice that \(\mbox{True} \lor \mbox{True} \) has a truth value of true.
+
+\end{enumerate}
+\end{frame}
+
+\begin{comment}
+
+\begin{frame}{Exclusive disjunctions}
+
+Arguably the sentence 
+\begin{quote}
+   Tonight I will  take a nap  or  bake scones.
+\end{quote}
+is disjunction, but it's clear that it's not possible to both take a nap and bake scones.  When a disjunction disallows the possibility of both parts being true, it is an \emph{exclusive disjunction}, otherwise it is
+an \emph{inclusive disjunction.}
+
+\begin{enumerate}
+
+\item In mathematics, a disjunction always means an \emph{inclusive disjunction}.  
+\item For an exclusive disjunction, there needs to be a ``not both'' qualifier; for example, ``Either \(a\) or \(b\) are integers, but not both are integers.''
+\item The word ``either'' alerts  the reader that a disjunction follows, but it does not alter the meaning of the disjunction; specifically ``either \dots or'' doesn't mean a exclusive disjuction in mathematical language.
+ 
+\end{enumerate}
+
+\end{frame}
+
+\end{comment}
+\begin{frame}{Conjunctions}  
+\begin{mydef}
+Let \(P\) and \(Q\) be a statements. The \emph{conjunction} of \(P\) with \(Q\), denoted by  \(P \land Q\), is a statement whose truth value is given by
+\[
+\begin{array}{|C|C|C|} \hline 
+$P$ & $Q$ & $P \land Q$\\
+\hline
+T & T  & T\\
+T & F  & F  \\
+F & T  & F \\
+F & F   & F \\ \hline
+\end{array} \, . 
+\] 
+\end{mydef}
+
+\begin{enumerate}
+\item That is \(P \land Q\) is true provided both \(P\) and \(Q\) are true; otherwise \(P \land Q\) is false.
+\end{enumerate}
+
+
+\end{frame}
+
+\begin{frame}{Tautologies}
+
+\begin{mydef}  A compound statement that has a truth value of true for all possible truth values of its
+constituent parts is a \emph{tautology}.
+\end{mydef}
+
+\begin{example} Each of the following are tautologies:
+
+\begin{enumerate}
+  \item    \(P \lor \llnot P\),
+  \item \(P \equiv P\),
+  \item \(P \equiv \llnot \llnot P\),
+  \item \(\llnot (P \land Q) \equiv (\llnot P) \lor (\llnot Q) \).
+\end{enumerate}
+
+\end{example}
+
+\end{frame}
+
+\begin{frame}{Example}
+\begin{example}
+Let's show that  \(\llnot (P \land Q) \equiv (\llnot P) \lor (\llnot Q) \) is a tautlogy.  There are two contistuent parts, so we need a truth table with four rows. How many columns it has depends on how many steps we are willing to skip.
+\tiny
+\[
+\begin{array}{|C|C|C|C|C|C|} \hline 
+$P$ & $Q$   &     $ P \land Q $   &   $\llnot (P \land Q) $ &  $(\llnot P) \lor (\llnot Q) $ &  \(\llnot (P \land Q) \equiv (\llnot P) \lor (\llnot Q) \) \\
+\hline
+T & T  & T & F & F & T  \\
+T & F  & F & T & T & T  \\
+F & T  & F & T & T & T \\
+F & F  & F & T & F & T \\ \hline
+\end{array} \, .
+\] 
+\normalsize
+The last column shows that regardless of the truth values for \(P\) and \(Q\),  the statement  \(\llnot (P \land Q) \equiv (\llnot P) \lor (\llnot Q) \) is true; therefore
+\(\llnot (P \land Q) \equiv (\llnot P) \lor (\llnot Q) \) is a tautalogy.
+
+\end{example}
+
+\begin{enumerate}
+
+\item Possibly the truth table should have columns for \(\llnot P\) and  \(\llnot Q\). 
+ 
+ \item The tautalogy \(\llnot (P \land Q) \equiv (\llnot P) \lor (\llnot Q) \) is due to   De Morgan, and is known as \emph{De Morgan's law.}
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Conditionals}
+
+The conditional is  a logical connective that allows us to form a compound statement with the meaning  ``if \(P\), then \(Q\)."  Specifically:
+
+
+\begin{mydef} 
+Let \(P\) and \(Q\) be a statements.   We define  \(P \implies Q\) with the truth table
+\[
+\begin{array}{|C|C|C|} \hline 
+$P$ & $Q$ & $P \implies Q$\\
+\hline
+T & T  & T\\
+T & F  & F  \\
+F & T  & T \\
+F & F   & T \\ \hline
+\end{array} \, .
+\] \, .
+\end{mydef}
+\begin{enumerate}
+
+\item In the conditional \(P \implies Q\), we say that \(P\) is the \(hypothesis\) and \(Q\) is the \emph{conclusion}.
+
+%\item In English , \(P \implies Q\) is spoken as either ``If \(P\), then Q''  or ``If \(P\), \(Q\).''
+\item A conditional is false when the hypothesis is true, but the conclusion is false; otherwise, a conditional is true.
+
+\end{enumerate}
+\end{frame}
+%\item  "if  is true, then  is also true"
+
+
+\begin{comment}
+\begin{frame}
+
+\begin{myfact}
+ The conditional statement  can be true even when its constituent parts have no particular relation; for example
+\begin{quote}
+  If all canines  have an exoskeleton, then \(1=1\),
+\end{quote}
+is a true statement (because the conclusion is true), but it is arguably a nonsensical  statement. 
+
+\vspace{0.1in}
+\quad A conditional statement with a false hypothesis is true regardless of the truth value of the conclusion.  Thus 
+ \begin{quote}
+  If  \(5 > 7\), then \(1=1\).
+\end{quote}
+and 
+\begin{quote}
+  If  \(5 > 7\), then \(1 \neq 1\).
+\end{quote}
+are both true conditional statements.  This is an example of GIGO (garbage in, garbage out.)
+\end{myfact}
+
+\end{frame}
+\end{comment}
+
+\begin{frame}{Converse}
+\begin{mydef} The \emph{converse} of the conditional \(P \implies Q\) is the conditional \(Q \implies P\). \end{mydef}
+
+\begin{myfact} A truth table shows that   \( (P \implies Q) \equiv (Q \implies P)\) is not a tautology.  Specifically, \(T \implies F \) is false, but
+ \(F \implies T \) is true.
+ \end{myfact}
+ 
+ 
+ \begin{example} Consider the statement
+ \begin{quote}
+If  \(x < 5\), then \(x < 7\)
+ \end{quote}
+ and its converse
+  \begin{quote}
+  If  \(x < 7\), then \(x < 5\).
+ \end{quote}
+The first statement is true, but its converse is false (because, for example, \(x\) could be six, making \(x < 7\) true, but \(x < 5\) false.
+ \end{example}
+ \end{frame}
+ \begin{frame}{Contrapositive}
+\begin{mydef} The \emph{contrapositive} of the conditional \(P \implies Q\) is the conditional \(\llnot Q \implies \llnot P\). \end{mydef}
+
+\begin{myfact} A truth table shows that   \( (P \implies Q) \equiv (\llnot Q \implies \llnot P)\) is  a tautology. 
+ \end{myfact}
+
+ \begin{example} Consider the statements:
+ \begin{quote}
+If  \(x < 5\), then \(x < 7\)
+ \end{quote}
+ and its contrapositive 
+  \begin{quote}
+   If \(x \geq 7\), then \(x \geq 5\)
+ \end{quote}
+These statements are logically equivalent.
+ \end{example}
+\end{frame} 
+
+\begin{frame} {Predicates}
+\begin{mydef}  A function whose range is a subset of  \(\{ \mathrm{true},  \mathrm{false} \} \) is a \emph{predicate}. Alternatively, a boolean valued function is a predicate.
+\end{mydef}
+
+
+
+\begin{myex} The function 
+\[
+F = x \in  (-\infty, \infty)  \mapsto \begin{cases}  1 & \mbox{ if } x \mbox{ is rational } \\   0 & \mbox{ if } x \mbox{ is irrational } \end{cases}
+\]
+is a predicate. We have, for example
+\[
+    F(2/3) = 1,  \quad F(\sqrt{2})  = 0,  \quad F(\uppi)  = 0, \quad F(\mathrm{e})  = 0,
+\]
+Last I checked, nobody knows the value of \(F(\uppi - \mathrm{e})\).
+ \end{myex}
+\end{frame}
+\begin{frame}{ Universal quantification}
+
+\begin{myqdef}  Let \(P\) be a predicate defined on  a set \(A\).  The statement
+\[
+   \left(\forall x \in A \right)(P(x))
+\]
+is true provided for all  \(x \in A\), the statement \(P(x) \) is true; the statement is false if for some \(x \in A\),  the statement \(P(x)\) is false.
+\end{myqdef}  
+
+\begin{enumerate}
+
+\item The symbol \(\forall\) is the  \emph{universal quantifier}.
+
+\item To show that     \(\left(\forall x \in A \right)(P(x)) \) is true, we cannot simply show that \(P(x)\) is true for one specific member of the set \(A\).
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Existential quantification}
+
+\begin{myqdef}    Let \(P\) be a predicate defined on  a set \(A\).  The statement
+\[
+   \left(\exists  x \in A \right)(P(x))
+\]
+is true provided there is \(x \in A\) such that  the statement \(P(x) \) is true; the statement is false if for all \(x \in A\),  the statement \(P(x)\) is false.
+\end{myqdef}  
+
+\begin{enumerate}
+
+\item The symbol \(\exists \) is the  \emph{existential quantifier}.
+
+\item To show that a statement of the form \(  \left(\exists  x \in A \right)(P(x)) \) is true, the task is to choose a specific member  \(x\) of the set \(A\) that makes \(P(x)\) true.  
+
+\item Since it's impossible to choose a specific member of the empty set  \(\varnothing \), regardless of the predicate \(P\), the statement  \(  \left(\exists  x \in \varnothing  \right)(P(x)) \) 
+is false.
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Negative practice} 
+
+For each member \(x\) of a set \(A\), let \(T(x) \) be a statement.  Each of the following are tautologies:
+\begin{align*}
+    \lnot (\forall x \in A)(T(x)) &\equiv (\exists x \in A) (\lnot T(x)), \\
+  \lnot (\exists  x \in A)(T(x)) &\equiv (\forall x \in A) (\lnot T(x)).
+\end{align*}
+
+\begin{enumerate}
+
+\item We don't negate the set membership--the following is rubbish:
+\[
+  \lnot (\forall x \in A)(T(x)) \equiv (\exists x \not \in A) (\lnot T(x)).
+\]
+For \( x \not \in A\), the predicate \(T\) might not even be defined.
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Negative Experiences} Consider the statement ``For all \(x \in \reals\), we have \(x \in (-1,1) \implies x^2 < 1 \).''
+
+Symbolically, the statement is
+\[
+    (\forall x \in \reals)( x \in (-1,1) \implies x^2 < 1 ).
+\]
+It's negation is (in general \(a \not < b) \equiv (a \geq b)\)
+\[
+    (\exists x \in \reals) ( x \notin (-1,1) \lor x^2 \geq 1).
+\]
+In English, the negation is ``There is \(x \in \reals\) such that either \(x \in (-1,1) \lor x^2 \geq 1.\) `'
+\end{frame}
+
+\begin{frame}{More Famous Tautologies}
+
+Let \(P\) and \(Q\) be statements.  Each of the following are tautologies:
+
+\begin{enumerate}
+   \item  \((P \equiv Q)  \equiv \left (P \implies Q) \land  (Q \implies P  \right) \)
+  \item \(\llnot (P \land Q) \equiv (\llnot P) \lor (\llnot Q) \)  (De Morgan's rule)
+  \item \((P \implies Q) \equiv  \left( \lnot Q  \implies \lnot P \right) \) (Rule of contrapositive)
+\end{enumerate}
+
+
+\end{frame}
+
+\begin{frame}{Logical tips}
+
+\begin{enumerate}
+\item[\textbf{Tip}] Any time you have trouble proving \(P \implies Q\), try proving  \( \lnot Q  \implies \lnot P \) instead. 
+
+\vspace{0.1in}
+
+\item[\textbf{Tip}]  Generally to prove \(P \equiv Q\), you should prove both \(P \implies Q\) and \(Q \implies P\).  See tautology one of the previous slide.  Students often refer to this process as ``proving it both ways.'' 
+
+\vspace{0.1in}
+
+\item[\textbf{Tip}] In general, \(Q \implies P\) is \textbf{not}  equivalent to  \(P \implies Q\).   Accidentally (on purpose) proving   \(Q \implies P\) instead of  \(P \implies Q\) will almost surely earn you zero points.
+\end{enumerate}
+
+\vfil
+\end{frame}
+
+
+\begin{frame}{Baby steps}
+
+Let \(P, Q\), and \(R\) be statements.  The following is a tautology:
+\[
+     \left ( (P \implies Q) \land (Q \implies R)  \right) \implies (P \implies R).
+\]
+Thus we can show that  \(P \implies R\) is true by finding a statement \(Q\) such that both  \(P \implies Q \) is true and   \(Q \implies R \) is true.
+
+
+\begin{enumerate}
+
+\item Think of proving \(P \implies Q\) and \(Q \implies R\) as  \emph{baby steps} in proving  \(P \implies R\) .
+
+\item Generally, we can  make multiple baby steps; thus
+\[
+       \left ( (P \implies Q_1) \land (Q_1 \implies Q_2)  \land   \cdots  \land ( Q_{n} \implies R)  \right) \implies (P \implies R).
+\]
+is a tautology.
+
+\end{enumerate}
+\end{frame}
+\end{document}
+\begin{frame}{Named Sets}
+\begin{align*}
+&\reals = \mbox{the set of real numbers}, \\
+& \amsbb{R} = \reals \mbox{(for handwritten text)}, \\
+&\reals_{> 0} = \{x \in \reals | x > 0\}, \\
+&\reals_{\neq 0}  =  \{x \in \reals | x \neq 0\},  \mbox{(and similarly for other subscripts)} \\
+&\integers = \mbox{the set of integers}, \\
+& \amsbb{Z} = \integers \mbox{(for handwritten text)}, \\
+&\mathbf{Q} = \mbox{the set of rational numbers}, \\
+& \amsbb{Q} = \integers \mbox{(for handwritten text)}, \\
+&\varnothing = \mbox{the set with no members, that is the empty set}
+\end{align*}
+It's a theorem that there is only one empty set.
+\end{frame}
+
+
+\begin{frame}{Set Operators} Let \(A\) and \(B\) be sets. Define
+\begin{align*}
+   A \cap B &= \{x | x \in A \land x \in B \}, \\
+   A \cup B &= \{x | x \in A \lor x \in B \}, \\
+   A \setminus B &= \{x | x \in A \land x \notin B \},
+\end{align*}
+I'm not sure that the rules of precendence are estiblished for all these symbols, but I think the only way to make sences out of \(x \in A \land x \in B \) is to parthemisis is as
+\[
+  x \in A \land x \in B   \equiv (x \in A) \land (x \in B ).
+\]
+\end{frame}
+
+\begin{frame}{Vacuous Truth}  Let \(T\) be a boolean valued function. Consider the statement
+\[
+   (\exists x \in \varnothing)(T(x)).
+\]
+To show that it's true, you would have to find a member of the empty set that makes \(T\) true. There are no members of the empty set, so for any predicate \(T\), we have
+\[
+     (\exists x \in \varnothing)(T(x)) \equiv \mbox{false}.
+\]
+Thus it's negation is true; that is
+\[
+    (\exists x \in \varnothing)(\lnot T(x)) \equiv \mbox{true}.
+\]
+\begin{myfact} For any boolean valued function \(T\), we have
+ \begin{align*}
+  (\exists x \in \varnothing)(T(x)) \equiv \mbox{false}, \\
+   (\forall x \in \varnothing)(T(x)) \equiv \mbox{true}. 
+    \end{align*}
+\end{myfact}
+
+\end{frame}
+
+
+\begin{frame}{Functions}
+
+To define a function \(F\) with domain \(A\) and formula \(\mbox{blob}\), we can write
+\[
+  F = x \in A \mapsto \mbox{blob}.
+\]
+In the rare cases that it's important to give the function a codomain, we can write
+\[
+  F = x \in A \mapsto \mbox{blob} \in B,
+\]
+where \(\codomain(F) = B\). Generically for a function \(F\) with domain \(A\) and codomain \(B\),  we say that \(F\) is a function from \(A\) to \(B\).
+
+\begin{example} We write
+\[
+   F = x \in [-1,1] \mapsto 2 x + 1
+\]
+is our compact way of writting: Define \(F(x) = 2x + 1 \), for \( -1 \leq x \leq 1\).
+\end{example}
+\end{frame}
+
+\begin{frame}{Range}
+\begin{definition} For any function, we define
+\[
+   \range(F) = \left \{F(x) | x \in \domain(F)  \right \}.
+\]
+Thus \(\range(F)\) is the set of all outputs.
+\end{definition}
+
+\begin{myfact} Let \(F\) be a function. Then
+\[
+     \left[ y \in \range(F)  \right] \equiv  \left(\exists x \in \domain(F) \right)(y = F(x)).
+ \]
+\end{myfact}
+
+\begin{example} Define \(F = x \in [-1,1] \mapsto 2 x + 1\). Then \(\frac{3}{2} \in \range(F)\) because \(\frac{1}{4} \in \domain(F)\) and \(F(\frac{1}{4}) = \frac{3}{2}\).
+
+\end{example}
+\end{frame}
+\begin{frame}{Weirdly named function}
+
+\begin{definition} If the range of a function is a nonempty subset of \(\{\mbox{false}, \mbox{true} \} \), the function is a \emph{predicate}.
+\end{definition}
+
+\begin{example}
+  \(F = x \in \reals \mapsto \begin{cases} \mbox{false}  & x < 0 \\  \mbox{true} & x \geq 0 \end{cases} \) is a predicate. 
+\end{example} 
+\end{frame}
+
+\begin{frame}{Set predicates} Let \(A\) and \(B\) be sets. Define
+\begin{align*}
+   A \subset B &\equiv (\forall x \in A)(x \in B),\\
+   A = B &\equiv  (A \subset B) \land (B \subset A).
+\end{align*}
+Specializing \(A \subset B\) to \(A = \varnothing\) gives
+\[
+   \left[\varnothing \subset B \right] \equiv  (\forall x \in \varnothing)(x \in B) \equiv \mbox{true}.
+\]
+Thus for all sets \(B\), we have \(\varnothing \subset B\).
+\end{frame}
+
+
+
+\end{document}
+
+

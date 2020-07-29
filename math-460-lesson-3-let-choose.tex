@@ -1,0 +1,284 @@
+\documentclass[fleqn]{beamer}
+%\usetheme[height=7mm]{Rochester}
+\usetheme{Boadilla} %{Rochester}
+
+\setbeamertemplate{footline}[text line]{%
+\parbox{\linewidth}{\vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+%\author[BW]{Dr.\ Barton Willis}
+\usepackage{amsmath}\usepackage{amsthm}
+\usepackage{isomath}
+\usepackage{upgreek}
+\usepackage{comment,enumerate,xcolor}
+
+\usepackage[english]{babel}
+\usepackage[final,babel]{microtype}%\usepackage[dvipsnames]{color}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\integers}{\mathbf{Z}}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\domain}{dom}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\codomain}{codomain}
+\DeclareMathOperator{\sspan}{span}
+\DeclareMathOperator{\F}{F}
+\DeclareMathOperator{\G}{G}
+\DeclareMathOperator{\B}{B}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ball}{ball}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\DeclareMathOperator{\nullspace}{nullity}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+\newtheorem{myqdef}{Quasi-definition}
+\newtheorem{myex}{Example}
+\newtheorem{myth}{Theorem} 
+\newtheorem{myfact}{Fact}
+\newtheorem{metathm}{Meta Theorem}
+\newtheorem{Question}{Question}
+\newtheorem{Answer}{Answer}
+\newtheorem{myproof}{Proof}
+\newtheorem{hurestic}{Hurestic}
+
+%\usepackage{array}   % for \newcolumntype macro
+%\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+
+\newenvironment{alphalist}{
+  \vspace{-0.4in}
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{snowflakelist}{
+  \vspace{-0.4in}
+  \begin{enumerate}[\textleaf]
+    \addtolength{\itemsep}{-1.2\itemsep}}
+  {\end{enumerate}}
+
+
+
+
+
+\newenvironment{checklist}{
+  \begin{enumerate}[\ding{52}]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{numberlist}
+   {\begin{enumerate}[(1)]
+       \addtolength{\itemsep}{-0.5\itemsep}}
+     {\end{enumerate}}
+\usepackage{amsfonts}
+\makeatletter
+\def\amsbb{\use@mathgroup \M@U \symAMSb}
+\makeatother
+\usepackage{bbold}
+
+\usepackage{array}
+\newcolumntype{C}{>$c<$}
+
+\newcommand{\llnot}{\lnot \,} % is accepted
+\DeclareMathOperator{\3F2}{{}_3  F_2}
+\newcommand\pochhammer[2]{\left[\genfrac..{0pt}{}{#1}{#2}\right]}
+\newmuskip\pFqmuskip
+
+\newcommand*\pFq[6][8]{%
+  \begingroup % only local assignments
+  \pFqmuskip=#1mu\relax
+  % make the comma math active
+  % \mathcode`\,=\string"8000
+  % and define it to be \pFqcomma
+  \begingroup\lccode`\~=`\,
+  \lowercase{\endgroup\let~}\pFqcomma
+  % typeset the formula
+      {}_{#2}\!\F_{#3}{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}   %\F{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}  %alt: {}_{#2}\F_{#3}{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}
+  \endgroup
+}
+
+\newcommand{\pFqcomma}{\mskip \pFqmuskip}
+\newcommand{\mydash}{\text{--}}
+
+
+%------------------
+
+\subtitle{Lesson 3}
+\title{\textbf{Let / Choose Proofs}}
+%\author[Barton Willis] % (optional, for multiple authors)
+%{Barton~Willis}%
+%\institute[UNK] % (optional)
+
+%{
+ % \inst{1}%
+%  ``The secret of getting ahead is getting started.'' Mark Twain
+%   }
+  \date{}
+ 
+
+\usepackage{courier}
+%\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+%\lstset{framextopmargin=50pt,frame=bottomline}
+
+
+%\begin{document}
+
+
+
+%--------
+%usepackage[usenames,dvipsnames,svgnames,table]{color}
+
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}{The Let/Choose Template}
+
+Many propositions have the form
+\vspace{0.1in}
+
+ \quad \quad  (string of \(\forall\) \(\exists\) qualifiers  in involving \(x_1\) thru \(x_n\)) (\(P (x_1, \dots x_n\)),
+  
+  \vspace{0.1in}
+
+where \(P\) is a predicate.  It behooves us to have a template for proving such propositions.   Let's try the example
+
+\begin{myth} For every \(x \in \reals\) there is \(y \in \reals\) such that \(x < y\). \end{myth}
+
+\begin{enumerate}
+
+\item[\# 0] Write the proposition in symbolic form:
+\[
+    (\forall x \in \reals)(\exists y \in \reals)(x < y).
+\]
+
+\item[\#1] Write the proposition in the form of a question:
+
+ \textbf{Answer} Given a real number \(x\), can I find a number \(y\) such that \(x < y\)?
+
+\item[\#2] Answer your question.  
+
+ \textbf{Answer} Sure--a number that is greater than \(x\) is \(x +1\).
+
+\end{enumerate}
+
+  \end{frame}
+  \begin{frame}
+  \begin{enumerate}
+
+\item[\#3] Using the symbolic form of the proposition, strictly moving from left to right, replace \(\forall \) with ``Let,'' and \(\exists\) with ``Choose.''  After each ``choose'' make a box to fill in. 
+Finish with the predicate:
+
+Let \(x \in \reals\).  Choose \(y = \fbox{\phantom{XX}}\).  We have
+\[
+      [x < y] = 
+\]
+
+\item[\#4] Fill in the boxes with the answers you chose, and attempt to show that the predicate is true:
+Let \(x \in \reals\).  Choose \(y = \fbox{x+1}\).  We have
+\begin{align*}
+      [x < y] &\equiv  [x < x + 1] , &(\mbox{ substitute for } y)\\
+                   &\equiv  [0 < 1],   &(\mbox{ subtract } x \mbox{ from both sides })\\
+                     &\equiv  \mbox{true}.  
+\end{align*}
+\item[\#5]  Erase the boxes:
+
+\begin{myproof}
+Let \(x \in \reals\).  Choose \(y = x+1\).  We have
+\begin{align*}
+      [x < y] &\equiv  [x < x + 1] , &(\mbox{ substitute for } y)\\
+                   &\equiv  [0 < 1],   &(\mbox{ subtract } x \mbox{ from both sides })\\
+                     &\equiv  \mbox{true}.  
+\end{align*}
+\end{myproof}
+
+\item[\#6] Proofread your work. 
+\end{enumerate}
+    \end{frame}
+    
+     \begin{frame}{\(\lnot\) Pedantic }
+     
+     \begin{enumerate}
+     
+     \item Proof construction is a creative activity--there is no step of steps that will always generate a proof. 
+     
+     \item But having patterns to follow and knowing techniques is useful for all creative endeavors. 
+     \end{enumerate}
+     \end{frame}
+     
+     \begin{frame}{Order matters}
+     
+     The order of qualifiers matters.  To show this, let's reverse the order of qualifiers in the previous proposition:
+     
+     \begin{myth}  There is \(y \in \reals\)  such that for  every \(x \in \reals\) we have \(x < y\). \end{myth}
+     
+     
+     \vspace{0.2in}
+     
+   
+     \textbf{Question} Can I find a real number \(y\) such that for every real number \(x\), we have \(x < y \)? 
+     
+          \vspace{0.2in}
+          
+     \textbf{Answer:}  No I don't think so--the number we choose has to be larger than \(10^{10}\), larger than  \(10^{{10}^{10}} \) and larger than every number.  
+   
+            \vspace{0.2in}
+            
+            \textbf{Tip}  Proving things that are wrong take too much time. So try to avoid attempting. 
+    \end{frame}
+    \begin{frame}
+    
+   Let's show that the proposition is false by showing that its negation is true; the negation of the proposition is
+   
+    \begin{myth}  For all \(y \in \reals\)  there is \(x \in \reals\)  such that \(x \geq  y\). \end{myth}
+   
+   \begin{myproof}   Let \(y \in \reals\).  Choose \(x = y\).  Then \([ x \geq  y] \equiv [x \geq  x] \equiv \mbox{true} \).  
+    \end{myproof}
+    
+    \begin{enumerate}
+    
+    \item We could choose \(x = y+1\), but we only need \(x \geq y\), so we can choose \(x = y\).
+    
+    \end{enumerate}
+     \end{frame} 
+
+\begin{frame}{Practice}
+
+ \begin{myth}  For all \(x \in \reals_{> 0}\)  there is \(y \in \reals_{>0} \)  such that \(y < x\). \end{myth}
+ 
+ \begin{enumerate}
+ \item[\#1] Write the proposition in the form of a question:
+
+\vspace{0.1in}
+\textbf{Question} Given a positive  real number \(x\), can I find a positive  \(y\) such that \(y\) is smaller than \(x\)?
+
+\item[\#2] Answer your question.  
+
+\vspace{0.1in}
+\quad  \textbf{Answer} Sure--a positive number that is smaller than \(x\) is the average of zero and \(x\); that is \(x/2\).
+
+
+\item[\#3] I'm ready, I think:
+
+
+\begin{myproof}  Let \(x \in \reals_{> 0}\).  Choose \(y = x/2\).  Then \(y \in \reals_{> 0}\).  Further
+\begin{align*}
+     [y < x] &\equiv [x/2 < x]     &(\mbox{ substitute for } y)\\ 
+              &\equiv [1/2 < 1]        &(\mbox{ divide inequality by positive number   } x)\\ 
+               &\equiv \mbox{true}.
+     \end{align*} 
+\end{myproof} 
+
+\end{enumerate}
+ 
+      \end{frame} 
+     
+  \end{document}
