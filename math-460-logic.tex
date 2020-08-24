@@ -2,6 +2,7 @@
 %\usetheme[height=7mm]{Rochester}
 \usetheme{Boadilla} %{Rochester}
 
+\usepackage{centernot}
 \setbeamertemplate{footline}[text line]{%
 \parbox{\linewidth}{\vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
 \setbeamertemplate{navigation symbols}{}
@@ -506,6 +507,15 @@ These statements are logically equivalent.
  \end{example}
 \end{frame} 
 
+\begin{frame}{Extra conditional}
+	\begin{myfact} A truth table shows that   \( (P \implies Q) \equiv \llnot P \lor Q\) is  a tautology.  This makes \( P  \centernot\implies Q\) equivalent to 
+	\(
+	   P \land \llnot Q.	
+	\)	
+	
+\end{myfact}
+	
+\end{frame}
 \begin{frame} {Predicates}
 \begin{mydef}  A function whose range is a subset of  \(\{ \mathrm{true},  \mathrm{false} \} \) is a \emph{predicate}. Alternatively, a boolean valued function is a predicate.
 \end{mydef}
@@ -581,13 +591,13 @@ For \( x \not \in A\), the predicate \(T\) might not even be defined.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Negative Experiences} Consider the statement ``For all \(x \in \reals\), we have \(x \in (-1,1) \implies x^2 < 1 \).''
+\begin{frame}{Negative experiences} Consider the statement ``For all \(x \in \reals\), we have \(x \in (-1,1) \implies x^2 < 1 \).''
 
 Symbolically, the statement is
 \[
     (\forall x \in \reals)( x \in (-1,1) \implies x^2 < 1 ).
 \]
-It's negation is (in general \(a \not < b) \equiv (a \geq b)\)
+Its negation is (in general \(a \not < b) \equiv (a \geq b)\)
 \[
     (\exists x \in \reals) ( x \notin (-1,1) \lor x^2 \geq 1).
 \]
@@ -745,7 +755,7 @@ Thus \(\range(F)\) is the set of all outputs.
 \end{example} 
 \end{frame}
 
-\begin{frame}{Set predicates} Let \(A\) and \(B\) be sets. Define
+\begin{frame}{Set \part{predicates}} Let \(A\) and \(B\) be sets. Define
 \begin{align*}
    A \subset B &\equiv (\forall x \in A)(x \in B),\\
    A = B &\equiv  (A \subset B) \land (B \subset A).
