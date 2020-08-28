@@ -39,7 +39,7 @@
 \newtheorem{mydef}{Definition}
 \newtheorem{myqdef}{Quasi-definition}
 \newtheorem{myex}{Example}
-\newtheorem{myth}{Theorem} 
+\newtheorem{myth}{Proposition} 
 \newtheorem{myfact}{Fact}
 \newtheorem{metathm}{Meta Theorem}
 \newtheorem{Question}{Question}
@@ -93,7 +93,7 @@
 %  ``The secret of getting ahead is getting started.'' Mark Twain
 %   }
   \date{}
- 
+
 
 %\usepackage{courier}
 %\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
@@ -132,7 +132,7 @@ We'll use the following names for subsets of real numbers:
 \end{frame}
 
 
-\begin{frame}{Set Operators} 
+\begin{frame}{Set Operators}
 
 \begin{mydef}
 Let \(A\) and \(B\) be sets. Define the set \emph{union, intersection}, and \emph{difference}
@@ -167,7 +167,7 @@ We have
 \end{frame}
 
 
-\begin{frame}{Set predicates} 
+\begin{frame}{Set predicates}
 
 \begin{mydef}
 Let \(A\) and \(B\) be sets. Define
@@ -181,7 +181,7 @@ Specializing \(A \subset B\) to \(A = \varnothing\) gives
 \[
    \left[\varnothing \subset B \right] \equiv  (\forall x \in \varnothing)(x \in B) \equiv \mbox{true}.
 \]
-We've shown that: 
+We've shown that:
 
 \begin{myth} Thus for all sets \(A\) and for any empty set \(\varnothing\), we have \(\varnothing \subset A\).  \end{myth}
 
@@ -221,13 +221,13 @@ A \cup (B \cup C) &= \{x \mid (x \in A) \lor (x \in B \cup C) \}, \\
                                 &= (A \cup B) \cup C.
  \end{align*}
   \end{myproof}
-  
+
   \begin{checklist}
-  
+
   \item The statement of the proposition doesn't introduce notation, so the proof must do so.
-  
+
   \item Alternatively, we can show that   \(  A \cup (B \cup C)  \subset  (A \cup B) \cup C) \) and  \( (A \cup B) \cup C) \subset A \cup (B \cup C)\).
-  
+
   \end{checklist}
 
 \end{frame}
@@ -235,8 +235,8 @@ A \cup (B \cup C) &= \{x \mid (x \in A) \lor (x \in B \cup C) \}, \\
 \begin{frame}{Alternative proofs}
 
 
-\begin{myproof}  Let \(A,B\), and \(C\) be sets.  We'll show that \(A \cup (B \cup C) =  (A \cup B) \cup C\).  
-We have 
+\begin{myproof}  Let \(A,B\), and \(C\) be sets.  We'll show that \(A \cup (B \cup C) =  (A \cup B) \cup C\).
+We have
 \begin{align*}
   x \in A \cup (B \cup C)  &\implies (x \in A) \lor (x \in B \cup C), \\
                                             &\implies  (x \in A) \lor ( (x \in  B) \lor (x \in C)), \\
@@ -251,11 +251,11 @@ Similarly, we can show that \(   x \in (A \cup B) \cup C \implies x \in A \cup (
 
 \begin{myth} There is at most one empty set. \end{myth}
 
-\begin{myproof} Let \(O\) and \(O^\prime\) be empty sets.  Since  \(O\) is empty, we have \(O \subset O^\prime\). Similarly since   \(O^\prime \) is empty, we have \(O^\prime  \subset O\). We have shown that \(O \subset O^\prime\) and \(O^\prime  \subset O\); therefore \(O = O^\prime\). \end{myproof} 
+\begin{myproof} Let \(O\) and \(O^\prime\) be empty sets.  Since  \(O\) is empty, we have \(O \subset O^\prime\). Similarly since   \(O^\prime \) is empty, we have \(O^\prime  \subset O\). We have shown that \(O \subset O^\prime\) and \(O^\prime  \subset O\); therefore \(O = O^\prime\). \end{myproof}
 
 \begin{enumerate}
 
-\item With impunity, we can now refer to  \textbf{the} empty set. 
+\item With impunity, we can now refer to  \textbf{the} empty set.
 
 \item A clumsy  way to proof this is by contradiction. The proof assumes that there are empty sets \(O\) and \(O^\prime\), but \(O \neq O^\prime\).
 
@@ -300,7 +300,7 @@ If a proposition has the form
 
 A template for its proof is
 
-\begin{myproof} Let \(X\) and \(X^\prime\) be such objects. Since \(H_1, H_2, \dots\), and \( H_n\), we have \dots.  ; therefore \(X = X^\prime\). \end{myproof} 
+\begin{myproof} Let \(X\) and \(X^\prime\) be such objects. Since \(H_1, H_2, \dots\), and \( H_n\), we have \dots.  ; therefore \(X = X^\prime\). \end{myproof}
 
 
 
@@ -315,7 +315,7 @@ these inequalities prove that  \(X = X^\prime\).
 \begin{frame}{Generalized disjunctions}
 
 
-Let \(I\) be a set. And suppose that every member of \(I\) is a statement. Define 
+Let \(I\) be a set. And suppose that every member of \(I\) is a statement. Define
 \[
        \underset{x \in I}{\lor} x  \equiv (\exists x \in I)(x).
 \]
@@ -330,7 +330,7 @@ The disjunction is associative and commutative, so we don't need to parenthesize
 Then
 \[
   \underset{x \in I \cup I^\prime}{\lor} x  \equiv    \left ( \underset{x \in I}{\lor}  x \right) \lor \left ( \underset{x \in I^\prime}{\lor} x \right).
-\] 
+\]
  \end{myth}
 
 
@@ -350,7 +350,7 @@ Thus we have
                                                                &\equiv  \left(  \underset{x \in I }{\lor} x \in I \right)  \lor  \mbox{ false }, \\
                                                                &\equiv  \underset{x \in I }{\lor} x \in I.
 \end{align*}
-Comparing the first and the last, we have the tautology 
+Comparing the first and the last, we have the tautology
 \[
     \underset{x \in I }{\lor} x \in I  \equiv \underset{x \in I }{\lor} x \in I .
     \]
@@ -382,27 +382,27 @@ In this context, we say that the set \(I\) is an \emph{index set.}
 \]
 \end{myth}
 \begin{enumerate}
-  \item The set union is associative and commutative, so  the meaning of \(A_1 \cup A_2 \cup \cdots \cup A_n \) unambiguous. 
-  
+  \item The set union is associative and commutative, so  the meaning of \(A_1 \cup A_2 \cup \cdots \cup A_n \) unambiguous.
+
   \item An index set neededn't be finite.
 \end{enumerate}
 \end{frame}
 
 \begin{frame}{Nonfinite unions}
 
-\begin{myex}  The index set needn't be finite--here is an example.  For \(x \in \reals\), define \( I = \{ (-\infty, x) \,\, | \,\, x \in \reals \} \). Our index set is a set of open intervals. 
+\begin{myex}  The index set needn't be finite--here is an example.  For \(x \in \reals\), define \( I = \{ (-\infty, x) \,\, | \,\, x \in \reals \} \). Our index set is a set of open intervals.
 We claim that
 \[
     \underset{x \in I}{\cup} x  = \reals.
 \]
-\end{myex} 
+\end{myex}
 
 \begin{myproof}  Suppose \(a \in   \underset{x \in I}{\cup} x  \).  We'll show that \(a \in \reals\).  Since  \(a \in   \underset{x \in I}{\cup} x  \), there is \(z \in I\) such that \(a \in z\).  But \(z \subset \reals\), so \(a \in \reals\); we've shown that   \( \underset{x \in I}{\cup} x  \subset \reals\).
 
 \quad Suppose \(a \in   \reals\).   We'll show that \(a \in  \underset{x \in I}{\cup} x  \).  We have \(a \in (-\infty, a + 1)\). Further  \( (-\infty, a + 1) \in I\); therefore  \(a \in  \underset{x \in I}{\cup} x \).
 \end{myproof}
 
-\begin{enumerate} 
+\begin{enumerate}
 
 \item Notice that \( a \not \in  (-\infty, a)\).  But it is true that \(a \in (-\infty, a + 1)\).
 
@@ -435,22 +435,22 @@ Let \(I\) be a set. And suppose that every member of \(I\) is a set.  Since ever
 \]
 \end{myth}
 \begin{enumerate}
-  \item The set intersection  is associative and commutative, so  the meaning of \(A_1 \cap A_2 \cap \cdots \cap A_n \) unambiguous. 
-  
+  \item The set intersection  is associative and commutative, so  the meaning of \(A_1 \cap A_2 \cap \cdots \cap A_n \) unambiguous.
+
   \item An index set needn't be finite.
 \end{enumerate}
 \end{frame}
 
 \begin{frame}{Nonfinite intersections}
 
-\begin{myex}  For \(x \in \reals\), define \( I = \{ (-\infty, x) \,\, | \,\, x \in \reals \} \). Our index set is a set of open intervals. 
+\begin{myex}  For \(x \in \reals\), define \( I = \{ (-\infty, x) \,\, | \,\, x \in \reals \} \). Our index set is a set of open intervals.
 We claim that
 \[
     \underset{x \in I}{\cap} x  = \varnothing.
 \]
-\end{myex} 
+\end{myex}
 
-\begin{myproof}   We'll prove this using contradiction.  Suppose  \( \underset{x \in I}{\cap} x \) has at least one member; say \(a \in  \underset{x \in I}{\cap} x \). We have 
+\begin{myproof}   We'll prove this using contradiction.  Suppose  \( \underset{x \in I}{\cap} x \) has at least one member; say \(a \in  \underset{x \in I}{\cap} x \). We have
 \[
     (\forall x \in \reals)(a \in (-\infty, x)).
 \]
@@ -468,7 +468,7 @@ popular when \(I = \integers_{> 0}\).  For example
 \[
   \underset{k  \in \integers_{> 0}} {\cap} A_k   = \{ a \,\, | \,\, (\forall n \in  \integers_{> 0})(a \in A_n) \}
 \]
-And 
+And
 \[
   \underset{k  \in \integers_{> 0}} {\cup} A_k   = \{ a \,\, | \,\, (\exists  n \in  \integers_{> 0})(a \in A_n) \}
 \]
@@ -501,7 +501,7 @@ Thus it's negation is true; that is
 \begin{myfact} For any boolean valued function \(T\), we have
  \begin{align*}
   (\exists x \in \varnothing)(T(x)) \equiv \mbox{false}, \\
-   (\forall x \in \varnothing)(T(x)) \equiv \mbox{true}. 
+   (\forall x \in \varnothing)(T(x)) \equiv \mbox{true}.
     \end{align*}
 \end{myfact}
 
@@ -584,7 +584,7 @@ The codomain of a function tells us something about its outputs, but remember th
 \end{mydef}
 
 \begin{enumerate}
-\item The definition of function equality does not involve the codomain of the function. Thus two functions can be equal, but have unequal codomains. 
+\item The definition of function equality does not involve the codomain of the function. Thus two functions can be equal, but have unequal codomains.
 \end{enumerate}
 
 \begin{myex}  The functions \(F = x \in [-1,1] \mapsto x \in [-1,1]\) and  \(G = x \in [-1,1] \mapsto x \in \reals \)  are equal, but \(F\) is onto and \(G\) is not onto. Thus
@@ -606,7 +606,7 @@ Equivalently, we have
 \[
   y \in F(A^\prime)  \equiv (\exists x \in A^\prime)(y = F(x)).
 \]
-\end{mydef}  
+\end{mydef}
 
 \begin{myth} For all functions \(F\), we have \(F(\dom{F}) = \range(F) \).   Further \(F(\varnothing) = \varnothing \). \end{myth}
 
@@ -624,5 +624,5 @@ Equivalently, we have
   x  \in F^{-1} (B^\prime)  \equiv F(x) \in B.
 \]
 \end{mydef}
-\end{frame}  
+\end{frame}
 \end{document}
