@@ -39,7 +39,7 @@
 \newtheorem{mydef}{Definition}
 \newtheorem{myqdef}{Quasi-definition}
 \newtheorem{myex}{Example}
-\newtheorem{myth}{Theorem} 
+\newtheorem{myth}{proposition} 
 \newtheorem{myfact}{Fact}
 \newtheorem{metathm}{Meta Theorem}
 \newtheorem{Question}{Question}
@@ -119,7 +119,7 @@
 %  ``The secret of getting ahead is getting started.'' Mark Twain
 %   }
   \date{}
- 
+
 
 \usepackage{courier}
 %\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
@@ -146,7 +146,7 @@ Many propositions have the form
 \vspace{0.1in}
 
  \quad \quad  (string of \(\forall\) \(\exists\) qualifiers  in involving \(x_1\) thru \(x_n\)) (\(P (x_1, \dots x_n)\)),
-  
+
   \vspace{0.1in}
 
 where \(P\) is a predicate.  It behooves us to have a template for proving such propositions.   Let's try the example
@@ -164,7 +164,7 @@ where \(P\) is a predicate.  It behooves us to have a template for proving such 
 
 \quad \emph{Given a real number \(x\), can I find a number \(y\) such that \(x < y\)?}
 
-\item[\#2] Answer your question.  
+\item[\#2] Answer your question.
 
 \quad \emph{Sure--a number that is greater than \(x\) is \(x +1\).}
 
@@ -174,12 +174,12 @@ where \(P\) is a predicate.  It behooves us to have a template for proving such 
   \begin{frame}
   \begin{enumerate}
 
-\item[\#3] Using the symbolic form of the proposition, strictly moving from left to right, replace \(\forall \) with ``Let,'' and \(\exists\) with ``Choose.''  After each ``choose'' make a box to fill in. 
+\item[\#3] Using the symbolic form of the proposition, strictly moving from left to right, replace \(\forall \) with ``Let,'' and \(\exists\) with ``Choose.''  After each ``choose'' make a box to fill in.
 Finish with the predicate:
 
 Let \(x \in \reals\).  Choose \(y = \fbox{\phantom{XX}}\).  We have
 \[
-      [x < y] = 
+      [x < y] =
 \]
 
 \item[\#4] Fill in the boxes with the answers you chose, and attempt to show that the predicate is true:
@@ -187,7 +187,7 @@ Let \(x \in \reals\).  Choose \(y = \fbox{x+1}\).  We have
 \begin{align*}
       [x < y] &\equiv  [x < x + 1] , &(\mbox{ substitute for } y)\\
                    &\equiv  [0 < 1],   &(\mbox{ subtract } x \mbox{ from both sides })\\
-                     &\equiv  \mbox{true}.  
+                     &\equiv  \mbox{true}.
 \end{align*}
 \item[\#5]  Erase the boxes:
 
@@ -196,70 +196,70 @@ Let \(x \in \reals\).  Choose \(y = x+1\).  We have
 \begin{align*}
       [x < y] &\equiv  [x < x + 1] , &(\mbox{ substitute for } y)\\
                    &\equiv  [0 < 1],   &(\mbox{ subtract } x \mbox{ from both sides })\\
-                     &\equiv  \mbox{true}.  
+                     &\equiv  \mbox{true}.
 \end{align*}
 \end{myproof}
 
-\item[\#6] Proofread your work. 
+\item[\#6] Proofread your work.
 \end{enumerate}
     \end{frame}
-    
+
      \begin{frame}{\(\lnot\) Pedantic }
-     
+
      \begin{enumerate}
-     
-     \item Proof construction is a creative activity--there is no step of steps that will always generate a proof. 
-     
-     \item But having patterns to follow and knowing techniques is useful for all creative endeavors. 
+
+     \item Proof construction is a creative activity--there is no step of steps that will always generate a proof.
+
+     \item But having patterns to follow and knowing techniques is useful for all creative endeavors.
      \end{enumerate}
      \end{frame}
-     
+
      \begin{frame}{Respecting order}
-     
+
      The order of qualifiers matters.  To show this, let's reverse the order of qualifiers in the previous proposition:
-     
+
      \begin{myth}  There is \(y \in \reals\)  such that for  every \(x \in \reals\) we have \(x < y\). \end{myth}
-     
-     
+
+
      \vspace{0.2in}
-     
-   
-     \textbf{Question} Can I find a real number \(y\) such that for every real number \(x\), we have \(x < y \)? 
-     
+
+
+     \textbf{Question} Can I find a real number \(y\) such that for every real number \(x\), we have \(x < y \)?
+
           \vspace{0.2in}
-          
-     \textbf{Answer:}  No I don't think so--the number we choose has to be larger than \(10^{10}\), larger than  \(10^{{10}^{10}} \) and larger than every number.  
-   
+
+     \textbf{Answer:}  No I don't think so--the number we choose has to be larger than \(10^{10}\), larger than  \(10^{{10}^{10}} \) and larger than every number.
+
             \vspace{0.2in}
-            
-            \textbf{Tip}  Proving things that are wrong take too much time. So try to avoid attempting. 
+
+            \textbf{Tip}  Proving things that are wrong take too much time. So try to avoid attempting.
     \end{frame}
     \begin{frame}
-    
+
    Let's show that the proposition is false by showing that its negation is true; the negation of the proposition is
-   
+
     \begin{myth}  For all \(y \in \reals\)  there is \(x \in \reals\)  such that \(x \geq  y\). \end{myth}
-   
-   \begin{myproof}   Let \(y \in \reals\).  Choose \(x = y\).  Then \([ x \geq  y] \equiv [x \geq  x] \equiv \mbox{true} \).  
+
+   \begin{myproof}   Let \(y \in \reals\).  Choose \(x = y\).  Then \([ x \geq  y] \equiv [x \geq  x] \equiv \mbox{true} \).
     \end{myproof}
-    
+
     \begin{enumerate}
-    
+
     \item We could choose \(x = y+1\), but we only need \(x \geq y\), so we can choose \(x = y\).
-    
+
     \end{enumerate}
-     \end{frame} 
+     \end{frame}
 
 \begin{frame}{Later, rinse, repeat}
 
  \begin{myth}  For all \(x \in \reals_{> 0}\)  there is \(y \in \reals_{>0} \)  such that \(y < x\). \end{myth}
- 
+
  \begin{enumerate}
  \item Write the proposition in the form of a question:
 
 \quad \emph{Given a positive  real number \(x\), can I find a positive  \(y\) such that \(y\) is smaller than \(x\)?}
 
-\item Answer your question.  
+\item Answer your question.
 
 \quad \emph{Sure--a positive number that is smaller than \(x\) is the average of zero and \(x\); that is \(x/2\).}
 
@@ -267,14 +267,14 @@ Let \(x \in \reals\).  Choose \(y = x+1\).  We have
 
 \begin{myproof}  Let \(x \in \reals_{> 0}\).  Choose \(y = x/2\).  Then \(y \in \reals_{> 0}\).  Further
 \begin{align*}
-     [y < x] &\equiv [x/2 < x]     &(\mbox{ substitute for } y)\\ 
-              &\equiv [1/2 < 1]        &(\mbox{ divide inequality by positive number   } x)\\ 
+     [y < x] &\equiv [x/2 < x]     &(\mbox{ substitute for } y)\\
+              &\equiv [1/2 < 1]        &(\mbox{ divide inequality by positive number   } x)\\
                &\equiv \mbox{true}.
-     \end{align*} 
+     \end{align*}
 \end{myproof}
 
 \end{enumerate}
- 
-      \end{frame} 
-     
+
+      \end{frame}
+
   \end{document}
