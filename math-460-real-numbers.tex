@@ -41,7 +41,7 @@
 \newtheorem{mydef}{Definition}
 \newtheorem{myqdef}{Quasi-definition}
 \newtheorem{myex}{Example}
-\newtheorem{myth}{Theorem} 
+\newtheorem{myth}{Theorem}
 \newtheorem{myfact}{Fact}
 \newtheorem{metathm}{Meta Theorem}
 \newtheorem{Question}{Question}
@@ -92,27 +92,7 @@
 
 \newcommand{\llnot}{\lnot \,} % is accepted
 \DeclareMathOperator{\3F2}{{}_3  F_2}
-\newcommand\pochhammer[2]{\left[\genfrac..{0pt}{}{#1}{#2}\right]}
-\newmuskip\pFqmuskip
-
-\newcommand*\pFq[6][8]{%
-  \begingroup % only local assignments
-  \pFqmuskip=#1mu\relax
-  % make the comma math active
-  % \mathcode`\,=\string"8000
-  % and define it to be \pFqcomma
-  \begingroup\lccode`\~=`\,
-  \lowercase{\endgroup\let~}\pFqcomma
-  % typeset the formula
-      {}_{#2}\!\F_{#3}{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}   %\F{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}  %alt: {}_{#2}\F_{#3}{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}
-  \endgroup
-}
-
-\newcommand{\pFqcomma}{\mskip \pFqmuskip}
-\newcommand{\mydash}{\text{--}}
-
-
-%------------------
+\
 
 \subtitle{Lesson 11}
 \title{\textbf{Real numbers}}
@@ -125,7 +105,7 @@
 %  ``The secret of getting ahead is getting started.'' Mark Twain
 %   }
   \date{}
- 
+
 
 \usepackage{courier}
 %\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
@@ -155,11 +135,11 @@ It is associative provided
 \[
    (\forall a,b,c \in S)(F(a,F(b,c)) = F(F(a,b),c)).
 \]
-It has an \emph{left identity element}  provided  
+It has an \emph{left identity element}  provided
 \[
   (\exists\,\, \theta \in S)((\forall a \in S)(F(\theta,a) = a).
 \]
-And it has an \emph{right identity element}  provided  
+And it has an \emph{right identity element}  provided
 \[
   (\exists\,\, \theta \in S)((\forall a \in S)(F(a, \theta) = a).
 \]
@@ -188,7 +168,7 @@ And it has an \emph{right identity element}  provided
 \item Addition \(+\) is a binary operator on \(\reals\).  Since \(x +0 = x\) for all real \(x\), the unit for addition is zero.  Further we know that addition is
 commutative and associative.
 
-\item Function composition \(\circ \) is a binary operator on the set of functions from \(\reals\) to \(\reals\).  The function \(x \in \reals \mapsto x\) is the unit for 
+\item Function composition \(\circ \) is a binary operator on the set of functions from \(\reals\) to \(\reals\).  The function \(x \in \reals \mapsto x\) is the unit for
 function composition .  Function composition is associative, but not commutative.
 
 \end{alphalist}
@@ -199,12 +179,12 @@ function composition .  Function composition is associative, but not commutative
 \begin{myth} Let \( S \) be a set and let \(F\) be a commutative binary operator on \(S\).  Then \(F\) has at most one identity element.
 
  \end{myth}
- 
+
  \begin{myproof} Let \(\theta\) and \(\theta^\prime\) be identity element. for \(F\). We'll show that \(\theta = \theta^\prime\).  We have
  \begin{align*}
     \theta &= F(\theta^\prime, \theta),    &\mbox{(because } \theta \mbox{ is an identity element.}) \\
                 &= F(\theta, \theta^\prime),    &\mbox{(because } F \mbox{ is commutative})\\
-                &= \theta^\prime.   &\mbox{(because } \theta^\prime \mbox{ is an  identity element.}) 
+                &= \theta^\prime.   &\mbox{(because } \theta^\prime \mbox{ is an  identity element.})
  \end{align*}
  So \(\theta = \theta^\prime\).
  \end{myproof}
@@ -263,15 +243,45 @@ The proof for the multiplicative inverse is similar and left as an exercise for 
 
 \end{frame}
 
+\begin{frame}{Why is the product of negative numbers positive?}
+
+
+  \begin{myth} Let \(({\mathcal F},  +, \times)\) be a field. For all \(a,b \in \mathcal{F}\), we have
+\begin{alphalist}
+  \item \(0 a = a 0 = 0\).
+  \item \(a (-b) = (-a) b = -(a b) \)
+    \item \(- (-a) = a \)
+    \item \((-a)(-b) = a b\)
+\end{alphalist}
+  \end{myth}
+
+The last is the most mysterious for grade school students. A proof follows from replacing \(a \to -a\) in  \(a (-b) = (-a) b\) and using \(-(-a) = a\).
+
+\end{frame}
+\begin{frame}
+Let's prove \(a (-b) = (-a) b = -(a b) \).
+\begin{myproof} Let \(({\mathcal F},  +, \times)\) be a field. For all
+  \(a,b \in {\mathcal F}\), we have
+  \[
+   0 = a 0 = a (b + -b) = a b + a (-b).
+  \]
+  So \(-(ab) = a (-b)\). Interchanging \(a\) and \(b\) and using commutivity gives
+   \(-(ab) = (-a) b\).
+
+\end{myproof}
+\begin{align*}
+
+\end{align*}
+\end{frame}
 \begin{frame}{Famous fields}
 
 
-Let \(+\) and \(\times\) be ordinary number addition and multiplication, respectively. Then 
+Let \(+\) and \(\times\) be ordinary number addition and multiplication, respectively. Then
 \begin{alphalist}
 
-\item \((\reals, +, \times)\) is the real field. 
+\item \((\reals, +, \times)\) is the real field.
 
-\item \((\rational, +, \times)\) is the rational field. 
+\item \((\rational, +, \times)\) is the rational field.
 Certainly the sum and product of rational numbers is a rational number so indeed, \(+  : \rational \times \rational \to \rational\) and
 similarly for \(\times\).  The other required conditions are ``inherited'' from the properties of the real field.
 
@@ -293,13 +303,36 @@ similarly for \(\times\).  The other required conditions are ``inherited'' from 
 
 \item For all \(a \in {\mathcal F}\) exactly one of the following is true:  (i)  \(a \in P\),  (ii) \(-a \in P\), (iii) \(a = 0\).
 
+\item \( [b - a \in P ] \equiv [a < b]. \)
+
+\item \( [a \leq b ] \equiv [a < b \lor a = b]. \)
+
 \end{alphalist}
 
 \end{mydef}
 
 \end{frame}
+
+\begin{frame}{Assume the reals}
+We will assume that there is a set \(\reals\) with members called \emph{real numbers} along with functions \(+ : \reals \times \reals \to \reals\) and \(\times : \reals \times \reals \to \reals\). Further we'll assume that this field is ordered by the positive numbers.
+  \end{frame}
+
+  \begin{frame}
+
+    \begin{myth} Let \(({\mathcal F},  +, \times)\) be an ordered field. For all
+      \(a,b,c \in {\mathcal F}\) we have
+
+\begin{alphalist}
+   \item \(a < b \implies a + c < b +c \).
+   \item \(a < b \land b < c \implies a < c \).
+   \item \(a < b \land c > 0 \implies  a c < b c \).
+   \item \(a < b \land c < 0 \implies  a c > b c \).
+   \item \(a \neq 0 \implies a^2 > 0\).
+\end{alphalist}
+    \end{myth}
+
+    \end{frame}
 \end{document}
 
-We will assume that there is a set \(\reals\) with members called \emph{real numbers} along with functions \(+ : \reals \times \reals \to \reals\) and \(\times : \reals \times \reals \to \reals\) 
+We will assume that there is a set \(\reals\) with members called \emph{real numbers} along with functions \(+ : \reals \times \reals \to \reals\) and \(\times : \reals \times \reals \to \reals\)
 such that
-
