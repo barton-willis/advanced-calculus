@@ -1,0 +1,242 @@
+\documentclass[fleqn]{beamer}
+%\usetheme[height=7mm]{Rochester}
+\usetheme{Boadilla} %{Rochester}
+
+\setbeamertemplate{footline}[text line]{%
+\parbox{\linewidth}{\vspace*{8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+%\author[BW]{Barton Willis}
+\usepackage{amsmath}\usepackage{amsthm}
+\usepackage{isomath}
+\usepackage{upgreek}
+\usepackage{comment,enumerate,xcolor}
+
+\usepackage[english]{babel}
+\usepackage[final,babel]{microtype}%\usepackage[dvipsnames]{color}
+%\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\integers}{\mathbf{Z}}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\domain}{dom}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\codomain}{codomain}
+\DeclareMathOperator{\sspan}{span}
+\DeclareMathOperator{\F}{F}
+\DeclareMathOperator{\G}{G}
+\DeclareMathOperator{\B}{B}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ball}{ball}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\DeclareMathOperator{\nullspace}{nullity}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+\newtheorem{myqdef}{Quasi-definition}
+\newtheorem{myex}{Example}
+\newtheorem{myth}{Theorem}
+\newtheorem{myaxiom}{Axiom}
+\newtheorem{myfact}{Fact}
+\newtheorem{metathm}{Meta Theorem}
+\newtheorem{Question}{Question}
+\newtheorem{Answer}{Answer}
+\newtheorem{myproof}{Proof}
+
+\newtheorem{myfakeproof}{Fake Proof}
+\newtheorem{mybadformproof}{Bad Form Proof}
+
+\newtheorem{hurestic}{Hurestic}
+
+\newenvironment{alphalist}{
+  \vspace{-0.4in}
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{snowflakelist}{
+  \vspace{-0.4in}
+  \begin{enumerate}[\textleaf]
+    \addtolength{\itemsep}{-1.2\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{checklist}{
+  \begin{enumerate}[\ding{52}]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{numberlist}
+   {\begin{enumerate}[(1)]
+       \addtolength{\itemsep}{-0.5\itemsep}}
+     {\end{enumerate}}
+\usepackage{amsfonts}
+\makeatletter
+\def\amsbb{\use@mathgroup \M@U \symAMSb}
+\makeatother
+\usepackage{bbold}
+
+\usepackage{array}
+\newcolumntype{C}{>$c<$}
+
+\newcommand{\llnot}{\lnot \,} % is accepted
+\newcommand{\mydash}{\text{--}}
+
+
+%------------------
+
+
+\title{\textbf{Well ordering}}
+%\author[Barton Willis] % (optional, for multiple authors)
+%{Barton~Willis}%
+%\institute[UNK] % (optional)
+\subtitle{Lesson 10   \\ \vspace{0.5in}
+  ``If you can't prove what you want to prove, demonstrate something else and pretend that they are the same.''  \\   \vspace{0.15in}{Darrell Huff} \\ \vspace{0.15in} \emph{How to Lie with Statistics} \\
+ \vspace{1.0in}
+  \tiny Barton Willis, Attribution 4.0 International (CC BY 4.0), 2020 \normalsize
+   }
+  \date{}
+
+\begin{document}
+
+
+
+\frame{\titlepage}
+
+
+\begin{frame}
+
+\begin{mydef} Let \(A\) be a subset of \(reals\). We say that \(A\) is \emph{bounded above} provided
+\[
+   \left (\exists M \in \reals \right) \left( \forall x \in A \right)(x \leq M).
+\]
+We say that the number \(M\) is \emph{an upper bound for  the set } \(A\).
+The set  \(A\) is \emph{bounded below} provided
+\[
+   \left (\exists M \in \reals \right) \left( \forall x \in A \right)(M \leq x).
+\]
+We say that the number \(M\) is \emph{a lower bound for  the set } \(A\). If \(A\) is bounded below and bounded above, we say \(A\) is \emph{bounded}.
+\end{mydef}
+
+\end{frame}
+\begin{frame}{Bounded details}
+
+\begin{numberlist}
+
+\item Notice that we do \emph{not} require that a upper bound for a set \(A\) to be a member of \(A\).
+
+\item Same for a lower bound.
+
+\item If \(M\) is an upper bound for a set \(A\), any number that is greater than \(M\) is also an upper bound for \(A\).
+
+\item Since we require that an upper bound be a real number, we disallow infinity from being an upper bound.  If we did, every set would be bounded.
+
+\end{numberlist}
+
+\end{frame}
+
+\begin{frame}{Bounded examples}
+
+\begin{myex}
+  \begin{numberlist}
+    \item The empty set is bounded above by 0.
+      \item Actually every real number is an upper bound for the empty set.
+      \item Every real number is a lower bound for the empty set.
+   \item The interval \([0,1] \) is bounded above by 1.
+   \item The interval \([0,1] \) is bounded above by 107.
+   \item The interval \([0,\infty) \) is bounded below by 0.
+   \item The interval \([0,\infty) \) is not bounded above.
+\end{numberlist}
+\end{myex}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Being least}
+\begin{mydef} Let \(A\) be a subset of \(\reals\). The set \(A\) has a least
+  member provided
+  \[
+     \left (\exists a^\star \in A \right) \left( \forall a \in A \right)
+     (a^\star \leq a).
+  \]
+  We say that \(a^\star\) is a least member.  The set \(A\) has a greatest 
+  member provided
+  \[
+     \left (\exists a^\star \in A \right) \left( \forall a \in A \right)
+     (a \leq a^\star).
+  \]
+  \end{mydef} 
+
+
+\begin{numberlist}
+ \item We require that a least member of a set \(A\) be a member of the set.
+\end{numberlist}
+
+\end{frame}
+
+
+
+\begin{frame}{Well ordering principle}
+
+\begin{myaxiom} Let \(A \subset \integers\) be (i) \emph{nonempty} and (ii) \emph{bounded below}. Then \(A\) has a least member.
+\end{myaxiom}
+
+\begin{numberlist}
+
+\item This is an axiom--we'll take it on faith.
+
+\item Again, a least member of a set \(A\) \emph{must} be a member of \(A\).
+
+\item Thus the empty set does \emph{not} have a least member.
+
+\item The qualification that the set be nonempty for it to have a least member is crucial.
+
+\end{numberlist}
+
+
+\begin{myth} Let \(A \subset \integers\) be (i) \emph{nonempty} and (ii) \emph{bounded above}. Then \(A\) has a greatest  member.
+\end{myth}
+
+\end{frame}
+\begin{frame}{Well ordering principle for the reals?}
+
+\textbf{Question} Are the real numbers well ordered?  That is, does every nonempty subset of \(\reals\) that is bounded below have a least member?
+
+\vspace{0.5in}
+\textbf{Answer} No. The interval \((0,1)\) is nonempty and  bounded below, but it doesn't have a least member. Although zero is less than
+every member of \((0,1)\), since zero isn't a member of \((0,1)\), it is not a least member.
+
+\end{frame}
+
+\begin{frame}{Uniqueness of the least}
+\begin{myth} If a subset of the reals has a least member, it is unique.
+
+\end{myth}
+
+\begin{myproof} Let \(A \subset \reals\). Suppose \(x\) and  \(x^\prime\) are least members of \(A\). Since \(x\) is a least member of \(A\) we have
+  \(x \in A\). But \(x^\prime\) is a least member, so \(x^\prime \leq x\).
+Interchanging the roles of \(x\) and \(x^\prime\), we have \(x^\prime \leq x\); therefore \(x = x^\prime\).
+
+\end{myproof}
+
+\begin{numberlist}
+\item Equality is hard, inequality is easier.
+\item We proved equality by proving two inequalities.
+\end{numberlist}
+\end{frame}
+
+\begin{frame}{Existence of the floor}
+
+Let \(x \in \reals\). Define the set \(M\) by
+\[
+     M = \{k \in \reals \mid k \geq x \}
+\]
+
+\end{frame}
+
+\end{document}
