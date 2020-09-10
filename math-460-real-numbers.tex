@@ -41,7 +41,7 @@
 \newtheorem{mydef}{Definition}
 \newtheorem{myqdef}{Quasi-definition}
 \newtheorem{myex}{Example}
-\newtheorem{myth}{Theorem} 
+\newtheorem{myth}{Theorem}
 \newtheorem{myfact}{Fact}
 \newtheorem{metathm}{Meta Theorem}
 \newtheorem{Question}{Question}
@@ -125,7 +125,7 @@
 %  ``The secret of getting ahead is getting started.'' Mark Twain
 %   }
   \date{}
- 
+
 
 \usepackage{courier}
 %\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
@@ -155,11 +155,11 @@ It is associative provided
 \[
    (\forall a,b,c \in S)(F(a,F(b,c)) = F(F(a,b),c)).
 \]
-It has an \emph{left identity element}  provided  
+It has an \emph{left identity element}  provided
 \[
   (\exists\,\, \theta \in S)((\forall a \in S)(F(\theta,a) = a).
 \]
-And it has an \emph{right identity element}  provided  
+And it has an \emph{right identity element}  provided
 \[
   (\exists\,\, \theta \in S)((\forall a \in S)(F(a, \theta) = a).
 \]
@@ -185,10 +185,10 @@ And it has an \emph{right identity element}  provided
 
 \begin{alphalist}
 
-\item Addition \(+\) is a binary operator on \(\reals\).  Since \(x +0 = x\) for all real \(x\), the unit for addition is zero.  Further we know that addition is
+\item Addition \(+\) is a binary operator on \(\reals\).  Since \(x +0 = x\) for all real \(x\), the identity element for addition is zero.  Further we know that addition is
 commutative and associative.
 
-\item Function composition \(\circ \) is a binary operator on the set of functions from \(\reals\) to \(\reals\).  The function \(x \in \reals \mapsto x\) is the unit for 
+\item Function composition \(\circ \) is a binary operator on the set of functions from \(\reals\) to \(\reals\).  The function \(x \in \reals \mapsto x\) is the identity element for
 function composition .  Function composition is associative, but not commutative.
 
 \end{alphalist}
@@ -199,12 +199,12 @@ function composition .  Function composition is associative, but not commutative
 \begin{myth} Let \( S \) be a set and let \(F\) be a commutative binary operator on \(S\).  Then \(F\) has at most one identity element.
 
  \end{myth}
- 
- \begin{myproof} Let \(\theta\) and \(\theta^\prime\) be identity element. for \(F\). We'll show that \(\theta = \theta^\prime\).  We have
+
+ \begin{myproof} Let \(\theta\) and \(\theta^\prime\) be identity elements for \(F\). We'll show that \(\theta = \theta^\prime\).  We have
  \begin{align*}
     \theta &= F(\theta^\prime, \theta),    &\mbox{(because } \theta \mbox{ is an identity element.}) \\
                 &= F(\theta, \theta^\prime),    &\mbox{(because } F \mbox{ is commutative})\\
-                &= \theta^\prime.   &\mbox{(because } \theta^\prime \mbox{ is an  identity element.}) 
+                &= \theta^\prime.   &\mbox{(because } \theta^\prime \mbox{ is an  identity element.})
  \end{align*}
  So \(\theta = \theta^\prime\).
  \end{myproof}
@@ -266,12 +266,12 @@ The proof for the multiplicative inverse is similar and left as an exercise for 
 \begin{frame}{Famous fields}
 
 
-Let \(+\) and \(\times\) be ordinary number addition and multiplication, respectively. Then 
+Let \(+\) and \(\times\) be ordinary number addition and multiplication, respectively. Then
 \begin{alphalist}
 
-\item \((\reals, +, \times)\) is the real field. 
+\item \((\reals, +, \times)\) is the real field.
 
-\item \((\rational, +, \times)\) is the rational field. 
+\item \((\rational, +, \times)\) is the rational field.
 Certainly the sum and product of rational numbers is a rational number so indeed, \(+  : \rational \times \rational \to \rational\) and
 similarly for \(\times\).  The other required conditions are ``inherited'' from the properties of the real field.
 
@@ -300,6 +300,5 @@ similarly for \(\times\).  The other required conditions are ``inherited'' from 
 \end{frame}
 \end{document}
 
-We will assume that there is a set \(\reals\) with members called \emph{real numbers} along with functions \(+ : \reals \times \reals \to \reals\) and \(\times : \reals \times \reals \to \reals\) 
+We will assume that there is a set \(\reals\) with members called \emph{real numbers} along with functions \(+ : \reals \times \reals \to \reals\) and \(\times : \reals \times \reals \to \reals\)
 such that
-
