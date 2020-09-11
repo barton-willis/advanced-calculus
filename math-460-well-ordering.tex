@@ -93,11 +93,13 @@
 %\author[Barton Willis] % (optional, for multiple authors)
 %{Barton~Willis}%
 %\institute[UNK] % (optional)
-\subtitle{Lesson 10   \\ \vspace{0.5in}
-  ``If you can't prove what you want to prove, demonstrate something else and pretend that they are the same.''  \\   \vspace{0.15in}{Darrell Huff} \\ \vspace{0.15in} \emph{How to Lie with Statistics} \\
+\subtitle{Lesson 11   \\ \vspace{0.5in}
+  ``The only way to learn mathematics is to do mathematics.''  \\   \vspace{0.15in}{Paul Halmos} \\
  \vspace{1.0in}
-  \tiny Barton Willis, Attribution 4.0 International (CC BY 4.0), 2020 \normalsize
+  \tiny Barton Willis, Creative Commons CC0 1.0 Universal, \the\year \normalsize
    }
+
+
   \date{}
 
 \begin{document}
@@ -109,18 +111,28 @@
 
 \begin{frame}
 
-\begin{mydef} Let \(A\) be a subset of \(reals\). We say that \(A\) is \emph{bounded above} provided
+\begin{mydef} Let \(A\) be a subset of \(\reals\). We say that \(A\) is \emph{bounded above} provided
 \[
    \left (\exists M \in \reals \right) \left( \forall x \in A \right)(x \leq M).
 \]
-We say that the number \(M\) is \emph{an upper bound for  the set } \(A\).
-The set  \(A\) is \emph{bounded below} provided
+The number \(M\) is \emph{an upper bound for  the set } \(A\).
+We say that \begin{tabular}{column alignment}
+
+\end{tabular}he set  \(A\) is \emph{bounded below} provided
 \[
    \left (\exists M \in \reals \right) \left( \forall x \in A \right)(M \leq x).
 \]
-We say that the number \(M\) is \emph{a lower bound for  the set } \(A\). If \(A\) is bounded below and bounded above, we say \(A\) is \emph{bounded}.
+The number \(M\) is \emph{a lower bound for  the set } \(A\). If \(A\) is bounded below and bounded above, we say \(A\) is \emph{bounded}.
 \end{mydef}
 
+\begin{numberlist}
+  \item If \(M\) is an upper bound for a set \(A\), and \(M \leq M^\prime\),
+  then \(M^\prime\) is an upper bound for \(A\).
+
+   \item So we need to say \emph{a (not the) upper bound}.
+
+   \item Similarly, lower bounds are not unique.
+\end{numberlist}
 \end{frame}
 \begin{frame}{Bounded details}
 
@@ -128,26 +140,35 @@ We say that the number \(M\) is \emph{a lower bound for  the set } \(A\). If \(A
 
 \item Notice that we do \emph{not} require that a upper bound for a set \(A\) to be a member of \(A\).
 
+\vspace{0.15in}
 \item Same for a lower bound.
 
-\item If \(M\) is an upper bound for a set \(A\), any number that is greater than \(M\) is also an upper bound for \(A\).
+\vspace{0.15in}
 
-\item Since we require that an upper bound be a real number, we disallow infinity from being an upper bound.  If we did, every set would be bounded.
+\item Since we require that an upper bound be a \emph{real number}, we disallow infinity from being an upper bound.  If we did, every set would be bounded.
 
+\vspace{0.15in}
+\item Although infinity is a number, it isn't a \emph{real} number.
 \end{numberlist}
 
 \end{frame}
 
-\begin{frame}{Bounded examples}
+\begin{frame}{Bounded and unbounded examples}
 
 \begin{myex}
   \begin{numberlist}
     \item The empty set is bounded above by 0.
+    \vspace{0.15in}
       \item Actually every real number is an upper bound for the empty set.
+      \vspace{0.15in}
       \item Every real number is a lower bound for the empty set.
+      \vspace{0.15in}
    \item The interval \([0,1] \) is bounded above by 1.
+   \vspace{0.15in}
    \item The interval \([0,1] \) is bounded above by 107.
+   \vspace{0.15in}
    \item The interval \([0,\infty) \) is bounded below by 0.
+   \vspace{0.15in}
    \item The interval \([0,\infty) \) is not bounded above.
 \end{numberlist}
 \end{myex}
@@ -158,32 +179,52 @@ We say that the number \(M\) is \emph{a lower bound for  the set } \(A\). If \(A
 
 
 \begin{frame}{Being least}
-\begin{mydef} Let \(A\) be a subset of \(\reals\). The set \(A\) has a least
-  member provided
+\begin{mydef} Let \(A\) be a subset of \(\reals\). The set \(A\) has a \emph{least member} provided
   \[
      \left (\exists a^\star \in A \right) \left( \forall a \in A \right)
      (a^\star \leq a).
   \]
-  We say that \(a^\star\) is a least member.  The set \(A\) has a greatest 
-  member provided
+  We say that \(a^\star\) is a least member.  The set \(A\) has a \emph{greatest
+  member} provided
   \[
      \left (\exists a^\star \in A \right) \left( \forall a \in A \right)
      (a \leq a^\star).
   \]
-  \end{mydef} 
+  \end{mydef}
 
 
 \begin{numberlist}
- \item We require that a least member of a set \(A\) be a member of the set.
+ \item Unlike a lower bound, we require that a least member of a set \(A\) be a member of the set.
+
+ \vspace{0.15in}
+
+ \item The same for a greatest member.
 \end{numberlist}
 
 \end{frame}
 
+\begin{frame}{Uniqueness of being least}
 
+\begin{myth} If a subset of the reals has a least member, it is unique.
+
+\end{myth}
+
+\begin{myproof} Let \(A \subset \reals\). Suppose \(x\) and  \(x^\prime\) are least members of \(A\). Since \(x\) is a least member of \(A\) we have
+  \(x \in A\). But \(x^\prime\) is a least member, so \(x^\prime \leq x\).
+Interchanging the roles of \(x\) and \(x^\prime\), we have
+\(x \leq x^\prime\); therefore \(x = x^\prime\).
+
+\end{myproof}
+
+\begin{numberlist}
+\item Equality is hard, inequality is easier.
+\item We proved equality by proving two inequalities.
+\end{numberlist}
+\end{frame}
 
 \begin{frame}{Well ordering principle}
 
-\begin{myaxiom} Let \(A \subset \integers\) be (i) \emph{nonempty} and (ii) \emph{bounded below}. Then \(A\) has a least member.
+\begin{myaxiom} Let \(A\) be a nonempty subset of \(\integers\) that is \emph{bounded below}. Then \(A\) has a least member.
 \end{myaxiom}
 
 \begin{numberlist}
@@ -213,30 +254,42 @@ every member of \((0,1)\), since zero isn't a member of \((0,1)\), it is not a l
 
 \end{frame}
 
-\begin{frame}{Uniqueness of the least}
-\begin{myth} If a subset of the reals has a least member, it is unique.
 
-\end{myth}
-
-\begin{myproof} Let \(A \subset \reals\). Suppose \(x\) and  \(x^\prime\) are least members of \(A\). Since \(x\) is a least member of \(A\) we have
-  \(x \in A\). But \(x^\prime\) is a least member, so \(x^\prime \leq x\).
-Interchanging the roles of \(x\) and \(x^\prime\), we have \(x^\prime \leq x\); therefore \(x = x^\prime\).
-
-\end{myproof}
-
-\begin{numberlist}
-\item Equality is hard, inequality is easier.
-\item We proved equality by proving two inequalities.
-\end{numberlist}
-\end{frame}
 
 \begin{frame}{Existence of the floor}
 
-Let \(x \in \reals\). Define the set \(M\) by
-\[
-     M = \{k \in \reals \mid k \geq x \}
-\]
+Let \(x \in \reals_{\geq 0}\). Define the set \(M\) by
+\(
+     M = \{k \in \reals \mid k \leq x \}
+\).
 
+\begin{numberlist}
+
+ \item Since \(x \geq 0\), it follows that \(0 \in M\).
+
+\vspace{0.15in}
+ \item So, the set \(M\) is nonempty.
+\vspace{0.15in}
+ \item Further the set \(M\) is bounded above by \(x\).
+\vspace{0.15in}
+  \item The well ordering principle tells us that \(M\) as
+  a least member.
+\vspace{0.15in}
+  \item Actaully, the least member is unique.
+\vspace{0.15in}
+  \item Of course the least member depends on \(x\).
+\vspace{0.15in}
+  \item Something that (i) depends on \(x\) and (ii) is unique defines a function!
+\vspace{0.15in}
+  \item We've used the well ordering principle to define the \emph{floor function} for nonnegative inputs.
+
+%  \item Similarly, we can define the ceiling function for nonnegative %inputs.
+
+%  \item The putative identity \(\lfoor x \rfloor = - \lceil -x \rceil %\) extends the floor and ceiling functions from the nonnegative %numbers to the reals.
+
+
+
+\end{numberlist}
 \end{frame}
 
 \end{document}
