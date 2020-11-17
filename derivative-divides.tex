@@ -1,0 +1,362 @@
+\documentclass[fleqn]{beamer}
+%\usetheme[height=7mm]{Rochester}
+\usetheme{Boadilla} %{Rochester}
+
+\setbeamertemplate{footline}[text line]{%
+\parbox{\linewidth}{\vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+%\author[BW]{Dr.\ Barton Willis}
+\usepackage{amsmath}\usepackage{amsthm}
+\usepackage{isomath}
+\usepackage{upgreek}
+\usepackage{comment,enumerate,xcolor}
+
+\usepackage[english]{babel}
+\usepackage[final,babel]{microtype}%\usepackage[dvipsnames]{color}
+\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\rationals}{\mathbf{Q}}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\domain}{dom}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\codomain}{codomain}
+\DeclareMathOperator{\sspan}{span}
+\DeclareMathOperator{\F}{F}
+\DeclareMathOperator{\G}{G}
+\DeclareMathOperator{\B}{B}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ball}{ball}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\DeclareMathOperator{\nullspace}{nullity}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+\newtheorem{myqdef}{Quasi-definition}
+\newtheorem{myex}{Example}
+\newtheorem{myth}{Theorem} 
+\newtheorem{myfact}{Fact}
+
+\newtheorem{heuristic}{Heuristic}
+
+\newtheorem{metathm}{Meta Theorem}
+\newtheorem{Question}{Question}
+\newtheorem{Answer}{Answer}
+\newtheorem{myproof}{Proof}
+
+\newtheorem{mycounterexample}{Counterexample}
+\newtheorem{hurestic}{Hurestic}
+
+%\usepackage{array}   % for \newcolumntype macro
+%\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+
+\newenvironment{alphalist}{
+  \vspace{-0.4in}
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{1.0\itemsep}}
+  {\end{enumerate}}
+
+
+
+\usepackage{pifont}
+
+\newenvironment{checklist}{
+  \begin{enumerate}[\ding{51}]
+    \addtolength{\itemsep}{-0.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{numberlist}
+   {\begin{enumerate}[(1)]
+       \addtolength{\itemsep}{-0.5\itemsep}}
+     {\end{enumerate}}
+\usepackage{amsfonts}
+\makeatletter
+\def\amsbb{\use@mathgroup \M@U \symAMSb}
+\makeatother
+\usepackage{bbold}
+
+\usepackage{mathabx}
+
+
+\newcommand{\llnot}{\lnot \,} % is accepted
+
+
+\subtitle{Lesson 7}
+\title{\textbf{Derivative divides integration}}
+%\author[Barton Willis] % (optional, for multiple authors)
+%{Barton~Willis}%
+%\institute[UNK] % (optional)
+
+%{
+ % \inst{1}%
+%  ``The secret of getting ahead is getting started.'' Mark Twain
+%   }
+  \date{}
+ 
+
+%\usepackage{courier}
+%\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+%\lstset{framextopmargin=50pt,frame=bottomline}
+
+
+%\begin{document}
+
+
+
+%--------
+%usepackage[usenames,dvipsnames,svgnames,table]{color}
+
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}{All things start with the chain rule}
+  
+Recall the chain rule; for differentiable functions \(F\) and \(g\), 
+in pure function notation, we have
+\[
+     (F \circ g)^\prime = g^\prime F^\prime \circ g.
+\]  
+Equivalently in formula notation, the chain rule is
+\[
+    \frac{\mathrm{d}}{\mathrm{d} x} (F (g(x)) = g^\prime(x) 
+    F^\prime(g(x)).
+\]  
+\begin{myfact}
+Up to an additive constant, the antiderivative ``undoes'' the derivative; thus
+\[
+\int g^\prime(x) F^\prime(g(x)) \, \mathrm{d} x  =  F (g(x))  + c,
+\]   
+where \(c \in \reals\).
+\end{myfact}
+\end{frame} 
+
+\begin{frame}{Match this}
+
+If we can match an integrand to  \(  g^\prime(x) F^\prime(g(x))  \) and we know an antiderivative of \(F\), we win.  An example
+\[
+    \int 2 x  \sin(x^2) \, \mathrm{d} x.
+\]
+Maybe you see the match isn't particularly hidden:
+
+\begin{checklist}
+\item \(g(x) = x^2   \implies g^\prime(x) = 2 x\),
+\item \(F^\prime = \sin \implies F = -\cos \).
+\end{checklist}
+
+Thus
+\[
+    \int 2 x  \sin(x^2) \, \mathrm{d} x = -\cos(x^2) + c.
+\]
+\end{frame} 
+
+\begin{frame}{Out with the old, in with the new}
+Let's re-do the problem  \(\int 2 x  \sin(x^2) \, \mathrm{d} x \), but organize our work differently.
+
+\begin{checklist}
+\item  The argument of \(\sin\) is \(x^2\).  Let's define a new variable \(u = x^2\).   Then
+\[
+    \mathrm{d} u = \frac{\mathrm{d} u}{\mathrm{d} x} \mathrm{d} x = 2 x  \, \mathrm{d} x.
+\]
+
+\item  We now need to write \(  2 x  \sin(x^2) \, \mathrm{d} x  \)  \emph{entirely} in terms of the new variable \(u\).  
+
+\item When I say entirely, I mean \emph{entirely}. This includes expressing \(\mathrm{d} x \) in terms of  \(\mathrm{d} u \) 
+
+\item Grouping the factor of \(2 x\) together with \(\mathrm{d} x\), we have 
+\[
+   2 x  \sin(x^2) \, \mathrm{d} x   = \sin(x^2)     (2 x \,  \mathrm{d} x  ) = \sin(u) \, \mathrm{d} u.
+\]
+\item So
+\[
+   \int 2 x  \sin(x^2) \, \mathrm{d} x   = \int  \sin(u) \, \mathrm{d} u = -\cos(u) = -\cos(x^2).
+\]
+\item In step   \(-\cos(u) = -\cos(x^2) \) we reverted to the ``original'' integration variable.
+
+\end{checklist}
+
+\end{frame}
+
+\begin{frame}{Example redux}
+
+Let's try  \(\int x  \exp(x^2) \, \mathrm{d} x \)
+
+\begin{checklist}
+\item  The argument of \(\exp\) is \(x^2\).  Let's define a new variable \(u = x^2\).   Then
+\[
+    \mathrm{d} u = \frac{\mathrm{d} u}{\mathrm{d} x} \mathrm{d} x = 2 x  \, \mathrm{d} x.
+\]
+
+%\item  We now need to write \(  x  \exp(x^2) \, \mathrm{d} x  \)  \emph{entirely} in terms of the new variable \(u\).  
+
+\item  Unlike the previous problem, the integrand is missing a factor of \(2\) for a complete matching.  No big deal; we have
+\[
+  [\mathrm{d} u  =  2 x  \, \mathrm{d} x ]  =   \left [\frac{1}{2} \mathrm{d} u  =  x  \, \mathrm{d} x \right ] 
+\]
+
+
+
+\item So  
+\[
+    x  \exp(x^2) \, \mathrm{d} x   = \exp(x^2)     (x \,  \mathrm{d} x  ) = \frac{1}{2} \exp(u) \, \mathrm{d} u.
+\]
+\item So
+\[
+   \int x  \exp(x^2) \, \mathrm{d} x   = \int  \exp(u) \, \mathrm{d} u =  \exp(u)= \exp(x^2).
+\]
+\item In step   \(\exp(u) = \exp(x^2) \) we reverted to the ``original'' integration variable.
+
+\end{checklist}
+
+\end{frame}
+
+\begin{frame}{Derivative divides}
+
+\begin{checklist}
+
+\item When we match \(u = x^2\) to find \( \int  x  \exp(x^2) \, \mathrm{d} x \),  the derivative of \(u\), that is  \(\frac{\mathrm{d} u}{\mathrm{d} x}\) doesn't exactly match the remaining factor
+of \(x\),   but it does match up to a multiplicative  factor of 2.
+
+\item Since the quotient of  the derivative of \(u\) divided by the  the remaining factor of \(x\) is a constant, the method is called \emph{derivative divides}.
+
+\item But calculus books call the method  \emph{U substitution}
+
+\item I you don't like my explanations, see \url{https://www.youtube.com/watch?v=8B31SAk1nD8}.
+
+\end{checklist}
+\end{frame}
+
+
+\begin{frame}{Finding You}
+
+\begin{heuristic}
+
+\begin{checklist}
+
+\item The integrand should be a product.
+
+\item Choose \(u\) to be an expression that is ``inside'' a function with a known antiderivative.
+
+\item The derivative of \(u\) times a constant should match the remaining factors of the integrand.
+\end{checklist}
+
+\end{heuristic}
+
+\end{frame}
+
+\begin{frame}{Matching examples}
+
+
+ \( \int x^2 \cos(x^3) \, \mathrm{d} x \).   The cosine has a known antiderivative.  The expression inside cosine is \(x^3\).  So choose \(u = x^3\).   Then
+\(\frac{\mathrm{d} u}{\mathrm{d} x} = 3 x^2\) matches the remaining factor  \(x^2\) in the integrand up to a multiplicative factor.  \mbox{\textbf{We win}}.
+
+\[
+    [u = x^3] = [\mathrm{d} u = 3 x^2 \mathrm{d} x] = \left[  x^2 \mathrm{d} x = \frac{1}{3}  \mathrm{d} u \right].
+\]
+So
+\[
+ \int x^2 \cos(x^3) \, \mathrm{d} x = \int \frac{1}{3} \cos(u) \, \mathrm{d} u = \frac{1}{3} \sin(u) =  \frac{1}{3} \sin(x^3).
+\]
+
+\end{frame}
+
+\begin{frame}{Actually, we are losers}
+
+Actually, we are \textbf{losers}. Why?  Because we didn't check our work:
+
+\[
+   \frac{\mathrm{d}}{\mathrm{d} x} \left(  \frac{1}{3} \sin(x^3)   \right) =   \frac{1}{3} 3 x^2 \cos(x^3)   = x^2 \cos(x^3)
+\]
+The integrand is  \( x^2 \cos(x^3)\).  So we aren't losers.
+
+\end{frame}
+\begin{frame}
+
+ \( \int x  \exp(-x^2) \, \mathrm{d} x \).   The function \(\exp\)  has a known antiderivative.  The expression inside \(\exp\) is \(-x^2\).  So choose \(u =-x^2\).   Then
+\(\frac{\mathrm{d} u}{\mathrm{d} x} = -2 x \) matches the remaining factor  \(x\) in the integrand up to a multiplicative factor. \textbf{We win}.
+
+
+\[
+    [u = -x^2] = [\mathrm{d} u = -2 x  \mathrm{d} x] = \left[  x \mathrm{d} x = -  \frac{1}{2}  \mathrm{d} u \right]
+\]
+So
+\[
+  \int x  \exp(-x^2) \, \mathrm{d} x   = \int  - \frac{1}{2} \exp(u)  \mathrm{d} u = -  \frac{1}{2}   \exp(u)  =  -  \frac{1}{2}  \exp(-x^2) .
+\]
+
+\end{frame}
+
+\begin{frame}
+
+\( \int  \sqrt{5 x + 7}  \, \mathrm{d} x \).    Oops! The integrand isn't a product. Are we loosers?  No way.   The integrand is \( \int 1 \times  \sqrt{5 x + 7}  \, \mathrm{d} x \). 
+
+The square root has a known antiderivative, so choose \(u = 5 x + 7\). Then \(\frac{\mathrm{d} u}{\mathrm{d} x} = 5 \) matches the remaining factor  \(1\) in the integrand 
+ up to a multiplicative factor. \textbf{We win}.
+ 
+ 
+\[
+    [u = 5 x + 7] = [\mathrm{d} u = 5   \mathrm{d} x] = \left[  \mathrm{d} x =  \frac{1}{5}  \mathrm{d} u \right].
+\]
+So
+\[
+   \int  \sqrt{5 x + 7}  \, \mathrm{d} x    =  \int \frac{1}{5} \sqrt{u} \, \mathrm{d} u =  \frac{1}{5}    \frac{2}{3} u^{3/2} =  \frac{2}{15}  (5 x + 7)^{3/2}.
+\]
+
+
+
+\end{frame}
+
+\begin{frame}{Fake  matches}
+
+Let's try the problem
+\[
+   \int  x \exp(x^4) \, \mathrm{d} x.
+\]
+Since \(\exp\) has a known antiderivative, for \(u\) choose what is inside \(\exp\). Thus
+\[
+   [u = x^4 ] = [\mathrm{d} u = 4 x^3 \mathrm{d} x] = \left[   \mathrm{d} x =  \frac{1}{4 x^3} \mathrm{d} u \right]
+\]
+So far, Okie-dokie.
+\[
+   \int  x \exp(x^4) \, \mathrm{d} x = \int x \exp(u)  frac{1}{4 x^3} \mathrm{d} u = \int  \exp(u)  \frac{1}{4 x^2} \mathrm{d} u
+\]
+
+\begin{checklist}
+
+\item Since   \(\int  \exp(u)  \frac{1}{4 x^2} \mathrm{d} u \) depends on both the old variable \(x\) and the new variable \(u\), we \textbf{have not completed our task of out with the old and in with the new}/
+
+\end{checklist}
+
+\end{frame}
+
+
+\begin{frame}{Hidden matches}
+
+
+Let's try the related antiderivative
+\[
+    \int x  \sin(x^2) \, \mathrm{d} x.
+\]
+If we match \(g^\prime(x) = x \),  we have \(g(x) =  \frac{1}{2} x^2\)
+The match isn't particularly hidden:
+
+\begin{checklist}
+\item \(g(x) = x^2   \implies g^\prime(x) = 2 x\),
+\item \(F^\prime = \sin \implies F = -\cos \).
+\end{checklist}
+
+Thus
+\[
+    \int 2 x  \sin(x^2) \, \mathrm{d} x = -\cos(x^2) + c.
+\]
+\end{frame} 
+\end{document} 
