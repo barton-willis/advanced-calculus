@@ -1,0 +1,219 @@
+\documentclass[fleqn]{beamer}
+%\usetheme[height=7mm]{Rochester}
+\usetheme{Boadilla} %{Rochester}
+
+\setbeamertemplate{footline}[text line]{%
+\parbox{\linewidth}{\vspace*{8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+%\author[BW]{Barton Willis}
+\usepackage{amsmath}\usepackage{amsthm}
+\usepackage{isomath}
+\usepackage{upgreek}
+\usepackage{comment,enumerate,xcolor}
+
+\usepackage[english]{babel}
+\usepackage[final,babel]{microtype}%\usepackage[dvipsnames]{color}
+\usefonttheme{professionalfonts}
+%\usefonttheme{serif}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\cover}{\mathcal{C}}
+
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\domain}{dom}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\codomain}{codomain}
+\DeclareMathOperator{\sspan}{span}
+\DeclareMathOperator{\F}{F}
+\DeclareMathOperator{\G}{G}
+\DeclareMathOperator{\B}{B}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ball}{B}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\DeclareMathOperator{\nullspace}{nullity}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+\newtheorem{myqdef}{Quasi-definition}
+\newtheorem{myex}{Example}
+\newtheorem{myth}{Theorem}
+\newtheorem{myfact}{Fact}
+\newtheorem{metathm}{Meta Theorem}
+\newtheorem{Question}{Question}
+\newtheorem{Answer}{Answer}
+\newtheorem{myproof}{Proof}
+
+\newtheorem{myfakeproof}{Fake Proof}
+\newtheorem{mybadformproof}{Bad Form Proof}
+
+\newtheorem{hurestic}{Hurestic}
+
+\newenvironment{alphalist}{
+  \vspace{-0.4in}
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{snowflakelist}{
+  %\vspace{-0.4in}
+  \begin{enumerate}[\textleaf]
+    %\addtolength{\itemsep}{1.2\itemsep}
+ }
+  {\end{enumerate}}
+
+\newenvironment{checklist}{
+  \begin{enumerate}[\ding{52}]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{numberlist}
+   {\begin{enumerate}[(1)]
+       \addtolength{\itemsep}{-0.5\itemsep}}
+     {\end{enumerate}}
+\usepackage{amsfonts}
+\makeatletter
+\def\amsbb{\use@mathgroup \M@U \symAMSb}
+\makeatother
+\usepackage{bbold}
+
+\usepackage{array}
+\newcolumntype{C}{>$c<$}
+
+\newcommand{\llnot}{\lnot \,} % is accepted
+\newcommand{\mydash}{\text{--}}
+
+
+%------------------
+
+
+\title{\textbf{Covers}}
+%\author[Barton Willis] % (optional, for multiple authors)
+%{Barton~Willis}%
+%\institute[UNK] % (optional)
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Covers}
+
+  \begin{mydef} Let \(A\) be a subset of \(\reals\).  We say \(\cover\) is a \emph{cover of the set} \(A\) provided
+    \begin{enumerate}
+      \item \(\cover\) is a set,
+      \item every member of \(\cover\) is an open set,
+      \item we have \(A \subset \underset{x \in \cover}{\cup} x\).
+    \end{enumerate}
+
+
+  \end{mydef}
+
+  \begin{snowflakelist}
+    \item A cover is a bit like a quilt--each square of the quilt is too small to cover the bed, but collectively (that is their union) covers the bed.
+    \item When a set has a cover, it is \emph{not} unique.
+  \end{snowflakelist}
+
+\end{frame}
+
+
+\begin{frame}{Examples and nonexamples}
+
+  \begin{myex}
+    \begin{enumerate}
+     \item The set \(\reals\) is not a cover of \(\reals\). Why? The members of \(\reals\) are real numbers, not open sets.
+
+     \item The set \(\{\reals \}\) is a cover of \(\reals\).  Why? 
+
+   \begin{enumerate}
+    \item   \(\{\reals \}\) is a set--sure, it's a set with one member that is a set.
+
+   \item every member of \(\{\reals \}\) is an open set--sure, the only member is \(\reals\) and we know that \(\reals\) is open.
+
+    \item We have
+     \[
+      \underset{x \in \{\reals \} }{\cup} x = \reals.
+     \]
+
+\end{enumerate}
+
+  \item The set \(\varnothing\) is a cover of itself.
+
+\begin{enumerate}
+    \item   \(\varnothing \) is a set--sure, it's a set.
+
+   \item every member of \(\varnothing \) is an open set--sure,  it's vacuously true.
+
+    \item We have
+     \[
+      \underset{x \in  \varnothing }{\cup} x = \varnothing.
+     \]
+\end{enumerate}
+\end{enumerate}
+  \end{myex}
+\end{frame}
+
+\begin{frame}{More Examples, less  nonexamples}
+
+  \begin{myex}
+
+    \begin{enumerate}
+\item Define \(\cover = \{ \ball(0,k) \mid k \in \integers_{> 0} \}\). Then \(\cover\) is a cover of \(\reals\).
+\begin{enumerate}
+    \item   \(\cover \) is a set--sure, it's a set.
+
+   \item every member of \(\cover \) is an open set--sure,  every member is an open ball.
+
+    \item We have
+     \[
+      \underset{x \in  \cover }{\cup} x = \reals. 
+     \]
+   
+\textbf{Claim:}   \(\reals \subset   \underset{x \in  \cover }{\cup} x \).
+
+\textbf{ Proof:}  Let \(z \in \reals\).  Then \(z \in \ball(0, \lceil |z| \rceil + 1) \).  But \(  \ball(0, \lceil |z| \rceil + 1) \in \cover \); therefore \(z \in   \underset{x \in  \cover }{\cup} x \).
+\end{enumerate}
+\end{enumerate}
+\end{myex}
+\end{frame}
+
+\begin{frame}{Subcovers}
+
+\begin{mydef}  Let \(\cover\) be a cover of a set \(A\).  Any subset \(\cover^\prime\) of \(\cover\) is a \emph{subcover}  of \(\cover\) provided \(\cover^\prime\) is a cover of \(A\).
+If \(\cover^\prime\) is a finite set, it's called a \emph{finite subcover of} \(A\). 
+\end{mydef}
+
+\begin{enumerate}
+
+\item A set is finite if either it is empty or  its members can be uniquely labeled using the integers 1 to \(n\), for some integer \(n\).
+
+\item The set \(\{ \reals \} \) is  finite; the set \(\reals\) is not finite.
+
+
+\item The set \(\{ \infty \} \) is  finite. 
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{Examples of subcovers}
+
+\begin{myex}
+
+\begin{enumerate}  
+
+
+\item The set \(\{ \ball(0,x) \mid x \in \reals_{>0}\} \) is a cover of \([0,1]\).      The set \(\{ \ball(0,2)  \} \) is a finite subcover. 
+
+\item  The set \(\{ \ball(0,x) \mid x \in \reals_{>0}\} \) is a cover of \( \reals\).  This cover has no finite subcover. 
+
+\textbf{Why} Every member of t \(\{ \ball(0,x) \mid x \in \reals_{>0}\} \) is bounded. The finite union of bounded sets is bounded. Thus regardless of what finite subset of \(\{ \ball(0,x) \mid x \in \reals_{>0}\} \) we choose,
+its union will be bounded.  But \(\reals\) is unbounded, so is is not contained in any bounded set.
+\end{enumerate}
+\end{myex}
+
+\end{frame}
+\end{document}
