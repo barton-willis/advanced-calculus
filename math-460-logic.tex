@@ -524,11 +524,11 @@ These statements are logically equivalent.
 
 \begin{myex} The function 
 \[
-F = x \in  (-\infty, \infty)  \mapsto \begin{cases}  1 & \mbox{ if } x \mbox{ is rational } \\   0 & \mbox{ if } x \mbox{ is irrational } \end{cases}
+F = x \in  (-\infty, \infty)  \mapsto \begin{cases}  \mbox{true} & \mbox{ if } x \mbox{ is rational } \\   \mbox{false} & \mbox{ if } x \mbox{ is irrational } \end{cases}
 \]
 is a predicate. We have, for example
 \[
-    F(2/3) = 1,  \quad F(\sqrt{2})  = 0,  \quad F(\uppi)  = 0, \quad F(\mathrm{e})  = 0,
+    F(2/3) = \mbox{true},  \quad F(\sqrt{2})  = \mbox{false},  \quad F(\uppi)  = \mbox{false}, \quad F(\mathrm{e})  = \mbox{false},
 \]
 Last I checked, nobody knows the value of \(F(\uppi - \mathrm{e})\).
  \end{myex}
