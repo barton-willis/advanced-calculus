@@ -53,7 +53,7 @@
 %\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
 
 \newenvironment{alphalist}{
-  \vspace{-0.4in}
+  %\vspace{-0.4in}
   \begin{enumerate}[(a)]
     \addtolength{\itemsep}{1.0\itemsep}}
   {\end{enumerate}}
@@ -82,7 +82,7 @@
 \newcommand{\llnot}{\lnot \,} % is accepted
 
 
-\subtitle{Lesson 3}
+%\subtitle{Lesson 3}
 \title{\textbf{Sets}}
 %\author[Barton Willis] % (optional, for multiple authors)
 %{Barton~Willis}%
@@ -113,7 +113,26 @@
 
 \frame{\titlepage}
 
+\begin{frame}{Sets}
+\begin{myqdef} We don't attempt to define a set, but we describe a set as a collection of things, often called \emph{members}.   
+The  members of a set can be numbers, ordered pairs,  functions, or sets themselves. In a bit, we'll learn that there are some things that might appear to be valid sets, but really are not sets. 
+\end{myqdef}
 
+\end{frame}
+
+\begin{frame}
+Here are some examples of sets:
+\begin{alphalist}
+
+\item  $\{46, 107\}$ is a set with two members, namely 46 and 107. We reserve the curly braces to delineate a set.
+
+\item  $\{46, \{46, 107 \} \}$ is a set with two members, namely 46 and  \(\{46, 107 \}\).  One member of this set is an integer, but the other is a set with two members--that's OK.
+
+\item $\{0,1,2,3, \dots \}$ is apparently the set of all nonnegative integers.  I say apparently because the ellipses (the $\dots$) isn't entirely clear.
+
+\item $\{ \}$ is a set with no members. 
+\end{alphalist}
+\end{frame}
 \begin{frame}{Named Sets}
 
 We'll use the following names for subsets of real numbers:
@@ -131,6 +150,23 @@ We'll use the following names for subsets of real numbers:
 
 \end{frame}
 
+\begin{frame}{Membership}
+
+For a set $A$, we define a predicate (boolean valued function) as
+\[
+   x \in A = \begin{cases} \mathrm{T} & \mbox{ if }  x  \mbox{ is a member of } A \\
+                                     \mathrm{F} &  \mbox{ if } x \mbox{ is not  member of } A   
+                                     \end{cases}          
+\]
+For example:
+
+\begin{alphalist}
+\item $ 107 \in \{46, 107\} = \mathrm{T}$
+\item $ \{107 \} \in \{46, \{107 \} \} = \mathrm{T}$
+\item $ \{107 \} \in \{46, 107 \} = \mathrm{F}$
+\end{alphalist}
+
+\end{frame}
 
 \begin{frame}{Set Operators}
 
@@ -292,6 +328,8 @@ We can write this as
 \end{checklist}
 
 \end{frame}
+
+\end{document}
 
 \begin{frame}{A unique template}
 
