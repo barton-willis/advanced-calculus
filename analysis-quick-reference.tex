@@ -128,25 +128,41 @@
 \end{tabular}
 
 \section*{Named Sets}
-\begin{tabular}{|L | L |} \hline 
-\mathrm{empty\,\, set} & \varnothing \\ 
-\mathrm{real\,\, numbers} & \mathbf{R} \\
-\mathrm{ordered \, \, pairs }  & \mathbf{R}^2 \\
-\mathrm{integers } & \mathbf{Z} \\
-\mathrm{positive \,\,  integers } & \mathbf{Z}_{>0} \\ 
-\mathrm{positive \,\, real \,\,  numbers} & \mathbf{R}_{>0} \\
-\hline
-\end{tabular}
+\begin{minipage}[c]{0.1665\textwidth}
+    \begin{tabular}{|L | L |} \hline 
+        \mathrm{empty\,\, set} & \varnothing \\ 
+        \mathrm{real\,\, numbers} & \mathbf{R} \\
+        \mathrm{ordered \, \, pairs }  & \mathbf{R}^2 \\
+        \hline
+    \end{tabular}
+\end{minipage}
+    \begin{minipage}[c]{0.1665\textwidth}
+        \begin{tabular}{|L | L |} \hline 
+            \mathrm{integers } & \mathbf{Z} \\
+            \mathrm{positive \,\,  integers } & \mathbf{Z}_{>0} \\ 
+            \mathrm{positive \,\, real} & \mathbf{R}_{>0} \\
+            \hline
+        \end{tabular}              
+\end{minipage}
+
 
 \section*{Set Symbols}
-\begin{tabular}{|L | L|} \hline
-\mbox{Meaning}  & \mbox{Symbol} \\ \hline
-\mathrm{is \,\, a \,\, member} & \in \\
-\mathrm{subset}       & \subset \\
-\mathrm{intersection} & \cap \\
-\mathrm{union} & \cup  \\ 
-\mathrm{set \,\,  minus}  & \setminus \\ \hline
-\end{tabular}
+\begin{minipage}[c]{0.1665\textwidth}
+    \begin{tabular}{|L | L|} \hline
+        \mbox{Meaning}  & \mbox{Symbol} \\ \hline
+        \mathrm{is \,\, a \,\, member} & \in \\
+        \mathrm{subset}       & \subset \\
+        \mathrm{intersection} & \cap \\ \hline
+        \end{tabular}   
+\end{minipage}
+\begin{minipage}[c]{0.1665\textwidth}
+    \begin{tabular}{|L | L|} \hline
+        \mbox{Meaning}  & \mbox{Symbol} \\ \hline
+        \mathrm{union} & \cup  \\ 
+        \mathrm{Cartesian} & \times \\
+        \mathrm{set \,\,  minus}  & \setminus \\ \hline
+        \end{tabular}   
+\end{minipage}
 \section*{Intervals}
 \begin{minipage}[c]{0.333\textwidth}
 For numbers \(a\) and \(b\), we define the intervals:
@@ -176,7 +192,6 @@ For numbers \(a\) and \(b\), we define the intervals:
 
 \section*{Tautologies}
 \begin{alignat*}{2}
-    &\lnot \lnot P \equiv P \\
     &\lnot (P \land Q) \equiv \lnot P \lor \lnot Q \\
     &P \centernot \implies Q \equiv P \land \lnot Q \\
     &\lnot (\forall x \in A)(P(x)) \equiv  (\exists x \in A)(\lnot P(x)) \\
