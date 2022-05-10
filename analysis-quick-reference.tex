@@ -25,6 +25,7 @@
 
 \newcommand{\dom}{\mathrm{dom}} 
 \newcommand{\range}{\mathrm{range}} 
+\newcommand{\codom}{\mathrm{codom}}
 \newcommand{\zero}{\mathrm{zero}} 
 \newcommand{\reals}{\mathbf{R}} 
 \newcommand{\ball}{\mathrm{ball}}
@@ -33,7 +34,10 @@
 \newcommand{\arcsec}{\mathrm{arcsec}}
 \newcommand{\arccsc}{\mathrm{arccsc}}
 \newcommand{\arccot}{\mathrm{arccot}}
-
+\newcommand{\glb}{\mathrm{glb}}
+\newcommand{\lub}{\mathrm{lub}}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\parens}{\lparen}{\rparen}
 \usepackage{amsmath,amssymb,textcomp}
 \everymath{\displaystyle}
 
@@ -145,7 +149,6 @@
         \end{tabular}              
 \end{minipage}
 
-
 \section*{Set Symbols}
 \begin{minipage}[c]{0.1665\textwidth}
     \begin{tabular}{|L | L|} \hline
@@ -179,25 +182,46 @@ For numbers \(a\) and \(b\), we define the intervals:
 \end{minipage}
 
 \section*{Logic Symbols}
-\begin{tabular}{|L | L|} \hline 
-\mbox{Meaning}  & \mbox{Symbol} \\ \hline 
-\mathrm{negation} &  \lnot   \\
-\mathrm{and} &  \land  \\
-\mathrm{or} &  \lor  \\
-\mathrm{implies} &  \implies  \\
-\mathrm{equivalent} &  \equiv \\ 
-\mbox{for all} & \forall \\
-\mbox{there exists} & \exists \\ \hline
-\end{tabular}
+\begin{minipage}[c]{0.1665\textwidth}
+    \begin{tabular}{|L | L|} \hline 
+        \mbox{Meaning}  & \mbox{Symbol} \\ \hline 
+        \mathrm{negation} &  \lnot   \\
+        \mathrm{and} &  \land  \\
+        \mathrm{or} &  \lor  \\
+        \mathrm{implies} &  \implies \\ \hline    
+    \end{tabular}   
+\end{minipage}
+\begin{minipage}[c]{0.1665\textwidth}
+    \begin{tabular}{|L | L|} \hline 
+        \mbox{Meaning}  & \mbox{Symbol} \\ \hline 
+        \mathrm{equivalent} &  \equiv \\ 
+        \mbox{for all} & \forall \\
+        \mbox{there exists} & \exists \\ \hline
+    \end{tabular}   
+\end{minipage}
+
 
 \section*{Tautologies}
-\begin{alignat*}{2}
-    &\lnot (P \land Q) \equiv \lnot P \lor \lnot Q \\
+\begin{alignat*}{1}
+    &\lnot \parens*{P \land Q} \equiv \lnot P \lor \lnot Q \\
     &P \centernot \implies Q \equiv P \land \lnot Q \\
-    &\lnot (\forall x \in A)(P(x)) \equiv  (\exists x \in A)(\lnot P(x)) \\
-    &\lnot (\exists x \in A)(P(x)) \equiv  (\forall x \in A)(\lnot P(x)) \\
+    &\lnot \parens*{\forall x \in A}\parens*{P(x)} \equiv \parens*{\exists x \in A}\parens*{\lnot P \parens*{x}} \} \\
+    &\lnot \parens*{\exists x \in A} \parens*{P \parens*{x}} \equiv \parens*{\forall x \in A} \parens*{\lnot P \parens{x}} \}
  \end{alignat*}
 
+ \section*{Generalized set operators}
+ Each member of a set $S$ is a set:
+\begin{alignat*}{1}
+    &\underset{x \in S}{\cup} x = \left \{z \mid \parens*{\exists y \in S}\parens{z \in y} \right \}\\
+    &\underset{x \in S}{\cap} x = \left \{z \mid \parens*{\forall y \in S}\parens{z \in y} \right \}
+\end{alignat*}
+ 
+\section*{Functions applied to  sets}
+Let $A \subset \dom(F)$ and $B \subset \codom(F)$:
+\begin{alignat*}{1}
+    F(A) &= \{F(x) \mid x \in A \} \\
+    F^{-1}(B) &= \{x \in \dom(F) \mid F(x) \in B \}
+\end{alignat*}
  \section*{Function Notation}
 \begin{tabular}{|L | L|} \hline 
     \dom(F) &   \mbox{domain of function } F \\
@@ -221,25 +245,23 @@ For numbers \(a\) and \(b\), we define the intervals:
    \forall(x \in \reals) (\lceil x \rceil \geq x) \\
 \end{align*}
 \end{comment}
-
-
   
 \section*{Bounded sets}
-\begin{description}%[\itemsep=0em]
-    \item[bounded below] A set $A$ is bounded below provided
-        \[\exists M \in \reals)(\forall x \in A)(M < x),\]
+\begin{description}[\itemsep=0em]
+    \item[Bounded below] A set $A$ is bounded below provided\\
+        \((\exists M \in \reals)(\forall x \in A)(M < x)\).
 
-    \item[bounded above] The set $A$ is bounded above provided
-        \[(\exists M \in \reals)(\forall x \in A)(x < M ). \]  
+    \item[Bounded above] The set $A$ is bounded above provided\\
+        \((\exists M \in \reals)(\forall x \in A)(x < M ) \).
         
-    \item[bounded set] A set is bounded if it is bounded below and bounded above.
+    \item[Bounded] A set is bounded if it is bounded below and bounded above.
 
 \end{description}
 
 \section*{Elementary function properties}
-    \begin{description}
+    \begin{description}[\itemsep=0em]
         \item[Increasing] \((\forall x,y \in A)(x < y \implies F(x) < F(y)) \).
-        \item[Decreasing] \((\forall x,y \in A)(x < y \implies F(x) < F(y)) \).
+        \item[Decreasing] \((\forall x,y \in A)(x < y \implies F(x) > F(y)) \).
         \item[One-to-one] \((\forall x,y \in \dom(F))(F(x) = F(y) \implies x = y) \).
         \item[Bounded above] \((\exists M \in \reals)(\forall x \in \dom(F))(F(x) < M) \).
         \item[Bounded below] \(\left (\exists M \in \reals \right) \left (\forall x \in \dom(F) \right ) \left (M < F(x) \right) \).
@@ -247,32 +269,73 @@ For numbers \(a\) and \(b\), we define the intervals:
 
 \section*{Topology}
 
-\begin{description}[\itemsep=1.5pt \parsep=1.5pt]
+\begin{description}[\itemsep=0em]
     \item[Open ball] $\ball(a, r) = \{x \in \reals \ssep -r < x-a < r \}$
   
     \item[Punctured ball] $\ball^\prime(a, r) = \ball(a, r) \setminus \{a\}$
   
-    \item[Open set] A subset $A$ of $\reals$ is open provided
-        \begin{equation*}  \left(\forall x \in A\right ) \left (\exists \, r \in \reals_{>0})(\ball(x,r) \subset A \right). \end{equation*} 
+    \item[Open set] A subset $A$ of $\reals$ is open provided\\
+        \(\left(\forall x \in A\right ) \left (\exists \, r \in \reals_{>0})(\ball(x,r) \subset A \right)\)
   
     \item[Closed set] A subset $A$ of $\reals$ is closed provided \(\reals \setminus A\) is open.
   
     \item[Limit point] A number $a$ is a limit point of a set $A$ provided
-         \begin{equation*}  \forall r \in \reals_{>0})(\ball^\prime(a, r) \cap A \neq \varnothing).  \end{equation*} 
+         \( (\forall r \in \reals_{>0})(\ball^\prime(a, r) \cap A \neq \varnothing) \)
 
-\end{description}    
+    \item[Open cover] A set $\mathcal{C}$ is a cover of a set $A$ provided 
+     \begin{alphalist}
+         \item every member of $\mathcal{C}$ is a set
+         \item $A \subset \underset{x \in S}{\cup} x$
+     \end{alphalist}
+    \end{description} 
+
+\section*{Least and greatest bounds} 
+For any subset $A$ of $\reals$:
+\begin{description}[\itemsep=0em]
+    \item[glb] $z = \glb(A)$ provided
+    \begin{alphalist}
+        \item $z$ is an lower bound for $A$
+        \item $x$ is a lower bound for $A$ implies $z \leq x$
+    \end{alphalist}
+   \item[lub]  $z = \lub(A)$ provided
+   \begin{alphalist}
+       \item $z$ is an upper bound for $A$
+       \item $x$ is a upper bound for $A$ implies $z \leq x$
+   \end{alphalist}
+\end{description}   
+\section*{Sequences}
+\begin{description}[\itemsep=0em]
+\item[Bounded] A sequence $F$ is bounded if $\range(F)$ bounded.
+
+\item[Cauchy] A sequence $F$ is Cauchy provided
+\begin{alphalist}
+    \item for every $\varepsilon \in \reals_{>0}$
+    \item there is $n \in \integers$
+    \item such that for all $k,\ell \in \integers_{>n}$
+    \item $|F_k - F_\ell| < \varepsilon$
+\end{alphalist}
+
+\item[Converges] A sequence $F$ converges provided
+\begin{alphalist}
+    \item there is $L \in \reals$
+    \item and $n \in \integers$
+    \item such that for all $k \in \integers_{>n}$
+    \item $|F_k - L | < \varepsilon$.
+\end{alphalist}
+\end{description}
+
 \section*{Functions}   
-\begin{description}
+\begin{description}[\itemsep=0em]
     \item[Continuous] A function $F$ is continuous at $a$ provided
     \begin{alphalist}
-        \item $a \in \dom(F)$ and; 
+        \item $a \in \dom(F)$; and
         \item for every $\varepsilon \in \reals_{>0}$
         \item there is $\delta \in \reals_{>0}$
         \item such that for all $x \in \ball(a,\delta) \cap \dom(F)$
         \item we have $F(x) \in \ball(F(a), \epsilon)$.
     \end{alphalist}
 
-    \item[Uniformly continuous]  A function $F$ is unformly continous on a set $A$ provided 
+    \item[Uniformly continuous]  A function $F$ is uniformly continous on a set $A$ provided 
        \begin{alphalist}
           \item $A \subset \dom(F)$; and
           \item for every $\varepsilon \in \reals_{>0}$
@@ -282,7 +345,7 @@ For numbers \(a\) and \(b\), we define the intervals:
        \end{alphalist} 
     \item[Limit]  A function $F$ has a limit toward $a$ provided
        \begin{alphalist}
-          \item $a$ is a limit point of $\dom(F)$ and;
+          \item $a$ is a limit point of $\dom(F)$; and
           \item there is $L \in \reals$
           \item such that for every $\varepsilon \in \reals_{>0}$
           \item there is $\delta \in \reals_{>0}$
@@ -299,11 +362,13 @@ For numbers \(a\) and \(b\), we define the intervals:
      \end{alphalist}
 
 \end{description}
-\end{multicols*}{2}
-\vfill
-\noindent Revised \today. Barton Willis is the author of this work. This work is
-licensed under Attribution 4.0 International (CC BY 4.0) \,  \qrcode[height=0.15in]{https://creativecommons.org/licenses/by/4.0/}. For the current version of
-this document, visit \, \qrcode[height=0.15in]{https://github.com/barton-willis/Math-100-200-level} 
 
+
+\vfill
+\noindent \emph{Revised \today. Barton Willis is the author of this work. This work is
+licensed under Attribution 4.0 International (CC BY 4.0) \,  \qrcode[height=0.15in]{https://creativecommons.org/licenses/by/4.0/}. For the current version of
+this document, visit \, \qrcode[height=0.15in]{https://github.com/barton-willis/Math-100-200-level}}
+
+\end{multicols*}{3}
 
 \end{document}
