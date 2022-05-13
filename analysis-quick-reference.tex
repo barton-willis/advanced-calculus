@@ -45,7 +45,7 @@
 %\renewcommand\familydefault{\sfdefault}
 %\usepackage{tgheros}
 %\usepackage[defaultmono,scale=0.85]{droidmono}
-\usepackage{fourier}
+%\usepackage{fourier}
 \usepackage{multicol}
 \setlength{\columnseprule}{0pt}
 \setlength{\columnsep}{20.0pt}
@@ -162,7 +162,7 @@
     \begin{tabular}{|L | L|} \hline
         \mbox{Meaning}  & \mbox{Symbol} \\ \hline
         \mathrm{union} & \cup  \\ 
-        \mathrm{Cartesian} & \times \\
+        \mathrm{complment} & \phantom{}^\mathrm{C} \\
         \mathrm{set \,\,  minus}  & \setminus \\ \hline
         \end{tabular}   
 \end{minipage}
@@ -205,15 +205,16 @@ For numbers \(a\) and \(b\), we define the intervals:
 \begin{alignat*}{1}
     &\lnot \parens*{P \land Q} \equiv \lnot P \lor \lnot Q \\
     &P \centernot \implies Q \equiv P \land \lnot Q \\
-    &\lnot \parens*{\forall x \in A}\parens*{P(x)} \equiv \parens*{\exists x \in A}\parens*{\lnot P \parens*{x}} \} \\
-    &\lnot \parens*{\exists x \in A} \parens*{P \parens*{x}} \equiv \parens*{\forall x \in A} \parens*{\lnot P \parens{x}} \}
+    &\parens*{P \iff Q} \equiv (P \implies Q) \land (Q \implies P) \\
+    &\lnot \parens*{\forall x \in A}\parens*{P(x)} \equiv \parens*{\exists x \in A}\parens*{\lnot P \parens*{x}}  \\
+    &\lnot \parens*{\exists x \in A} \parens*{P \parens*{x}} \equiv \parens*{\forall x \in A} \parens*{\lnot P \parens{x}}
  \end{alignat*}
 
  \section*{Generalized set operators}
- Each member of a set $S$ is a set:
+ Each member of a set $\mathcal{C}$ is a set:
 \begin{alignat*}{1}
-    &\underset{x \in S}{\cup} x = \left \{z \mid \parens*{\exists y \in S}\parens{z \in y} \right \}\\
-    &\underset{x \in S}{\cap} x = \left \{z \mid \parens*{\forall y \in S}\parens{z \in y} \right \}
+    &\underset{A \in \mathcal{C}}{\bigcup} A = \left \{z \mid \parens*{\exists \, B  \in \mathcal{C} }\parens{z \in B} \right \}\\
+    &\underset{A \in \mathcal{C}}{\bigcap} A = \left \{z \mid \parens*{\forall \, B \in \mathcal{C}}\parens{z \in B} \right \}
 \end{alignat*}
  
 \section*{Functions applied to  sets}
@@ -230,6 +231,12 @@ Let $A \subset \dom(F)$ and $B \subset \codom(F)$:
     A \to B   & \mbox{set of functions with} A \mbox { to } B \\ \hline
 \end{tabular}
 
+\section*{Triangle inequalities}
+For all $x,y \in \reals$, we have
+\begin{alignat*}{1}
+    |x+y| &\leq |x| + |y| \\
+    \left | |x| - |y| \right |  &\leq |x-y|    
+\end{alignat*}
 \section*{Floor and ceiling}
 
 \noindent Definitions:
@@ -258,10 +265,11 @@ Let $A \subset \dom(F)$ and $B \subset \codom(F)$:
 
 \section*{Elementary function properties}
     \begin{description}[\itemsep=0em]
-        \item[Increasing] \((\forall x,y \in A)(x < y \implies F(x) < F(y)) \).
-        \item[Decreasing] \((\forall x,y \in A)(x < y \implies F(x) > F(y)) \).
-        \item[One-to-one] \((\forall x,y \in \dom(F))(F(x) = F(y) \implies x = y) \).
-        \item[Bounded above] \((\exists M \in \reals)(\forall x \in \dom(F))(F(x) < M) \).
+        \item[Increasing] \( \parens*{\forall x,y \in A} \parens*{x < y \implies F(x) < F(y)} \).
+        \item[Decreasing] \( \parens*{\forall x,y \in A} \parens*{x < y \implies F(x) > F(y)} \).
+        \item[One-to-one] \( \parens*{\forall x,y \in \dom(F)} \parens{F(x) = F(y) \implies x = y} \).
+        \item[Subadditive] \( \parens*{\forall x,y \in \dom(F)} \parens*{F(x+y) \leq F(x) + F(y)} \).
+        \item[Bounded above] \( \parens{\exists M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{F(x) < M} \).
         \item[Bounded below] \(\left (\exists M \in \reals \right) \left (\forall x \in \dom(F) \right ) \left (M < F(x) \right) \).
     \end{description}
 
@@ -283,7 +291,7 @@ Let $A \subset \dom(F)$ and $B \subset \codom(F)$:
     \item[Open cover] A set $\mathcal{C}$ is a cover of a set $A$ provided 
      \begin{alphalist}
          \item every member of $\mathcal{C}$ is a set
-         \item $A \subset \underset{x \in S}{\cup} x$
+         \item $A \subset \underset{B \in S}{\bigcup} B $
      \end{alphalist}
 
      \item[Compact] A set $A$ is compact provided for every 
