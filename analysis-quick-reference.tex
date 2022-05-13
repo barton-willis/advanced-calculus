@@ -194,21 +194,23 @@ For numbers \(a\) and \(b\), we define the intervals:
 \begin{minipage}[c]{0.1665\textwidth}
     \begin{tabular}{|L | L|} \hline 
         \mbox{Meaning}  & \mbox{Symbol} \\ \hline 
-        \mathrm{equivalent} &  \equiv \\ 
+        \mbox{equivalent} &  \equiv \\ 
+        \mbox{if and only if} & \iff \\ 
         \mbox{for all} & \forall \\
         \mbox{there exists} & \exists \\ \hline
     \end{tabular}   
 \end{minipage}
 
-
+\begin{minipage}[t]{0.3333\textwidth}
 \section*{Tautologies}
 \begin{alignat*}{1}
     &\lnot \parens*{P \land Q} \equiv \lnot P \lor \lnot Q \\
     &P \centernot \implies Q \equiv P \land \lnot Q \\
-    &\parens*{P \iff Q} \equiv (P \implies Q) \land (Q \implies P) \\
-    &\lnot \parens*{\forall x \in A}\parens*{P(x)} \equiv \parens*{\exists x \in A}\parens*{\lnot P \parens*{x}}  \\
-    &\lnot \parens*{\exists x \in A} \parens*{P \parens*{x}} \equiv \parens*{\forall x \in A} \parens*{\lnot P \parens{x}}
+    &\parens*{P \iff Q} \equiv \parens*{\parens*{P \implies Q} \land \parens*{Q \implies P}} \\
+    &\lnot \parens*{\forall \, x \in A}\parens*{P(x)} \equiv \parens*{\exists \, x \in A}\parens*{\lnot P \parens*{x}}  \\
+    &\lnot \parens*{\exists \, x \in A} \parens*{P \parens*{x}} \equiv \parens*{\forall \, x \in A} \parens*{\lnot P \parens{x}}
  \end{alignat*}
+\end{minipage}
 
  \section*{Generalized set operators}
  Each member of a set $\mathcal{C}$ is a set:
