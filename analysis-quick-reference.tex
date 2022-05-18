@@ -36,6 +36,7 @@
 \newcommand{\arccot}{\mathrm{arccot}}
 \newcommand{\glb}{\mathrm{glb}}
 \newcommand{\lub}{\mathrm{lub}}
+\newcommand{\length}{\mathrm{length}}
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\parens}{\lparen}{\rparen}
 \usepackage{amsmath,amssymb,textcomp}
@@ -110,6 +111,7 @@
 %\makeatother
 
 \raggedbottom 
+\raggedright
 %\usepackage{tikz-3dplot}
 \begin{document}
 
@@ -120,14 +122,14 @@
 \section*{Greek Characters}
 \begin{tabular}{|L | L| L|} \hline
 \mbox{Name} & \mbox{Symbol} & \mbox{Typical use(s)} \\ \hline
-\mathrm{alpha} & \alpha  & \mbox{ angle, constant} \\
-\mathrm{beta} & \beta  & \mbox{ angle, constant}  \\ 
+\mathrm{alpha} & \alpha  & \mbox{angle, constant} \\
+\mathrm{beta} & \beta  & \mbox{angle, constant}  \\ 
 \mathrm{gamma} & \gamma & \mbox{angle, constant} \\
-\mathrm{delta} & \delta  & \mbox{ limit definition}\\
+\mathrm{delta} & \delta  & \mbox{limit definition}\\
 \mathrm{epsilon} & \epsilon  \mbox{ or } \varepsilon & \mbox{limit definition} \\
-\mathrm{theta}  & \theta  \mbox{ or } \vartheta &\mbox{ angle}\\ 
+\mathrm{theta}  & \theta  \mbox{ or } \vartheta &\mbox{angle}\\ 
 \mathrm{pi} & \pi \mbox{ or } \uppi & \mbox{circular constant} \\
-\mathrm{phi} & \phi \mbox{ or } \varphi  & \mbox{ angle, constant} \\
+\mathrm{phi} & \phi \mbox{ or } \varphi  & \mbox{angle, constant} \\
 \hline
 \end{tabular}
 
@@ -162,7 +164,7 @@
     \begin{tabular}{|L | L|} \hline
         \mbox{Meaning}  & \mbox{Symbol} \\ \hline
         \mathrm{union} & \cup  \\ 
-        \mathrm{complment} & \phantom{}^\mathrm{C} \\
+        \mathrm{complment} & \mbox{superscript}^\mathrm{C} \\
         \mathrm{set \,\,  minus}  & \setminus \\ \hline
         \end{tabular}   
 \end{minipage}
@@ -203,6 +205,7 @@ For numbers \(a\) and \(b\), we define the intervals:
 
 \begin{minipage}[t]{0.3333\textwidth}
 \section*{Tautologies}
+\vspace{-0.1in}
 \begin{alignat*}{1}
     &\lnot \parens*{P \land Q} \equiv \lnot P \lor \lnot Q \\
     &P \centernot \implies Q \equiv P \land \lnot Q \\
@@ -229,8 +232,9 @@ Let $A \subset \dom(F)$ and $B \subset \codom(F)$:
 \begin{tabular}{|L | L|} \hline 
     \dom(F) &   \mbox{domain of function } F \\
     \range(F) &   \mbox{range of function } F \\
-    C_{A} & \mbox{ set of continuous functions on set } A \\
-    A \to B   & \mbox{set of functions with} A \mbox { to } B \\ \hline
+    \mathrm{C}_{A} & \mbox{ set of continuous functions on set } A \\
+    \mathrm{C}_{A}^1 & \mbox{ set of differentiable functions on set } A \\
+    A \to B   & \mbox{set of functions from} A \mbox { to } B \\ \hline
 \end{tabular}
 
 \section*{Triangle inequalities}
@@ -249,30 +253,32 @@ For all $x,y \in \reals$, we have
 
 \noindent Properties:
 \begin{align*}
-   \forall(x \in \reals) (\lfloor x \rfloor \leq x) \\
-   \forall(x \in \reals) (\lceil x \rceil \geq x) \\
+  % &\parens*{\forall x \in \reals} \parens*{\lfloor x \rfloor \leq x} \\
+  % &\parens*{\forall x \in \reals} \parens*{\lceil x \rceil \geq x} \\
+   & \parens*{\forall x \in \reals, n \in \integers} \parens*{x < n \iff  \lfloor x \rfloor < n}\\
+   & \parens*{\forall x \in \reals, n \in \integers} \parens*{n < x \iff  n < \lceil  x \rceil}\\
 \end{align*}
   
 \section*{Bounded sets}
 \begin{description}[\itemsep=0em]
-    \item[Bounded below] A set $A$ is bounded below provided\\
-        \((\exists M \in \reals)(\forall x \in A)(M < x)\).
+    \item[Bounded below] A set $A$ is \emph{bounded below} provided\\
+        \((\exists \, M \in \reals)(\forall \, x \in A)(M < x)\).
 
-    \item[Bounded above] The set $A$ is bounded above provided\\
-        \((\exists M \in \reals)(\forall x \in A)(x < M ) \).
+    \item[Bounded above] The set $A$ is \emph{bounded above} provided\\
+        \((\exists \, M \in \reals)(\forall \, x \in A)(x < M ) \).
         
-    \item[Bounded] A set is bounded if it is bounded below and bounded above.
+    \item[Bounded] A set is \emph{bounded} if it is bounded below and bounded above.
 
 \end{description}
 
 \section*{Elementary function properties}
     \begin{description}[\itemsep=0em]
-        \item[Increasing] \( \parens*{\forall x,y \in A} \parens*{x < y \implies F(x) < F(y)} \).
-        \item[Decreasing] \( \parens*{\forall x,y \in A} \parens*{x < y \implies F(x) > F(y)} \).
-        \item[One-to-one] \( \parens*{\forall x,y \in \dom(F)} \parens{F(x) = F(y) \implies x = y} \).
-        \item[Subadditive] \( \parens*{\forall x,y \in \dom(F)} \parens*{F(x+y) \leq F(x) + F(y)} \).
-        \item[Bounded above] \( \parens{\exists M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{F(x) < M} \).
-        \item[Bounded below] \(\left (\exists M \in \reals \right) \left (\forall x \in \dom(F) \right ) \left (M < F(x) \right) \).
+        \item[Increasing] \( \parens*{\forall \, x,y \in A} \parens*{x < y \implies F(x) < F(y)} \)
+        \item[Decreasing] \( \parens*{\forall \, x,y \in A} \parens*{x < y \implies F(x) > F(y)} \)
+        \item[One-to-one] \( \parens*{\forall \, x,y \in \dom(F)} \parens*{F(x) = F(y) \implies x = y} \)
+        \item[Subadditive] \( \parens*{\forall \, x,y \in \dom(F)} \parens*{F(x+y) \leq F(x) + F(y)} \)
+        \item[Bounded above] \( \parens{\exists \, M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{F(x) < M} \)
+        \item[Bounded below] \(\left (\exists \, M \in \reals \right) \parens*{\forall x \in \dom(F)} \parens*{M < F(x)}\)
     \end{description}
 
 \section*{Topology}
@@ -282,13 +288,13 @@ For all $x,y \in \reals$, we have
   
     \item[Punctured ball] $\ball^\prime(a, r) = \ball(a, r) \setminus \{a\}$
   
-    \item[Open set] A subset $A$ of $\reals$ is open provided\\
+    \item[Open set] A subset $A$ of $\reals$ is \emph{open} provided\\
         \(\left(\forall x \in A\right ) \left (\exists \, r \in \reals_{>0})(\ball(x,r) \subset A \right)\)
   
-    \item[Closed set] A subset $A$ of $\reals$ is closed provided \(\reals \setminus A\) is open.
+    \item[Closed set] A subset $A$ of $\reals$ is \emph{closed} provided \(\reals \setminus A\) is open.
   
-    \item[Limit point] A number $a$ is a limit point of a set $A$ provided
-         \( (\forall r \in \reals_{>0})(\ball^\prime(a, r) \cap A \neq \varnothing) \)
+    \item[Limit point] A number $a$ is a \emph{limit point} of a set $A$ provided
+         \( \parens*{\forall \, r \in \reals_{>0}} \parens*{\ball^\prime(a, r) \cap A \neq \varnothing} \)
 
     \item[Open cover] A set $\mathcal{C}$ is a cover of a set $A$ provided 
      \begin{alphalist}
@@ -377,9 +383,50 @@ For any subset $A$ of $\reals$:
 
 \end{description}
 
+\section*{Riemann sums}
+\begin{description}[\itemsep=0em]
+    \item[Partition] A set $\mathcal{P}$ is a partition of an 
+    interval $[a,b]$ provided
+    \begin{alphalist}
+        \item the set  $\mathcal{P}$ is finite
+        \item every member of $\mathcal{P}$ is a closed interval
+        \item the members of $\mathcal{P}$ are pairwise disjoint
+        \item $\underset{I \in \mathcal{P}} \bigcup I = [a,b]$
+    \end{alphalist}
+\end{description}
+Let $F$ be a bounded function on an interval $[a,b]$ and let
+$\mathcal{P}$ be a partition of $[a,b]$. 
+\begin{description}[\itemsep=0em]    
+    \item[Lower sum] $\underline{S}(\mathcal{P}) = \sum_{I \in \mathcal{P}} \glb \parens*{F \parens*{A}} \times  \length(I)$
+    \item[Upper sum] $\overline{S}(\mathcal{P}) = \sum_{I \in \mathcal{P}} \lub \parens*{F \parens*{A}} \times  \length(I)$
+    \item[Riemann sum] $\sum_{I \in \mathcal{P}, x^\star \in I} F \parens*{x^\star} \times  \length(I)$
+\end{description}
+
+\section*{Axioms}
+\begin{description}
+    \item[Completeness] Every nonempty subset $A$ of $\reals$ that is 
+    bounded above has a least upper bound.
+    \item[Well-ordering]  Every non-empty set of positive integers 
+        contains a least element.
+    \item[Induction] $$ \parens*{\forall n \in \integers_{\geq 0}} 
+    \iff P(0) \land \parens*{\forall n \in 
+    \integers_{\geq 0}  P(n) \implies P(n+1)}$$
+\end{description}
+
+\section*{Named Theorems}
+    \begin{description}[\itemsep=0em]
+    \item[Bolzano-Weirstrass] Every bounded real valued sequence has a convergent subsequence.
+    \item[Heine–Borel] A subset of $\reals$ is compact iff it is closed and bounded.
+    \item[ Intermediate value theorem ] If $F \in \mathrm{C}_{[a,b]}$, then
+         $F(I) \subset [\min(F(a),F(b)), \max(F(a),F(b))]$.
+    \item[Mean Value]  If $F \in \mathrm{C}_{[a,b]} \cap \mathrm{C}_{(a,b)}^1$ 
+    there is $\xi \in (a,b) $ such that $(b-a) F^\prime(\xi) = F(b) - F(a)$.
+
+
+\end{description}
 
 \vfill
-\noindent \emph{Revised \today. Barton Willis is the author of this work. This work is
+\noindent {Revised \today. Barton Willis is the author of this work. This work is
 licensed under Attribution 4.0 International (CC BY 4.0) \,  \qrcode[height=0.15in]{https://creativecommons.org/licenses/by/4.0/}. For the current version of
 this document, visit \, \qrcode[height=0.15in]{https://github.com/barton-willis/Math-100-200-level}}
 
