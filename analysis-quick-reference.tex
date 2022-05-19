@@ -8,7 +8,6 @@
 \usepackage{qrcode}
 %\usetikzlibrary{shapes.geometric}
 %\usetikzlibrary{calc}
-\usepackage{array}   % for \newcolumntype macro
 %\usepackage{fourier}
 \usepackage{graphicx,nicefrac}
 \usepackage{isomath,upgreek,xcolor,comment}
@@ -382,7 +381,6 @@ For any subset $A$ of $\reals$:
        \item such that $\phi$ is continuous at $a$ and
        \item $(\forall x \in \dom(F))(F(x) = F(a) + (x-a) \phi(x))$.
      \end{alphalist}
-
 \end{description}
 
 \section*{Riemann sums}
@@ -423,8 +421,6 @@ $\mathcal{P}$ be a partition of $[a,b]$.
          $F(I) \subset [\min(F(a),F(b)), \max(F(a),F(b))]$.
     \item[Mean Value]  If $F \in \mathrm{C}_{[a,b]} \cap \mathrm{C}_{(a,b)}^1$, 
     there is $\xi \in (a,b) $ such that $(b-a) F^\prime(\xi) = F(b) - F(a)$.
-
-
 \end{description}
 
 \vfill
