@@ -221,7 +221,7 @@ For numbers \(a\) and \(b\), we define the intervals:
     &\underset{A \in \mathcal{C}}{\bigcup} A = \left \{z \mid \parens*{\exists \, B  \in \mathcal{C} }\parens{z \in B} \right \}\\
     &\underset{A \in \mathcal{C}}{\bigcap} A = \left \{z \mid \parens*{\forall \, B \in \mathcal{C}}\parens{z \in B} \right \}
 \end{alignat*}
- 
+Theorem: \(\underset{A \in \mathcal{C}}{\bigcup} A^\mathrm{C} = \parens*{\underset{A \in \mathcal{C}}{\bigcap} A}^\mathrm{C} \)
 \section*{Functions applied to  sets}
 Let $A \subset \dom(F)$ and $B \subset \codom(F)$:
 \begin{alignat*}{1}
@@ -273,12 +273,14 @@ For all $x,y \in \reals$, we have
 
 \section*{Elementary function properties}
     \begin{description}[\itemsep=0em]
-        \item[Increasing] \( \parens*{\forall \, x,y \in A} \parens*{x < y \implies F(x) < F(y)} \)
-        \item[Decreasing] \( \parens*{\forall \, x,y \in A} \parens*{x < y \implies F(x) > F(y)} \)
+        \item[Increasing] \( \parens*{\forall \, x,y \in A} \parens*{x < y \implies F(x) \leq F(y)} \).
+        For strictly increasing, replace $F(x) \leq F(y)$ with $F(x) < F(y)$.
+        \item[Decreasing] \( \parens*{\forall \, x,y \in A} \parens*{x < y \implies F(x) \geq F(y)} \)
+        For strictly decreasing, replace $F(x) \geq F(y)$ with $F(x) > F(y)$.
         \item[One-to-one] \( \parens*{\forall \, x,y \in \dom(F)} \parens*{F(x) = F(y) \implies x = y} \)
         \item[Subadditive] \( \parens*{\forall \, x,y \in \dom(F)} \parens*{F(x+y) \leq F(x) + F(y)} \)
-        \item[Bounded above] \( \parens{\exists \, M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{F(x) < M} \)
-        \item[Bounded below] \(\left (\exists \, M \in \reals \right) \parens*{\forall x \in \dom(F)} \parens*{M < F(x)}\)
+        \item[Bounded above] \( \parens*{\exists \, M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{F(x) < M} \)
+        \item[Bounded below] \(\parens*{\exists \, M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{M < F(x)}\)
     \end{description}
 
 \section*{Topology}
@@ -355,7 +357,7 @@ For any subset $A$ of $\reals$:
         \item we have $F(x) \in \ball(F(a), \epsilon)$.
     \end{alphalist}
 
-    \item[Uniformly continuous]  A function $F$ is uniformly continous on a set $A$ provided 
+    \item[Uniformly continuous]  A function $F$ is uniformly continuous on a set $A$ provided 
        \begin{alphalist}
           \item $A \subset \dom(F)$; and
           \item for every $\varepsilon \in \reals_{>0}$
@@ -419,7 +421,7 @@ $\mathcal{P}$ be a partition of $[a,b]$.
     \item[Heine–Borel] A subset of $\reals$ is compact iff it is closed and bounded.
     \item[ Intermediate value theorem ] If $F \in \mathrm{C}_{[a,b]}$, then
          $F(I) \subset [\min(F(a),F(b)), \max(F(a),F(b))]$.
-    \item[Mean Value]  If $F \in \mathrm{C}_{[a,b]} \cap \mathrm{C}_{(a,b)}^1$ 
+    \item[Mean Value]  If $F \in \mathrm{C}_{[a,b]} \cap \mathrm{C}_{(a,b)}^1$, 
     there is $\xi \in (a,b) $ such that $(b-a) F^\prime(\xi) = F(b) - F(a)$.
 
 
