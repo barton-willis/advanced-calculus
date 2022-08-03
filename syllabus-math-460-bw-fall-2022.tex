@@ -5,8 +5,8 @@
 \usepackage{marvosym }
 \usepackage{xcolor}
 \usepackage{comment}
-
-\usepackage[paperwidth=8.5in,paperheight=11in,margin=0.5in]{geometry} 
+\usepackage{pdfpages}
+\usepackage[paperwidth=8.5in,paperheight=11in,margin=0.75in]{geometry} 
 \usepackage[UKenglish]{babel}
 \usepackage[UKenglish]{isodate}% http://ctan.org/pkg/isodate
 \usepackage{hyperref}
@@ -119,7 +119,7 @@ Exam \theex}
 
       \textbf{First Homework due} \dotfill  \printdate{27/8/\the\year}  \\
        \textbf{Exam 1} \dotfill \printdate{23/9/\the\year}  \\
-    \textbf{Exam 2} \dotfill  \printdate{28/10/\the\year} \\
+    \textbf{Exam 2} \dotfill  \printdate{4/11/\the\year} \\
     \textbf{Exam 3} \dotfill \printdate{2/12/\the\year} \\
       \textbf{Final exam} \dotfill  \printdate{14/12/\the\year} 8:00\AM -- 10:00 \AM
 \end{mypar}
@@ -141,25 +141,25 @@ If we end the term with less than 180 points for homework,  your homework point 
 
 \FPeval{\F}{round(\points*0.6-1,0)}
 \FPeval{\Dm}{round(\points*0.6,0)}
-\FPeval{\D}{round(\points*0.63,0)}
-\FPeval{\Dp}{round(\points*0.66,0)}
+\FPeval{\D}{round(\points*0.633,0)}
+\FPeval{\Dp}{round(\points*0.666,0)}
 
 \FPeval{\Cm}{round(\points*0.7,0)}
-\FPeval{\C}{round(\points*0.73,0)}
-\FPeval{\Cp}{round(\points*0.76,0)}
+\FPeval{\C}{round(\points*0.733,0)}
+\FPeval{\Cp}{round(\points*0.766,0)}
 
 \FPeval{\Bm}{round(\points*0.8,0)}
-\FPeval{\B}{round(\points*0.83,0)}
-\FPeval{\Bp}{round(\points*0.86,0)}
+\FPeval{\B}{round(\points*0.833,0)}
+\FPeval{\Bp}{round(\points*0.866,0)}
 
 \FPeval{\Am}{round(\points*0.9,0)}
-\FPeval{\A}{round(\points*0.93,0)}
-\FPeval{\Ap}{round(\points*0.96,0)}
+\FPeval{\A}{round(\points*0.933,0)}
+\FPeval{\Ap}{round(\points*0.966,0)}
 
 The following table shows the \emph{minimum} number of points (out of \points) that
 are required for each of the twelve letter grades D- through A+. For
 example, a point total of \Bp\/  points will earn you a grade of B+,  and 
-a point total of \Am\/ points will earn you a grade of A-. A point
+a point total of \Am\/ points will earn you a grade of A-. If you earn a point
 total of \F\/  or less earns you a failing course grade.
  
  \vspace{0.1in}
@@ -214,9 +214,10 @@ When we are ahead or behind, the topics on the exams will be appropriately adjus
    \item \emph{Exams will be given on  \textbf{Friday} of the week they are assigned.}
    
 
-    \item Homework (labeled \textbf{HW}) will be due one minute before midnight on  Saturday of the week they are assigned.  
+    \item Homework (labelled \textbf{HW}) will be due one minute before midnight on  Saturday of the week they are assigned.  
 
-
+    \item The final exam will be given on \textbf{Wednesday December 14 from 8:00 \AM -- 10:00 \AM}.
+    
 \end{alphalist}
 
 \vspace{0.1in}
@@ -228,21 +229,21 @@ When we are ahead or behind, the topics on the exams will be appropriately adjus
 {\bf Week}  & \textbf{Week Starting} &  {\bf Section(s)} & {\bf Topic(s)} & \textbf{Assessments} \\
 \hline \hline 
 \wk    &  \printdate{22/8/\the\year} &     & Logic, Proof methods, and Overleaf & \hw  \\
-\wk    & \printdate{29/1/\the\year}   &  \S1.1 -- 1.3  & Sets, Functions, Real numbers, Completeness   & \hw  \\
+\wk    & \printdate{29/8/\the\year}   &  \S1.1 -- 1.3  & Sets, Functions, Real numbers, Completeness   & \hw  \\
 \wk    & \printdate{5/9/\the\year}&     \S2.1 -- \S2.2  & Sequences \& Subsequences    &  \hw \\
 \wk    & \printdate{12/9/\the\year}&     \S2.1 -- \S2.2  & Sequences \& Subsequences    &  \hw \\
-\wk    & \printdate{19/9/\the\year}   &  \S2.3  & Bolzano-Weierstrass    &  \hw          \\
-\wk    & \printdate{26/9/\the\year} &  \S2.5 -- \S2.6    &  Topology    & \textbf{\ex}  \\ \hline
-\wk    & \printdate{3/10/\the\year}    & \S2.7   &   Topology  &    \hw  \\
-\wk    & \printdate{10/10/\the\year}     & \S2.8 -- \S3.1  & Limits and Continuity & \hw \\
-\wk    & \printdate{17/10/\the\year}   & \S3.1 -- \S3.2   & Limits and Continuity     & \hw   \\
-\wk   &  \printdate{24/10/\the\year}   & \S3.3 -- \S3.4 & Monotone and Inverse Functions     & \hw \\ 
-\wk   &  \printdate{31/10/\the\year}      &   \S3.5 & Derivatives   &  \textbf{\ex} \\ \hline
-\wk   &  \printdate{7/11/\the\year}   &   \S41 -- \S4.2 &  Derivatives   & \hw  \\
-\wk   & \printdate{14/11/\the\year}  & \S4.3    & Some Mean Value Theorems   &  \hw   \\
-\wk   & \printdate{21/11/\the\year} & \S5.1 -- \S5.2  & The Riemann Integral    & \hw \\
-\wk   & \printdate{28/11/\the\year}    &  \S5.3 -- \S5.4  & The Riemann Integral     &   \textbf{\ex}      \\
-\wk   & \printdate{5/12/\the\year}   &       &  Catch up and Review     &   \hw \\ \hline
+\wk    & \printdate{19/9/\the\year}   &  \S2.3  & Bolzano-Weierstrass    &   \textbf{\ex}          \\ \hline
+\wk    & \printdate{26/9/\the\year} &  \S3.1    &  Topology    &  \hw \\ 
+\wk    & \printdate{3/10/\the\year}    & \S3.1  &   Topology  &    \hw  \\
+\wk    & \printdate{10/10/\the\year}     & \S4.1  & Limits and Continuity & \hw \\
+\wk    & \printdate{17/10/\the\year}   & \S4.1  & Limits and Continuity     & \hw   \\
+\wk   &  \printdate{24/10/\the\year}   & \S4.2 & Monotone and Inverse Functions     & \hw \\ 
+\wk   &  \printdate{31/10/\the\year}      &   \S5.1 & Derivatives   &  \textbf{\ex} \\ \hline
+\wk   &  \printdate{7/11/\the\year}   &   \S5.1 &  Derivatives   & \hw  \\
+\wk   & \printdate{14/11/\the\year}  & \S5.2    & Some Mean Value Theorems   &  \hw   \\
+\wk   & \printdate{21/11/\the\year} & \S6.1  & The Riemann Integral    & \hw \\
+\wk   & \printdate{28/11/\the\year}    &  \S6.2  & The Riemann Integral     &   \textbf{\ex}    \\
+\wk   & \printdate{5/12/\the\year}   &       &  Catch up or Review     &    \\ \hline
  \wk   & \printdate{12/12/\the\year}     &     &    \hfill  & \textbf{ Final Exam}  \\  \hline
    
 \end{tabular}
@@ -255,13 +256,13 @@ Please see \url{https://www.unk.edu/academic_affairs/asa_forms/course-policies-a
 
 \subsubsection* {Policies}
 
-Unless an assessment is \emph{explicitly} stated to be a group project,  \emph{all work you turn in for a grade must be your own.}  If you need assistance in completing a homework assignment, you may ask me for help. Googling for answers, seeking help from the Learning Commons or other faculty members,  or using solution keys from previous terms (either from UNK or other universities) is also prohibited.  Violation of these rules will result in earning a grade of zero on the assessment. Further each homework assignment you turn in for a grade must include the statement:
+Unless an assessment is \emph{explicitly} stated to be a group project,  \emph{all work you turn in for a grade must be your own.}  If you need assistance in completing a homework assignment, you may ask me for help. Googling for answers, seeking help from the Learning Commons or other faculty members,  or using solution keys from previous terms (either from UNK or other universities) is also prohibited.  Violation of these rules will result in earning a grade of zero on the assessment. Each homework assignment you turn in for a grade must include the statement:
 
 \begin{quote}
 \fbox{I have neither given nor received unauthorized assistance on this assignment.}
 \end{quote}
  If two assignments are so similar that only collaboration could explain their similarities, both assignments will receive a grade of zero.  Using unauthorized materials or communication devices (cell phone, for
-example) while taking a test will earn you a \emph{failing course grade.}  
+example) while taking a test will earn you a grade of zero on that assessment.  
 
 
 Examinations are closed book and closed notes; using
@@ -269,6 +270,8 @@ unauthorized materials while taking a test will earn you a failing
 course grade.  
 
 \begin{enumerate}
+
+\item Regular in person class attendance is required. If you are ill or need to miss class due to athletics, please let me know ahead of time, and I will make an effort to put the class on Zoom.
 
 \item For examinations and in class assignments, show your work.  \emph{No credit will be given for multi-step problems without the necessary work. Your solution must contain enough detail
 so that I am convinced that you could correctly work any similar problem.} Also erase or clearly mark any work you want me to ignore; otherwise,
@@ -289,11 +292,10 @@ course assessments.
 
 
 
-\item For examinations, you make use a teacher provided crib sheet, 
+\item For examinations, you make use a teacher provided quick reference sheet, 
 but no other reference materials. You may also use a pencil, eraser, 
 and a scientific calculator. For examinations, your phone and all such
-devices must be turned off and \emph{out of sight}. Checking your phone
-to look at the time is \emph{not} allowed.
+devices must be turned off and \emph{out of sight}. 
 
 \item Generally, if you are ill or absent for any reason (including 
 athletics), you must turn in your in class work on time. Permission to
@@ -325,6 +327,5 @@ your grades, I'll correct it provided you saved your paper.
 
 
 \end{enumerate}
-
 \end{document}
 
