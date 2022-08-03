@@ -295,8 +295,12 @@ For all $x,y \in \reals$, we have
     \item[Closed set] A subset $A$ of $\reals$ is \emph{closed} provided \(\reals \setminus A\) is open.
   
     \item[Limit point] A number $a$ is a \emph{limit point} of a set $A$ provided
-         \( \parens*{\forall \, r \in \reals_{>0}} \parens*{\ball^\prime(a, r) \cap A \neq \varnothing} \)
+         \( \parens*{\forall \, r \in \reals_{>0}} \parens*{\ball^\prime(a, r) \cap A \neq \varnothing} \).
+         
 
+    \item[Set closure] $\overline{A} = A \cup \mathrm{LP}(A)$, were $\mathrm{LP}(A)$ is the
+    set of limit points of $A$.
+    
     \item[Open cover] A set $\mathcal{C}$ is a cover of a set $A$ provided 
      \begin{alphalist}
          \item every member of $\mathcal{C}$ is a set
@@ -389,17 +393,17 @@ For any subset $A$ of $\reals$:
     interval $[a,b]$ provided
     \begin{alphalist}
         \item the set  $\mathcal{P}$ is finite
-        \item every member of $\mathcal{P}$ is a closed interval
-        \item the interiors of the members of $\mathcal{P}$ are pairwise disjoint
-        \item $\underset{I \in \mathcal{P}} \bigcup I = [a,b]$
+        \item every member of $\mathcal{P}$ is an open interval
+        \item the members of $\mathcal{P}$ are pairwise disjoint
+        \item $\underset{I \in \mathcal{P}} \bigcup \overline{I} = [a,b]$
     \end{alphalist}
 \end{description}
 Let $F$ be a bounded function on an interval $[a,b]$ and let
 $\mathcal{P}$ be a partition of $[a,b]$. 
 \begin{description}[\itemsep=0em]    
-    \item[Lower sum] $\underline{S}(\mathcal{P}) = \sum_{I \in \mathcal{P}} \glb \parens*{F \parens*{A}} \times  \length(I)$
-    \item[Upper sum] $\overline{S}(\mathcal{P}) = \sum_{I \in \mathcal{P}} \lub \parens*{F \parens*{A}} \times  \length(I)$
-    \item[Riemann sum] $\sum_{I \in \mathcal{P}, x^\star \in I} F \parens*{x^\star} \times  \length(I)$
+    \item[Lower sum] $\underline{S}(\mathcal{P}) = \sum_{I \in \mathcal{P}} \glb \parens*{F \parens*{\overline{I}}} \times  \length(I)$
+    \item[Upper sum] $\overline{S}(\mathcal{P}) = \sum_{I \in \mathcal{P}} \lub \parens*{F \parens*{\overline{I}}} \times  \length(I)$
+    \item[Riemann sum] $\sum_{I \in \mathcal{P}, x^\star \in \overline{I}} F \parens*{x^\star} \times  \length(I)$
 \end{description}
 
 \section*{Axioms}
@@ -417,6 +421,7 @@ $\mathcal{P}$ be a partition of $[a,b]$.
     \begin{description}[\itemsep=0em]
     \item[Bolzano-Weirstrass] Every bounded real valued sequence has a convergent subsequence.
     \item[Heine–Borel] A subset of $\reals$ is compact iff it is closed and bounded.
+    \item[Cauchy completeness]  Every Cauchy sequence in \(\reals\) converges. 
     \item[ Intermediate value theorem ] If $F \in \mathrm{C}_{[a,b]}$, then
     for all $y \in [\min(F(a),F(b)), \max(F(a),F(b))]$ there is
     $x \in [a,b]$ such that $F(x)=y$.      
