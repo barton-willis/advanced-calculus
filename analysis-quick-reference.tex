@@ -145,7 +145,7 @@
         \begin{tabular}{|L | L |} \hline 
             \mathrm{integers } & \mathbf{Z} \\
             \mathrm{positive \,\,  integers } & \mathbf{Z}_{>0} \\ 
-            \mathrm{positive \,\, real} & \mathbf{R}_{>0} \\
+            \mathrm{positive \,\, reals} & \mathbf{R}_{>0} \\
             \hline
         \end{tabular}              
 \end{minipage}
@@ -163,7 +163,7 @@
     \begin{tabular}{|L | L|} \hline
         \mbox{Meaning}  & \mbox{Symbol} \\ \hline
         \mathrm{union} & \cup  \\ 
-        \mathrm{complment} & \mbox{superscript}^\mathrm{C} \\
+        \mathrm{complement} & \mbox{superscript}^\mathrm{C} \\
         \mathrm{set \,\,  minus}  & \setminus \\ \hline
         \end{tabular}   
 \end{minipage}
@@ -233,7 +233,7 @@ Let $A \subset \dom(F)$ and $B \subset \codom(F)$:
     \range(F) &   \mbox{range of function } F \\
     \mathrm{C}_{A} & \mbox{ set of continuous functions on set } A \\
     \mathrm{C}_{A}^1 & \mbox{ set of differentiable functions on set } A \\
-    A \to B   & \mbox{set of functions from} A \mbox { to } B \\ \hline
+    A \to B   & \mbox{set of functions from } A \mbox { to } B \\ \hline
 \end{tabular}
 
 \section*{Triangle inequalities}
@@ -261,10 +261,10 @@ For all $x,y \in \reals$, we have
 \section*{Bounded sets}
 \begin{description}[\itemsep=0em]
     \item[Bounded below] A set $A$ is \emph{bounded below} provided\\
-        \((\exists \, M \in \reals)(\forall \, x \in A)(M < x)\).
+        \((\exists \, M \in \reals)(\forall \, x \in A)(M \leq x)\).
 
     \item[Bounded above] The set $A$ is \emph{bounded above} provided\\
-        \((\exists \, M \in \reals)(\forall \, x \in A)(x < M ) \).
+        \((\exists \, M \in \reals)(\forall \, x \in A)(x \leq M ) \).
         
     \item[Bounded] A set is \emph{bounded} if it is bounded below and bounded above.
 
@@ -278,14 +278,14 @@ For all $x,y \in \reals$, we have
         For strictly decreasing, replace $F(x) \geq F(y)$ with $F(x) > F(y)$.
         \item[One-to-one] \( \parens*{\forall \, x,y \in \dom(F)} \parens*{F(x) = F(y) \implies x = y} \)
         \item[Subadditive] \( \parens*{\forall \, x,y \in \dom(F)} \parens*{F(x+y) \leq F(x) + F(y)} \)
-        \item[Bounded above] \( \parens*{\exists \, M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{F(x) < M} \)
-        \item[Bounded below] \(\parens*{\exists \, M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{M < F(x)}\)
+        \item[Bounded above] \( \parens*{\exists \, M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{F(x) \leq M} \)
+        \item[Bounded below] \(\parens*{\exists \, M \in \reals} \parens*{\forall x \in \dom(F)} \parens*{M \leq F(x)}\)
     \end{description}
 
 \section*{Topology}
 
 \begin{description}[\itemsep=0em]
-    \item[Open ball] $\ball(a, r) = \{x \in \reals \ssep -r < x-a < r \}$
+    \item[Open ball] $\ball(a, r) = \{x \in \reals \ssep -r + a< x < r+a \}$
   
     \item[Punctured ball] $\ball^\prime(a, r) = \ball(a, r) \setminus \{a\}$
   
@@ -316,7 +316,7 @@ For any subset $A$ of $\reals$:
     \item[glb] $z = \glb(A)$ provided
     \begin{alphalist}
         \item $z$ is an lower bound for $A$
-        \item $x$ is a lower bound for $A$ implies $z \leq x$
+        \item $x$ is a lower bound for $A$ implies $x \leq z$
     \end{alphalist}
    \item[lub]  $z = \lub(A)$ provided
    \begin{alphalist}
@@ -361,7 +361,7 @@ For any subset $A$ of $\reals$:
           \item $A \subset \dom(F)$; and
           \item for every $\varepsilon \in \reals_{>0}$
           \item there is $\delta \in \reals_{>0}$
-          \item such that for all $x,y  \in A \land |x-y| < \delta$
+          \item such that for all $x,y  \in A$ and $ |x-y| < \delta$
           \item we have $|F(x) - F(y)| < \epsilon$.
        \end{alphalist} 
     \item[Limit]  A function $F$ has a limit toward $a$ provided
@@ -390,7 +390,7 @@ For any subset $A$ of $\reals$:
     \begin{alphalist}
         \item the set  $\mathcal{P}$ is finite
         \item every member of $\mathcal{P}$ is a closed interval
-        \item the members of $\mathcal{P}$ are pairwise disjoint
+        \item the interiors of the members of $\mathcal{P}$ are pairwise disjoint
         \item $\underset{I \in \mathcal{P}} \bigcup I = [a,b]$
     \end{alphalist}
 \end{description}
@@ -406,11 +406,11 @@ $\mathcal{P}$ be a partition of $[a,b]$.
 \begin{description}
     \item[Completeness] Every nonempty subset $A$ of $\reals$ that is 
     bounded above has a least upper bound.
-    \item[Well-ordering]  Every non-empty set of positive integers 
+    \item[Well-ordering]  Every nonempty set of positive integers 
         contains a least element.
-    \item[Induction] $$ \parens*{\forall n \in \integers_{\geq 0}} 
-    \iff P(0) \land \parens*{\forall n \in 
-    \integers_{\geq 0}  P(n) \implies P(n+1)}$$
+    \item[Induction] $\parens*{\forall n \in \integers_{\geq 0}}(P(n))$ if and only if
+    $ P(0) \land \parens*{\forall n \in 
+    \integers_{\geq 0}}  \parens*{P(n) \implies P(n+1)}$.
 \end{description}
 
 \section*{Named theorems}
@@ -418,16 +418,15 @@ $\mathcal{P}$ be a partition of $[a,b]$.
     \item[Bolzano-Weirstrass] Every bounded real valued sequence has a convergent subsequence.
     \item[Heine–Borel] A subset of $\reals$ is compact iff it is closed and bounded.
     \item[ Intermediate value theorem ] If $F \in \mathrm{C}_{[a,b]}$, then
-         $F(I) \subset [\min(F(a),F(b)), \max(F(a),F(b))]$.
+    for all $y \in [\min(F(a),F(b)), \max(F(a),F(b))]$ there is
+    $x \in [a,b]$ such that $F(x)=y$.      
     \item[Mean Value]  If $F \in \mathrm{C}_{[a,b]} \cap \mathrm{C}_{(a,b)}^1$, 
     there is $\xi \in (a,b) $ such that $(b-a) F^\prime(\xi) = F(b) - F(a)$.
 \end{description}
-
 \vfill
 \noindent {Revised \today. Barton Willis is the author of this work. This work is
 licensed under Attribution 4.0 International (CC BY 4.0) \,  \qrcode[height=0.15in]{https://creativecommons.org/licenses/by/4.0/}. For the current version of
 this document, visit \, \qrcode[height=0.15in]{https://github.com/barton-willis/Math-100-200-level}}
-
-\end{multicols*}{3}
+\end{multicols*}%{3}
 
 \end{document}
