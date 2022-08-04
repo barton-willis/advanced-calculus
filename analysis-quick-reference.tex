@@ -214,6 +214,15 @@ For numbers \(a\) and \(b\), we define the intervals:
  \end{alignat*}
 \end{minipage}
 
+\section*{Function notation}
+\begin{tabular}{|L | L|} \hline 
+    \dom(F) &   \mbox{domain of function } F \\
+    \range(F) &   \mbox{range of function } F \\
+    \mathrm{C}_{A} & \mbox{ set of continuous functions on set } A \\
+    \mathrm{C}_{A}^1 & \mbox{ set of differentiable functions on set } A \\
+    A \to B   & \mbox{set of functions from } A \mbox { to } B \\ \hline
+\end{tabular}
+
  \section*{Generalized set operators}
  Each member of a set $\mathcal{C}$ is a set:
 \begin{alignat*}{1}
@@ -222,19 +231,12 @@ For numbers \(a\) and \(b\), we define the intervals:
 \end{alignat*}
 Theorem: \(\underset{A \in \mathcal{C}}{\bigcup} A^\mathrm{C} = \parens*{\underset{A \in \mathcal{C}}{\bigcap} A}^\mathrm{C} \)
 \section*{Functions applied to  sets}
-Let $A \subset \dom(F)$ and $B \subset \codom(F)$:
+Let $A \subset \dom(F)$ and $B \subset \range(F)$:
 \begin{alignat*}{1}
     F(A) &= \{F(x) \mid x \in A \} \\
     F^{-1}(B) &= \{x \in \dom(F) \mid F(x) \in B \}
 \end{alignat*}
- \section*{Function notation}
-\begin{tabular}{|L | L|} \hline 
-    \dom(F) &   \mbox{domain of function } F \\
-    \range(F) &   \mbox{range of function } F \\
-    \mathrm{C}_{A} & \mbox{ set of continuous functions on set } A \\
-    \mathrm{C}_{A}^1 & \mbox{ set of differentiable functions on set } A \\
-    A \to B   & \mbox{set of functions from } A \mbox { to } B \\ \hline
-\end{tabular}
+
 
 \section*{Triangle inequalities}
 For all $x,y \in \reals$, we have
@@ -304,7 +306,7 @@ For all $x,y \in \reals$, we have
     \item[Open cover] A set $\mathcal{C}$ is a cover of a set $A$ provided 
      \begin{alphalist}
          \item every member of $\mathcal{C}$ is a set
-         \item $A \subset \underset{B \in S}{\bigcup} B $
+         \item $A \subset \underset{B \in \mathcal{C}}{\bigcup} B $
      \end{alphalist}
 
      \item[Compact] A set $A$ is compact provided for every 
@@ -353,7 +355,7 @@ For any subset $A$ of $\reals$:
 \begin{description}[\itemsep=0em]
     \item[Continuous] A function $F$ is continuous at $a$ provided
     \begin{alphalist}
-        \item $a \in \dom(F)$; and
+        \item $a \in \dom(F)$ and
         \item for every $\varepsilon \in \reals_{>0}$
         \item there is $\delta \in \reals_{>0}$
         \item such that for all $x \in \ball(a,\delta) \cap \dom(F)$
