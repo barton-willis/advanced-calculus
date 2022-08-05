@@ -334,6 +334,8 @@ For any subset $A$ of $\reals$:
 \begin{description}[\itemsep=0em]
 \item[Bounded] A sequence $F$ is bounded if $\range(F)$ bounded.
 
+\item[Monotone] A sequence is monotone if it either increases or
+decreases.
 \item[Cauchy] A sequence $F$ is Cauchy provided
 \begin{alphalist}
     \item for every $\varepsilon \in \reals_{>0}$
@@ -421,9 +423,12 @@ $\mathcal{P}$ be a partition of $[a,b]$.
 
 \section*{Named theorems}
     \begin{description}[\itemsep=0em]
+    \item[Archimedean] \(\parens*{\forall x \in \reals} 
+       \parens*{\exists n \in \integers}(n > x) \equiv \mbox{true}\).
     \item[Bolzano-Weirstrass] Every bounded real valued sequence has a convergent subsequence.
     \item[Heine–Borel] A subset of $\reals$ is compact iff it is closed and bounded.
     \item[Cauchy completeness]  Every Cauchy sequence in \(\reals\) converges. 
+    \item[Monotone convergence] Every bounded monotone sequence converges.  
     \item[ Intermediate value theorem ] If $F \in \mathrm{C}_{[a,b]}$, then
     for all $y \in [\min(F(a),F(b)), \max(F(a),F(b))]$ there is
     $x \in [a,b]$ such that $F(x)=y$.      
