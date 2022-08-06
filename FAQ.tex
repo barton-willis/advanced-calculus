@@ -1,0 +1,361 @@
+\documentclass[12pt]{article} 
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{calc,url}
+
+\usepackage{epsfig,amsmath}
+
+\newcommand{\reals}{\mathbf{R}}
+
+\usepackage[short,us]{datetime}
+\newdateformat{mydate}{\THEMONTH \, / \THEDAY}
+
+\mydate
+
+
+\newcounter{hw}\setcounter{hw}{0}
+\newcommand{\hw}{%\
+\setcounter{hw}{\value{hw}+1}
+\thehw \,\,}
+
+\newcounter{qz}\setcounter{qz}{0}
+\newcommand{\qz}{%\
+\setcounter{qz}{\value{qz}+1}
+\theqz \,\,}
+
+\newcounter{ex}\setcounter{ex}{0}
+\newcommand{\ex}{%\
+\setcounter{ex}{\value{ex}+1}
+\theex}
+
+
+
+\newcounter{wk}\setcounter{wk}{0}
+\newcommand{\wk}{%\
+\setcounter{wk}{\value{wk}+1}
+\thewk \,\,}
+
+\newcounter{dy}\setcounter{dy}{0}
+\newcommand{\dy}{%\
+\setcounter{dy}{\value{dy}+1}
+\thedy \,\,}
+
+% cd = class day
+\newcounter{cd}\setcounter{cd}{24}
+\newcommand{\cd}{%\
+\setcounter{cd}{\value{cd}+1}
+\thecd \,\,}
+
+\newcounter{cmon}\setcounter{cmon}{8}
+\newcommand{\cmon}{%\
+\setcounter{cmon}{\value{cmon}+1}
+\thecmon \,\,}
+
+\newcounter{cy}\setcounter{cy}{\the\year}
+\newcommand{\cy}{%\
+\setcounter{cy}{\value{cy}+1}
+\thecy \,\,}
+
+
+\frenchspacing
+\usepackage[margin=0.5in]{geometry}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+
+\newcommand{\term}{Fall}
+\newcommand{\course}{MATH 115--02,  Calculus I with Analytic Geometry}
+\begin{document}
+
+
+
+\begin{flushleft}
+  \large
+\textbf{Fifty Questions for Dr.\ Willis}
+\end{flushleft}  
+\normalsize
+%\subsubsection*{FAQ}
+\begin{enumerate}
+
+\item \textbf{Question} Did I miss anything in class last week?
+
+\textbf{Answer} Yes.  Please read  the poem “Did I Miss Anything?” by Tom Wayman.  
+
+\item \textbf{Question} Will that be on the test?
+
+\textbf{Answer} Maybe. If you are concerned about a topic that is briefly
+mentioned in class that is not in the homework or textbook, please ask me
+about its importance. But it is, I think, important for me to 
+show you how the topics we are learning relate to other disciplines  
+as well as to understand the historical and human side of the
+creative effort involved in creating (or discovering) mathematics. So yes,
+not every mathematical morsel we learn in class will be ``on the test.''
+
+\item \textbf{Question} On the test, do you want interval notation, set builder
+notation, or a pictorial representation?
+
+\item  \textbf{Answer} Unless the question explicitly says which form,
+you are free to express yourself in whatever way you wish.
+
+\item \textbf{Question} Do you want me to write a proof like X or 
+like Y?
+
+\item  \textbf{Answer} I like to keep the focus on logical 
+correctness, not on adherence to a style template. If your question is about
+style, not content, don't be surprised if my answer is ``It doesn't 
+matter--either way is OK.'' 
+
+\item \textbf{Question} Is this OK, or do I need to simplify it?
+
+\item  \textbf{Answer} Maybe. Giving guidelines on what it means to 
+  simplified is tough. But if you  (a) do all rational arithmetic (b) combine
+  all like terms, (c) simplify all ``famous'' values of functions, 
+  for example $\cos(0)=1$ and $\sqrt{81} = 9$, and (d) make an effort
+  to simplify all vanishing expressions to zero (for example, 
+  $\frac{1}{\sqrt{2}} - \frac{\sqrt{2}}{2}$ simplifies to zero), you'll be OK.
+
+\item  \textbf{Question}  Will  we review the entire dead week?
+
+\textbf{Answer} Maybe.  Once we finish all sections in the course 
+calendar, we'll review for the remainder of the term.  But it's 
+likely that we'll need to use at least part of dead week to cover
+new material. 
+
+
+\item  \textbf{Question}  Will you give us a review before every exam?
+
+\textbf{Answer} Yes. The review will likely not have a complete solution key, but yes there will be a review. The review for the final exam will be the union of all the other reviews.  We might spend some class time before an exam for review, but it's unlikely we'll spend the entire class period reviewing. 
+
+\item  \textbf{Question}  Can I get extra credit?
+
+\textbf{Answer} No. Course grades for all students will be
+assigned according to the syllabus. Our grading scheme has 
+no provision for extra credit. 
+
+\item  \textbf{Question}  Will you sign my grade check form?
+
+\textbf{Answer} Yes.  Please help me out and look up your course grade on Canvas and show it to me.
+
+\item  \textbf{Question}  My major is X and I have to take Calculus II.  I've heard that Calculus II is much harder than Calculus I.  Should I switch majors?
+
+ \textbf{Answer}  No, not for that reason. Calculus II is no more intellectually challenging than Calculus I. All science majors have required classes (for example, Physical Chemistry, Quantum Mechanics, etc) that
+are \emph{far} more difficult than Calculus II. 
+
+\item  \textbf{Question} Isn't \(1/0\) \emph{really} equal to infinity?
+
+  \textbf{Answer}  No,  the rule  \(1/0 = \infty\)  is rubbish. If we adopted    \(1/0 = \infty\) as a rule and kept the other usual rules of arithmetic, we'd be able to derive statements that
+are manifestly false (things like \(1 = 2\)).
+
+
+\item  \textbf{Question} Isn't \(1/\infty \) \emph{really} equal to zero?
+
+ \textbf{Answer}  No,  \(1/\infty = 0\)  is rubbish.  The reason is much the same as for why  \(1/0 = \infty\)  is rubbish.  Possibly the confusion stems from the limit fact that if \(\displaystyle \lim_{x \to a} F(x) = 1\) and  \(\displaystyle  \lim_{x \to a} G(x) =  \infty\), we have \(\displaystyle \lim_{x \to a} \frac{F(x)}{G(x)} = 0\).  Arguably, the calculation \(\displaystyle \lim_{x \to a} \frac{F(x)}{G(x)} =\frac{1}{\infty} = 0\) is a forgivable faux pas, but this limit fact  doesn't imply that  \(1/\infty = 0\).
+
+
+\item \textbf{Question} Is \(0^0\) undefined?
+
+ \textbf{Answer} Sometimes, but not always.  In the context of a summation, such as \(\sum_{k=0}^{n} x^k\),  the first term is \(x^0\). If \(0^0\) is undefined, the first term of the sum is
+undefined when \(x=0\). But in the context of a sum of powers of a variable, we almost always want \(x^0 = 1\) for all \(x\).  In other contexts,  \(0^0\) is undefined. Mathematical notation, like all natural languages, is context dependent.
+
+\item  \textbf{Question} What is  \(\infty - \infty\)?
+
+\textbf{Answer} It is rubbish.
+
+
+\item  \textbf{Question}  Is infinity a number?
+
+\textbf{Answer} Yes, infinity is a number.  It's not a \emph{real} number, but it is a number.
+
+\item  \textbf{Question}  Can a function be infinity?
+
+ \textbf{Answer} No. Functions and numbers are distinct objects, so a function can \emph{never} be a number. It is possible for infinity to be in the range of a function, for example, \(x \in \reals \mapsto \begin{cases}  x & \mbox{ if } x \neq 2 \\ \infty &  \mbox{ if } x = 2 \end{cases} \).  Although infinity is in the range of this function, the function certainly isn't infinity. Failing to distinguish a function from a number is an example of \emph{conflating}.
+
+ \item \textbf{Question} What do you mean by an identity?
+
+\textbf{Answer} An equation is an identity provided its solution set is
+``everything.'' For equations involving one real variable, ``everything'' generally means
+the set of all real numbers. For example, the solution set to 
+\( 0 x= 0 \) is \(\reals\), so \(0 x = 0 \)
+is an identity. But the solution set to \(\displaystyle \frac{x}{x} = 1\)
+is the set of all real numbers \emph{except} for zero, so \(\displaystyle \frac{x}{x} = 1\)
+isn't an identity. 
+
+\quad A relaxed notion of an identity is an equation whose
+solution set is the same as its natural domain. For that meaning, \(\displaystyle \frac{x}{x} = 1\)
+is an identity because both its solution set and its natural domain are \(\reals_{\neq 0}\).
+
+\item \textbf{Question} To prove that an equation is an identity, I was
+ told to ``only work with one side at a time.'' Why is that?
+
+ \textbf{Answer} First of all, to prove that an equation is an identity,
+ we need to (i) solve the equation and (ii) show that its solution
+ set is the same as its natural domain. During the process of solving,
+ we can't do anything that enlarges the solution set, but doing anything
+ that maintains the solution set is allowed.
+ 
+ \quad The requirement to ``only work with one side at a time''
+ is an effort to disallow doing things that enlarge the solution set of
+ the given equation. One  such example is multiplying both sides of an equation by zero. Another
+ example is squaring both sides of an equation. Indeed multiplying
+ both sides of \(x = 1\) by zero enlarges the solution set from \(\{1\}\)
+to \(\reals\). And that's a huge enlargement.  Another example is squaring both sides of 
+\(x=1\) enlarges the solution set from \(\{1\}\) to \(\{-1,1\}\).
+
+\quad Instead of the adage to ``only work with one side at a time,'' 
+students would be much better served if we gave them guidance that was firmly
+rooted in logic than to ``only work with one side at a time.'' 
+
+\item  \textbf{Question} Why is \(0! = 1\)?
+
+ \textbf{Answer} Because it's useful and it extends the validity of a useful identity. For positive integers \(n\) greater than two, we have the identity \(n! = n (n-1)!\). If we replace \(n\) by one in this identity, we get \(0! = 1\). 
+
+\item  \textbf{Question} I saw a proof that \(0=1\).  Is it correct?
+
+  \textbf{Answer}  No, it is rubbish. Most likely the so-called proof involved a hidden divide by zero.
+
+
+
+\item  \textbf{Question} My cousin told me about a strategy for playing Keno that is guaranteed to win. Does it work?
+
+ \textbf{Answer} No. Many such methods involve doubling your bet repeatedly. This doubling scheme is 
+an effective way to convert  a large fortune into a small fortune. Actually, there is a sure-fire 
+way to earn a small fortune playing Keno--the trick is to start with a 
+large fortune.
+
+\item  \textbf{Question}  If a sentence ends with a factorial function, should a period follow the explanation point?
+
+  \textbf{Answer}  Yes. But the sentence should be re-written to not end that way.  Writing ``\(x = 0!\).''  is nerd humor for the equivalent statement ``\(x = 1.\)''
+
+\item  \textbf{Question} Does \(\ln x + y\) mean \((\ln x) + y \) or   \(\ln  (x + y)\)?
+
+ \textbf{Answer} The standard is that is \(\ln x + y = (\ln x) + y \). But \( \ln x y = \ln(xy)\).  All this is too confusing, so I suggest using parentheses. 
+
+\item  \textbf{Question}  Is it true that \(a \cdot b  + c\) means \(a (b+c)\), but \(a  b  + c\) means \((ab) + c\)?
+
+ \textbf{Answer} No.  Both  \(a \cdot b  + c\) and \(a b + c\) mean  \((ab) + c\).  Possibly before about 1940 or so, using a centered dot for multiplication had a lower precedence than for addition. But at least in the United States, this is no longer true.
+
+
+
+\item  \textbf{Question}  Is time the fourth dimension?
+
+\textbf{Answer} No, not really.  For many physical theories, it's convenient to lump the three spatial dimensions together with the time, forming a vector with four components. But in mathematics, 
+vectors can have any number of components and we don't impose any particular meaning to the components. So I wouldn't say that time is \emph{the} fourth dimension.
+
+\item  \textbf{Question}  Can you see the fourth dimension?
+
+\textbf{Answer} No, absolutely not.
+
+\item  \textbf{Question}  Is mathematics \emph{invented} or \emph{discovered}?
+
+ \textbf{Answer} I don't know. Meta-mathematical questions don't interest me all that much. 
+It isn't, I think, a question that is worth pondering.
+
+\item  \textbf{Question} Do numbers exist?
+
+  \textbf{Answer} I don't know. Again, it isn't, I think, a question that is worth pondering.
+
+\item  \textbf{Question} Do the Fibonacci numbers frequently appear in nature?
+
+\textbf{Answer}  No, not really.  For an explanation, read the article ``Fibonacci Flim-Flam,'' by Donald E. Simanek.
+
+\item  \textbf{Question} Are there deep connections between mathematics and music? 
+
+  \textbf{Answer}  No, not really. The connections that are known aren't, I would say, particularly deep.
+
+\item  \textbf{Question}  Billy had 53 socks.  Eleven of them were brown.  The rest were navy blue.  He never sorts them, and keeps them all in his drawer.  In the morning, what's the greatest number of socks that he has to pull out before he gets a matching pair?
+
+  \textbf{Answer} It depends. Is Billy color blind?  Are the lights on? What does matching mean? Does a wool sock match with a cotton sock? It matters.
+
+\item  \textbf{Question} What's the next number in the sequence  \(2,5,8,11, \dots \)?
+
+  \textbf{Answer}  It's a silly problem that deserves a silly answer--any number is just as logical as any other. 
+The formula for the sequence might be \(k \in \mathbf{Z}_{\geq 0} \mapsto \begin{cases} 3 k +2 & \mbox{ if } k \leq 3
+ \\ \sqrt{2} & \mbox{ if } k >  3 \end{cases} \). That would make the next term \(\sqrt{2} \). 
+ Arguably, the formula  \(k \in \mathbf{Z}_{\geq 0}  \mapsto 3 k +2 \) is in some 
+ sense the most simple, so by the law of parsimony 
+ (the simplest explanation is most likely the right one), the next 
+ term is 14. But ``most likely'' isn't always correct.
+
+\item  \textbf{Question} Is it true that \(1 + 2 + 3 + \cdots = -1/12\)?
+
+  \textbf{Answer}  Maybe. For one meaning of the concept of convergence, the answer is yes; for other meanings, including the meaning that you will learn (or learned)  in calculus, the answer is no.  Some physical theories use the notion of convergence for which it is true that \(1 + 2 + 3 + \cdots = -1/12\).
+
+\item  \textbf{Question} Is \(\sqrt{9} = \pm 3\)?
+
+  \textbf{Answer}  Maybe.  But for this class, it's best to stick with the so-called principal square root--that means \(\sqrt{9} = 3\), not  \(\sqrt{9} = \pm 3\).
+
+\item  \textbf{Question} Why does my graphing calculator not show the left side of the graph of \(y = x^{2/3}\). 
+
+\textbf{Answer} It's because your calculator is using what is usually known as the principal branch for the \(2/3\) power and not the so-called real-branch rule.  Using the real branch rule,
+we have \((-1)^{2/3} = ((-1)^2)^3 = 1^3 = 1\). But using principal branch, we have \((-1)^{2/3} = \frac{\sqrt{3}}{2}  \mathrm{i}  -\frac{1}{2}\) If you would like to understand this, please enroll in MATH 365.
+
+\item \textbf{Question} Do I need a graphing calculator for this class?
+
+\textbf{Answer} No. When we need a computer drawn graph, we'll use an online tool.
+
+\item \textbf{Question} What other classes do you teach?
+
+\textbf{Answer} At UNK I have taught College Algebra, 
+   Plane Trigonometry, Calculus I, II, and III, Applied Calculus I,
+   Foundations of Math, Differential Equations, Discrete Mathematics, Abstract Algebra, Complex Analysis,
+   Numerical Analysis, Linear Algebra, Theory of Numbers, and Advanced Calculus I. Additionally, I've
+   taught the final third of Math for Elementary Teachers I as well as  Probability and Statistics.
+   Additionally, at another university, I taught classes in partial differential equations and a
+   year long applied mathematics course for graduate students in engineering.
+
+\item  \textbf{Question} Is it true that four current UNK faculty took a math class from you?
+
+ \textbf{Answer}  This was likely true at one time, but currently I only know of two who 
+ took a class from me. And no--without violating Federal law, I cannot reveal the identities of
+ these faculty members.
+
+\item  \textbf{Question} Why did you choose to be a math teacher?
+
+\textbf{Answer} It was a combination of having something close to love for the discipline, growing up in a scientifically based family, and learning from some strong science teachers in high school and college.
+
+
+\item  \textbf{Question} What is your favorite comfort food?
+
+  \textbf{Answer}  For cool weather, it's cornbread (with butter and honey), chili, collard greens, chow-chow, and peach cobbler; for warm weather, it's cold slaw, baked beans, sliced tomatoes, buttered corn on the cob, and peach cobbler.
+
+  \item  \textbf{Question}  What is your favorite bird?
+  
+  \textbf{Answer} Goldfinches--I grow sunflowers for them and in late summer
+  they visit my garden and gobble up the crop. Watching goldfinches feed on my sunfllower
+  crop gives me a 
+  ridiculous amount of joy.
+
+  \item  \textbf{Question}  Do bees visit your gardens?
+  
+  \textbf{Answer} Yes--my pollinator garden attracts lots of bees. I love
+  watching them and I wish I could learn all the different
+  species that visit my flowers. I don't have hives for honey bees, but
+  I'd like to try that someday.
+
+\item   \textbf{Question}  What is your favorite programming language?
+
+ \textbf{Answer}  Common Lisp, definitely. And this is fortunate because I'm a developer for a computer algebra system that is written in Common Lisp. My second favorite language is Julia.
+
+\item   \textbf{Question} Is it true that you hit your head on a TV in class and 
+passed out?
+
+  \textbf{Answer} True, I bled but I didn't pass out.
+
+\item   \textbf{Question} Will you tell the story about the time you chased a turkey?
+
+ \textbf{Answer} No, the turkey story has been retired.
+
+
+\item   \textbf{Question} Is there anything that totally creeps you out?
+
+\textbf{Answer} Bats (the flying mammal kind) come pretty close.
+
+\item \textbf{Question} Has somebody really asked all these questions?
+
+\textbf{Answer}  Except for  this question, yes.
+\end{enumerate}
+
+\end{document}
