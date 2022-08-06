@@ -83,7 +83,7 @@
 \newcommand{\llnot}{\lnot \,} % is accepted
 
 
-\subtitle{Lesson 7}
+%\subtitle{Lesson 7}
 \title{\textbf{Functions}}
 %\author[Barton Willis] % (optional, for multiple authors)
 %{Barton~Willis}%
@@ -119,11 +119,13 @@
 
 \begin{checklist}
 
-\item There is an elegant way of defining a function from at set \(A\) to a set \(B\)  purely in terms of a subset of \(A \times B\).
+\item There is an elegant way of defining a function from at set \(A\) to a set \(B\)
+  purely in terms of a subset of \(A \times B\).
 
 \vspace{0.2in}
 
-\item And as we have seen, members of \(A \times B\) can be defined purely in terms of sets.
+\item And as we have seen, members of \(A \times B\) can be defined purely in terms 
+of sets.
 
 \vspace{0.2in}
 
@@ -131,11 +133,13 @@
 
 \vspace{0.2in}
 
-\item Functions usually have a formula (or recipe) for determining the output for every input. But sometimes there is no known recipe--for example
+\item Functions usually have a formula (or recipe) for determining the output for 
+every input. But sometimes there is no known recipe--for example
 \[
     F(x) = \begin{cases}   1   & x \in \rationals \\   -1   & x \notin \rationals  \end{cases}
  \]
- Last I checked, nobody knows the value of \(F(\uppi - \mathrm{e}) \).    But certainly \(F(107) = 1 \) and  \(F(\sqrt{2}) = -1 \) .
+ Last I checked, nobody knows the value of \(F(\uppi - \mathrm{e}) \).    
+ But certainly \(F(107) = 1 \) and  \(F(\sqrt{2}) = -1 \) .
      
 %\item Rather, we'll think of a function has a machine-like thing that produces an output (a member of the \emph{range}) from an input (a member of the \emph{domain}).
 
@@ -145,7 +149,8 @@
 
 \begin{frame}{Functions}
 
-To define a function \(F\) with domain \(A\) and formula \(\mbox{blob}\), we can write
+To define a function \(F\) with domain \(A\) and formula \(\mbox{blob}\), we can 
+write
 \[
   F = x \in A \mapsto \mbox{blob}.
 \]
@@ -153,13 +158,14 @@ In the rare cases that it's important to give the function a codomain, we can wr
 \[
   F = x \in A \mapsto \mbox{blob} \in B,
 \]
-where \(\codomain(F) = B\). Generically for a function \(F\) with domain \(A\) and codomain \(B\),  we say that \(F\) is a function from \(A\) to \(B\).
+where \(\codomain(F) = B\). Generically for a function \(F\) with domain \(A\) and 
+codomain \(B\),  we say that \(F\) is a function from \(A\) to \(B\).
 
 \begin{example} The notation
 \[
    F = x \in [-1,1] \mapsto 2 x + 1
 \]
-is our compact way of writing: Define \(F(x) = 2x + 1 \), for \( -1 \leq x \leq 1\).
+is our compact way of writing: Define \(F(x) = 2x + 1 \) and \(\dom(F) = [-1,1] \).
 \end{example}
 \end{frame}
 
