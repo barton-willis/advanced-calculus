@@ -1,10 +1,13 @@
 \documentclass[letterpaper,landscape, 12pt]{report}
 
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \usepackage{schedule}
 \usepackage{fourier}
 \usepackage{phonenumbers}
-\usepackage{hyperref}
 \usepackage{xcolor}
+
+\usepackage{wasysym}
+\usepackage{marvosym }
 \pagestyle{empty}
 \usepackage[landscape]{geometry}
 \begin{document}
@@ -15,7 +18,7 @@
 \SubUnits{15}
 \BeginOn{Monday}
 \TextSize{\tiny}
-\FiveDay
+\SevenDay
 %\TwelveHour
 \TwentyFourHour
 
@@ -25,14 +28,20 @@
 \NewAppointment{lunch}{brown}{black}
 \NewAppointment{office}{yellow}{black}
 \NewAppointment{notavail}{brown}{black}
+\NewAppointment{appointment}{yellow}{black}
 \begin{flushleft}
 \large
 \textbf{Barton Willis, PhD}\\
-\phonenumber[country=US]{3088658868}\\
- \href{mailto:willisb@unk.edu}{willisb@unk.edu}
+\emph{Professor of Mathematics and Statistics}\\
+\vspace{0.1in}
+\phone: \phonenumber[country=US]{3088658868}\\
+\Email: \href{mailto:willisb@unk.edu}{willisb@unk.edu}
 \end{flushleft}
-\normalsize
 
+\noindent Blocks marked ``Appointments'' (yellow highlight) means \emph{usually} available 
+to make appointments.
+
+\normalsize
 \begin{schedule}[Fall \the\year]
 \lunch{\textbf{Lunch}}{}{M,W,F}{11:00-12:20}
 \lunch{\textbf{Lunch}}{}{T,Th}{11:00-12:30}
@@ -44,6 +53,7 @@
 \office{\textbf{Office Hours}}{9:30--11:00, DSCH 368}{T,Th}{9:30-11:00}
 \office{\textbf{Office Hours}}{10:00--11:00, DSCH 368}{M,W,F}{10:00-11:00}
 \notavail{\textbf{Not Available}}{}{M,W,Th}{15:15-17:00}
+\appointment{\textbf{Appointments}}{DSCH 368}{M,W,F}{13:45-15:00}
 \end{schedule}
 \end{document}
 
