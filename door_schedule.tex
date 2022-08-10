@@ -5,20 +5,20 @@
 \usepackage{fourier}
 \usepackage{phonenumbers}
 \usepackage{xcolor}
-
 \usepackage{wasysym}
 \usepackage{marvosym }
 \pagestyle{empty}
-\usepackage[landscape]{geometry}
+%\usepackage[landscape]{geometry}
+\usepackage[width=11in, height=8.5in,left=0.5in,top=0.5in]{geometry}
 \begin{document}
 
 \CellHeight{.5in}
 \CellWidth{1in}
-\TimeRange{9:30-17:00}
+\TimeRange{9:05-17:00}
 \SubUnits{15}
 \BeginOn{Monday}
 \TextSize{\tiny}
-\SevenDay
+\FiveDay
 %\TwelveHour
 \TwentyFourHour
 
@@ -30,16 +30,16 @@
 \NewAppointment{notavail}{brown}{black}
 \NewAppointment{appointment}{yellow}{black}
 \begin{flushleft}
-\large
+\Large
 \textbf{Barton Willis, PhD}\\
-\emph{Professor of Mathematics and Statistics}\\
+Professor of Mathematics and Statistics\\
 \vspace{0.1in}
 \phone: \phonenumber[country=US]{3088658868}\\
 \Email: \href{mailto:willisb@unk.edu}{willisb@unk.edu}
 \end{flushleft}
 
 \noindent Blocks marked ``Appointments'' (yellow highlight) means \emph{usually} available 
-to make appointments.
+to make appointments. Blocks with brown highlights mean not available.
 
 \normalsize
 \begin{schedule}[Fall \the\year]
@@ -53,6 +53,8 @@ to make appointments.
 \office{\textbf{Office Hours}}{9:30--11:00, DSCH 368}{T,Th}{9:30-11:00}
 \office{\textbf{Office Hours}}{10:00--11:00, DSCH 368}{M,W,F}{10:00-11:00}
 \notavail{\textbf{Not Available}}{}{M,W,Th}{15:15-17:00}
+\notavail{\textbf{Not Available}}{}{Sa,Su}{9:05-17:00}
+\notavail{\textbf{Not Available}}{}{T,Th}{9:05-9:30}
 \appointment{\textbf{Appointments}}{DSCH 368}{M,W,F}{13:45-15:00}
 \end{schedule}
 \end{document}
