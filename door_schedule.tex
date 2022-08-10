@@ -1,0 +1,57 @@
+\documentclass[letterpaper,landscape, 10pt]{report}
+
+\usepackage{schedule}
+\usepackage{fourier}
+\usepackage{phonenumbers}
+\usepackage{hyperref}
+
+\usepackage[landscape]{geometry}
+\begin{document}
+
+\CellHeight{.6in}
+\CellWidth{1in}
+\TimeRange{9:30-15:00}
+\SubUnits{15}
+\BeginOn{Monday}
+\TextSize{\tiny}
+\SevenDay
+%\TwelveHour
+\TwentyFourHour
+
+
+
+\NewAppointment{meeting}{gray}{black}
+\NewAppointment{workshop}{green}{blue}
+\NewAppointment{lunch}{gray}{blue}
+\NewAppointment{office}{yellow}{black}
+%\begin{minipage}{11in}
+\begin{flushleft}
+\large
+\textbf{Barton Willis, PhD}\\
+\phonenumber[country=US]{3088658868}\\
+ \href{mailto:willisb@unk.edu}{willisb@unk.edu}
+\end{flushleft}
+\normalsize
+
+\begin{schedule}[Fall \the\year]
+\lunch{Lunch}{}{M,W,F}{11:00-12:00}
+\class{Advanced Calculus I }{DSCH 386}{M,W,F}{9:05-9:55}
+\class{Calculus I}{DSCH 383}{M,W,F}{12:20-13:45}
+\class{Calculus I}{DSCH 383}{T,Th}{12:30-13:20}
+\meeting{Departental Meeting}{DSCH X}{T}{14:00-15:00}
+%\workshop{Crit. Reas. Workshop}{HOB2 233}{T}{13:00-13:50}
+\office{Office Hours}{DSCH 368}{T,Th}{9:30-11:00}
+\end{schedule}
+%\end{minipage}
+\end{document}
+
+\NewAppointment{meeting}{red}{white}
+\NewAppointment{workshop}{green}{blue}
+\begin{schedule}[Fall Term  \the\year]
+\class{Moral Philosophy}{HOB2 233}{M}{14:00-16:50}
+\class{Math Logic}{EIC 128}{T,Th}{11:00-12:20}
+\class{Critical Reasoning}{SSL 290}{M,W,F}{13:00-13:50}
+\meeting{Departmental Meeting}{HOB2 233}{W}{12:00-12:50}
+\workshop{Crit. Reas. Workshop}{HOB2 233}{T}{13:00-13:50}
+\class{Office Hours}{HOB2 210}{W,F}{14:00-14:50}
+\end{schedule}
