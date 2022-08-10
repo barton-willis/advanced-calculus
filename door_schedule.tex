@@ -1,5 +1,4 @@
 \documentclass[letterpaper,landscape, 12pt]{report}
-
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \usepackage{schedule}
 \usepackage{fourier}
@@ -8,21 +7,17 @@
 \usepackage{wasysym}
 \usepackage{marvosym }
 \pagestyle{empty}
-%\usepackage[landscape]{geometry}
 \usepackage[width=11in, height=8.5in,left=0.5in,top=0.5in]{geometry}
 \begin{document}
 
-\CellHeight{.5in}
-\CellWidth{1in}
+\CellHeight{0.6in}
+\CellWidth{1.25in}
 \TimeRange{9:05-17:00}
 \SubUnits{15}
 \BeginOn{Monday}
 \TextSize{\tiny}
-\FiveDay
-%\TwelveHour
-\TwentyFourHour
-
-
+\FiveDay %\SevenDay
+\TwentyFourHour %\TwelveHour
 
 \NewAppointment{meeting}{brown}{black}
 \NewAppointment{lunch}{brown}{black}
@@ -41,7 +36,7 @@ Professor of Mathematics and Statistics\\
 \noindent Blocks marked ``Appointments'' (yellow highlight) means \emph{usually} available 
 to make appointments. Blocks with brown highlights mean not available.
 
-\normalsize
+%\normalsize
 \begin{schedule}[Fall \the\year]
 \lunch{\textbf{Lunch}}{}{M,W,F}{11:00-12:20}
 \lunch{\textbf{Lunch}}{}{T,Th}{11:00-12:30}
