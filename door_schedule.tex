@@ -3,11 +3,15 @@
 \usepackage{schedule}
 \usepackage{fourier}
 \usepackage{phonenumbers}
-\usepackage{xcolor}
+
 \usepackage{wasysym}
 \usepackage{marvosym }
+\usepackage{xcolor}
 \pagestyle{empty}
 \usepackage[width=11in, height=8.5in,left=0.5in,top=0.5in]{geometry}
+	\definecolor{light-gray}{gray}{0.95}
+	\definecolor{light-orange}{HTML}{FED8B1}
+\definecolor{light-yellow}{HTML}{FFFFE0}
 \begin{document}
 
 \CellHeight{0.6in}
@@ -19,10 +23,11 @@
 \FiveDay %\SevenDay
 \TwentyFourHour %\TwelveHour
 
-\NewAppointment{meeting}{brown}{black}
-\NewAppointment{lunch}{brown}{black}
+\NewAppointment{myclass}{light-orange}{black}
+\NewAppointment{meeting}{light-gray}{black}
+\NewAppointment{lunch}{light-gray}{black}
 \NewAppointment{office}{yellow}{black}
-\NewAppointment{notavail}{brown}{black}
+\NewAppointment{notavail}{light-gray}{black}
 \NewAppointment{appointment}{yellow}{black}
 \begin{flushleft}
 \Large
@@ -34,23 +39,23 @@ Professor of Mathematics and Statistics\\
 \end{flushleft}
 
 \noindent Blocks marked ``Appointments'' (yellow highlight) means \emph{usually} available 
-to make appointments. Blocks with brown highlights mean not available.
+to make appointments. Blocks with gray highlights mean not available.
 
 %\normalsize
 \begin{schedule}[Fall \the\year]
 \lunch{\textbf{Lunch}}{}{M,W,F}{11:00-12:20}
 \lunch{\textbf{Lunch}}{}{T,Th}{11:00-12:30}
-\class{\textbf{Advanced Calculus I} }{DSCH 386}{M,W,F}{9:05-9:55}
-\class{\textbf{Calculus I}}{DSCH 383}{M,W,F}{12:20-13:45}
-\class{\textbf{Calculus I}}{DSCH 383}{T,Th}{12:30-13:20}
-\meeting{\textbf{Departental Meeting}}{}{T}{14:00-15:00}
-\meeting{\textbf{Departental Meeting}}{}{Th}{14:00-15:00}
+\myclass{\textbf{Advanced Calculus I}}{9:05-9:55, DSCH 386}{M,W,F}{9:05-9:55}
+\myclass{\textbf{Calculus I}}{12:20-13:10, DSCH 383}{M,W,F}{12:20-13:10}
+\myclass{\textbf{Calculus I}}{12:30-13:20, DSCH 383}{T,Th}{12:30-13:20}
+\meeting{\textbf{Departental Meeting}}{14:00-15:00}{T}{14:00-15:00}
+\meeting{\textbf{Departental Meeting}}{14:00-15:00}{Th}{14:00-15:00}
 \office{\textbf{Office Hours}}{9:30--11:00, DSCH 368}{T,Th}{9:30-11:00}
 \office{\textbf{Office Hours}}{10:00--11:00, DSCH 368}{M,W,F}{10:00-11:00}
-\notavail{\textbf{Not Available}}{}{M,W,Th}{15:15-17:00}
-\notavail{\textbf{Not Available}}{}{Sa,Su}{9:05-17:00}
-\notavail{\textbf{Not Available}}{}{T,Th}{9:05-9:30}
-\appointment{\textbf{Appointments}}{DSCH 368}{M,W,F}{13:45-15:00}
+\notavail{\textbf{Not Available}}{15:15-17:00}{M,W,Th}{15:15-17:00}
+\notavail{\textbf{Not Available}}{9:05-17:00}{Sa,Su}{9:05-17:00}
+\notavail{\textbf{Not Available}}{9:05-9:30}{T,Th}{9:05-9:30}
+\appointment{\textbf{Appointments}}{13:15-15:00, DSCH 368}{M,W,F}{13:15-15:00}
 \end{schedule}
 \end{document}
 
