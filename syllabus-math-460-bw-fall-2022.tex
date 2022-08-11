@@ -10,6 +10,12 @@
 \usepackage[UKenglish]{babel}
 \usepackage[UKenglish]{isodate}% http://ctan.org/pkg/isodate
 \usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = black, %Colour for external hyperlinks
+  linkcolor    = black, %Colour of internal links
+  citecolor   = black %Colour of citations
+}
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 \frenchspacing
 \usepackage[nodayofweek,level]{datetime}
@@ -143,19 +149,19 @@ If we end the term with less than 180 points for homework,  your homework point 
 \FPeval{\F}{round(\points*0.6-1,0)}
 \FPeval{\Dm}{round(\points*0.6,0)}
 \FPeval{\D}{round(\points*0.633,0)}
-\FPeval{\Dp}{round(\points*0.666,0)}
+\FPeval{\Dp}{round(\points*0.6667,0)}
 
 \FPeval{\Cm}{round(\points*0.7,0)}
 \FPeval{\C}{round(\points*0.733,0)}
-\FPeval{\Cp}{round(\points*0.766,0)}
+\FPeval{\Cp}{round(\points*0.7667,0)}
 
 \FPeval{\Bm}{round(\points*0.8,0)}
 \FPeval{\B}{round(\points*0.833,0)}
-\FPeval{\Bp}{round(\points*0.866,0)}
+\FPeval{\Bp}{round(\points*0.8667,0)}
 
 \FPeval{\Am}{round(\points*0.9,0)}
 \FPeval{\A}{round(\points*0.933,0)}
-\FPeval{\Ap}{round(\points*0.966,0)}
+\FPeval{\Ap}{round(\points*0.98,0)}
 
 The following table shows the \emph{minimum} number of points (out of \points) that
 are required for each of the twelve letter grades D- through A+. For
@@ -253,7 +259,11 @@ When we are ahead or behind, the topics on the exams will be appropriately adjus
 
 \subsubsection*{University Policies}
 
-Please see \url{https://www.unk.edu/academic_affairs/asa_forms/course-policies-and-resources.php}.
+For the UNK's Policies and statements on: Attendance Policy, Academic Honesty Policy, 
+Reporting Student Sexual Harassment, Sexual Violence or Sexual Assault, Students 
+with Disabilities, Students Who are Pregnant, and UNK Statement of Diversity 
+\& Inclusion,  you \emph{must read}
+\url{https://www.unk.edu/academic_affairs/asa_forms/course-policies-and-resources.php}.
 
 \subsubsection* {Policies}
 
@@ -269,7 +279,8 @@ example) while taking a test will earn you a grade of zero on that assessment.
 
 \begin{enumerate}
 
-\item Regular in person class attendance is required. If you are ill or need to miss class due to athletics, please let me know ahead of time, and I will make an effort to put the class on Zoom.
+\item Regular in person class attendance is required. If you are ill or need to miss 
+class due to athletics, please let me know ahead of time and I will make an effort to put the class on Zoom.
 
 \item For examinations and in class assignments, show your work.  \emph{No credit will be given for multi-step problems without the necessary work. Your solution must contain enough detail
 so that I am convinced that you could correctly work any similar problem.} Also erase or clearly mark any work you want me to ignore; otherwise,
@@ -280,7 +291,7 @@ complete, concise, neat}, and \emph{well-organized}.
 \emph{You will not earn full credit on work that falls short of 
 these expectations.}
 
-\item Class cancellations due to weather or illness or other 
+\item Class cancellations due to weather, illness, or other 
 unplanned circumstances may require that we make  adjustments
 to the course calendar, exam dates, and due dates or specifics for 
 course assessments. 

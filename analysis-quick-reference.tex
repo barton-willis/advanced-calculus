@@ -207,6 +207,7 @@ For numbers \(a\) and \(b\), we define the intervals:
 \vspace{-0.1in}
 \begin{alignat*}{1}
     &\lnot \parens*{P \land Q} \equiv \lnot P \lor \lnot Q \\
+    & \parens*{P \implies Q} \equiv \parens*{\lnot Q \implies \lnot P}\\
     &P \centernot \implies Q \equiv P \land \lnot Q \\
     &\parens*{P \iff Q} \equiv \parens*{\parens*{P \implies Q} \land \parens*{Q \implies P}} \\
     &\lnot \parens*{\forall \, x \in A}\parens*{P(x)} \equiv \parens*{\exists \, x \in A}\parens*{\lnot P \parens*{x}}  \\
@@ -303,9 +304,9 @@ For all $x,y \in \reals$, we have
     \item[Set closure] $\overline{A} = A \cup \mathrm{LP}(A)$, were $\mathrm{LP}(A)$ is the
     set of limit points of $A$.
     
-    \item[Open cover] A set $\mathcal{C}$ is a cover of a set $A$ provided 
+    \item[Open cover] A set $\mathcal{C}$ is an open cover of a set $A$ provided 
      \begin{alphalist}
-         \item every member of $\mathcal{C}$ is a set
+         \item every member of $\mathcal{C}$ is an open set
          \item $A \subset \underset{B \in \mathcal{C}}{\bigcup} B $
      \end{alphalist}
 
@@ -322,12 +323,12 @@ For any subset $A$ of $\reals$:
     \item[glb] $z = \glb(A)$ provided
     \begin{alphalist}
         \item $z$ is an lower bound for $A$
-        \item $x$ is a lower bound for $A$ implies $x \leq z$
+        \item if $x$ is a lower bound for $A$ then $x \leq z$
     \end{alphalist}
    \item[lub]  $z = \lub(A)$ provided
    \begin{alphalist}
        \item $z$ is an upper bound for $A$
-       \item $x$ is a upper bound for $A$ implies $z \leq x$
+       \item if $x$ is a upper bound for $A$ then $z \leq x$
    \end{alphalist}
 \end{description}   
 \section*{Sequences}
