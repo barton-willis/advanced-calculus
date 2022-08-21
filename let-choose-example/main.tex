@@ -19,7 +19,7 @@
 \setbeamertemplate{footline}[text line]{%
 \parbox{\linewidth}{\vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
 \setbeamertemplate{navigation symbols}{}
-%\author[bw]{}
+\author[bw]{}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{upgreek}
@@ -189,6 +189,11 @@ value of $x$ or $a$.
 
 \textbf{Answer} Sure.  We need to choose the line to be the \emph{tangent line}. Thus in the general case, we need to choose $m = 2 a$.
 
+\begin{PenList}
+   \item In words, \(\left(\forall \,\, a \in \reals\right)\left(\exists \,\,  m \in \reals\right)\left(\forall \,\, x \in \reals \right)\left(x^2 \geq a^2 + m (x-a) \right) \)
+   means that \emph{every} tangent line to the parabola is below or touching the
+   parabola.
+\end{PenList}
 \vfill
 
 \end{frame}
@@ -285,5 +290,32 @@ the value of $m$ \emph{cannot} depend on $x$.
 \item So this is a ``fake proof.''
 \end{PenList}  
 
+\end{frame}
+
+\begin{frame}{T is for Thinking}
+
+\textbf{Question} What can we say about functions $F$ that have
+the property
+\begin{equation*}
+   \left(\forall \,\, a \in \reals\right)\left(\exists \,\,  m \in \reals\right)\left (\forall \,\, x \in \reals \right)\left(F(x) \geq F(a) + m (x-a) \right).
+\end{equation*}
+Specifically:
+\begin{PenList}
+
+   \item Does this function property have a standard name?
+   
+   \item Does the sum, difference, product, or quotient of 
+   functions with this property also have this property?
+   
+   \item Is the number $m$ always unique?
+   
+   \item Must the function $F$ be differentiable? If so, must 
+   $m = F^\prime(a)$? 
+
+   \item Is there an easy way to check if a function has this property?
+   
+
+
+\end{PenList}
 \end{frame}
 \end{document}
