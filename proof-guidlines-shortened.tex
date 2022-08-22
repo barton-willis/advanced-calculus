@@ -1,0 +1,246 @@
+\documentclass[professionalfonts]{beamer}%
+%\usetheme{Madrid}
+%\usecolortheme{whale}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\dom}{\mathrm {dom}}
+%\usepackage{alltt}
+%\usepackage[]{algorithm2e}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows}
+
+\usepackage{upgreek}
+\usepackage{amsmath,amssymb,enumerate,verbatim}
+\let\checkmark\relax
+\usepackage{dingbat}
+\usepackage{epsfig}
+\usepackage{pifont,bbding,enumerate,color}
+
+\usepackage{epsfig}
+
+\usepackage{enumerate}
+%\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+%\let\endchangemargin=\endlist 
+\newenvironment{handlist}{
+  \begin{enumerate}[\leftthumbsup]
+    \addtolength{\itemsep}{-0.3\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-0.5\itemsep}}
+  {\end{enumerate}}
+
+\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\usepackage{isomath}
+\usepackage{xcolor}
+\usepackage[]{algorithm2e}
+%%
+\title[Proofs for humans] % (optional, only for long titles)
+{Grammar for mathematicians and other humans}
+\author[Barton Willis] % (optional, for multiple authors)
+{Barton~Willis}
+\institute[UNK] % (optional)
+{
+ % \inst{1}%
+  MATH 460 \\
+   \medskip
+  Department of Mathematics and Statistics\\
+  University Nebraska at Kearney
+  }
+  \date{}
+
+
+\begin{document}
+
+
+
+\frame{\titlepage}
+
+
+\begin{frame}[fragile]{Write proofs as (English) sentences}{}%
+
+Write proofs as (English) sentences; specifically:
+
+\begin{handlist}
+\item Every sentence must start with a word, not  a mathematical expression.
+\item Every sentence of a proof must  end with a \emph{period or a semicolon.}
+\item Except for  enumeration, generally mathematical expressions should be separated by  a word or phrase. 
+\end{handlist}
+
+\vfill 
+\end{frame}
+\begin{frame}[fragile]{}{}%
+
+\vspace{0.1in}
+
+\begin{block}{Examples}
+\textbf{Wrong:} m,n integers
+
+\textbf{Correct:} Let \(m\) and \(n\) be integers.\\
+
+\vspace{0.1in}
+
+\textbf{Wrong:} \(x > 0\),  we have \(x + 1 > 0\).\\
+\textbf{Correct:}  Since \(x > 0\), we have \(x + 1 > 0\).
+
+\vspace{0.1in}
+
+\textbf{Wrong:} If \(x \in A\), \(x \in B\).\\
+\textbf{Correct:}  If \(x \in A\), then  \(x \in B\).
+\end{block}
+
+\vfill
+\end{frame} 
+
+\begin{frame}[fragile]{No poetry}{}%
+
+\textbf{Ode To Tomatoes by Pablo Neruda}
+
+The street\\
+filled with tomatoes,\\
+midday,\\
+summer,\\
+light is\\
+halved\\
+like\\
+a\\
+tomato \\
+
+\begin{handlist}
+
+\item Write proofs as regular text, not as poetry with wide margins.
+\end{handlist}
+
+
+
+
+\end{frame}
+\begin{frame}[fragile]{}{}%
+
+
+\begin{block}{Example}
+
+\textbf{Wrong:}
+\begin{centering}
+Let \(\varepsilon > 0\). \\
+Choose \(\delta = \varepsilon / 3 \). \\
+For \(|x - 1| < \delta \) we have \(x < 1 + \delta\). \\
+\end{centering}
+
+\vspace{0.1in}
+
+\textbf{Correct:} Let \(\varepsilon > 0\). Choose \(\delta = \varepsilon / 3 \).  For \(|x - 1| < \delta \) we have \(x < 1 + \delta\). 
+\end{block}
+
+\vfill
+\end{frame}
+
+\begin{frame}[fragile]{Say what you mean}{}%
+
+Try reading your text out loud. Make sure it makes sense.
+
+\begin{block}{Examples}
+
+\textbf{Wrong:} Let \(x \in A \subset B\).
+
+
+
+\textbf{Correct} Let \(x \in A\). Since \(A \subset B\), we have \(x \in B\).
+
+\vspace{0.1in}
+
+\textbf{Wrong:}   Let \(k > 0\) be an integer.
+
+\textbf{Correct:} Let \(k\) be a positive integer.
+
+\end{block}
+
+\begin{handlist}
+\item The sentence
+\begin{quote} Let \(x \) be a member of \(A\) is a subset of \(B\). \end{quote}
+is nonsence. So is
+\begin{quote} Let \(k\) is  greater than zero be an integer. \end{quote}.
+
+\end{handlist}
+\vfill 
+\end{frame}
+\begin{frame}[fragile]{First waffle rule}{}%
+
+The first waffle is never perfect; neither is the first attempt at a proof. Revise your work until it is 
+as close to perfect as you can make it.
+
+\begin{handlist}
+\item But first be sure your work is logical--correcting the form of illogical work is a waste of time.
+
+\item By all means, if it helps you construct a proof, draw pictures and
+diagrams filled with lines and arrows.  
+
+\item But do not include your scratch work in the final copy.
+
+\item In a quest for perfection, mathematicians have been known to write math on resturant menus, unpaid bills, and on birth certificates.
+\end{handlist}
+
+\end{frame}
+
+\begin{frame}[fragile]{Pick-and-show idiom}{}%
+
+Anytime you need to show one set is a subset of another, you should use the
+``pick-and-show'' idiom; it looks like this:
+
+\begin{quote}
+
+{\bf Proposition} Let \(A\) and \(B\) be sets and suppose \(H_1\), \(H_2\), \dots , and \(H_n\). Then  \(A \subset B\).
+
+\vspace{0.1in}
+
+{\bf Proof} If \(x \in A\), we have (deductions made using the 
+facts \(H_1\) through \(H_n\)); therefore \(x \in B\).
+
+\end{quote}
+Here, the statements \(H_1\) through \(H_n\) are the hypothesis of the
+proposition. To demonstrate set equality, use the pick-and-show idiom twice. 
+
+\end{frame}
+
+\begin{frame}[fragile]{Pick-and-show shown}{}%
+
+\begin{block}{Pick-and-show example}
+\textbf{Proposition} Let \(A\) and \(B\) be sets with \(A \subset B\). Then \(B^\mathrm{C} \subset A^\mathrm{C}\).
+
+\vspace{0.1in}
+
+\textbf{Proof} If \(x \in B^\mathrm{C} \), then \(x \notin B\). Since \(x \notin B\) and  \(A \subset B\), we have \(x \notin A\); therefore
+\(x \in A^\mathrm{C}\).
+
+\end{block}
+
+\begin{handlist}
+
+\item The \emph{conclusion} of the proposition is  \(B^\mathrm{C} \subset A^\mathrm{C}\). Thus pick-and-show starts with ``If \(x \in B^\mathrm{C}\).''
+
+\item The hypothesis is  \(A \subset B\). Starting pick-and-show starting with `If \(x \in A^\mathrm{C}\)'' is the exit ramp to nowhere.
+
+\end{handlist}
+
+\end{frame}
+
+\begin{frame}[fragile]{Jeep\footnote{there's only one} idiom}{}%
+
+To show that there is only one thing of some object, assume \(\mbox{Thing}_1\) and \(\mbox{Thing}_2\) are these objects and show that  \(\mbox{Thing}_1 = \mbox{Thing}_2\)
+
+
+\begin{block}{There's only one}
+
+\textbf{Proposition} There is at most one empty set.
+
+\vspace{0.1in}
+\textbf{Proof} Suppose \(E\) and \(E^\prime\) are empty sets. Since \(E\) is empty, we have \(E \subset E^\prime\). Similarly since \(E^\prime\) is empty,
+we have \(E^\prime \subset E\); therefore \(E = E^\prime\).
+
+\end{block}
+
+\end{frame}
+\end{document}
+
