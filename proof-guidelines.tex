@@ -1,0 +1,1081 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{fullpage,amsmath,pifont,moreverb,enumerate}
+\usepackage{amssymb,url}
+
+\newcommand{\reals}{\mathbf{R}}
+
+\newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{numlist}{
+  \begin{enumerate}[(1)]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{handlist}{
+  \begin{enumerate}[\ding{43}]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\usepackage{mathptm,calc}
+
+\newcounter{ex}\setcounter{ex}{0}
+\newcommand{\ex}{%\
+\hspace{-0.2in} \setcounter{ex}{\value{ex}+1}
+\theex \,\,}
+
+\newcounter{id}\setcounter{id}{0}
+\newcommand{\id}{%\
+\hspace{-0.2in} \setcounter{id}{\value{id}+1}
+\theid \,\,}
+
+\newcounter{se}\setcounter{se}{0}
+\newcommand{\se}{%\
+\hspace{-0.2in} \setcounter{se}{\value{se}+1}
+\these \,\,}
+
+\usepackage{isomath}
+
+%\title{ Guidelines for Writing Proofs}
+
+%\author{Barton Willis \\ Professor of Mathematics}
+
+
+%\date{\today}                   
+\begin{document}
+
+\begin{flushleft}
+\textbf{Guidelines for Writing Proofs} \\
+ Barton Willis, PhD
+\end{flushleft}
+
+\begin{quote}
+{\em I have made this letter longer than usual, only because I have
+  not had the time to make it shorter.} \hfill Blaise Pascal
+\end{quote}
+
+
+\subsubsection*{\ex Write Sentences}
+
+Write proofs using sentences. Do not write 
+proofs as sentence fragments connected by arrows.
+\begin{quote}
+Replace
+\begin{quote}
+\(n,m\) integers \(\sqrt{2} = n / m  \longrightarrow 2 m^2 = n^2\). 
+\end{quote}
+with
+\begin{quote}
+Let \(n\) and \(m\) be integers. If \(\sqrt{2} = n / m\), then \(2 \, m^2 = n^2\).
+\end{quote}
+\end{quote}
+
+
+%%----Style rules---------------------------------
+\subsubsection*{\ex  Format proofs as regular text}
+
+Poetry is often printed using centered lines and wide
+margins. Mathematics isn't poetry; don't format mathematics as if it were poetry.
+
+
+\begin{quote}
+Replace
+\begin{quote}
+\begin{centering}
+Let \(\varepsilon > 0\). \\
+Choose \(\delta = \varepsilon / 3 \). \\
+For \(|x - 1| < \delta \) we have \(x < 1 + \delta\). \\
+\end{centering}
+\end{quote}
+with
+\begin{quote}
+Let \(\varepsilon > 0\).  Choose \(\delta = \varepsilon / 3 \).
+For \(|x - 1| < \delta \) we have \mbox{\(x<1 + \delta\)}.
+\end{quote}
+\end{quote}
+
+
+
+
+
+
+\subsubsection*{\ex  Do not use the first person} 
+
+In a proof, do not  use the first person.  
+
+\begin{quote}
+Replace
+\begin{quote}
+\textbf{Proof } First, I consider the case \(x < 0\).
+\end{quote}
+with
+\begin{quote}
+ \textbf { Proof } First, consider \(x < 0\).
+\end{quote}
+\end{quote}
+
+Outside a proof, use the first person when it is natural.
+
+\subsubsection*{\ex  Use ``we''}
+
+In mathematical text, ``we'' means the author and the reader.
+Use ``we'' instead of the passive voice when it makes the 
+text shorter.
+
+\begin{quote}
+Replace (passive voice)
+\begin{quote}
+  It has been shown that \(x\) is prime.
+\end{quote}
+with (active voice)
+\begin{quote}
+  We've shown that \(x\) is prime.
+\end{quote}
+Alternatively, write this as
+\begin{quote}
+  The number \(x\) is prime.
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex  Refer to theorems and axioms by name}  
+
+It is usually better to write
+\begin{quote}
+The completeness of the real numbers implies that \dots
+\end{quote}
+then it is to write
+\begin{quote}
+ It follows from Axiom  (A9) that \dots
+\end{quote}
+The meaning of the first is clear, but the second won't be clear
+to most readers until they look up Axiom (A9).
+
+\subsubsection*{\ex  Use consistent terminology}
+
+Mathematics is full of synonyms; for example, {\em set\/} and {\em
+collection\/} are synonyms. In a proof, it's best to stay with the
+same word to express a concept.
+
+\begin{quote}
+Replace
+\begin{quote}
+Let \(A\) be a set and let \(B\) be a nonempty collection.
+\end{quote}
+with
+\begin{quote}
+Let \(A\) be a set and let \(B\) be a nonempty set.
+\end{quote}
+\end{quote}
+
+%%----end style rules---------------------------------
+%%----clarity rules---------------------------------
+
+\subsubsection*{\ex  Use words with clear meanings}
+
+A \mbox{well-written} proof can be hard to follow. Do not make it more
+difficult to understand by using imprecise language.  Informally 
+I might say that a quantity is ``tiny.'' Don't use such language in a proof.
+
+
+
+\subsubsection*{\ex Mathematical writing should be readable}
+
+Some mathematical writing looks OK in print, but it is nonsense when read
+aloud.  Read your writing out loud to find such mistakes.
+
+\begin{quote}
+Replace
+\begin{quote}
+  Let \(k > 0\) be an integer.
+\end{quote}
+with
+\begin{quote}
+  Let \(k\) be a positive integer.
+\end{quote}
+Alternatively,  this can be expressed as
+\begin{quote}
+  Let \(k \in \mathbf{Z}_ {\geq 0}.\)
+\end{quote}
+\end{quote}
+Spoken,``Let \(k > 0\) be an integer'' is equivalent to
+``Let \(k\) is greater than zero  be an integer.''
+
+
+
+\subsubsection*{\ex  Write succinctly}  
+
+Extraneous facts make it difficult for the reader to follow a logical
+argument.  Re-read your work and make certain that each thread of
+reasoning is needed.
+
+\subsubsection*{\ex  Include sufficient detail}  
+
+The proofs you write should contain enough detail so that a 
+classmate could  follow it; however,  most purely algebraic 
+steps may be omitted. 
+
+\begin{quote}
+Replace
+\begin{quote}
+Subtracting 8 from both sides of the inequality (1)  and dividing by 42,
+we deduce that \(x < 1\).
+\end{quote}
+with
+\begin{quote}
+Inequality (1) implies that \(x < 1\).
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex Be careful with ``it''}
+
+Make sure the meaning of every pronoun is unambiguous.
+
+\begin{quote}
+Replace
+\begin{quote}
+   Let \(\ a = 1\). To find \(b\), add 5 to it and then multiply it by 8.
+\end{quote}
+with 
+\begin{quote}
+   Let \(a = 1\).  Define \(b = 8 (a + 5)\).
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex Define symbols before you use them}
+
+With few exceptions (\(\pi\), for example), every symbol you use must be defined
+before, or near, the place you first use it.
+
+\begin{quote}
+Replace
+\begin{quote}
+The volume is \(\pi r^2 h\).
+\end{quote}
+with
+\begin{quote}
+The volume of a right circular cylindrical with height \(h\) and
+radius \(r\) is \(\pi r^2 h\).
+
+\end{quote}
+\end{quote}
+\subsubsection*{\ex  Qualify identifiers} 
+
+Some symbols have more than one meaning; for example, $(0,1)$ can
+represent an open interval in $\mathbf{R}$, an element of
+\(\mathbf{R}^2\), or a complex number.  Do not leave it up to the reader
+to use conventions or context (\(n\) is an integer, \(z\) is complex
+number, \(F\) is a function, etc.) to guess the type of each
+identifier; rather, tell the reader the meaning of symbols.  If $F$ is
+a function, for example, immediately let the reader know:
+\begin{quote}
+   Let $F$ be a function \dots
+\end{quote}
+Unless a proof is very long, the reader needn't be reminded that
+$F$ is a function. 
+\begin{quote}
+Replace
+\begin{quote}
+  Let $F$ be a function defined on $\mathbf{R}$.  If the function $F$ is continuous on
+  the open interval $(0,1)$,  \dots
+\end{quote}
+with
+\begin{quote}
+  Let \(F\) be a function defined on \(\mathbf{R}\).  If \(F\) is continuous on
+  the open interval \((0,1)\), \dots
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex Mathematics is case--sensitive}
+
+Lower and upper case identifiers are distinct.  This means, for
+example that \(a\) and \(A\) are different symbols.
+
+\subsubsection*{\ex  Avoid unnecessary notation}
+
+Introduce notation and identifiers only when needed. 
+\begin{quote}
+For example, replace
+\begin{quote}
+ \textbf {Proposition} The number \(x = \sqrt{2}\) is irrational.
+\end{quote}
+with
+\begin{quote}
+{ \textbf Proposition} The number \(\sqrt{2}\) is irrational.
+\end{quote}
+\end{quote}
+In addition to being verbose, the first statement of the 
+proposition has several other problems. First, \(x = \sqrt{2}\) isn't 
+a number, it's an  {\em equation}. Second, only a number can be 
+irrational, but the first proposition asserts that an {\em equation\/}
+can be irrational. 
+
+\subsubsection*{\ex  Don't confuse a function with its formula}
+
+If \(F\) is a function, don't write \(F(x)\) when you mean \(F\).
+
+\begin{quote}
+Replace
+\begin{quote}
+If \(F(x) \) and \(G(x)\) are continuous, \(F(x) + G(x)\) is 
+continuous.
+\end{quote}
+with
+\begin{quote}
+If \(F\) and \(G\) are continuous, \(F + G\) is 
+continuous.
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex  Use function signature notation}
+
+When a new function is first introduced, you should  
+immediately tell the reader the {\em name, domain}, and 
+{\em co-domain\/} of a function by giving its signature.\footnote{The terminology {\em function signature\/} isn't
+standard.}
+\begin{quote}
+Replace
+\begin{quote}
+Let \(F(x,y)\) be a real-valued function.
+\end{quote}
+with
+\begin{quote}
+Let \(F : \mathbf{R}^2 \to \mathbf{R}\).
+\end{quote}
+\end{quote}
+Writing \(F(x,y)\) to {\em imply\/} that \(F\) is defined
+on \( \mathbf{R}^2\) is a poor substitute for a clear statement of 
+the function signature. If the exact domain of a function isn't 
+important, use the notation
+\begin{quote}
+Let \(F :\,\, \subset \mathbf{R}^2 \to \mathbf{R}\).
+\end{quote}
+This tells the reader that the domain of \(F\) is a subset
+of \(\mathbf{R}^2\), but it doesn't give its actual domain.
+
+
+%%---end clarity-----------------------------------------
+%%---start word selection--------------------------------
+\subsubsection*{\ex Don't confuse ``let'' with ``therefore''}
+
+To introduce a new object, use ``let.''  Use ``therefore'' to
+state a logical consequence of the facts that precede it.
+
+
+\begin{quote}
+Replace
+\begin{quote}
+  Let \(n\) be an integer. Let \(n (n+1)\) be even.
+\end{quote}
+with
+\begin{quote}
+Let \(n\) be an integer.  Therefore \(n (n+1)\) is even.
+\end{quote}
+\end{quote}
+Alternatives to ``therefore'' are ``so'' and ``thus.''
+
+
+\subsubsection*{\ex  Omit empty words and phrases} 
+
+It doesn't help the reader to say that something is 
+``easy to show'' or ``obvious.'' Omit or replace 
+the empty words and phrases listed in the following table.
+
+\begin{center}
+\begin{tabular}{| l l |}
+\hline  \textbf {Word or Phrase} &  \textbf {Replacement} \\ 
+\hline
+It is trivial to show    & (omit) \\
+It is easy to show     & (omit) \\   
+Clearly   & (omit) \\
+Obviously  & (omit) \\
+It immediately follows & It follows \\
+For the purpose of contradiction &  Suppose \\
+By definition                    & Thus \\
+\hline
+\end{tabular}
+\end{center}
+Also, expunge weasel words from your text. For a list of weasel words,  see, for example,  
+\begin{url} {http://en.wikipedia.org/wiki/Weasel_word} \end{url}.
+
+
+
+
+\subsubsection*{\ex  Do not be wishy-washy}  
+
+A proof is no place to be indefinite.  Do not use  phrases similar 
+to ``I believe,'' ``should be'' or ``I think that.''
+
+
+
+%---end word selection
+%-----start structure----------
+
+
+\subsubsection*{\ex  Use related theorems}  
+
+A short proof that uses several powerful theorems is more likely to be
+correct then is a long proof that starts from scratch.  Whenever
+possible, base your proofs on propositions that have been proved.  Of
+course, using a result that we have not yet proved in class is not
+allowed.
+
+\subsubsection*{\ex  Let the reader know where the argument is heading} 
+
+It often helps the reader to know in advance where a proof is heading.
+Depending on the audience, it may be better to write
+
+\begin{quote}
+  Let $x \in A$.  To show that $ A \subset B$, we'll show that
+  $x \in B$. Since, \dots. Thus $x \in B$; therefore $A \subset B$.
+\end{quote}
+than to write
+\begin{quote}
+  Let $x \in A$.  Since, \dots. Thus $x \in B$; therefore $A \subset B$.
+\end{quote}
+
+\subsubsection*{\ex  Use idioms}
+
+Some patterns enter into proofs so frequently that we express them
+using an idiom.\footnote{Idiom (noun): A style or manner of expression
+peculiar to a given people. (From dictionary.com)} Think of an idiom
+as a template for a proof.  When a proof conforms to a template, the
+reader has a good idea of what will follow.  This can make a proof easier to
+read. We'll learn a few templates for proofs. 
+
+
+%%---end structure ----------------
+%%---start grammar ----------------
+
+\subsubsection*{\ex  Use correct spelling, punctuation, and grammar}
+
+Misspelled words, incorrect punctuation, and poor grammar distract the reader.  
+Always carefully check your work for these errors. Additionally, 
+displayed formulas should be punctuated as regular text.  For example,
+\begin{quote}
+Repeated use of the  double angle formula gives
+\[
+   \sin^4(x) = \frac {\cos \left(4\,x\right)}{8}-\frac {\cos \left(2\,x\right)}{2%
+ }+\frac {3}{8}. 
+\]
+\end{quote}
+The displayed formula ends the sentence; thus it terminates with a period.
+
+\subsubsection*{\ex  Begin each sentence with a word}  
+
+
+A sentence that starts with a symbol is difficult to 
+read; every sentence must begin with a word, not a symbol.
+
+\begin{quote}
+Replace
+\begin{quote}
+$A$ is continuous on $\mathbf{R}$; we have \dots
+\end{quote}
+with
+\begin{quote}
+Since $A$ is continuous on $\mathbf{R}$, we have \dots
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex Place a word between adjacent formulas}
+
+When one formula follows another, place a word in between the formulas.
+
+\begin{quote}
+Replace
+\begin{quote}
+   When \(u > n\)  \(k < 0\).
+\end{quote}
+with
+\begin{quote}
+  When \(u > n\), we also have \(k < 0\).
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex Don't over use the colon}
+
+Do not use a colon immediately before a formula when the formula 
+completes the sentence.
+
+\begin{quote}
+Replace
+\begin{quote}
+  For all integers \(n\), the number: \(n (n + 1) \) is even.
+\end{quote}
+with
+\begin{quote}
+   For all integers \(n\), the number \(n (n + 1) \) is even.
+\end{quote}
+\end{quote}
+If the phrase that follows a colon is a complete sentence, 
+capitalize the first word following a colon; otherwise, do
+not capitalize the first word following a colon.
+ 
+\subsubsection*{\ex Don't use unnecessary commas}
+
+Do not surround an appositive with commas.
+
+\begin{quote}
+Replace
+\begin{quote}
+  The revenue, \(R\), is an increasing function of price, \(p\).
+\end{quote}
+with
+\begin{quote}
+  The revenue \(R\) is an increasing function of price \(p\).
+\end{quote}
+\end{quote}
+Further when a sentence starts with ``further,'' ``therefore,'' or ``thus,''
+a comma isn't needed after the first word.
+
+
+\subsubsection*{\ex If there is a ``first,'' there must be a ``second''}
+
+If you enumerate ideas using starting with ``first,'' you must identify
+the remaining ideas using second, third, etc.
+
+\begin{quote}
+Replace
+\begin{quote}
+First, we'll show that \(x \leq 0\). Next, we'll show that
+\(x \geq 0\).
+\end{quote}
+with
+\begin{quote}
+First, we'll show that \(x \leq 0\).  Second, we'll show that
+\mbox{\(x \geq 0\)}.
+\end{quote}
+\end{quote}
+
+
+
+\subsubsection*{\ex  Capitalize proper names and theorems}
+
+Capitalize the words {\em axiom, definition, proposition\/}, and {\em theorem\/}
+when they refer to something specific; otherwise, do not
+capitalize them.
+
+\begin{quote}
+Replace
+\begin{quote}
+Today, Mary proved theorem 1. Yesterday, she proved two Theorems.
+\end{quote}
+with
+\begin{quote}
+Today, Mary proved Theorem 1. Yesterday, she proved two theorems.
+\end{quote}
+\end{quote}
+Also capitalize proper names; for example, {\em the Euler
+constant}. Do not capitalize a name that is {\em derived\/} from a
+proper name; for example, {\em a cartesian coordinate\/} or the {\em
+lagrangian density}.\footnote{This rule is gaining popularity, but
+most writers still write ``Cartesian coordinate.'' }
+
+
+\subsubsection*{\ex  Don't confuse it's and its}
+
+The word ``it's'' always means it is. Don't confuse it's with its.\footnote{I suppose you
+could name your dog ``It.'' Then ``It's doghouse has two stories.'' is correct,
+and ``It's'' does not mean ``It is.''} 
+
+\begin{quote}
+Replace
+\begin{quote}
+Memorize Definition 1-1; its the most important thing you will learn
+this term.
+\end{quote}
+with
+\begin{quote}
+Memorize Definition 1-1; it's the most important thing you will learn
+this term.
+\end{quote}
+\end{quote}
+
+
+%%---start appearance ---------------------
+
+
+\subsubsection*{\ex Do scratch work}
+
+By all means, if it helps you construct a proof, draw pictures and
+diagrams filled with lines and arrows.  But do not include your scratch
+work in the final copy.
+
+\subsubsection*{\ex Proofread your work}
+
+When you have finished a proof, put it aside for a while.  After that,
+proofread it several more times. Imagine that it is someone else's
+work.  Does it still make sense?  Read your proof one line at a time
+(cover up all the other lines). Finally, try reading your work out
+loud. Mistakes that are easy to skip often manifest when spoken.
+
+
+\subsubsection*{\ex Check that you used every hypothesis}
+
+After your first draft, check that you have used every hypothesis.
+If you did not, it doesn't mean that your proof is wrong.  But it
+does mean that it is  suspect.  Generally mathematicians
+state theorems without unnecessary hypotheses.
+
+%%---end appearance--------------------------------------
+%%---start Logic-----------------------------------------
+\subsubsection*{\ex Prove, show, and demonstrate all mean prove}
+
+If you are asked to show that something is true, you need to
+supply a proof.  The words prove, show, and demonstrate all mean the
+same thing. 
+
+\subsubsection*{\ex Prove what is given--not a special case}
+
+It's not fair to append additional conditions to a proposition and 
+then use these additional conditions to prove the proposition.  Put
+differently, proving a {\em special case\/} of a proposition does not
+prove the proposition. 
+
+\begin{quote}
+Replace
+\begin{quote}
+ \textbf {Proposition} Let \(A\) and \(B\) be sets.  Show that 
+\(A \subset A \cup B\).
+
+\vspace{0.1in}
+
+\textbf{Proof} Let \(A = \{2,3,4\}\) and \(B = \{3,4,5\}\).  So
+\mbox{\(A \cup B = \{2,3,4,5\}\)}.  Since \(\{2,3,4\} \subset \{2,3,4,5\}\),
+we've shown that \(A \subset A \cup B\)
+\end{quote}
+with
+\begin{quote}
+ \textbf {Proof}  If \(x \in A\), we have \(x \in A \cup B\); therefore
+\(A \subset A \cup B\).
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex Prove the conclusion, not the hypothesis}
+
+Make certain that the logic of your proof flows from the 
+hypothesis to the conclusion. I've seen proofs that
+start with the conclusion and end with either the same statement
+or with one or more of the hypothesis.  
+
+
+
+\subsubsection*{\ex If objects aren't the same type, they aren't
+  equal.}
+
+In this class, we mostly work with {\em functions, sets}, or {\em
+numbers\/}.  A set can never equal a number and a number can never
+equal a function.  Carefully check your work and make sure that you
+have equality written only between objects with the same type.
+\begin{quote}
+The {\em range\/} of a function is a {\em set\/}; it is not a
+number. If your proof contains
+\begin{quote}
+ \(\mbox{range}(F) = 1\),
+\end{quote}
+possibly you need to replace it with
+\begin{quote}
+ \(\mbox{range}(F) = \{1\}\)
+\end{quote}
+or with
+\begin{quote}
+ \(1 \in \mbox{range}(F)\)
+\end{quote}
+\end{quote}
+Of course, equality shouldn't be written between things with the
+same type that aren't equal; however, this isn't the point that 
+is being made here.
+
+
+\subsubsection*{\ex The symbol ``='' means equal}
+
+Use ``='' between things that are equal. Do not use ``='' to 
+mean ``the next step is'' or ``implies.''
+
+\begin{quote}
+Replace
+\begin{quote}
+  \(\displaystyle F(x) = x^2 = \frac{d}{dx} (x^2) = 2x = F^\prime(x)\)
+\end{quote}
+with
+\begin{quote}
+  \(F^\prime(x) = (x^2)^\prime = 2 x. \)
+\end{quote}
+\end{quote}
+
+\noindent Also, do not practice what I call non--committal math. This is
+when mathematics is written as a stream of nouns without any 
+connections between them.
+
+\begin{quote}
+Replace
+\begin{quote}
+  \( x (x + 1) \quad (x (x + 1))^\prime \quad (x)^\prime (x + 1) + x (x+1)^\prime
+ \quad x + 1 + x \quad 2x + 1 \)
+\end{quote}
+with
+\begin{quote}
+   \((x (x + 1))^\prime = (x)^\prime (x + 1) + x (x+1)^\prime =  x + 1 + x = 2x + 1 \)
+\end{quote}
+\end{quote}
+
+Finally, do not use an arrow when you mean equality.
+
+\begin{quote}
+Replace
+\begin{quote}
+  \( (x+1)^2 \rightarrow x^2 + 2 x + 1 \)
+\end{quote}
+with
+\begin{quote}
+   \( (x+1)^2 = x^2 + 2 x + 1 \)
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex Avoid arrows}
+The double arrow \(\Rightarrow\) means \emph{therefore}, not
+equal. When you want to express the fact that expressions are
+\emph{equal}, use the equal sign, not the double arrow. Although we do
+not generally use symbols for logical connectives, a correct usage of
+the double arrow is: \emph{Chocolate is made from the bean of the
+cacao tree \(\Rightarrow\) Chocolate contains caffeine.}  An
+\emph{incorrect} usage is: \(\left(1 + x^2\right)^\prime \Rightarrow 2
+x\).  A single arrow (either left or right pointing) generally means
+``replace by.''  A correct usage of the single arrow is:
+\emph{Substituting \(x \to 5\) in \(y = 6 + x\) yields \(y = 11\).} An
+\emph{incorrect} usage is: \(x (1-x) = 0 \to x = 0,1\).
+
+
+
+\subsubsection*{\ex Check for dangling silent variables}
+
+Nothing should depend in any significant way on a  silent variable. If your
+work has a  silent variable, make sure it is qualified in some way.
+
+
+\begin{quote}
+In the following \(i\) is a  silent variable. In the last sentence, the
+ silent variable is unqualified:
+\begin{quote}
+If \(x \in \left(\underset{i \in I}{\bigcap} \,\, A_i \right)^C\), then
+\(x \in \mathcal{U}\) and \(x \notin \underset{i \in I}{\bigcap} \,\, A_i\).
+So \(x \notin A_i\).
+\end{quote}
+Replace this with
+\begin{quote}
+If \(x \in \left(\underset{i \in I}{\bigcap} \,\, A_i \right)^C\), then
+\(x \in \mathcal{U}\) and \(x \notin \underset{i \in I}{\bigcap} \,\, A_i\).
+So \(x \notin A_i\) for some \(i \in I\).
+\end{quote}
+\end{quote}
+
+\subsubsection*{\ex A statement must follow ``such that'' }
+
+What follows ``such that'' must be a statement (something that must either
+be true or false).  In 
+
+\begin{quote}
+Let \(A\) and \(B\) be sets such that \(A \cap B\).
+\end{quote}
+A noun \(A \cap B\) follows the ``such that''; it's not clear what the writer intended.
+One possibility is 
+\begin{quote}
+Let \(A\) and \(B\) be sets such that \(A \cap B\) is nonempty.
+\end{quote}
+
+\subsubsection*{\ex Say what you mean }
+
+Consider
+\begin{quote}
+If \(x \in A \cap B\), then \(x \in A\) and \(x \in B\). So
+\(x \in A \cap B \subset A\).
+\end{quote}
+Spoken the last sentence is 
+ \emph{So \(x\) is a member of \(A\) intersect \(B\) is a subset of \(A\).} To fix this,
+end the proof with \emph{So \(x \in A\).}
+
+
+
+
+
+
+
+
+
+\subsection*{\se Proof idioms}
+
+\subsubsection*{\id The let-choose idiom}
+
+To show that the quantified statement such as \(\left(\exists x_o \in \reals \right) \left(\forall x > x_o\right) 
+\left(\exists M \in \reals \right)  \left(|7 + 5 x| \leq M x^2\right)\),
+use the let-choose idiom. For each \(\forall\), use the word `let,' and for each \(\exists\) use the word `choose.' For example
+
+\textbf{Proof} Choose \(x_o = 1\) and let \(x > 1\). Choose \(M = 12\). For all \(x > 1\), we have
+\begin{align*}
+  |7 + 5 x| &\leq |7| + 5 |x|, &\mbox{(triangle inequality)} \\
+            &\leq 7 x + 5 x,   &\mbox{(using } x > 1) \\
+            &= 12 x,        &\mbox{(arithmetic)} \\
+            &\leq 12 x^2,   &\mbox{(using } x^2 > x) \\
+            &= M x^2.       &\mbox{(substitution)} \\
+\end{align*}
+
+
+
+\subsubsection*{\id The one--bad--apple idiom}
+
+You can show that a proposition is {\em false\/} by displaying just
+one example that shows that it is false. You don't need two examples
+or infinitely many examples; just one ``bad apple'' is enough.  
+
+
+
+
+
+\subsubsection*{\id The pick-and-show idiom}
+
+Anytime you need to show one set is a subset of another, you should use the
+``pick-and-show'' idiom; it looks like this
+
+\begin{quote}
+
+{ \textbf Proposition} Let \(A\) and \(B\) be sets and suppose \(H_1, H_2 , \dots
+,\mbox{ and } H_n\). Then  \(A \subset B\).
+
+\vspace{0.1in}
+
+{ \textbf Proof} If \(x \in A\), we have (deductions made using the 
+facts \(H_1\) through \(H_n\)); therefore \(x \in B\).
+
+\end{quote}
+Here, the statements \(H_1\) through \(H_n\) are the hypothesis of the
+proposition. To demonstrate set equality, use the pick-and-show idiom twice. Here
+is and example of using pick-and-show.
+
+\begin{quote}
+{ \textbf Proposition} Let \(A\) and \(B\) be nonempty sets and suppose \mbox{\(A \times B
+= B \times A\)}.  Then \(A = B\).
+\end{quote}
+The conclusion of the proposition is \(A = B\); we need to use the 
+pick-and-show idiom twice. The proof starts with
+\begin{quote}
+ { \textbf Proof}  First we show that \(A \subset B\). If \(a \in A\), we have \dots. 
+\end{quote}
+We need a consequence of \(a \in A\) that somehow involves the
+hypothesis \mbox{\(A \times B = B \times A\)}.  Since \(B\) is
+nonempty, it has an element \(b\). Thus we have \((a,b) \in A \times
+B\).  It's downhill from here. For our proof, it might be best to
+explain that \(B\) has an element and give it a name before we start
+the pick-and-show idiom.  Here's a proof.
+
+
+
+\begin{quote}
+ { \textbf Proof} First we show that \(A \subset B\). Since \(B\) is
+ nonempty, it has at least one element, call it \(b\). If \(x \in A\), we
+ have \((x,b) \in A \times B\).  But \mbox{\(A \times B = B \times A\)};
+ thus \((x,b) \in B \times A\).  Therefore \(x \in B\); consequently
+\(A \subset B\).
+
+Second we show that \(B \subset C\).  Since \(A\) is
+ nonempty, it has at least one element, call it \(a\). If \(x \in B\), we
+ have \((a,x) \in A \times B\).  But \(A \times B = B \times A\);
+ thus \((a,x) \in B \times A\).  Therefore \(x \in A\); consequently
+\(A \subset B\).
+
+\end{quote}
+
+
+It's tempting to write the proof as
+
+\begin{quote}
+ { \textbf Proof} If \((a,b) \in A \times B\), we have \((a,b) \in B \times
+ A\). Thus \(a \in B\) and \(b \in A\); therefore \(A \subset B\) and
+\(B \subset A\).
+\end{quote}
+
+What's wrong with this? Plenty: First it uses pick-and-show on \(A
+\times B\) and \(B \times A\); it should use pick-and-show on \(A\)
+and \(B\). Second, the proof never makes any use of the hypothesis
+that \(A\) and \(B\) are nonempty; this doesn't mean that the proof is
+wrong, just highly suspect. Third, and most importantly, the proof is
+logically flawed. To see the flaw, look at it carefully and decide
+what has really been proved. Since we've used pick-and-show on \(A
+\times B\), we're aiming toward a proof that  \(A \times B = B
+\times A\) implies \(B \times A \subset A \times B\).  We don't need
+to do any work to conclude that! (For any set \(A\), we have \(A
+\times \varnothing = \varnothing\). Think about that.)
+
+
+\setcounter{id}{0}
+
+\subsection* {\se How to get started}
+
+Students often tell me that ``I know how to prove it, but I can't get
+started.''  Here are a few suggestions on how to start.
+
+
+\subsubsection*{\id Know the definitions}
+
+Have you ever tried to translate an article written in a foreign
+language by looking up the definition of each word?  If you have,
+you'll agree that the method doesn't work.  If you don't throughly
+understand the definition of every word in the statement of a theorem,
+you won't be able to prove it.  When you throughly understand a
+mathematical definition, you should be able to:
+
+
+\begin{quote}
+\begin{alphalist}
+
+\item write a definition without peeking at the textbook,
+
+\item give examples (and supply proofs) of things that satisfy the definition, 
+
+\item give examples (and supply proofs) of things  that don't satisfy the definition.
+
+\end{alphalist}
+\end{quote}
+
+\subsubsection*{\id Use an idiom }
+
+Does the proof follow a standard pattern?  If it does, look at a proof that
+follows the same pattern and try to use the template.
+
+
+\subsubsection*{\id Look at related theorems}
+
+Look at all theorems that have been previously proved that involve one or
+more of the hypothesis of the theorem you are trying to prove.  These
+related theorems might help you prove your theorem.
+
+\subsubsection*{\id Checked that you have used every hypothesis}
+
+If you are stuck part way through a proof, check that you have
+used {\em every\/} hypothesis.  If you have ignored one fact,  it's likely
+that it holds the key to finishing the proof.
+
+\subsubsection*{\id Try to disprove the proposition}
+
+Sometimes if you try to disprove a proposition, you'll discover why
+it is true.
+
+\subsubsection*{\id Take a walk}
+
+It's easy to get flustered or stuck on a bad idea.  When that happens,
+put the work away and do some else for a while.  When you return, you may
+be unstuck.
+
+
+\section*{Further Reading}
+
+\begin{numlist}
+
+\item Leslie Lamport, ``How to Write a Proof,'' American Mathematical Monthly, { \textbf 102} 
+(1993) 600-608.  
+
+\item Donald Knuth, Tracy Larrabee, and Paul Roberts, {\em Mathematical
+  Writing,\/} MAA Notes Series, 1989.
+
+\item Leonard Gillman, {\em Writing Mathematics Well,\/} Mathematical
+Association of America, 1987.
+
+\item Ashley Reiter, ``Writing a Research Paper in Mathematics,'' \\
+\verb|web.mit.edu/jrickert/www/mathadvice.html|.
+
+\item \verb|www.mit.edu/afs/athena.mit.edu/course/other/mathp2/www/piil.html|.
+
+\item For an introduction to formal proofs, see \verb|en.wikipedia.org/wiki/Proof_theory|
+and \verb| www.economist.com/science/displayStory.cfm?story_id=3809661|.
+
+\end{numlist}
+
+
+
+\end{document}
+
+
+
+
+%{ \textbf Tricks for Writing Proofs} \\
+%\vspace{0.1in}
+%\normalsize
+%Dr. Barton  Willis\\
+%MATH 460 \\
+%16 Sept 2003 \\
+%\end{flushleft}
+
+\noindent Analysis proofs often start with something like the following:
+\begin{quote}
+  Let \(\varepsilon > 0\).  Choose \(\delta = \mbox{min} \{1, \varepsilon\}\).
+\end{quote}
+We need to become comfortable with such statements. Understanding hinges on the fact:
+\begin{quote}
+{ \textbf Fact} If \(x = \mbox{min} \{a,b\}\), we have \(x \leq  a\) and  \(x \leq b\).
+\end{quote}
+Let's illustrate this with an example. Suppose
+\begin{equation*}
+  x = \mbox{min} \{5,6\}. \tag{$\star$}
+\end{equation*}
+Since \( \mbox{min} \{5,6\} = 5\), we could have simply written
+\(\star\) as  \(x = 5 \) instead; \((\star\)) implies {\em two\/}
+facts
+\[
+  x < 5 \mbox{ and } x < 6.
+\]
+Of course if \(x < 5\) then \(x < 6\) is redundant; nevertheless,
+\((\star\)) is a tricky way of writing two inequalities as one.
+The full power of this idea is more clear when we have something
+like
+\begin{equation*}
+  x < \mbox{min}\{1, \varepsilon\},  \tag{$\star \star$}
+\end{equation*}
+where \(\varepsilon\) is some real number. Now $(\star \star)$
+implies
+\[
+  x < 1 \mbox{ and } x < \varepsilon.
+\]
+Given a {\em specific\/} value for \(\varepsilon\), we could reduce
+these two inequalities into just one; for example, if \(\varepsilon =
+10\), we'd simply have \(x < 1\). And if if \(\varepsilon =
+\frac{1}{2} \), we'd simply have \(x < \frac{1}{2}\).
+
+\ding{43} { \textbf Fact} If \(x < \mbox{min} \{a,b\}\), we have
+\(x < a\) and \(x < b\).
+
+OK, let's try something more challenging. Given that
+\[
+   | x - 1 | < \mbox{min} \{1, \frac{\varepsilon}{3}\},
+\]
+show that
+\[
+  |x^2 - 1| < \varepsilon.
+\]
+Expressing our given as two inequalities, yields
+\[
+  |x - 1| < 1 \mbox{ and } |x - 1| < \frac{\varepsilon}{3}.
+\]
+What we're to show looks like a difference of squares; let's factor it
+\[
+  |x^2 - 1| = |x - 1| \, |x + 1|
+\]
+The first factor \(|x - 1|\) is bounded above by
+\( \frac{\varepsilon}{3}\).  The second factor \(|x+1|\) is more
+of a puzzle. Using our other given, we have
+\[
+  | x - 1| < 1 \Rightarrow -1 < x -1 < 1 \Rightarrow 1 < x + 1 < 3
+\Rightarrow |x+1| < 3.  
+\]
+Using \(|x+1| < 3 \) and \(|x-1| < \frac{\varepsilon}{3} \), we get
+what we were after; thus
+\[
+    |x^2 - 1| = |x - 1| \, |x + 1| < 3  \frac{\varepsilon}{3} = \varepsilon.
+\]
+
+
+\end{document} 
+
+
+
+
