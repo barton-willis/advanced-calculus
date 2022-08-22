@@ -19,7 +19,7 @@
 \setbeamertemplate{footline}[text line]{%
 \parbox{\linewidth}{\vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber}}
 \setbeamertemplate{navigation symbols}{}
-%\author[bw]{}
+\author[bw]{}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{upgreek}
@@ -103,7 +103,7 @@ We have
 
 \begin{itemize}
     \item Puzzled? Good.
-    \item Let's try GNAT (= Geometric, Numerical, Algebraic, and Thinking)
+    \item Let's try GNAT (= Geometric, Numerical, Algebraic, and Thinking).
     \item But how to do that?
  \end{itemize}
 
@@ -189,6 +189,11 @@ value of $x$ or $a$.
 
 \textbf{Answer} Sure.  We need to choose the line to be the \emph{tangent line}. Thus in the general case, we need to choose $m = 2 a$.
 
+\begin{PenList}
+   \item In words, \(\left(\forall \,\, a \in \reals\right)\left(\exists \,\,  m \in \reals\right)\left(\forall \,\, x \in \reals \right)\left(x^2 \geq a^2 + m (x-a) \right) \)
+   means that \emph{every} tangent line to the parabola is below or touching the
+   parabola.
+\end{PenList}
 \vfill
 
 \end{frame}
@@ -206,7 +211,7 @@ $$
        &\mbox{(substitution)}\\
        &\equiv \left[x^2 \geq 2 a x - a^2\right], &\mbox{(expand)}\\
         &\equiv \left[x^2 - 2 a x + a^2  \geq 0 \right], &\mbox{(subtraction)}\\
-        &\equiv \left[(x-a)^2  \geq 0 \right ], &\mbox{(factor)}\\    
+        &\equiv \left[(x-a)^2  \geq 0 \right], &\mbox{(factor)}\\    
         &\equiv \mbox{True}.   &\mbox{(inequality fact)}\\
 \end{align*}
 \end{myproof}
@@ -215,7 +220,8 @@ $$
 \item  Since $a$ precedes $m$ in the statement $\left(\forall \,\, a \in \reals\right)\left(\exists \,\, m \in \reals\right) \dots$, it's OK for
 $m$ to depend on $a$.
 
-\item Our textbook sometimes reminds of such allowed dependencies by using function notation: in this case it would write $m(a)$.
+\item Our textbook sometimes reminds of such allowed dependencies by using function 
+notation: in this case it would write $m(a)$.
 
 \end{PenList}
 \end{frame}
@@ -223,7 +229,8 @@ $m$ to depend on $a$.
 \begin{frame}{D is for Details}
 
 \begin{PenList}
-\item The main part of the proof is  a string of \emph{logical equivalences} of the form $\mbox{blob}_1 \equiv \mbox{blob}_2 \equiv \cdots 
+\item The main part of the proof is  a string of \emph{logical equivalences} of the 
+form $\mbox{blob}_1 \equiv \mbox{blob}_2 \equiv \cdots 
 \equiv \mbox{True}$.
 
 \item The transitive property  of equivalence allows us to conclude that $\mbox{blob}_1 \equiv \mbox{True}$. And that was what we wanted to prove.
@@ -257,5 +264,58 @@ $$
 \end{fakeproof}
 
 \end{frame}
-    
+
+\begin{frame}{R is for Rubbish}
+
+   \begin{myprop} We have
+      $$
+      \left(\forall \,\, a \in \reals\right)\left(\exists \,\, m \in \reals\right)\left (\forall \,\, x \in \reals \right) 
+      \left(x^2 \geq a^2 + m (x-a) \right).
+      $$
+   \end{myprop}
+      
+      \begin{fakeproof}Let $a \in \reals$. Choose $m = a+x$. Let $x \in \reals$. We have
+      \end{fakeproof}
+
+
+\begin{PenList}
+\item Since $x$ follows $m$ in the statement
+$$
+\left(\forall \,\, a \in \reals\right)\left(\exists \,\, m \in \reals\right)\left(\forall \,\, x \in \reals \right) 
+$$
+the value of $m$ \emph{cannot} depend on $x$.  
+
+\item The choice $m = a+x$ violates this.
+
+\item So this is a ``fake proof.''
+\end{PenList}  
+
+\end{frame}
+
+\begin{frame}{T is for Thinking}
+
+\textbf{Question} What can we say about functions $F$ that have
+the property
+\begin{equation*}
+   \left(\forall \,\, a \in \reals\right)\left(\exists \,\,  m \in \reals\right)\left (\forall \,\, x \in \reals \right)\left(F(x) \geq F(a) + m (x-a) \right).
+\end{equation*}
+Specifically:
+\begin{PenList}
+
+   \item Does this function property have a standard name?
+   
+   \item Does the sum, difference, product, or quotient of 
+   functions with this property also have this property?
+   
+   \item Is the number $m$ always unique?
+   
+   \item Must the function $F$ be differentiable? If so, must 
+   $m = F^\prime(a)$? 
+
+   \item Is there an easy way to check if a function has this property?
+   
+
+
+\end{PenList}
+\end{frame}
 \end{document}
