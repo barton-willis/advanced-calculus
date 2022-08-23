@@ -1,7 +1,8 @@
-\documentclass[12pt,fleqn]{article}
-\usepackage{fullpage,amsmath,pifont,moreverb,enumerate}
+\documentclass[12pt]{article}
+\usepackage{amsmath,pifont,moreverb,enumerate}
 \usepackage{amssymb,url}
 
+\usepackage[letterpaper, top=0.5in, bottom=0.5in,margin=0.5in]{geometry}
 \newcommand{\reals}{\mathbf{R}}
 
 \newenvironment{alphalist}{
@@ -19,7 +20,7 @@
     \addtolength{\itemsep}{-1.0\itemsep}}
   {\end{enumerate}}
 
-\usepackage{mathptm,calc}
+\usepackage{fourier,calc}
 
 \newcounter{ex}\setcounter{ex}{0}
 \newcommand{\ex}{%\
@@ -52,21 +53,21 @@
 \end{flushleft}
 
 \begin{quote}
-{\em I have made this letter longer than usual, only because I have
+\emph{I have made this letter longer than usual, only because I have
   not had the time to make it shorter.} \hfill Blaise Pascal
 \end{quote}
 
 
 \subsubsection*{\ex Write Sentences}
 
-Write proofs using sentences. Do not write 
-proofs as sentence fragments connected by arrows.
+Write proofs using sentences. Do not write proofs as sentence fragments connected by 
+arrows.
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 \(n,m\) integers \(\sqrt{2} = n / m  \longrightarrow 2 m^2 = n^2\). 
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 Let \(n\) and \(m\) be integers. If \(\sqrt{2} = n / m\), then \(2 \, m^2 = n^2\).
 \end{quote}
@@ -81,7 +82,7 @@ margins. Mathematics isn't poetry; don't format mathematics as if it were poetry
 
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 \begin{centering}
 Let \(\varepsilon > 0\). \\
@@ -89,7 +90,7 @@ Choose \(\delta = \varepsilon / 3 \). \\
 For \(|x - 1| < \delta \) we have \(x < 1 + \delta\). \\
 \end{centering}
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 Let \(\varepsilon > 0\).  Choose \(\delta = \varepsilon / 3 \).
 For \(|x - 1| < \delta \) we have \mbox{\(x<1 + \delta\)}.
@@ -106,13 +107,13 @@ For \(|x - 1| < \delta \) we have \mbox{\(x<1 + \delta\)}.
 In a proof, do not  use the first person.  
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
-\textbf{Proof } First, I consider the case \(x < 0\).
+First, I consider the case \(x < 0\).
 \end{quote}
 with
 \begin{quote}
- \textbf { Proof } First, consider \(x < 0\).
+ First, consider \(x < 0\).
 \end{quote}
 \end{quote}
 
@@ -125,11 +126,11 @@ Use ``we'' instead of the passive voice when it makes the
 text shorter.
 
 \begin{quote}
-Replace (passive voice)
+\textbf{\textbf{Replace}} (passive voice)
 \begin{quote}
   It has been shown that \(x\) is prime.
 \end{quote}
-with (active voice)
+\textbf{with} (active voice)
 \begin{quote}
   We've shown that \(x\) is prime.
 \end{quote}
@@ -159,11 +160,11 @@ collection\/} are synonyms. In a proof, it's best to stay with the
 same word to express a concept.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 Let \(A\) be a set and let \(B\) be a nonempty collection.
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 Let \(A\) be a set and let \(B\) be a nonempty set.
 \end{quote}
@@ -186,11 +187,11 @@ Some mathematical writing looks OK in print, but it is nonsense when read
 aloud.  Read your writing out loud to find such mistakes.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
   Let \(k > 0\) be an integer.
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
   Let \(k\) be a positive integer.
 \end{quote}
@@ -217,12 +218,12 @@ classmate could  follow it; however,  most purely algebraic
 steps may be omitted. 
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 Subtracting 8 from both sides of the inequality (1)  and dividing by 42,
 we deduce that \(x < 1\).
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 Inequality (1) implies that \(x < 1\).
 \end{quote}
@@ -233,11 +234,11 @@ Inequality (1) implies that \(x < 1\).
 Make sure the meaning of every pronoun is unambiguous.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
    Let \(\ a = 1\). To find \(b\), add 5 to it and then multiply it by 8.
 \end{quote}
-with 
+\textbf{with} 
 \begin{quote}
    Let \(a = 1\).  Define \(b = 8 (a + 5)\).
 \end{quote}
@@ -249,11 +250,11 @@ With few exceptions (\(\pi\), for example), every symbol you use must be defined
 before, or near, the place you first use it.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 The volume is \(\pi r^2 h\).
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 The volume of a right circular cylindrical with height \(h\) and
 radius \(r\) is \(\pi r^2 h\).
@@ -275,12 +276,12 @@ a function, for example, immediately let the reader know:
 Unless a proof is very long, the reader needn't be reminded that
 $F$ is a function. 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
   Let $F$ be a function defined on $\mathbf{R}$.  If the function $F$ is continuous on
   the open interval $(0,1)$,  \dots
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
   Let \(F\) be a function defined on \(\mathbf{R}\).  If \(F\) is continuous on
   the open interval \((0,1)\), \dots
@@ -296,11 +297,11 @@ example that \(a\) and \(A\) are different symbols.
 
 Introduce notation and identifiers only when needed. 
 \begin{quote}
-For example, replace
+For example, \textbf{Replace}
 \begin{quote}
  \textbf {Proposition} The number \(x = \sqrt{2}\) is irrational.
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 { \textbf Proposition} The number \(\sqrt{2}\) is irrational.
 \end{quote}
@@ -316,12 +317,12 @@ can be irrational.
 If \(F\) is a function, don't write \(F(x)\) when you mean \(F\).
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 If \(F(x) \) and \(G(x)\) are continuous, \(F(x) + G(x)\) is 
 continuous.
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 If \(F\) and \(G\) are continuous, \(F + G\) is 
 continuous.
@@ -335,11 +336,11 @@ immediately tell the reader the {\em name, domain}, and
 {\em co-domain\/} of a function by giving its signature.\footnote{The terminology {\em function signature\/} isn't
 standard.}
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 Let \(F(x,y)\) be a real-valued function.
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 Let \(F : \mathbf{R}^2 \to \mathbf{R}\).
 \end{quote}
@@ -364,11 +365,11 @@ state a logical consequence of the facts that precede it.
 
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
   Let \(n\) be an integer. Let \(n (n+1)\) be even.
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 Let \(n\) be an integer.  Therefore \(n (n+1)\) is even.
 \end{quote}
@@ -379,12 +380,12 @@ Alternatives to ``therefore'' are ``so'' and ``thus.''
 \subsubsection*{\ex  Omit empty words and phrases} 
 
 It doesn't help the reader to say that something is 
-``easy to show'' or ``obvious.'' Omit or replace 
+``easy to show'' or ``obvious.'' Omit or replace
 the empty words and phrases listed in the following table.
 
 \begin{center}
 \begin{tabular}{| l l |}
-\hline  \textbf {Word or Phrase} &  \textbf {Replacement} \\ 
+\hline  \textbf {Word or Phrase} &  \textbf {\textbf{Replace}ment} \\ 
 \hline
 It is trivial to show    & (omit) \\
 It is easy to show     & (omit) \\   
@@ -469,11 +470,11 @@ A sentence that starts with a symbol is difficult to
 read; every sentence must begin with a word, not a symbol.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 $A$ is continuous on $\mathbf{R}$; we have \dots
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 Since $A$ is continuous on $\mathbf{R}$, we have \dots
 \end{quote}
@@ -484,11 +485,11 @@ Since $A$ is continuous on $\mathbf{R}$, we have \dots
 When one formula follows another, place a word in between the formulas.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
    When \(u > n\)  \(k < 0\).
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
   When \(u > n\), we also have \(k < 0\).
 \end{quote}
@@ -500,11 +501,11 @@ Do not use a colon immediately before a formula when the formula
 completes the sentence.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
   For all integers \(n\), the number: \(n (n + 1) \) is even.
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
    For all integers \(n\), the number \(n (n + 1) \) is even.
 \end{quote}
@@ -518,11 +519,11 @@ not capitalize the first word following a colon.
 Do not surround an appositive with commas.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
   The revenue, \(R\), is an increasing function of price, \(p\).
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
   The revenue \(R\) is an increasing function of price \(p\).
 \end{quote}
@@ -537,12 +538,12 @@ If you enumerate ideas using starting with ``first,'' you must identify
 the remaining ideas using second, third, etc.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 First, we'll show that \(x \leq 0\). Next, we'll show that
 \(x \geq 0\).
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 First, we'll show that \(x \leq 0\).  Second, we'll show that
 \mbox{\(x \geq 0\)}.
@@ -558,20 +559,17 @@ when they refer to something specific; otherwise, do not
 capitalize them.
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 Today, Mary proved theorem 1. Yesterday, she proved two Theorems.
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 Today, Mary proved Theorem 1. Yesterday, she proved two theorems.
 \end{quote}
 \end{quote}
-Also capitalize proper names; for example, {\em the Euler
-constant}. Do not capitalize a name that is {\em derived\/} from a
-proper name; for example, {\em a cartesian coordinate\/} or the {\em
-lagrangian density}.\footnote{This rule is gaining popularity, but
-most writers still write ``Cartesian coordinate.'' }
+Also capitalize proper names; for example, \emph{the Euler
+constant}. 
 
 
 \subsubsection*{\ex  Don't confuse it's and its}
@@ -581,12 +579,12 @@ could name your dog ``It.'' Then ``It's doghouse has two stories.'' is correct,
 and ``It's'' does not mean ``It is.''} 
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
 Memorize Definition 1-1; its the most important thing you will learn
 this term.
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
 Memorize Definition 1-1; it's the most important thing you will learn
 this term.
@@ -635,7 +633,7 @@ differently, proving a {\em special case\/} of a proposition does not
 prove the proposition. 
 
 \begin{quote}
-Replace
+\textbf{\textbf{Replace}}
 \begin{quote}
  \textbf {Proposition} Let \(A\) and \(B\) be sets.  Show that 
 \(A \subset A \cup B\).
@@ -646,7 +644,7 @@ Replace
 \mbox{\(A \cup B = \{2,3,4,5\}\)}.  Since \(\{2,3,4\} \subset \{2,3,4,5\}\),
 we've shown that \(A \subset A \cup B\)
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
  \textbf {Proof}  If \(x \in A\), we have \(x \in A \cup B\); therefore
 \(A \subset A \cup B\).
@@ -695,11 +693,11 @@ Use ``='' between things that are equal. Do not use ``='' to
 mean ``the next step is'' or ``implies.''
 
 \begin{quote}
-Replace
+\textbf{Replace}
 \begin{quote}
   \(\displaystyle F(x) = x^2 = \frac{d}{dx} (x^2) = 2x = F^\prime(x)\)
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
   \(F^\prime(x) = (x^2)^\prime = 2 x. \)
 \end{quote}
@@ -710,12 +708,12 @@ when mathematics is written as a stream of nouns without any
 connections between them.
 
 \begin{quote}
-Replace
+\textbf{Replace}
 \begin{quote}
   \( x (x + 1) \quad (x (x + 1))^\prime \quad (x)^\prime (x + 1) + x (x+1)^\prime
  \quad x + 1 + x \quad 2x + 1 \)
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
    \((x (x + 1))^\prime = (x)^\prime (x + 1) + x (x+1)^\prime =  x + 1 + x = 2x + 1 \)
 \end{quote}
@@ -724,11 +722,11 @@ with
 Finally, do not use an arrow when you mean equality.
 
 \begin{quote}
-Replace
+\textbf{Replace}
 \begin{quote}
   \( (x+1)^2 \rightarrow x^2 + 2 x + 1 \)
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
    \( (x+1)^2 = x^2 + 2 x + 1 \)
 \end{quote}
@@ -743,7 +741,7 @@ the double arrow is: \emph{Chocolate is made from the bean of the
 cacao tree \(\Rightarrow\) Chocolate contains caffeine.}  An
 \emph{incorrect} usage is: \(\left(1 + x^2\right)^\prime \Rightarrow 2
 x\).  A single arrow (either left or right pointing) generally means
-``replace by.''  A correct usage of the single arrow is:
+``\textbf{Replace} by.''  A correct usage of the single arrow is:
 \emph{Substituting \(x \to 5\) in \(y = 6 + x\) yields \(y = 11\).} An
 \emph{incorrect} usage is: \(x (1-x) = 0 \to x = 0,1\).
 
@@ -763,7 +761,7 @@ If \(x \in \left(\underset{i \in I}{\bigcap} \,\, A_i \right)^C\), then
 \(x \in \mathcal{U}\) and \(x \notin \underset{i \in I}{\bigcap} \,\, A_i\).
 So \(x \notin A_i\).
 \end{quote}
-Replace this with
+\textbf{Replace} this with
 \begin{quote}
 If \(x \in \left(\underset{i \in I}{\bigcap} \,\, A_i \right)^C\), then
 \(x \in \mathcal{U}\) and \(x \notin \underset{i \in I}{\bigcap} \,\, A_i\).
