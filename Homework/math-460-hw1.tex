@@ -1,4 +1,4 @@
-\documentclass[fleqn, 12pt]{exam}
+\documentclass[fleqn, 12pt,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -7,6 +7,9 @@
 
 \usepackage{geometry}
 \geometry{letterpaper, margin=0.75in}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
 \addpoints
 \boxedpoints
 \pointsinmargin
@@ -82,12 +85,28 @@ due \emph{\due}.
   
   \part [5] Without using negation (the symbol \(\lnot\)), write the negation of 
 \begin{equation*} 
-  \left(\forall x,y \in \dom(F) \right) \left(x < y \implies F(x) \leq F(y) \right)
+  \left(\forall x,y \in \dom(F) \right) \left(x < y \implies F(x) \leq F(y) \right).
   \end{equation*}
    in symbolic form. For assistance with the logic, see the section ``Tautologies'' in our class Quick Reference.
   
+   \begin{solution}
+    \begin{equation*} 
+      \left(\exists x,y \in \dom(F) \right) \left((x < y) \land  (F(x) > F(y)) \right).
+      \end{equation*}
+   \end{solution}
+    
   \part[5] Show that the function $x \in [-1,1] \mapsto |x|$ is not increasing on its domain.
-  
+  \begin{solution}
+    We'll show that
+    \begin{equation*} 
+      \left(\exists x,y \in \dom(F) \right) \left((x < y) \land  (|x| > |y|) \right).
+      \end{equation*}
+    Choose $x = -1$ and $y=0$.  We have
+    \[
+      \left[(x < y) \land  (|x| > |y|)\right] \equiv
+      \left[(-1 < 0) \land  (|-1| > |0|)\right] \equiv \mbox{True}.
+    \]
+   \end{solution}
    
   \end{parts} 
   
@@ -103,15 +122,36 @@ due \emph{\due}.
   \left(\forall x,y \in \dom(F) \right) \left(  F(x+y) \leq F(x) + F(y) \right)
   \end{equation*}
    in symbolic form.
+   \begin{solution}
+    \begin{equation*}
+    \left(\exists x,y \in \dom(F) \right) \left(  F(x+y) > F(x) + F(y) \right).
+    \end{equation*}
+  \end{solution}
+    
   
   \part[5] Show that the function $x \in \reals \mapsto x^2 $ is not subadditive on its domain.
+
+  \begin{solution} We'll show that
+         \begin{equation*}
+      \left(\exists x,y \in \dom(F) \right) \left(  (x+y)^2 > x^2 + y^2 \right).
+      \end{equation*}
+  Choose $x=1$ and $y=1$. We have
+  \begin{equation*}
+    \left[(x+y)^2 > x^2 + y^2 \right] \equiv 
+      \left[4 > 1 + 1 \right] \equiv \mbox{True}.
+  \end{equation*}
+   \end{solution}
   
   \part[5]  Show that the function  $x \in \reals \mapsto |x| $ is  subadditive on its domain.
   To do this, you may use the triangle inequality without proving it.
   \end{parts}
   
 
-\begin{solution}  
+\begin{solution} We'll show that
+  \begin{equation*}
+    \left(\forall x,y \in \reals \right) \left( |x+y|  \leq  |x| + |y|  \right).
+    \end{equation*}
+This is the triangle inequality.
 \end{solution}
 
 
