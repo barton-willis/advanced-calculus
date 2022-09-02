@@ -79,8 +79,8 @@
 \makeatother
 \usepackage{bbold}
 
-\usepackage{array}
-\newcolumntype{C}{>$c<$}
+%\usepackage{array}
+%\newcolumntype{C}{>$c<$}
 
 \newcommand{\llnot}{\lnot \,} % is accepted
 \newcommand{\mydash}{\text{--}}
@@ -93,7 +93,7 @@
 %\author[Barton Willis] % (optional, for multiple authors)
 %{Barton~Willis}%
 %\institute[UNK] % (optional)
-\subtitle{Lesson 11   \\ \vspace{0.5in}
+\subtitle{%Lesson 11   \\ \vspace{0.5in}
   ``The only way to learn mathematics is to do mathematics.''  \\   \vspace{0.15in}{Paul Halmos} \\
  \vspace{1.0in}
   \tiny Barton Willis, Creative Commons CC0 1.0 Universal, \the\year \normalsize
@@ -113,14 +113,12 @@
 
 \begin{mydef} Let \(A\) be a subset of \(\reals\). We say that \(A\) is \emph{bounded above} provided
 \[
-   \left (\exists M \in \reals \right) \left( \forall x \in A \right)(x \leq M).
+   \left(\exists M \in \reals \right) \left( \forall x \in A \right)(x \leq M).
 \]
 The number \(M\) is \emph{an upper bound for  the set } \(A\).
-We say that \begin{tabular}{column alignment}
-
-\end{tabular}he set  \(A\) is \emph{bounded below} provided
+We say that the set  \(A\) is \emph{bounded below} provided
 \[
-   \left (\exists M \in \reals \right) \left( \forall x \in A \right)(M \leq x).
+   \left(\exists M \in \reals \right) \left( \forall x \in A \right)(M \leq x).
 \]
 The number \(M\) is \emph{a lower bound for  the set } \(A\). If \(A\) is bounded below and bounded above, we say \(A\) is \emph{bounded}.
 \end{mydef}
@@ -134,11 +132,13 @@ The number \(M\) is \emph{a lower bound for  the set } \(A\). If \(A\) is bounde
    \item Similarly, lower bounds are not unique.
 \end{numberlist}
 \end{frame}
+
 \begin{frame}{Bounded details}
 
 \begin{numberlist}
 
-\item Notice that we do \emph{not} require that a upper bound for a set \(A\) to be a member of \(A\).
+\item Notice that we do \emph{not} require that an upper bound for a set \(A\) to be 
+a member of \(A\).
 
 \vspace{0.15in}
 \item Same for a lower bound.
@@ -181,13 +181,13 @@ The number \(M\) is \emph{a lower bound for  the set } \(A\). If \(A\) is bounde
 \begin{frame}{Being least}
 \begin{mydef} Let \(A\) be a subset of \(\reals\). The set \(A\) has a \emph{least member} provided
   \[
-     \left (\exists a^\star \in A \right) \left( \forall a \in A \right)
+     \left(\exists a^\star \in A \right) \left( \forall a \in A \right)
      (a^\star \leq a).
   \]
   We say that \(a^\star\) is a least member.  The set \(A\) has a \emph{greatest
   member} provided
   \[
-     \left (\exists a^\star \in A \right) \left( \forall a \in A \right)
+     \left(\exists a^\star \in A \right) \left( \forall a \in A \right)
      (a \leq a^\star).
   \]
   \end{mydef}
@@ -233,7 +233,7 @@ Interchanging the roles of \(x\) and \(x^\prime\), we have
 
 \item Again, a least member of a set \(A\) \emph{must} be a member of \(A\).
 
-\item Thus the empty set does \emph{not} have a least member.
+\item Thus, the empty set does \emph{not} have a least member.
 
 \item The qualification that the set be nonempty for it to have a least member is crucial.
 
@@ -246,11 +246,14 @@ Interchanging the roles of \(x\) and \(x^\prime\), we have
 \end{frame}
 \begin{frame}{Well ordering principle for the reals?}
 
-\textbf{Question} Are the real numbers well ordered?  That is, does every nonempty subset of \(\reals\) that is bounded below have a least member?
+\textbf{Question} Are the real numbers well-ordered?  That is, does every 
+nonempty subset of \(\reals\) that is bounded below have a least member?
 
 \vspace{0.5in}
-\textbf{Answer} No. The interval \((0,1)\) is nonempty and  bounded below, but it doesn't have a least member. Although zero is less than
-every member of \((0,1)\), since zero isn't a member of \((0,1)\), it is not a least member.
+\textbf{Answer} No. The interval \((0,1)\) is nonempty and  bounded below, but 
+it doesn't have a least member. Although zero is less than
+every member of \((0,1)\), since zero isn't a member of \((0,1)\), it is 
+not a least member.
 
 \end{frame}
 
@@ -275,17 +278,18 @@ Let \(x \in \reals_{\geq 0}\). Define the set \(M\) by
   \item The well ordering principle tells us that \(M\) as
   a least member.
 \vspace{0.15in}
-  \item Actaully, the least member is unique.
+  \item Actually, the least member is unique.
 \vspace{0.15in}
   \item Of course the least member depends on \(x\).
 \vspace{0.15in}
   \item Something that (i) depends on \(x\) and (ii) is unique defines a function!
 \vspace{0.15in}
-  \item We've used the well ordering principle to define the \emph{floor function} for nonnegative inputs.
+  \item We've used the well ordering principle to define the \emph{floor function} 
+  for nonnegative inputs.
 
-%  \item Similarly, we can define the ceiling function for nonnegative %inputs.
+  \item Similarly, we can define the ceiling function for nonnegative inputs.
 
-%  \item The putative identity \(\lfoor x \rfloor = - \lceil -x \rceil %\) extends the floor and ceiling functions from the nonnegative %numbers to the reals.
+  \item The putative identity \(\lfloor x \rfloor = - \lceil -x \rceil \) extends the floor and ceiling functions from the nonnegative numbers to the reals.
 
 
 
