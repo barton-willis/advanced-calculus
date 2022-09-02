@@ -114,7 +114,7 @@
 
 %------------------
 
-\subtitle{Lesson 11}
+%\subtitle{Lesson 11}
 \title{\textbf{Real numbers}}
 %\author[Barton Willis] % (optional, for multiple authors)
 %{Barton~Willis}%
@@ -155,11 +155,11 @@ It is associative provided
 \[
    (\forall a,b,c \in S)(F(a,F(b,c)) = F(F(a,b),c)).
 \]
-It has an \emph{left identity element}  provided
+It has a \emph{left identity element}  provided
 \[
   (\exists\,\, \theta \in S)((\forall a \in S)(F(\theta,a) = a).
 \]
-And it has an \emph{right identity element}  provided
+And it has a \emph{right identity element}  provided
 \[
   (\exists\,\, \theta \in S)((\forall a \in S)(F(a, \theta) = a).
 \]
@@ -169,15 +169,20 @@ And it has an \emph{right identity element}  provided
 \begin{frame}
 \begin{enumerate}
 
-\item Addition and multiplication of real numbers are examples of binary operators; these operators are commutative and associative.
+\item Addition and multiplication of real numbers are examples of binary operators; 
+these operators are commutative and associative.
 
-\item In this context, binary means that the function takes \emph{two} members of the same set; the use of binary has nothing to do with base two representation of a number.
+\item In this context, binary means that the function takes \emph{two} members of 
+the same set; the use of binary has nothing to do with base two representation of 
+a number.
 
-\item Usually binary operators are expressed in \emph{infix notation}; that is, the operator is in between its arguments.
+\item Usually binary operators are expressed in \emph{infix notation}; that is, 
+the operator is in between its arguments.
 
 \item For example, we write \(1 + 107 = 108\), not \(+(1,107) = 108\).
 
-\item  For a commutative binary operator,  every right identity element is a left identity element; so we'll call them collectively an identity element.
+\item  For a commutative binary operator,  every right identity element is a 
+left identity element; so we'll call them collectively an identity element.
 \end{enumerate}
 \end{frame}
 
@@ -185,22 +190,27 @@ And it has an \emph{right identity element}  provided
 
 \begin{alphalist}
 
-\item Addition \(+\) is a binary operator on \(\reals\).  Since \(x +0 = x\) for all real \(x\), the identity element for addition is zero.  Further we know that addition is
-commutative and associative.
+\item Addition \(+\) is a binary operator on \(\reals\).  Since \(x +0 = x\) for 
+all real \(x\), the identity element for addition is zero.  Further we know that 
+addition is commutative and associative.
 
-\item Function composition \(\circ \) is a binary operator on the set of functions from \(\reals\) to \(\reals\).  The function \(x \in \reals \mapsto x\) is the identity element for
-function composition .  Function composition is associative, but not commutative.
+\item Function composition \(\circ \) is a binary operator on the set of functions 
+from \(\reals\) to \(\reals\).  The function \(x \in \reals \mapsto x\) is the 
+identity element for function composition.  Function composition is associative, 
+but not commutative.
 
 \end{alphalist}
 
 \end{frame}
 
 \begin{frame}{Unique elements}
-\begin{myth} Let \( S \) be a set and let \(F\) be a commutative binary operator on \(S\).  Then \(F\) has at most one identity element.
+\begin{myth} Let \( S \) be a set and let \(F\) be a commutative binary operator 
+  on \(S\).  Then \(F\) has at most one identity element.
 
  \end{myth}
 
- \begin{myproof} Let \(\theta\) and \(\theta^\prime\) be identity elements for \(F\). We'll show that \(\theta = \theta^\prime\).  We have
+ \begin{myproof} Let \(\theta\) and \(\theta^\prime\) be identity elements for \(F\). 
+  We'll show that \(\theta = \theta^\prime\).  We have
  \begin{align*}
     \theta &= F(\theta^\prime, \theta),    &\mbox{(because } \theta \mbox{ is an identity element.}) \\
                 &= F(\theta, \theta^\prime),    &\mbox{(because } F \mbox{ is commutative})\\
@@ -213,10 +223,13 @@ function composition .  Function composition is associative, but not commutative
 
 \begin{frame}{Fields}
 
-We would like to capture the important features of the real numbers and give all such structures a name. This object is a \emph{field}.
+We would like to capture the important features of the real numbers and give all 
+such structures a name. This object is a \emph{field}.
 
-\begin{mydef}A field is an ordered triple  \(({\mathcal F},  +, \times)\) where \({\mathcal F} \) is a set and both \(+\) and \(\times\) are commutative and associative binary operators on
-\({\mathcal F}\) that have  identity elements; the  identity element for \(+\) is 0 and the  identity element  for \(\times\) is 1.
+\begin{mydef}A field is an ordered triple  \(({\mathcal F},  +, \times)\) 
+  where \({\mathcal F} \) is a set and both \(+\) and \(\times\) are commutative 
+  and associative binary operators on \({\mathcal F}\) that have  identity elements; 
+  the  identity element for \(+\) is 0 and the  identity element  for \(\times\) is 1.
 
 
 
