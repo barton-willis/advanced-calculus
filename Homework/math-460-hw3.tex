@@ -1,9 +1,8 @@
 \documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb}
 \usepackage{epsfig}
-%\usepackage{amsym}
 \usepackage[]{hyperref}
 \usepackage{geometry}
 \geometry{letterpaper, margin=0.5in}
@@ -40,21 +39,19 @@
 \DeclareMathOperator{\Ln}{\mathrm{Ln}}
 \newcommand{\imag}{\, \mathrm{i}}
 
-\newcommand{\union}{\cup}
-\newcommand{\intersection}{\cap}
 \usepackage{graphicx}
 \newcommand\AM{{\sc am}}
 \newcommand\PM{{\sc pm}}
      
-\newcommand{\quiz}{2}
+\newcommand{\quiz}{3}
 \newcommand{\term}{Fall}
-\newcommand{\due}{Saturday 3 September at 11:59 \PM}
+\newcommand{\due}{Saturday 10 September  at 11:59 \PM}
 \begin{document}
 \large
 \vspace{0.1in}
 \noindent\makebox[3.0truein][l]{{\bf MATH 460}}
-{\bf Name:} \\
-\noindent \makebox[3.0truein][l]{\bf Homework \quiz, \term \/ \the\year}
+{\bf Name:}  \\
+\noindent \makebox[3.0truein][l]{\bf Homework   \quiz, \term \/ \the\year}
 %{\bf Row:}\hrulefill\
 \vspace{0.1in}
 
@@ -69,53 +66,41 @@
 
 \begin{questions} 
 
-\question [5] Define $F = x \in \reals \mapsto x^2$. Enumerate
-the members of $F(\{-2,-1,0,1,2 \})$.
-\begin{solution}
-\[
-    F(\{-2,-1,0,1,2 \} = \{F(-2),F(-1),F(0),F(1), F(2) \}
-                       = \{4,1,0,1,4 \} =  \{0,1,4 \}
-\]
-\end{solution}
-
-\question [5] Define $F = x \in \reals \mapsto x^2$. Enumerate
-the members of $F^{(-1)} (\{0,1,4 \})$.
-
-\begin{solution}
-The solution set to $F(x) = 4$ is $\{-2,2\}$; the solution set to $F(x) = 1$ is $\{-1,1\}$;
-and the solution set to $F(x) = 0$ is $\{0\}$. So
-\[
-    F^{(-1)} (\{0,1,4 \}) = \{-2,-1,0,1,2 \}
-\]
-\end{solution}
-
 \question[5] Show that
-\begin{equation*}
- \left(\forall a \in \reals_{>0}\right) \left  (\exists \,\, m \in \reals \right )  \left (\forall \,\,
- x \in \reals_{\geq 0} \right ) \left (\sqrt{x} \leq \sqrt{a} + m (x-a) \right).
-\end{equation*}
-\textbf{Hints:} You might like to use the facts:
+\(
+ \left(\forall x \in (-1,1) \right) 
+  \left(\exists r \in \reals_{>0} \right)
+    \left( (x-r,x+r) \subset (-1,1) \right)
+\).
+
+\begin{solution}  
+\end{solution}
+
+\question[5] Define $S = \{(-k,k) | k \in \integers_{>0} \}$. Show that
+ $\underset{q \in S}{\cup} q = \reals$.
+ \begin{solution}  
+ \end{solution}
+
+ \question[5] On $\reals^2$ define the binary operators
+ $+$ and $\times$ by
 \begin{align*}
-    \left[ \sqrt{x} \leq \sqrt{a} + m (x-a) \right] &\equiv
-    \left[ \sqrt{x} - \sqrt{a} - m (x-a) \leq 0 \right], \\
-    &\equiv  \left[ \sqrt{x} - \sqrt{a} - m  (\sqrt{x} - \sqrt{a}) 
-          (\sqrt{x} + \sqrt{a}) \leq 0 \right], \\
-    &\equiv \left[ (\sqrt{x} - \sqrt{a}) (1 - m  (\sqrt{x} + \sqrt{a}) \leq 0 \right]
+  (a,b) + (c,d) &= (a+c,b+d),\\
+  (a,b) \times (c,d) &= (ac+2bd, ad+bc).
 \end{align*}
-
-\begin{solution}
+These operators are commutative and associative. Further, the
+additive identity is $(0,0)$ and the multiplicative identity is
+$(1,0)$. Given these facts, show that $(\reals^2, +, \times)$ is a 
+field.
+\begin{solution}  
 \end{solution}
 
-\question [5] Show that for all sets $A$ and $B$ that $\left(B \setminus  A = B \right)  \implies \left( A \intersection B = \varnothing \right)$.
-\textbf{Hint:} Try proving the contrapositive.
-
-\begin{solution}
+\question[5] Show that the complex field is not ordered. Hint: Suppose 
+it is. Let $P$ be its positive set. Since $\mathrm{i} \neq 0$, either
+$\mathrm{i} \in P$ or $-\mathrm{i} \in P$. Show that both 
+$\mathrm{i} \in P$ or $-\mathrm{i} \in P$ are 
+contradictions.
+\begin{solution}  
 \end{solution}
-
-
-
-
-
 
 \end{questions}
 

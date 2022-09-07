@@ -80,9 +80,9 @@
 \newcommand{\llnot}{\lnot \,} % is accepted
 
 
-\subtitle{Lesson 4 \\
-\vspace{1.0in}
- \tiny Barton Willis, Attribution 4.0 International (CC BY 4.0), 2020 \normalsize}
+%\subtitle{Lesson 4 \\
+%\vspace{1.0in}
+ %\tiny Barton Willis, Attribution 4.0 International (CC BY 4.0), 2020 \normalsize}
 \title{\textbf{Sets as ordered pairs}}
 %\author[Barton Willis] % (optional, for multiple authors)
 %{Barton~Willis}%
@@ -115,7 +115,8 @@
 
 \begin{frame}{Ordered pairs}
 
-An ordered pair is a familiar object--the cartesian coordinates of a point in a plane, for example, is an ordered pair of real numbers.
+An ordered pair is a familiar object--the Cartesian coordinates of a point in a plane, 
+for example, is an ordered pair of real numbers.
 
 \begin{myex}
 Examples of ordered pairs of real numbers:
@@ -128,27 +129,32 @@ Examples of ordered pairs of real numbers:
 
 \item We say that \(a\) is the \emph{first coordinate} of the ordered pair \((a,b)\), and \(b\) is its \emph{second coordinate}.
 
-\item  We define define equality of ordered pairs using   \([ (a,b) = (a^\prime, b^\prime)]   \equiv  [a = a^\prime] \land  [b = b^\prime] \).
+\item  We efine equality of ordered pairs using   \([ (a,b) = (a^\prime, b^\prime)]   \equiv  [a = a^\prime] \land  [b = b^\prime] \).
 
-\item Of course, the symbols \(a\) through \(b^\prime\) need to be objects for which equality is defined.
+\item Of course, the symbols \(a\) through \(b^\prime\) need to be objects for which 
+equality is defined.
 \end{checklist}
 
 \end{frame}
 \begin{frame}{As nice this may be}
 
-\textbf{Question} Ordered pairs are somewhat like sets, but the order matters.  Can we define an ordered pair as a set?
+\textbf{Question} Ordered pairs are somewhat like sets, but the order matters.  
+Can we define an ordered pair as a set?
 
-\textbf{Answer}   Sure.  To an ordered pair \((a,b)\) we associate it with the set  \(\{\{a\}, \{a,b\}\} \).
+\textbf{Answer}   Sure.  To an ordered pair \((a,b)\) we associate it with the 
+set  \(\{\{a\}, \{a,b\}\} \).
 
 \vspace{0.2in}
 
 \begin{checklist}
 
-\item Since \(\{\{a\}, \{a,b\}\} \) is  a set of sets, we can form the intersection of its members. Define  \(I = \{\{a\}, \{a,b\}\} \) . Then
+\item Since \(\{\{a\}, \{a,b\}\} \) is  a set of sets, we can form the intersection 
+of its members. Define  \(I = \{\{a\}, \{a,b\}\} \). Then
 \[
    \underset{x \in I}{\cap} x =  \{a\} \cap \{a,b\} = \{a\}.
 \]
-So the intersection of the member of \(I\) gives the first coordinate of the ordered pair \((a,b)\).
+So the intersection of the member of \(I\) gives the first coordinate of the 
+ordered pair \((a,b)\).
 
 \item How do we extract the second coordinate?
 \[
@@ -163,20 +169,22 @@ So the intersection of the member of \(I\) gives the first coordinate of the ord
 \end{frame}
 \begin{frame}
 
-\begin{myth}  If  \(  \{\{a\}, \{a,b\} \} =   \{\{a^\prime\}, \{a^\prime,b^\prime\} \}\), then \(a = a^\prime\) and  \(b = b^\prime\) .
+\begin{myth}  If  \(  \{\{a\}, \{a,b\} \} =   \{\{a^\prime\}, \{a^\prime,b^\prime\} \}\), 
+  then \(a = a^\prime\) and  \(b = b^\prime\).
 \end{myth}
 
 \begin{checklist}
 
-\item A proof uses the ingredients:  If \( \{a \} = \{a^\prime \}\), then \(a = a^\prime\). It also uses
+\item A proof uses the ingredients:  If \( \{a \} = \{a^\prime \}\), 
+then \(a = a^\prime\). It also uses
 \[
    \underset{x \in I}{\cap} x =  \{a\} \cap \{a,b\} = \{a\},
 \]
 and
 \[
-    \underset{x \in I}{\cup} x   \setminus \underset{x \in I}{\cap} x  = \{a,b\} \setminus \{a\} = \{b\}.
+    \underset{x \in I}{\cup} x \setminus \underset{x \in I}{\cap} x  = \{a,b\} \setminus \{a\} = \{b\}.
 \]
-where \(I = \{\{a\}, \{a,b\}\} \) .
+where \(I = \{\{a\}, \{a,b\}\} \).
 
 \end{checklist}
 \end{frame}
