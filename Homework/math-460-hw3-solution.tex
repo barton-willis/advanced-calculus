@@ -92,20 +92,16 @@
  \begin{solution}  
  \end{solution}
 
- \question[5] On $\integers^2$ define the binary operators
+ \question[5] On $\reals^2$ define the binary operators
  $+$ and $\times$ by
 \begin{align*}
   (a,b) + (c,d) &= (a+c,b+d),\\
   (a,b) \times (c,d) &= (ac+2bd, ad+bc).
 \end{align*}
-These operators are commutative and associative. Additionally, the
-additive identity is $(0,0)$, the multiplicative identity is
-$(1,0)$, every member of $\integers^2$ has an additive identity, and multiplication distributes over addition.
-Given these facts, show that $(\integers^2, +, \times)$ is a 
-field. The only thing left to show is that every member 
-$\integers^2$ except for the additive identity has a multiplicative
-inverse. To prove this, you might like to use the fact that $\sqrt{2}$ is
-not rational.
+These operators are commutative and associative. Further, the
+additive identity is $(0,0)$ and the multiplicative identity is
+$(1,0)$. Given these facts, show that $(\reals^2, +, \times)$ is a 
+field.
 \begin{solution}  
 \end{solution}
 
@@ -115,7 +111,28 @@ $\mathrm{i} \in P$ or $-\mathrm{i} \in P$. Show that both
 $\mathrm{i} \in P$ or $-\mathrm{i} \in P$ are 
 contradictions.
 \begin{solution}  
- 
+  We will prove this by contradiction. Suppose the complex field
+  is ordered, and let $P$ be its positive set. Since $\mathrm{i}  \neq 0$,
+  either $\mathrm{i} \in P$ or $-\mathrm{i} \in P$. If
+  $\mathrm{i} \in P$, closer of $P$ under multiplication implies
+  that $\mathrm{i}^2 \in P$ and   $\mathrm{i}^4 \in P$. But this
+  says that $-1 \in P$ and $1 \in P$. That violates tricotomy.
+  
+  \quad Similarly, the assumption $-\mathrm{i} \in P$ violates
+  tricotomy;  therefore the assumption the complex field is ordered is false.
+
+
+  \textbf{Fun Fact} It is possible to define $<$ on the complex field that
+  has the properties
+  \begin{alphalist}
+    \item for all $a,b \in \complex$ exactly one of the following
+    is true:  $a<b$ or $a=b$ or $b < a$.
+    \item for all $a,b,c \in \complex$, we have $a<b$ and $b < c$ implies
+     $a < c$.
+  \end{alphalist}
+But the set $\{z \in \complex | 0 < z\}$ does not have the properties 
+required by an ordered field to be a positive set.
+
 \end{solution}
 
 \end{questions}
