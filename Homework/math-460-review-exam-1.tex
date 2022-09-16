@@ -1,0 +1,132 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage[]{hyperref}
+\usepackage{geometry}
+\geometry{letterpaper, margin=0.5in}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage{enumerate}
+\newenvironment{alphalist}{
+  %\vspace{-0.4in}
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{0.0\itemsep}}
+  {\end{enumerate}}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\newcommand\AM{{\sc am}}
+\newcommand\PM{{\sc pm}}
+     
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+
+\newcommand{\quiz}{Review for Exam I}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Saturday 10 September  at 11:59 \PM}
+\begin{document}
+\large
+\quiz
+%\vspace{0.1in}
+%\noindent\makebox[3.0truein][l]{{\bf MATH 460}}
+%{\bf Name:}  \\
+%\noindent \makebox[3.0truein][l]{\bf Homework   \quiz, \term \/ \the\year}
+%{\bf Row:}\hrulefill\
+%\vspace{0.1in}
+
+
+\begin{questions} 
+
+
+
+
+\question Show that 
+\[
+    \left(\forall k \in \integers_{>0} \right) 
+      \left(\frac{1}{k} \leq \frac{1}{k} - \frac{1}{k+1} \right).
+\]
+
+\question Show that
+\[
+    \left(\forall x \in (-\infty, 1) \right)\left( \exists r \in \reals \right)
+    \left((x-r,x+r) \subset (-\infty, 1) \right).
+\]
+
+\question Let $A,B$ be subsets of $\reals$ and let $A$ be bounded above.
+Show that $A \setminus B$ is bounded above.
+
+\question Give an example of subsets $A,B$ be subsets of $\reals$
+such that $A \setminus B$ is bounded above, but $A$ is not bounded
+above.
+
+\question Define $F = x \in \reals \mapsto x^2$.  Enumerate the members of the set
+\[
+      F(\{-4,-1,0,1,4 \}).
+    \]
+
+\question Define $F = x \in \reals \mapsto x^2$.  Enumerate the members of the set
+\[
+      F^{-1}(\{-4,-1,0,1,4 \}).
+\]
+
+\question Using the definition from the QRS, show that the sequence 
+$k \in \integers_{\geq 0} \mapsto \frac{k-6}{k+28}$ converges.
+
+\question Show that the sequence $n \in \integers_{>0} \mapsto \sum_{k=1}^n \frac{1}{k^2}$ is
+bounded above. To do this, use the fact that for all positive integers $k$, we have 
+$\frac{1}{k} \leq \frac{1}{k} - \frac{1}{k+1}$.
+
+\question Either show that the sequence
+\[
+      k \in \integers \mapsto \sin(\uppi k)
+\]
+converges or that it diverges. For either case, you're proof will
+must use the definition from the QRS.
+
+\question Show that the sequence
+\[
+    k \in \integers \mapsto \begin{cases} k!  & k < 100\\
+        \frac{1}{k}  & k \geq  100 \end{cases}
+\]
+converges. You must use the definition in the QRS.
+
+\question Show that
+\[
+    \left(\forall a \in \reals \right) \left(\exists m \in \reals \right)
+    \left(\forall x \in \reals \right) \left(x^2 - a^2 \leq m (x-a) \right).
+\]
+\end{questions}
+\end{document}
