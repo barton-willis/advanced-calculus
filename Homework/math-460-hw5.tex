@@ -1,10 +1,11 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
 \usepackage{epsfig}
 \usepackage[]{hyperref}
 \usepackage{geometry}
+\usepackage[]{graphicx}
 \geometry{letterpaper, margin=0.5in}
 \addpoints
 \boxedpoints
@@ -71,14 +72,32 @@ use  La\TeX\,  for this assignment. This work is due \emph{\due}.
 \question[5] Show that \(\left( \forall x \in \reals \right) \left(\max(0,x) = \frac{x+|x|}{2} \right) \).
 Likely you will want to consider the cases $x < 0$ and $x \geq 0$ separately.
 
-\begin{solution}  
+\begin{solution}  We'll consider the cases $x < 0$ and $x \geq 0$ 
+    separately. For $x < 0$, we have
+    \begin{align*}
+        \frac{x+|x|}{2} &= \frac{x-x}{2}, &\mbox{(simplify absolute value)} \\
+                        &= 0, &\mbox{(algebra)} \\
+                        &= \max(0,x). &\mbox{($x < 0$)} 
+    \end{align*}
+    For $x \geq 0$, we have
+    \begin{align*}
+        \frac{x+|x|}{2} &= \frac{x+x}{2}, &\mbox{(simplify absolute value)} \\
+                        &= x, &\mbox{(algebra)} \\
+                        &= \max(0,x). &\mbox{($x \geq 0$)} 
+    \end{align*}
 \end{solution}
 
 \question[5] Let $F$ be a convergent sequence. Show that the sequence 
 \(k \in \integers_{\geq 0} \mapsto \max(F_k,0)\) converges.
 \textbf{Hint:} Use the result of Question 1. 
 
-\begin{solution}  
+\begin{solution}  Let's define \(G = k \in \integers_{\geq 0} \mapsto \max(F_k,0)\).
+    Alternatively \(G = \frac{F  + |F|}{2}\). Since $F$ converges,
+    so does $|F|$. That makes $G$ a linear combination
+    of convergent sequences, so $G$ converges.
+
+
+
 \end{solution}
 
 
@@ -98,7 +117,16 @@ Likely you will want to consider the cases $x < 0$ and $x \geq 0$ separately.
     not converge). To do this, you will use some standard calculus facts
     about telescoping sums and about the natural logarithm. One fact that you might use is the fact
     that the natural logarithm is not bounded above.
-    \begin{solution}  
+    \begin{solution}  Let $ n \in \integers_{> 0}$. We have
+        \begin{align*}
+            H_n &= \sum_{k=1}^n \frac{1}{k}, &\mbox{(definiton)}\\
+                &\geq \sum_{k=1}^n \ln(k+1) - \ln(k), &\mbox{(given fact)}\\
+                &= \ln(n+1) - \ln(1), &\mbox{(telescoping sum)}\\
+                &= \ln(n+1). &\mbox{(simplifcation)}\\
+        \end{align*}
+        Since the natural logarithm isn't bounded above, neither is the
+        sequence $H$. Thus $H$ diverges.
+         
     \end{solution}
 
     \part[5] Show that 
@@ -109,9 +137,20 @@ Likely you will want to consider the cases $x < 0$ and $x \geq 0$ separately.
         \left(|H_{k+1} - H_k| < \varepsilon\right)
     \).
 \begin{solution}  
+    Let $\varepsilon \in \reals_{>0} $. Choose 
+    $n = \lceil \frac{1}{\varepsilon} \rceil$. 
+    Thus $n \in \integers$ as required. Let $k \in \integers_{>n}$.
+    We have
+    \[
+        |H_{k+1} - H_k| = |\frac{1}{k+1}| < \frac{1}{n}
+        = \frac{1}{\lceil \frac{1}{\varepsilon} \rceil}
+        \leq  \frac{1}{\frac{1}{\varepsilon}}.
+        = \varepsilon.
+    \]
 \end{solution}
     \part[5] Show that the sequence $H$ is not Cauchy.
     \begin{solution}  
+        Since $H$ diverges, it is not Cauchy.
     \end{solution}
 
 \part [5] Draw a graph that shows that
@@ -129,7 +168,16 @@ $(x=k+1, y=\ln(k+1))$.
 
 \end{parts}
 
+\begin{solution}
+It's not what I had in mind, but one graphical method is to 
+graph both $y = \ln(x+1) - \ln(x)$ and $y = 1/x$ together 
+and compare them. Here the red graph is $y = \ln(x+1) - \ln(x)$
+and the blue graph is $y = 1/x$ 
 
+\begin{center}
+\includegraphics[scale=0.2]{desmos-graph(11).png}
+\end{center}
+\end{solution}
 
 \end{questions}
 
