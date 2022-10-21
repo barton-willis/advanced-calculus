@@ -6,7 +6,7 @@
 \usepackage{epsfig}
 
 \usepackage{geometry}
-\geometry{letterpaper, margin=0.75in}
+\geometry{letterpaper, margin=0.5in}
 \addpoints
 \boxedpoints
 \pointsinmargin
@@ -66,51 +66,41 @@
 
 
 
-\noindent Dear Dr.\ Holub:
 
-\noindent I apologize that this Homework is a few decades late. I don't have a 
-copy of the class syllabus (I'd guess there wasn't one), so I don't
-know what your late policy is, but I hope that you will accept it
-at least for partial credit.
-
-\vspace{0.5in}
-\noindent Sincerely,
-
-\noindent Barton Willis, PhD \\
-\noindent Professor of Mathematics
-
-
-\vspace{1.0in}
-\begin{quote}
-  \fbox{I have neither given nor received unauthorized assistance on this assignment.}
-  \end{quote}
-\vspace{0.1in}
 \begin{questions} 
 
-\question Show that 
+\question Show that for all real $x$ and $y$, we have
 \[
-   \left(\forall \,\, x, y \in \reals \right) 
     \left(\frac{|x+y|}{1 + |x+y|} \leq 
     \frac{|x|}{1 + |x|} + \frac{|y|}{1 + |y|} \right).
 \]
 
 \begin{solution}
-Let $x,y \in \reals$. We have
+Let $x,y \in \reals$.  Starting with the inequality we want to prove,
+we'll write our proof as a sequence of logical equivalences. We'll 
+end with an equality that is known to be true.  We have
 \begin{align*}
     \left[\frac{|x+y|}{1 + |x+y|} \leq 
     \frac{|x|}{1 + |x|} + \frac{|y|}{1 + |y|} \right] &\equiv
-    \left[\frac{|x+y|}{1 + |x+y|} - \frac{|x|}{1 + |x|} - \frac{|y|}{1 + |y|} \leq 0 \right] 
-      &\mbox{(algebra)} \\
+    \left[\frac{|x+y|}{1 + |x+y|} - \frac{|x|}{1 + |x|} - \frac{|y|}{1 + |y|} \leq 0 \right],
+      &\mbox{(subtract right side)} \\
       &\equiv \left[ \frac{|x+y| - |x| - |y| - |x| |y| (2 + |x+y|)}{(1 + |x+y|) (1 + |x|) 
-      (1 + |y|) } \leq 0  \right] &\mbox{(lots of algebra)} \\
-      &\equiv \mbox{True} &\mbox{(triangle inequality)}
+      (1 + |y|) } \leq 0  \right], &\mbox{(lots of algebra)} \\
+      &\equiv \mbox{True}. &\mbox{(triangle inequality)}
 \end{align*}
 To justify the last line, we need the triangle inequality (that makes 
 $|x+y| - |x| - |y|$ negative) along with the fact that the term
 $- |x| |y| (2 + |x+y|)$ is also negative. Finally, 
 the denominator is positive because it's a product of
-positive terms.
+positive terms--that makes the denominator positive and the 
+numerator negative, so the quotient is negative.
 \end{solution}
 
+If we instead attempt to prove this using a string of less than or equal
+equalities starting with the triangle inequality, likely we'll get stuck. Try it:
+\begin{align*}
+  \frac{|x+y|}{1 + |x+y|} & \leq \frac{|x| + |y|}{1 + |x+y|} \hfill &\mbox{(triangle inequality)} \\
+                          & \leq \mbox{What?}
+\end{align*}
 \end{questions}
 \end{document}

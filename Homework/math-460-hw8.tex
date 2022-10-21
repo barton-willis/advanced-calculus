@@ -48,7 +48,7 @@
      
 \newcommand{\quiz}{8}
 \newcommand{\term}{Fall}
-\newcommand{\due}{Saturday 15 October  at 11:59 \PM}
+\newcommand{\due}{Saturday 29 October  at 11:59 \PM}
 \begin{document}
 \large
 \vspace{0.1in}
@@ -61,17 +61,18 @@
 \begin{quote}
     \fbox{I have neither given nor received unauthorized assistance on this assignment.}
     \end{quote}
-\noindent  Homework    \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
-Neatly \textbf{hand write your solutions}, digitize your work, and turn it into Canvas. This work is due \emph{\due}.
+\noindent  Homework    \quiz\/  has questions 1 through  \numquestions \/ with 
+a total of  \numpoints\/  points.  You must typeset your work using Overleaf.
+ This work is due \emph{\due}.
 
 \vspace{0.1in}
 
-%\noindent{\textbf{Link to your Overleaf work: }}\url{XXX}
+\noindent{\textbf{Link to your Overleaf work: }}\url{XXX}
 
 \begin{questions} 
 
-\question Show that the function $x \in \reals \mapsto x^2$ is continuous on $\reals$. 
-That is show that
+\question[5] Show that the function $x \in \reals \mapsto x^2$ is continuous 
+on $\reals$. That is show that
 \begin{equation*}
     \left(\forall a \in \reals \right) 
     \left(\forall \varepsilon \in \reals_{>0} \right)
@@ -79,34 +80,43 @@ That is show that
     \left(\forall x \in \ball(a,\delta) \right)
     \left(|x^2 - a^2| < \varepsilon \right).
 \end{equation*}
+\begin{solution}
+    
+\end{solution}
 
 
-\question Show that
+\question[5] Show that
 \begin{equation*}
      \left(\forall \varepsilon \in \reals_{>0} \right)
     \left(\exists \delta \in \reals_{>0} \right)
     \left(\forall a, x \in \reals \right)
     \left(|x - a| < \delta \implies |x^2 - a^2| < \varepsilon \right)
 \end{equation*}
-is false.  You might like to use the fact that the solution set to the equations
+is false.  You might like to use the fact that the solving the equations
 \begin{equation*}
-     x = \alpha + \frac{\delta}{4}, \quad a = \alpha = \frac{\delta}{4},
+     x = \alpha + \frac{\delta}{4}, \quad a = \alpha - \frac{\delta}{4},
      \quad x^2 - a^2 = 1
 \end{equation*}
-is 
+for $x,a$, and $\alpha$ yields
 \begin{equation*}
     x = \frac{1}{\delta} + \frac{\delta}{4}, \quad 
-    a =  \frac{1}{\delta} = \frac{\delta}{4}, \quad
+    a =  \frac{1}{\delta} - \frac{\delta}{4}, \quad
     \alpha =  \frac{1}{\delta}.
 \end{equation*}
-
-\question Show that the function $x \in \reals \mapsto 
+\begin{solution}
+    
+\end{solution}
+\question[5] Show that the function $x \in \reals \mapsto 
 \begin{cases} x & x \leq 1 \\ 5 & x > 1 \end{cases}$ is not continuous at 1.
-
-\question Show that the function $x \in \reals \mapsto 
+\begin{solution}
+    
+\end{solution}
+\question[5] Show that the function $x \in \reals \mapsto 
 \begin{cases} x & x \leq 1 \\ 5 & x > 1 \end{cases}$ is continuous at 3.
 \end{questions}
-
+\begin{solution}
+    
+\end{solution}
 
 
 \end{document}
