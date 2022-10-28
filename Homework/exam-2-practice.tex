@@ -1,0 +1,224 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath}
+\usepackage{fleqn}
+\usepackage{epsfig}
+\usepackage{mathptm}
+\usepackage{amssymb}
+
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\ball}{\mathrm{ball}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\LP}{\mathrm{LP}}
+\newcommand{\dotprod}{\, {\scriptzcriptztyle \stackrel{\bullet}{{}}}\,}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{{\bf Advanced Calculus, Fall 2022}}
+{\bf Name:}\hrulefill\
+\noindent \makebox[3.0truein][l]{\bf Practice Exam II}
+{\bf Row and Seat:}\hrulefill\
+%\normalsize
+
+\vspace{0.1in}
+
+
+\begin{questions}
+
+\question Show that the sequence $k \in \integers_{>0} \mapsto \frac{k+1}{k+5}$ converges.
+
+\question Give an example of a convergent subsequence of $k \in \integers_{>0} \mapsto (-1)^k$.
+
+\question Show that sequence $k \in \integers_{>0} \mapsto \begin{cases}  k!  & k < 1000 \\
+\frac{k+1}{k+5} & k \geq 1000 \end{cases} $ converges.
+
+\question  Use the QRS definition of an open set to show that interval \((0,1)\) is open.
+
+\question  Use the QRS definition of a closed set to show that interval \([0,1]\) is closed.
+
+\question   Use the QRS definitions of open and closed to show that the set \(\reals\) is open and closed.
+
+\begin{solution}
+Let \(x\) be a real number.  We have \(\ball(x,1) \subset
+\reals\); therefore, \(\reals\) is open.  To show that \(\reals\) is
+closed, we'll show that \(\reals^c = \varnothing\) is open. To
+show that \(\varnothing\) is open, no proof is required (give
+me an element of \(\varnothing\), and I'll surround it with an
+open interval.  I'm waiting\dots).
+ \end{solution}
+ 
+\question   Use the QRS definition of a boundary point to show that \(\partial(0,1] = \{0,1\}\).  Use this
+result to explain why \((0,1]\) is not closed.
+\begin{solution}
+ First, we'll show that \( 0 \in \partial(0,1]
+\). Let \(\delta\) be a positive real number.  We have \(-\delta/2
+\notin (0,1]\). Further define
+\( x^\star = \displaystyle \begin{cases} \frac{\delta}{2} & \mbox{ if } \delta <
+  1 \\ \frac{1}{2} & \mbox { if } \delta \geq 1 
+   \end{cases} \).  Then \(x^\star \in (0,1]\) and \(x^\star \in
+   \ball(0,\delta)\). I'll leave it to you to show that  \(1 \in (0,1]\). 
+
+
+\quad The set  \((0,1]\) is not closed because \(0 \in
+ \partial(0,1]\) and \(0 \notin (0,1] \). (A closed set
+must contain all of its boundary points.)
+\end{solution}
+
+\question  Use the QRS definition to show that \(0 \not \in  \LP(\integers)\).
+
+\begin{solution}
+We have \(\ball(0,1) \cap \integers = \{0\}\). Since
+\(\{0\}\) isn't an infinite set, 0 isn't a limit point of \(\integers\).
+\end{solution}
+
+%\vspace*{3.0in}
+
+\question  Show that the function
+\(\displaystyle
+  F(x) = \begin{cases} -1, & \mbox{if } x < 5, \\
+                        1, & \mbox{if } x \geq 5
+         \end{cases}
+\)
+does not have a limit toward 5.
+
+%\textbf{Proof}  This barely differs from the problem in the class notes.
+
+
+\question   Show that the function \(F(x) = x^2\) has a limit
+toward 2.
+\begin{solution}
+Let \(\varepsilon\) be a positive real number.  Choose
+\(\delta = \mbox{min} \{1, \frac{\delta}{5} \}\).  For \(x \in
+\ball(2,\delta)\), we have
+\begin{align*}
+  | x^2 - 4 | &= |x -2| |x + 2|, \\
+              &< |x + 2| \delta, \\
+              &< (|x| + 2) \delta, \\
+              &< 5 \delta, \\
+              &\leq \varepsilon.
+\end{align*}
+\end{solution}
+
+\question   Show that the set \((0,\infty)\) is not compact by 
+showing that there is an open cover of \((0,\infty)\) that has no
+finite subcover.
+
+\begin{solution}
+ For \(k \in \integers_{<0}\), define \(I_k = (-k,k)\).
+The set \(\mathcal{C} = \{I_1, I_2, \dots \}\) is a cover of 
+\((0,\infty)\).  The union of every finite subset of \(\mathcal{C}\)
+is bounded. Thus no finite subset of \(\mathcal{C}\) is a cover of
+\((0,\infty)\); therefore, \((0,\infty)\) is not compact.
+\end{solution}
+
+\question   Show that if a subset of \(\reals\) is not bounded, it
+is not compact. Do this using the definition of compact that involves
+open covers.
+
+\begin{solution}
+\textbf{Proof} See your class notes.
+\end{solution}
+
+
+
+
+
+
+\question   Show that the union of two compact sets is compact.  Do
+this using  the definition of compact that involves
+open covers.
+
+\begin{solution}
+ Let \(F_1\) and \(F_2\) be compact, and let
+\(\mathcal{C}\) be an open cover of \(F_1 \cup  F_2\). Then
+\(\mathcal{C}\) is an open cover of \(F_1\) and \(\mathcal{C}\) is an
+open cover of \(F_2\). Since \(F_1\) and \(F_2\) are compact,
+there are sets \(\mathcal{C}_1 \subset \mathcal{C}\) and
+\(\mathcal{C}_2 \subset \mathcal{C}\) such that 
+\(
+  F_1 \subset \underset{x \in \mathcal{C}_1}{\cup} x\) and
+\(
+  F_2 \subset \underset{x \in \mathcal{C}_2}{\cup} x.
+\)
+Thus
+\(\displaystyle
+   F_1 \cup  F_2  \subset \underset{x \in \mathcal{C}_1 \cup \mathcal{C}_2 }{\cup} x
+\).
+Since \(\mathcal{C}_1 \cup \mathcal{C}_2\) is finite, it follows that 
+\( F_1 \cup  F_2 \) is compact.
+
+\end{solution}
+
+\question Show that if sets $A$ and $B$ are closed, so it $A \cup B$.
+
+\question   Give an example of open sets \(\mathcal{G}_1,
+\mathcal{G}_3, \mathcal{G}_3, \dots \) such that the intersection
+\( \displaystyle
+  \underset{k \in \mathbf{Z}_{> 0}}{\cap} \mathcal{G}_k
+\)
+is not open.
+
+\begin{solution}
+\textbf{Answer} For \(k \in \mathbf{Z}_{>0}\), define \(I_k = (1-1/k,
+\infty)\). We have
+\(\displaystyle
+  \underset{k \in \mathbf{Z}_{>0}}{\cap} I_k = [1,\infty).
+\)
+The set \([1,\infty)\) isn't open.
+
+\end{solution}
+
+\question   Let \(F : \mathbf{Z} \to \mathbf{R}\) and let
+\( \displaystyle
+  F(x) = \sqrt[3]{x^{14} + 1066} + \sqrt[43]{x^2 + 1776}.
+\)
+Either prove or disprove: 
+%\begin{quote}
+  The function \(F\) has a limit toward 1.
+%\end{quote}
+
+\question   Define $F =  x \in \mathbf{Z} \mapsto \sqrt[3]{x^{14} + 1066} + \sqrt[43]{x^2 + 1776}.$ Show that
+$F$  is not continuous at 1.
+
+\begin{solution}
+Since \(1\) isn't a limit point of \(\mbox{dom}(F)\),
+it follows that \(F\) doesn't have a limit toward 1.
+\end{solution}
+
+
+
+\question  Let \(F\) be a convergent sequence and let \(\alpha \in
+\reals\).  Show that \(\alpha F\) is a convergent sequence.
+
+
+\question  Let \(|F| \) be a convergent sequence.  Show that \(|F| \) is a convergent sequence.
+\begin{solution}
+
+\end{solution}
+
+\question   Use the inequality
+\(
+   | \sqrt{a} - \sqrt{b} | \leq \sqrt{|a -b|},\mbox{ for } a,b > 0
+\)
+to show that the function
+\[
+   F = x \in \reals \mapsto  \sqrt{1+x},
+\]
+is continuous at 1.
+
+\end{questions}
+\end{document}
+Show that \(A\) has at
+most one infimum. Do this by assuming \(\alpha\) and \(\beta\)
+are both infimums of the set \(A\) and demonstrate that \(\alpha = [1,\infty).\beta\).
+
+
+
+
+\vspace*{2.5in}
