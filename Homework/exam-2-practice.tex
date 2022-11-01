@@ -1,12 +1,14 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath}
 \usepackage{fleqn}
 \usepackage{epsfig}
-\usepackage{mathptm}
+\usepackage{fourier}
 \usepackage{amssymb}
+\usepackage[margin=0.75in]{geometry}
 
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 \addpoints
 \boxedpoints
 \pointsinmargin
@@ -16,41 +18,115 @@
 \newcommand{\ball}{\mathrm{ball}}
 \newcommand{\integers}{\mathbf{Z}}
 \newcommand{\LP}{\mathrm{LP}}
+\newcommand{\True}{\mathrm{True}}
 \newcommand{\dotprod}{\, {\scriptzcriptztyle \stackrel{\bullet}{{}}}\,}
+
+\let\oldforall\forall
+\renewcommand{\forall}{\oldforall \, }
+
+\let\oldexist\exists
+\renewcommand{\exists}{\oldexist \: }
 \begin{document}
 \large
-\vspace{0.1in}
-\noindent\makebox[3.0truein][l]{{\bf Advanced Calculus, Fall 2022}}
-{\bf Name:}\hrulefill\
-\noindent \makebox[3.0truein][l]{\bf Practice Exam II}
-{\bf Row and Seat:}\hrulefill\
-%\normalsize
-
-\vspace{0.1in}
-
+\begin{flushleft}
+  \textbf{Advanced Calculus, Fall \the\year}\\
+  \emph{Review for Exam II}
+\end{flushleft}
 
 \begin{questions}
 
 \question Show that the sequence $k \in \integers_{>0} \mapsto \frac{k+1}{k+5}$ converges.
+\begin{solution} We'll show that
+\begin{equation*}
+  (\exists L \in \reals)
+  (\forall \varepsilon \in \reals_{>0})
+  (\exists n \in \integers) 
+  \left(\forall k \in \integers_{>n}\right )
+  \left (\left |  \frac{k+1}{k+5} - L \right | < \varepsilon \right).
+\end{equation*}
+Choose $L=1$.  Let $\varepsilon \in \reals_{>0}$.  Choose 
+$n = \left \lceil \frac{4}{\varepsilon} \right \rceil$.  Let $k \in \integers_{>n}$. We have
+\begin{align*}
+\left|  \frac{k+1}{k+5} - L \right | &=  \left | \frac{k+1}{k+5} - 1 \right |, & (\mbox{substitution}) \\
+                                        &=   \frac{4}{k+5},            &(\mbox{algebra}) \\
+                                        &<    \frac{4}{n},                 &(k+5 > n) \\
+                                       &=   \frac{4}{\left \lceil \frac{4}{\varepsilon} \right \rceil},  & (\mbox{substitution}) \\ 
+                                        &\leq  \frac{4}{ \frac{4}{\varepsilon}},  & (\mbox{ceiling property}) \\ 
+                                        &= \varepsilon.  &(\mbox{algebra})
+\end{align*}
 
-\question Give an example of a convergent subsequence of $k \in \integers_{>0} \mapsto (-1)^k$.
+\end{solution}
 
+\question Give an example of a convergent subsequence of $F = k \in \integers_{>0} \mapsto (-1)^k$.
+\begin{solution}
+Define $\phi = n \in \integers \mapsto 2 n$.  
+Then $F \circ \phi = k \in \integers \mapsto (-1)^{2 k}$.
+This is a constant sequence; it converges.
+
+\end{solution}
 \question Show that sequence $k \in \integers_{>0} \mapsto \begin{cases}  k!  & k < 1000 \\
 \frac{k+1}{k+5} & k \geq 1000 \end{cases} $ converges.
 
+\begin{solution} We'll show that
+\[
+  (\exists L \in \reals)
+  (\forall \varepsilon \in \reals_{>0})
+  (\exists n \in \integers)
+  (\forall k \in \integers_{>n})
+  \left ( \left |  \frac{k+1}{k+5} - L \right | < \varepsilon \right ).
+\]
+Choose $L=1$.  Let $\varepsilon \in \reals_{>0}$.  Choose $n = \max(1000, \lceil \frac{4}{\varepsilon} \rceil)$.  Let $k \in \integers_{>n}$. We have
+\begin{align*}
+\left|  \frac{k+1}{k+5} - L \right | &=   \left |\frac{k+1}{k+5} - L \right |,   &(k > 1000) \\
+                                         &= \left | \frac{k+1}{k+5} - 1 \right|,      & (\mbox{substitution}) \\
+                                        &=   \frac{4}{k+5},             &(\mbox{algebra}) \\
+                                        &<    \frac{4}{n},                &(k+5 > n) \\
+                                        &=   \frac{4}{\lceil \frac{4}{\varepsilon} \rceil},  & (\mbox{substitution}) \\ 
+                                        &\leq  \frac{4}{ \frac{4}{\varepsilon}},  & (\mbox{ceiling property})\\ 
+                                        &= \varepsilon.  &(\mbox{algebra})
+\end{align*}
+\end{solution}
+
 \question  Use the QRS definition of an open set to show that interval \((0,1)\) is open.
+\begin{solution}  We'll show that
+\[
+   (\forall x \in (0,1))(\exists r \in \reals_{>0})(\ball(x,r) \subset (0,1)).
+\]
+Let $x \in (0,1)$.  Choose $r = \frac{1}{2} \min(1-x,x)$. Since
+$x > 0$ and $x < 1$, we have $r \in \reals_{>0}$ as required.
+We need to show that $0 < x - r$ and $x+r < 1$. We have
+\[
+    [0 < x-r ] \equiv [r < x] \equiv \True
+\]
+And
+\[
+    [x+r < 1 ] \equiv [x < 1-r] \equiv \True
+\]
+\end{solution}
 
 \question  Use the QRS definition of a closed set to show that interval \([0,1]\) is closed.
+
+\begin{solution} We need to show that the complement of  \([0,1]\) is open. We have
+$ [0,1]^{\mathrm{C}} = (-\infty,0) \cup (1,\infty)$.  But both  $(-\infty,0)$  and $(1,\infty)$ are open. And we know that the union of
+open sets is open, so  $[0,1]^{\mathrm{C}}$ is open; therefore \([0,1]\) is closed.
+
+\quad Arguably we should use the QRS definition to show that both  $(-\infty,0)$  and $(1,\infty)$ are open. But the fact that these sets are
+open is a book theorem.
+
+\end{solution}
 
 \question   Use the QRS definitions of open and closed to show that the set \(\reals\) is open and closed.
 
 \begin{solution}
-Let \(x\) be a real number.  We have \(\ball(x,1) \subset
-\reals\); therefore, \(\reals\) is open.  To show that \(\reals\) is
-closed, we'll show that \(\reals^c = \varnothing\) is open. To
-show that \(\varnothing\) is open, no proof is required (give
-me an element of \(\varnothing\), and I'll surround it with an
-open interval.  I'm waiting\dots).
+Let \(x\) be a real number.  We have \(\ball(x,1) \subset \reals\); therefore, \(\reals\) is open.  To show that \(\reals\) is
+closed, we'll show that \(\reals^{\mathrm{C}} \) is open; since  \(\reals^{\mathrm{C}} = \varnothing\), we'll show that 
+\(\varnothing\) is open. To show that \(\varnothing\) is open, we need to show that
+\begin{equation*}
+  \left(\forall x \in \varnothing \right)
+  \left(\exists r \in \reals_{>0} \right)
+  \left(\ball(x,r) \subset \varnothing \right).
+\end{equation*}
+This is vacuously true.
  \end{solution}
  
 \question   Use the QRS definition of a boundary point to show that \(\partial(0,1] = \{0,1\}\).  Use this
@@ -73,35 +149,51 @@ must contain all of its boundary points.)
 \question  Use the QRS definition to show that \(0 \not \in  \LP(\integers)\).
 
 \begin{solution}
-We have \(\ball(0,1) \cap \integers = \{0\}\). Since
-\(\{0\}\) isn't an infinite set, 0 isn't a limit point of \(\integers\).
+  We need to show that $(\exists r \in \reals_{>0})
+                (\ball^\prime(0,r) \cap \integers = \varnothing)$.
+Choose $r=1/2$. Then $\ball^\prime(0,r) \cap \integers
+=  \varnothing$.
 \end{solution}
-
-%\vspace*{3.0in}
 
 \question  Show that the function
 \(\displaystyle
-  F(x) = \begin{cases} -1, & \mbox{if } x < 5, \\
-                        1, & \mbox{if } x \geq 5
+  F(x) = \begin{cases} -1 & \mbox{if } x < 5 \\
+                        1 & \mbox{if } x \geq 5
          \end{cases}
 \)
-does not have a limit toward 5.
+does not have a limit \mbox{toward 5.}
 
-%\textbf{Proof}  This barely differs from the problem in the class notes.
+\begin{solution} We'll show that
+\begin{equation*}
+  \left(\forall L \in \reals \right)
+  \left(\exists \varepsilon \in \reals_{>0} \right)
+  \left(\forall \delta \in \reals_{>0} \right)
+  \left(\exists x \in \ball^\prime(5,\delta) \right)
+  \left( \left|F(x) - L \right| \geq \varepsilon \right).
+\end{equation*}
+Let $L \in \reals$. Choose $\varepsilon = 1$. Let 
+$\delta \in \reals_{>0}$. Choose $x = \begin{cases}
+  5+\delta/2 & L \leq 0 \\ 5 -\delta/2 & L \geq 0 \end{cases}$.
+When $L \leq 0$, we have
+\begin{equation*}
+  |F(x) - L| = |F(5+\delta/2) - L| = |1 - L| \geq 1.
+\end{equation*}
+The case $L > 0$ is similar.
 
+\end{solution}
 
 \question   Show that the function \(F(x) = x^2\) has a limit
 toward 2.
 \begin{solution}
-Let \(\varepsilon\) be a positive real number.  Choose
-\(\delta = \mbox{min} \{1, \frac{\delta}{5} \}\).  For \(x \in
-\ball(2,\delta)\), we have
+Let \(\varepsilon\) be a positive real number. Choose
+\(\delta = \mbox{min} \{1, \frac{\delta}{5} \}\).  Let  \(x \in
+\ball(2,\delta)\). To start, we notice that since $|x-2| \leq 1$, we have $ 1 \leq x \leq 3$;
+thus $3 \leq x+2 \leq 5$. So $|x+2| \leq 5$. We have
 \begin{align*}
-  | x^2 - 4 | &= |x -2| |x + 2|, \\
-              &< |x + 2| \delta, \\
-              &< (|x| + 2) \delta, \\
-              &< 5 \delta, \\
-              &\leq \varepsilon.
+  | x^2 - 4 | &= |x - 2| |x + 2|, & (\mbox{algebra}) \\
+              &< |x + 2| \delta, & (x \in \ball(2,\delta))\\
+              &\leq 5 \delta, &(|x+2| \leq 5) \\
+              &\leq \varepsilon.  &(\delta \leq \varepsilon/5)
 \end{align*}
 \end{solution}
 
@@ -110,8 +202,8 @@ showing that there is an open cover of \((0,\infty)\) that has no
 finite subcover.
 
 \begin{solution}
- For \(k \in \integers_{<0}\), define \(I_k = (-k,k)\).
-The set \(\mathcal{C} = \{I_1, I_2, \dots \}\) is a cover of 
+ For \(k \in \integers_{>0}\), define \(I_k = (-k,k)\).
+The set \(\mathcal{C} = \{I_k | k \in \integers_{>0}\}\) is a cover of 
 \((0,\infty)\).  The union of every finite subset of \(\mathcal{C}\)
 is bounded. Thus no finite subset of \(\mathcal{C}\) is a cover of
 \((0,\infty)\); therefore, \((0,\infty)\) is not compact.
@@ -139,7 +231,7 @@ open covers.
 \(\mathcal{C}\) be an open cover of \(F_1 \cup  F_2\). Then
 \(\mathcal{C}\) is an open cover of \(F_1\) and \(\mathcal{C}\) is an
 open cover of \(F_2\). Since \(F_1\) and \(F_2\) are compact,
-there are sets \(\mathcal{C}_1 \subset \mathcal{C}\) and
+there are finite sets \(\mathcal{C}_1 \subset \mathcal{C}\) and
 \(\mathcal{C}_2 \subset \mathcal{C}\) such that 
 \(
   F_1 \subset \underset{x \in \mathcal{C}_1}{\cup} x\) and
@@ -155,51 +247,79 @@ Since \(\mathcal{C}_1 \cup \mathcal{C}_2\) is finite, it follows that
 
 \end{solution}
 
-\question Show that if sets $A$ and $B$ are closed, so it $A \cup B$.
-
-\question   Give an example of open sets \(\mathcal{G}_1,
-\mathcal{G}_3, \mathcal{G}_3, \dots \) such that the intersection
-\( \displaystyle
-  \underset{k \in \mathbf{Z}_{> 0}}{\cap} \mathcal{G}_k
-\)
-is not open.
+\question Show that if sets $A$ and $B$ are closed, so is $A \cup B$.
 
 \begin{solution}
-\textbf{Answer} For \(k \in \mathbf{Z}_{>0}\), define \(I_k = (1-1/k,
+We'll show that $(A \cup B)^{\mathrm{C}}$ is open. We have   $(A \cup B)^{\mathrm{C}} = A^{\mathrm{C}} \cap B^{\mathrm{C}}$. But both $A^{\mathrm{C}}$ and $B^{\mathrm{C}}$ are open;
+since a finite intersection of open sets is open, we have $A^{\mathrm{C}} \cap B^{\mathrm{C}}$ is open.
+
+\end{solution}
+
+\question   Give an example of open sets \(G_1, G_2, G_3, \dots \) such that the intersection
+\( \displaystyle   \underset{k \in \integers_{> 0}}{\cap} G_k
+\) is not open.
+
+\begin{solution}
+For \(k \in \integers_{>0}\), define \(I_k = (1-1/k,
 \infty)\). We have
 \(\displaystyle
-  \underset{k \in \mathbf{Z}_{>0}}{\cap} I_k = [1,\infty).
+  \underset{k \in \integers_{>0}}{\cap} I_k = [1,\infty).
 \)
 The set \([1,\infty)\) isn't open.
 
 \end{solution}
 
-\question   Let \(F : \mathbf{Z} \to \mathbf{R}\) and let
-\( \displaystyle
-  F(x) = \sqrt[3]{x^{14} + 1066} + \sqrt[43]{x^2 + 1776}.
-\)
+\question   Define  \(F =  x \in \integers \mapsto \sqrt[3]{x^{14} + 1066} + \sqrt[43]{x^2 + 1776}\).
 Either prove or disprove: 
 %\begin{quote}
   The function \(F\) has a limit toward 1.
 %\end{quote}
 
-\question   Define $F =  x \in \mathbf{Z} \mapsto \sqrt[3]{x^{14} + 1066} + \sqrt[43]{x^2 + 1776}.$ Show that
-$F$  is not continuous at 1.
-
 \begin{solution}
-Since \(1\) isn't a limit point of \(\mbox{dom}(F)\),
-it follows that \(F\) doesn't have a limit toward 1.
+Since $1 \notin \LP(\integers)$, the sequence $F$ doesn't have a limit toward 1.
+
+\end{solution}
+
+\question   Define $F =  x \in \integers \mapsto \sqrt[3]{x^{14} + 1066} + \sqrt[43]{x^2 + 1776}.$ Show that
+$F$  is continuous at 1.
+\begin{solution}
+We'll show that
+\[
+  (\forall \varepsilon \in \reals_{>0})(\exists \delta \in \reals_{>0})(\forall x \in \ball(1,\delta) \cap \integers)(
+  (|F(x) - F(1)| < \varepsilon).
+\]
+Let $ \varepsilon \in \reals_{>0}$. Choose $\delta = \frac{1}{2}$.  Let $x \in \ball(1,\delta) \cap \integers$. We have
+$x = 1$. Thus  $$|F(x) - F(1)|  = |F(1) - F(1)| = 0 < \varepsilon.$$
 \end{solution}
 
 
 
-\question  Let \(F\) be a convergent sequence and let \(\alpha \in
-\reals\).  Show that \(\alpha F\) is a convergent sequence.
+\question  Let \(F\) be a convergent sequence and let \(\alpha \in \reals\).  Show that \(\alpha F\) is a convergent sequence.
+
+\begin{solution} We'll prove this from scratch.  
+  Suppose $F$ converges to $L$. We'll show that $\alpha F$ converges 
+  to $\alpha L$.
+Let $\varepsilon \in \reals_{>0}$.  
+We have $\frac{\varepsilon}{1+|\alpha|} \in \reals_{>0}$. 
+Choose $n \in \integers$ such that 
+$(\forall k \in \integers_{>n})(|\alpha F(k) - L | <  \frac{\varepsilon}{1+|\alpha|}$.  
+Again for all $k \in \integers_{>n}$, we have
+\[
+  |\alpha F(k) - \alpha L| = |\alpha| |F(k) - L| \leq \frac{\varepsilon |\alpha|}{1+|\alpha|} < \varepsilon.
+\]
 
 
+
+\end{solution}
 \question  Let \(|F| \) be a convergent sequence.  Show that \(|F| \) is a convergent sequence.
 \begin{solution}
-
+We'll prove this from scratch.  Suppose $F$ converges to $L$. We'll show that $|F|$ converges to $|L|$.
+Let $\varepsilon \in \reals_{>0})$. Choose $n \in \integers$ such that 
+$$(\forall k \in \integers_{>n})(|F(k) - L | <  \varepsilon.$$  
+Again for all $k \in \integers_{>n}$, we have
+\[
+  ||F(k)| - |L||  \leq |F(k) - L|  < \varepsilon.
+\]
 \end{solution}
 
 \question   Use the inequality
@@ -207,18 +327,16 @@ it follows that \(F\) doesn't have a limit toward 1.
    | \sqrt{a} - \sqrt{b} | \leq \sqrt{|a -b|},\mbox{ for } a,b > 0
 \)
 to show that the function
-\[
-   F = x \in \reals \mapsto  \sqrt{1+x},
-\]
+\(
+   F = x \in [-1,\infty) \mapsto  \sqrt{1+x},
+\)
 is continuous at 1.
 
+\begin{solution} Let $\varepsilon \in \reals$. Choose $\delta  = \varepsilon^2$. Let $x \in \ball(1,\delta) \cap [-1,\infty)$ We have
+\[
+   | \sqrt{1+x} - \sqrt{2} | \leq \sqrt{|x-1|} < \sqrt{\delta} = \sqrt{\varepsilon^2} = \varepsilon.
+\]
+
+\end{solution}
 \end{questions}
 \end{document}
-Show that \(A\) has at
-most one infimum. Do this by assuming \(\alpha\) and \(\beta\)
-are both infimums of the set \(A\) and demonstrate that \(\alpha = [1,\infty).\beta\).
-
-
-
-
-\vspace*{2.5in}

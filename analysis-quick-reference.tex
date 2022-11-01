@@ -246,7 +246,7 @@ For all $x,y \in \reals$, we have
     \big | |x| - |y|  \big |  &\leq |x-y|    
 \end{alignat*}
 \section*{Floor and ceiling}
-
+\vspace{-0.1in}
 \noindent Definitions:
 \begin{align*}
     \lfloor x \rfloor = \max \{k \in \integers \mid  k \leq x \} \\
@@ -260,7 +260,7 @@ For all $x,y \in \reals$, we have
    & \parens*{\forall x \in \reals, n \in \integers} \parens*{x < n \iff  \lfloor x \rfloor < n}\\
    & \parens*{\forall x \in \reals, n \in \integers} \parens*{n < x \iff  n < \lceil  x \rceil}\\
 \end{align*}
-  
+\vspace{-0.51in} 
 \section*{Bounded sets}
 \begin{description}[\itemsep=0em]
     \item[Bounded below] A set $A$ is \emph{bounded below} provided\\
@@ -300,7 +300,10 @@ For all $x,y \in \reals$, we have
     \item[Limit point] A number $a$ is a \emph{limit point} of a set $A$ provided
          \( \parens*{\forall \, r \in \reals_{>0}} \parens*{\ball^\prime(a, r) \cap A \neq \varnothing} \).
          
-
+    \item[Boundary point] A number $a$ is a \emph{boundary point} of a set $A$ provided
+    \( \parens*{\forall \, r \in \reals_{>0}} \parens*{\ball(a, r) \cap A \neq \varnothing \land 
+    \ball(a, r) \cap A^{\mathrm{C}} \neq \varnothing } \).
+   
     \item[Set closure] $\overline{A} = A \cup \mathrm{LP}(A)$, were $\mathrm{LP}(A)$ is the
     set of limit points of $A$.
     
