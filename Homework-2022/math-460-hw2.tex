@@ -1,0 +1,128 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath}
+\usepackage{epsfig}
+%\usepackage{amsym}
+\usepackage[]{hyperref}
+\usepackage{geometry}
+\geometry{letterpaper, margin=0.5in}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\newcommand{\union}{\cup}
+\newcommand{\intersection}{\cap}
+\newcommand{\True}{\mbox{True}}
+\usepackage{graphicx}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\newcommand\AM{{\sc am}}
+\newcommand\PM{{\sc pm}}
+
+\begin{document}
+\large
+
+\begin{questions} 
+
+\question Define $F = x \in \reals \mapsto x^2$. Enumerate
+the members of $F(\{-2,-1,0,1,2 \})$.
+\begin{solution}
+\[
+    F(\{-2,-1,0,1,2 \} = \{F(-2),F(-1),F(0),F(1), F(2) \}
+                       = \{4,1,0,1,4 \} =  \{0,1,4 \}.
+\]
+\end{solution}
+
+\question  Define $F = x \in \reals \mapsto x^2$. Enumerate
+the members of $F^{(-1)} (\{0,1,4 \})$.
+
+\begin{solution}
+The solution set to $F(x) = 4$ is $\{-2,2\}$; the solution set to $F(x) = 1$ is $\{-1,1\}$;
+and the solution set to $F(x) = 0$ is $\{0\}$. So
+\[
+    F^{(-1)} (\{0,1,4 \}) = \{-2,-1,0,1,2 \}.
+\]
+\end{solution}
+
+\question Show that
+\begin{equation*}
+ \left(\forall a \in \reals_{>0}\right) \left  (\exists \,\, m \in \reals \right )  \left (\forall \,\,
+ x \in \reals_{\geq 0} \right ) \left (\sqrt{x} \leq \sqrt{a} + m (x-a) \right).
+\end{equation*}
+\textbf{Hints:} You might like to use the facts:
+\begin{align*}
+    \left[ \sqrt{x} \leq \sqrt{a} + m (x-a) \right] &\equiv
+    \left[ \sqrt{x} - \sqrt{a} - m (x-a) \leq 0 \right], \\
+    &\equiv  \left[ \sqrt{x} - \sqrt{a} - m  (\sqrt{x} - \sqrt{a}) 
+          (\sqrt{x} + \sqrt{a}) \leq 0 \right], \\
+    &\equiv \left[ (\sqrt{x} - \sqrt{a}) (1 - m  (\sqrt{x} + \sqrt{a}) \leq 0 \right].
+\end{align*}
+
+\begin{solution}
+Let $a \in \reals_{>0}$. Choose $m = \frac{1}{2 \sqrt{a}}$. We have
+\begin{align*}
+    \left[ \sqrt{x} \leq \sqrt{a} + m (x-a) \right] &\equiv
+    \left[ \sqrt{x} - \sqrt{a} - m (x-a) \leq 0 \right], &\mbox{(algebra)}\\
+    &\equiv  \left[ \sqrt{x} - \sqrt{a} - m  (\sqrt{x} - \sqrt{a}) 
+          (\sqrt{x} + \sqrt{a}) \leq 0 \right], &\mbox{(algebra)} \\
+    &\equiv \left[ (\sqrt{x} - \sqrt{a}) (1 - m  (\sqrt{x} + \sqrt{a}) \leq 0 \right], &\mbox{(factor)} \\
+    &\equiv \left[ (\sqrt{x} - \sqrt{a}) \frac{\sqrt{a} - \sqrt{x}}{2 \sqrt{a}}\leq 0 \right], &\mbox{(substitution)} \\
+    &\equiv \left[ -\frac{(\sqrt{x} - \sqrt{a})^2} {2 \sqrt{a}}\leq 0 \right], &\mbox{(factor)} \\
+    &= \True.
+\end{align*}
+
+\end{solution}
+
+\question  Show that for all sets $A$ and $B$ that $\left(B \setminus  A = B \right)  \implies \left( A \intersection B = \varnothing \right)$.
+\textbf{Hint:} Try proving the contrapositive.
+
+\begin{solution}
+We'll show that $A \intersection B \neq \varnothing \implies B \setminus  A \neq B$.
+Since $A \intersection B \neq \varnothing$, there is $x$ such that $x \in A$ add
+$x \in B$; thus $x \notin B \setminus  A$ and $x \in B$. Since there is a member 
+of $B$ that isn't a member of $B \setminus  A$, we've shown that $B \setminus  A \neq B$.
+
+
+\end{solution}
+
+
+
+
+
+
+\end{questions}
+
+
+
+\end{document}

@@ -1,0 +1,106 @@
+\documentclass[fleqn, 12pt,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+
+\usepackage{geometry}
+\geometry{letterpaper, margin=0.5in}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\newcommand\AM{{\sc am}}
+\newcommand\PM{{\sc pm}}
+     
+\newcommand{\quiz}{1}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Saturday 27 August  at 11:59 \PM}
+\begin{document}
+%\large
+%\vspace{0.1in}
+%\noindent\makebox[3.0truein][l]{{\bf MATH 460}}
+%{\bf Name:}  \\
+%\noindent \makebox[3.0truein][l]{\bf Homework   \quiz, \term \/ \the\year}
+%{\bf Row:}\hrulefill\
+%\vspace{0.1in}
+
+%\noindent  Homework    \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
+
+%\textbf{Very neatly} hand write your solutions, digitize them 
+%(pdf works the best--please no *.HEIC files. Canvas cannot display 
+%them), and submit the digitized copy to Canvas.  This assignment is 
+%due \emph{\due}.
+
+
+
+
+
+\begin{questions} 
+
+\question Show that for all real $x$ and $y$, we have
+\[
+    \left(\frac{|x+y|}{1 + |x+y|} \leq 
+    \frac{|x|}{1 + |x|} + \frac{|y|}{1 + |y|} \right).
+\]
+
+\begin{solution}
+Let $x,y \in \reals$.  Starting with the inequality we want to prove,
+we'll write our proof as a sequence of logical equivalences. We'll 
+end with an equality that is known to be true.  We have
+\begin{align*}
+    \left[\frac{|x+y|}{1 + |x+y|} \leq 
+    \frac{|x|}{1 + |x|} + \frac{|y|}{1 + |y|} \right] &\equiv
+    \left[\frac{|x+y|}{1 + |x+y|} - \frac{|x|}{1 + |x|} - \frac{|y|}{1 + |y|} \leq 0 \right],
+      &\mbox{(subtract right side)} \\
+      &\equiv \left[ \frac{|x+y| - |x| - |y| - |x| |y| (2 + |x+y|)}{(1 + |x+y|) (1 + |x|) 
+      (1 + |y|) } \leq 0  \right], &\mbox{(lots of algebra)} \\
+      &\equiv \mbox{True}. &\mbox{(triangle inequality)}
+\end{align*}
+To justify the last line, we need the triangle inequality (that makes 
+$|x+y| - |x| - |y|$ negative) along with the fact that the term
+$- |x| |y| (2 + |x+y|)$ is also negative. Finally, 
+the denominator is positive because it's a product of
+positive terms--that makes the denominator positive and the 
+numerator negative, so the quotient is negative.
+\end{solution}
+
+If we instead attempt to prove this using a string of less than or equal
+equalities starting with the triangle inequality, likely we'll get stuck. Try it:
+\begin{align*}
+  \frac{|x+y|}{1 + |x+y|} & \leq \frac{|x| + |y|}{1 + |x+y|} \hfill &\mbox{(triangle inequality)} \\
+                          & \leq \mbox{What?}
+\end{align*}
+\end{questions}
+\end{document}

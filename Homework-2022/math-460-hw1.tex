@@ -1,0 +1,183 @@
+\documentclass[fleqn, 12pt,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{letterpaper, margin=0.75in}
+\usepackage{color}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\newcommand{\true}{\mathrm{True}}
+\newcommand{\false}{\mathrm{False}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{graphicx}
+\newcommand\AM{{\sc am}}
+\newcommand\PM{{\sc pm}}
+     
+\newcommand{\quiz}{1}
+\newcommand{\term}{Fall}
+\newcommand{\due}{Saturday 27 August  at 11:59 \PM}
+\begin{document}
+\begin{comment}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{{\bf MATH 460}}
+{\bf Name:}  \\
+\noindent \makebox[3.0truein][l]{\bf Homework   \quiz, \term \/ \the\year}
+%{\bf Row:}\hrulefill\
+\vspace{0.1in}
+
+\noindent  Homework    \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
+
+\textbf{Very neatly} hand write your solutions, digitize them 
+(pdf works the best--please no *.HEIC files. Canvas cannot display 
+them), and submit the digitized copy to Canvas.  This assignment is 
+due \emph{\due}.
+
+\begin{quote}
+  \fbox{I have neither given nor received unauthorized assistance on this assignment.}
+  \end{quote}
+\vspace{0.1in}
+
+
+\end{comment}
+
+\begin{questions} 
+
+\question A function $F$ is increasing on its domain provided
+\begin{equation*}
+  \left(\forall x,y \in \dom(F) \right) \left(x < y \implies F(x) \leq F(y) \right).
+  \end{equation*}
+  
+  \begin{parts}
+  
+  \part [5] Without using negation (the symbol \(\lnot\)), write the negation of 
+\begin{equation*} 
+  \left(\forall x,y \in \dom(F) \right) \left(x < y \implies F(x) \leq F(y) \right).
+  \end{equation*}
+   in symbolic form. For assistance with the logic, see the 
+   section ``Tautologies'' in our class QRS.
+  
+   \begin{solution}
+    \begin{equation*} 
+      \left(\exists x,y \in \dom(F) \right) \left((x < y) \land  (F(x) > F(y)) \right).
+      \end{equation*}
+  Alternatively, a solution is
+  \begin{equation*} 
+    \left(\exists x,y \in \dom(F) \right) \left(x < y \centernot \implies F(x) \leq F(y) \right).
+    \end{equation*} 
+  But for most people, the meaning of $(x < y) \land  (F(x) > F(y))$ is clear and the
+  meaning of $(x < y) \centernot \implies (F(x) \leq F(y)) $ is less clear.
+   \end{solution}
+    
+  \part[5] Show that the function $x \in [-1,1] \mapsto |x|$ is not increasing on its domain.
+  \begin{solution}
+    We'll show that
+    \begin{equation*} 
+      \left(\exists x,y \in [-1,1] \right) \left((x < y) \land  (|x| > |y|) \right).
+      \end{equation*}
+    Choose $x = -1$ and $y=0$.  We have
+    \[
+      \left[(x < y) \land  (|x| > |y|)\right] \equiv
+      \left[(-1 < 0) \land  (|-1| > |0|)\right] \equiv \true.
+    \]
+
+    There are infinitely many choices for $x$ and $y$ that yield
+    a proof. We only need one--don't burden the reader with more 
+    than one choice.
+   \end{solution}
+   
+  \end{parts} 
+  
+  \question A function $F$ is subadditive on its domain provided
+  \begin{equation*}
+  \left(\forall x,y \in \dom(F) \right) \left(  F(x+y) \leq F(x) + F(y) \right).
+  \end{equation*}
+  
+  \begin{parts}
+  
+  \part [5] Without using negation (the symbol \(\lnot\)), write the negation of 
+  \begin{equation*}
+  \left(\forall x,y \in \dom(F) \right) \left(  F(x+y) \leq F(x) + F(y) \right)
+  \end{equation*}
+   in symbolic form.
+   \begin{solution}
+    \begin{equation*}
+    \left(\exists x,y \in \dom(F) \right) \left(  F(x+y) > F(x) + F(y) \right).
+    \end{equation*}
+  \end{solution}
+    
+  
+  \part[5] Show that the function $x \in \reals \mapsto x^2 $ is not subadditive on its domain.
+
+  \begin{solution} We'll show that
+         \begin{equation*}
+      \left(\exists x,y \in \reals \right) \left(  (x+y)^2 > x^2 + y^2 \right).
+      \end{equation*}
+  Choose $x=1$ and $y=1$. We have
+  \begin{equation*}
+    \left[(x+y)^2 > x^2 + y^2 \right] \equiv 
+      \left[4 > 1 + 1 \right] \equiv \true.
+  \end{equation*}
+  Again, there are many choices for $x$ and $y$, but we need only
+  once choice.
+   \end{solution}
+  
+  \part[5]  Show that the function  $x \in \reals \mapsto |x| $ is  subadditive on its domain.
+  To do this, you may use the triangle inequality without proving it.
+  \end{parts}
+  
+
+\begin{solution} We'll show that
+  \begin{equation*}
+    \left(\forall x,y \in \reals \right) \left( |x+y|  \leq  |x| + |y|  \right).
+    \end{equation*}
+This is the triangle inequality, a fact we were allowed to use without proof.
+
+The familiar triangle inequality expresses the fact that the absolute value function is subadditive.
+\end{solution}
+
+
+
+
+\end{questions}
+
+
+
+\end{document}
