@@ -89,10 +89,10 @@ Exam \theex}
 \newcommand{\room}{Discovery Hall, room  386}
 \newcommand{\meetingtime}{This class meets Monday, Wednesday, and Friday  from 
 	9:05\AM -- 9:55\AM}
-\newcommand{\officehours}{ Monday, Wednesday, and Friday 10:00\AM -- 11:00\AM,
-    Tuesday and Thursday 9:30\AM -- 11:00\AM, and by appointment.}
+\newcommand{\officehours}{ Monday, Wednesday, and Friday 10:00\AM---11:00\AM,
+    Tuesday and Thursday 9:30\AM---11:00\AM, and by appointment.}
 
-    \newcommand{\finaldateandtime}{\printdate{14/12/\the\year} 8:00\AM{} -- 10:00 \AM}
+    \newcommand{\finaldateandtime}{\printdate{13/12/\the\year} 8:00\AM{}---10:00 \AM}
 \begin{document}
 \cleanlookdateon% Remove ordinal day reference
 \shortdate
@@ -100,7 +100,7 @@ Exam \theex}
 \large
 \begin{center}
     \textbf{\coursename}  \\
-    {\coursenumber--\sectionnumber} \\
+    {\coursenumber---\sectionnumber} \\
      {\term \the\year} \\
 \end{center}
 
@@ -112,8 +112,8 @@ Exam \theex}
 \begin{description}
     \item[Instructor:] Barton Willis, PhD, Professor of Mathematics
     \item[Office:]  Discovery Hall, Room 368
-    \item[\phone:]   \phonenumber[country=US]{3088658868}
-    \item[\Email:]    \href{mailto:willisb@unk.edu}{willisb@unk.edu}
+    \item[\phone:]  \phonenumber[country=US]{3088658868}
+    \item[\Email:]  \href{mailto:willisb@unk.edu}{willisb@unk.edu}
    % \item[Zoom:] 616 568 5706
     \item[Office Hours:] \officehours
   \end{description}
@@ -125,27 +125,27 @@ Exam \theex}
 
 \begin{mypar}{0.25in}{0.25in} 
 
-      \textbf{First Homework due} \dotfill  \printdate{27/8/\the\year}  \\
-       \textbf{Exam 1} \dotfill \printdate{23/9/\the\year}  \\
-    \textbf{Exam 2} \dotfill  \printdate{4/11/\the\year} \\
-    \textbf{Exam 3} \dotfill \printdate{2/12/\the\year} \\
-      \textbf{Final exam} \dotfill  \finaldateandtime
+  \textbf{First Homework due} \dotfill  \printdate{26/8/\the\year}  \\
+  \textbf{Exam 1} \dotfill \printdate{15/9/\the\year}  \\
+  \textbf{Exam 2} \dotfill  \printdate{13/10/\the\year} \\
+  \textbf{Exam 3} \dotfill \printdate{10/11/\the\year} \\
+  \textbf{Final exam} \dotfill  \finaldateandtime
 \end{mypar}
-
-
 
 \subsubsection*{Grading}
 
-Your course grade will be based on weekly homework sets, three midterm exams, and a comprehensive 
+Your course grade will be based on twelve homework sets, three midterm exams, and a comprehensive 
 final exam; specifically:
+\FPeval{\hwpts}{round(20*12,0)}
 \begin{mypar}{0.25in}{0.25in}
-    \textbf{Weekly Homework:}  \emph{12 fifteen point assignments}  \dotfill 180 (total) \\
-    \textbf{Mid-term exams 1,2, and 3:} \emph{100 points each} \dotfill 300 (total)\\
-      \textbf{Comprehensive Final exam} \dotfill 150 (total)
+    \textbf{Weekly Homework:}  \emph{12 twenty point assignments}  \dotfill \hwpts\/ (total) \\
+    \textbf{Mid-term exams 1, 2, and 3:} \emph{100 points each} \dotfill 300 (total)\\
+    \textbf{Comprehensive Final exam} \dotfill 150 (total)
 \end{mypar}
-If we end the term with less than 180 points for homework,  your homework point total will be scaled to a total of 180. 
+If we end the term with less than \hwpts\/ points for homework,  
+your homework point total will be scaled to a total of \hwpts\/. 
 
-\FPeval{\points}{round(12*15+300+150,0)}
+\FPeval{\points}{round(12*20+300+150,0)}
 
 \FPeval{\F}{round(\points*0.6-1,0)}
 \FPeval{\Dm}{round(\points*0.6,0)}
@@ -168,7 +168,7 @@ The following table shows the \emph{minimum} number of points (out of \points) t
 are required for each of the twelve letter grades D- through A+. For
 example, a point total of \Bp\/  points will earn you a grade of B+,  and 
 a point total of \Am\/ points will earn you a grade of A-. If you earn a point
-total of \F\/  or less, you a failing course grade.
+total of \F\/  or less, you will a failing course grade.
  
  \vspace{0.1in}
      \begin{minipage}{5.5in}
@@ -219,9 +219,8 @@ When we are ahead or behind, the topics on the exams will be appropriately adjus
 
 
 \begin{alphalist}
-   \item \emph{Exams will be given on  \textbf{Friday} of the week they are assigned.}
+   \item \emph{The three midterm exams will be given on  \textbf{Friday} of the week they are assigned.}
    
-
     \item Homework (labelled \textbf{HW}) will be due one minute before midnight on  Saturday of the week they are assigned.  
 
     \item The final exam will be given on \finaldateandtime.
@@ -250,9 +249,9 @@ When we are ahead or behind, the topics on the exams will be appropriately adjus
 \wk    & \printdate{6/11/\the\year}  & \S5.2    & Some Mean Value Theorems   &  \textbf{\ex}    \\ \hline
 \wk    & \printdate{13/11/\the\year} & \S6.1  & Some Mean Value Theorems   & \hw \\
 \wk    & \printdate{20/11/\the\year}    &  \S6.2  & The Riemann Integral     &   \hw   \\
-\wk    & \printdate{27/11/\the\year}   &       &  The Riemann Integral     &  \hw  \\ \hline
- \wk   & \printdate{4/12/\the\year}     &     &   Catch up or review  &   \\  \hline
- \wk   & \printdate{11/12/\the\year}     &     &    \hfill  & \textbf{ Final Exam}  \\  \hline  
+\wk    & \printdate{27/11/\the\year}   &   \S6.2    &  The Riemann Integral     &  \hw  \\ \hline
+ \wk   & \printdate{4/12/\the\year}     &  \S1.1--6.2   &   Catch up or review  &   \\  \hline
+ \wk   & \printdate{11/12/\the\year}     &    &    \hfill  & \textbf{ Final Exam}  \\  \hline  
 \end{tabular}
 \end{center}
 
@@ -357,14 +356,20 @@ example) while taking a test will earn you a grade of zero on that assessment.
 
 \begin{enumerate}
 
-\item Regular in person class attendance is required. If you are ill or need to miss 
-class due to athletics, please let me know ahead of time and I will make an effort to put the class on Zoom.
+\item Assessments that are turned in late will earn a score of zero.
+I will grant extensions to the due date only for serious injury or 
+illness.
 
-\item For examinations and in class assignments, show your work.  \emph{No credit will be given for multi-step problems without the necessary work. Your solution must contain enough detail
+\item You are expected to attend class regularly. If you miss class, 
+please ask a classmate for class notes. Understand that my class notes are unlikely 
+to be of any value to you.
+
+\item For examinations and in class assignments, show your work.  
+\emph{No credit will be given for multistep problems without the necessary work. Your solution must contain enough detail
 so that I am convinced that you could correctly work any similar problem.} Also erase or clearly mark any work you want me to ignore; otherwise,
 I'll grade it.  
 
-\item The work you turn in is expected to be \emph{accurate, 
+\item The work you turn in for a grade must be \emph{accurate, 
 complete, concise, neat}, and \emph{well-organized}.  
 \emph{You will not earn full credit on work that falls short of 
 these expectations.}
@@ -374,23 +379,18 @@ unplanned circumstances may require that we make  adjustments
 to the course calendar, exam dates, and due dates or specifics for 
 course assessments. 
 
-
-\item Extra credit is not allowed. 
-
-
+\item I will \emph{decline} all requests for extra credit or for
+redoing an assignment to earn a higher grade.
 
 \item For examinations, you may use a teacher provided quick reference sheet, 
-but no other reference materials. You may also use a pencil, eraser, 
+but no other reference materials. You may also use a pencil, an eraser, 
 and a scientific calculator. For examinations, your phone and all such
-devices must be turned off and \emph{out of sight}. 
+devices must be turned off and \emph{out of sight.} 
 
 \item Generally, if you are ill or absent for any reason (including 
 athletics), you must turn in your in class work on time. Permission to
 turn in work late must be made in advance, otherwise late in class work 
 will count zero points.
-
-
- 
 
 \item During class time, please refrain from using electronic devices. If your 
 device usage distracts your classmates, I will ask you to put it away. If it's my 
@@ -403,12 +403,9 @@ you must take the exam at this time.
  
 \item If you have questions about how your work has been graded, make an appointment with me immediately.
 
-
 \item Please regularly check Canvas  to verify that your scores have 
 been recorded correctly.  If I made a mistake in recording one of
 your grades, I'll correct it provided you saved your paper.
-
-
 
 \end{enumerate}
 \includepdf[pages={1-},angle=90]{door_schedule.pdf}  
