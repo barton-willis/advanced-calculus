@@ -2,8 +2,10 @@
 \usepackage{amsmath,pifont,moreverb,enumerate}
 \usepackage{amssymb,url}
 
-\usepackage[letterpaper, top=0.5in, bottom=0.5in,margin=0.5in]{geometry}
+\usepackage[letterpaper,left=0.75in, right=0.75in,top=0.75in,bottom=0.75in]{geometry}
 \newcommand{\reals}{\mathbf{R}}
+
+\usepackage[final]{microtype}
 
 \newenvironment{alphalist}{
   \begin{enumerate}[(a)]
@@ -43,19 +45,31 @@
 
 %\author{Barton Willis \\ Professor of Mathematics}
 
-
+\usepackage{titlesec}
 %\date{\today}                   
 \begin{document}
 
 \begin{flushleft}
 \textbf{Guidelines for Writing Proofs} \\
- Barton Willis, PhD
+ Barton Willis
 \end{flushleft}
 
-\begin{quote}
-\emph{I have made this letter longer than usual, only because I have
-  not had the time to make it shorter.} \hfill Blaise Pascal
-\end{quote}
+
+\begin{flushleft}
+  \small
+  \emph{I have made this letter longer than usual, only because I have
+  not had the time to make it shorter.} \hfill {\sc Blaise Pascal}
+\end{flushleft}
+
+\normalsize
+The proofs you write for this class must be logical and they should be 
+written using standard mathematical notation and expressed as English sentences. Other than 
+logical correctness and using English sentences, you are free to write your proofs
+in a way that makes sense to you and that pleases you.
+
+Our textbook and class notes provides us with plenty of examples of well-written proofs. You may,
+but are not required to, imitate the proof style of these resources. As you become
+more comfortable writing proofs, it's good to develop your own style.
 
 
 \subsubsection*{\ex Write Sentences}
@@ -63,7 +77,7 @@
 Write proofs using sentences. Do not write proofs as sentence fragments connected by 
 arrows.
 \begin{quote}
-\textbf{\textbf{Replace}}
+\textbf{Replace}
 \begin{quote}
 \(n,m\) integers \(\sqrt{2} = n / m  \longrightarrow 2 m^2 = n^2\). 
 \end{quote}
@@ -77,12 +91,12 @@ Let \(n\) and \(m\) be integers. If \(\sqrt{2} = n / m\), then \(2 \, m^2 = n^2\
 %%----Style rules---------------------------------
 \subsubsection*{\ex  Format proofs as regular text}
 
-Poetry is often printed using centered lines and wide
+Poets frequently format their work  with centered lines and wide
 margins. Mathematics isn't poetry; don't format mathematics as if it were poetry.
 
 
 \begin{quote}
-\textbf{\textbf{Replace}}
+\textbf{Replace}
 \begin{quote}
 \begin{centering}
 Let \(\varepsilon > 0\). \\
@@ -107,7 +121,7 @@ For \(|x - 1| < \delta \) we have \mbox{\(x<1 + \delta\)}.
 In a proof, do not  use the first person.  
 
 \begin{quote}
-\textbf{\textbf{Replace}}
+\textbf{Replace}
 \begin{quote}
 First, I consider the case \(x < 0\).
 \end{quote}
@@ -126,7 +140,7 @@ Use ``we'' instead of the passive voice when it makes the
 text shorter.
 
 \begin{quote}
-\textbf{\textbf{Replace}} (passive voice)
+\textbf{Replace} (passive voice)
 \begin{quote}
   It has been shown that \(x\) is prime.
 \end{quote}
@@ -155,12 +169,12 @@ to most readers until they look up Axiom (A9).
 
 \subsubsection*{\ex  Use consistent terminology}
 
-Mathematics is full of synonyms; for example, {\em set\/} and {\em
-collection\/} are synonyms. In a proof, it's best to stay with the
+Mathematics is full of synonyms; for example, \emph{set} and 
+\emph{collection}. In a proof, it's best to stay with the
 same word to express a concept.
 
 \begin{quote}
-\textbf{\textbf{Replace}}
+\textbf{Replace}
 \begin{quote}
 Let \(A\) be a set and let \(B\) be a nonempty collection.
 \end{quote}
@@ -187,7 +201,7 @@ Some mathematical writing looks OK in print, but it is nonsense when read
 aloud.  Read your writing out loud to find such mistakes.
 
 \begin{quote}
-\textbf{\textbf{Replace}}
+\textbf{Replace}
 \begin{quote}
   Let \(k > 0\) be an integer.
 \end{quote}
@@ -214,11 +228,11 @@ reasoning is needed.
 \subsubsection*{\ex  Include sufficient detail}  
 
 The proofs you write should contain enough detail so that a 
-classmate could  follow it; however,  most purely algebraic 
-steps may be omitted. 
+classmate could  follow it, but you should omit most purely algebraic 
+steps. 
 
 \begin{quote}
-\textbf{\textbf{Replace}}
+\textbf{Replace}
 \begin{quote}
 Subtracting 8 from both sides of the inequality (1)  and dividing by 42,
 we deduce that \(x < 1\).
@@ -288,7 +302,7 @@ $F$ is a function.
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex Mathematics is case--sensitive}
+\subsubsection*{\ex Mathematics is case-sensitive}
 
 Lower and upper case identifiers are distinct.  This means, for
 example that \(a\) and \(A\) are different symbols.
@@ -331,10 +345,8 @@ continuous.
 
 \subsubsection*{\ex  Use function signature notation}
 
-When a new function is first introduced, you should  
-immediately tell the reader the {\em name, domain}, and 
-{\em co-domain\/} of a function by giving its signature.\footnote{The terminology {\em function signature\/} isn't
-standard.}
+When you introduce a new function, immediately tell the reader its 
+name, domain, and possibly its co-domain. by giving its signature.
 \begin{quote}
 \textbf{\textbf{Replace}}
 \begin{quote}
@@ -345,7 +357,7 @@ Let \(F(x,y)\) be a real-valued function.
 Let \(F : \mathbf{R}^2 \to \mathbf{R}\).
 \end{quote}
 \end{quote}
-Writing \(F(x,y)\) to {\em imply\/} that \(F\) is defined
+Writing \(F(x,y)\) to \emph{imply} that \(F\) is defined
 on \( \mathbf{R}^2\) is a poor substitute for a clear statement of 
 the function signature. If the exact domain of a function isn't 
 important, use the notation
@@ -398,7 +410,7 @@ By definition                    & Thus \\
 \end{tabular}
 \end{center}
 Also, expunge weasel words from your text. For a list of weasel words,  see, for example,  
-\begin{url} {http://en.wikipedia.org/wiki/Weasel_word} \end{url}.
+\url{http://en.wikipedia.org/wiki/Weasel_word}.
 
 
 
@@ -419,8 +431,7 @@ to ``I believe,'' ``should be'' or ``I think that.''
 A short proof that uses several powerful theorems is more likely to be
 correct than is a long proof that starts from scratch.  Whenever
 possible, base your proofs on propositions that have been proved.  Of
-course, using a result that we have not yet proved in class is not
-allowed.
+course, your work should only reference theorems we have covered in class.
 
 \subsubsection*{\ex  Let the reader know where the argument is heading} 
 
@@ -431,7 +442,7 @@ Depending on the audience, it may be better to write
   Let $x \in A$.  To show that $ A \subset B$, we'll show that
   $x \in B$. Since, \dots. Thus $x \in B$; therefore $A \subset B$.
 \end{quote}
-than to write
+then to write
 \begin{quote}
   Let $x \in A$.  Since, \dots. Thus $x \in B$; therefore $A \subset B$.
 \end{quote}
@@ -703,9 +714,8 @@ mean ``the next step is'' or ``implies.''
 \end{quote}
 \end{quote}
 
-\noindent Also, do not practice what I call non--committal math. This is
-when mathematics is written as a stream of nouns without any 
-connections between them.
+\noindent Also, do not practice what I call non-committal math. This is, do not
+express mathematics as a stream of disconnected nouns.
 
 \begin{quote}
 \textbf{Replace}
@@ -838,12 +848,12 @@ Anytime you need to show one set is a subset of another, you should use the
 
 \begin{quote}
 
-{ \textbf Proposition} Let \(A\) and \(B\) be sets and suppose \(H_1, H_2 , \dots
+\textbf{Proposition} Let \(A\) and \(B\) be sets and suppose \(H_1, H_2 , \dots
 ,\mbox{ and } H_n\). Then  \(A \subset B\).
 
 \vspace{0.1in}
 
-{ \textbf Proof} If \(x \in A\), we have (deductions made using the 
+\textbf{Proof} If \(x \in A\), we have (deductions made using the 
 facts \(H_1\) through \(H_n\)); therefore \(x \in B\).
 
 \end{quote}
@@ -852,13 +862,13 @@ proposition. To demonstrate set equality, use the pick-and-show idiom twice. Her
 is and example of using pick-and-show.
 
 \begin{quote}
-{ \textbf Proposition} Let \(A\) and \(B\) be nonempty sets and suppose \mbox{\(A \times B
+\textbf{Proposition} Let \(A\) and \(B\) be nonempty sets and suppose \mbox{\(A \times B
 = B \times A\)}.  Then \(A = B\).
 \end{quote}
 The conclusion of the proposition is \(A = B\); we need to use the 
 pick-and-show idiom twice. The proof starts with
 \begin{quote}
- { \textbf Proof}  First we show that \(A \subset B\). If \(a \in A\), we have \dots. 
+ \textbf{Proof}  First we show that \(A \subset B\). If \(a \in A\), we have \dots. 
 \end{quote}
 We need a consequence of \(a \in A\) that somehow involves the
 hypothesis \mbox{\(A \times B = B \times A\)}.  Since \(B\) is
@@ -870,7 +880,7 @@ the pick-and-show idiom.  Here's a proof.
 
 
 \begin{quote}
- { \textbf Proof} First we show that \(A \subset B\). Since \(B\) is
+ \textbf{Proof} First we show that \(A \subset B\). Since \(B\) is
  nonempty, it has at least one element, call it \(b\). If \(x \in A\), we
  have \((x,b) \in A \times B\).  But \mbox{\(A \times B = B \times A\)};
  thus \((x,b) \in B \times A\).  Therefore \(x \in B\); consequently
@@ -888,7 +898,7 @@ Second we show that \(B \subset C\).  Since \(A\) is
 It's tempting to write the proof as
 
 \begin{quote}
- { \textbf Proof} If \((a,b) \in A \times B\), we have \((a,b) \in B \times
+ \textbf{Proof} If \((a,b) \in A \times B\), we have \((a,b) \in B \times
  A\). Thus \(a \in B\) and \(b \in A\); therefore \(A \subset B\) and
 \(B \subset A\).
 \end{quote}
@@ -898,7 +908,7 @@ What's wrong with this? Plenty: First it uses pick-and-show on \(A
 and \(B\). Second, the proof never makes any use of the hypothesis
 that \(A\) and \(B\) are nonempty; this doesn't mean that the proof is
 wrong, just highly suspect. Third, and most importantly, the proof is
-logically flawed. To see the flaw, look at it carefully and decide
+illogical. To see the flaw, look at it carefully and decide
 what has really been proved. Since we've used pick-and-show on \(A
 \times B\), we're aiming toward a proof that  \(A \times B = B
 \times A\) implies \(B \times A \subset A \times B\).  We don't need
@@ -910,18 +920,12 @@ to do any work to conclude that! (For any set \(A\), we have \(A
 
 \subsection* {\se How to get started}
 
-Students often tell me that ``I know how to prove it, but I can't get
-started.''  Here are a few suggestions on how to start.
+Students often tell me that ``I know how to prove it, but I can't get started.''  Here are a few suggestions on how to start.
 
 
 \subsubsection*{\id Know the definitions}
 
-Have you ever tried to translate an article written in a foreign
-language by looking up the definition of each word?  If you have,
-you'll agree that the method doesn't work.  If you don't thoroughly
-understand the definition of every word in the statement of a theorem,
-you won't be able to prove it.  When you thoroughly understand a
-mathematical definition, you should be able to:
+Have you ever tried to translate an article written in a foreign language by looking up the definition of each word?  If you have, you'll agree that the method doesn't work.  If you don't thoroughly understand the definition of every word in the statement of a theorem, you won't be able to prove it.  When you thoroughly understand a mathematical definition, you should be able to:
 
 
 \begin{quote}
@@ -936,7 +940,16 @@ mathematical definition, you should be able to:
 \end{alphalist}
 \end{quote}
 
-\subsubsection*{\id Use an idiom }
+\subsubsection*{\id List the hypothesis and the conclusion}
+
+List each hypothesis and the conclusion. The conclusion often tells us what kind of proof to use. If, for example,
+the conclusion is set inclusion, you will likely use a pick-and-show proof.
+
+\subsubsection*{\id Express the proposition in symbolic form}
+
+Write the proposition in symbolic form--expressed this way, it can be a road map for constructing the proof.
+
+\subsubsection*{\id Use an idiom}
 
 Does the proof follow a standard pattern?  If it does, look at a proof that
 follows the same pattern and try to use the template.
@@ -973,19 +986,13 @@ be unstuck.
 \item Leslie Lamport, ``How to Write a Proof,'' American Mathematical Monthly, { \textbf 102} 
 (1993) 600-608.  
 
-\item Donald Knuth, Tracy Larrabee, and Paul Roberts, {\em Mathematical
-  Writing,\/} MAA Notes Series, 1989.
+\item Donald Knuth, Tracy Larrabee, and Paul Roberts,  \emph{Mathematical   Writing} MAA Notes Series, 1989.
 
 \item Leonard Gillman, {\em Writing Mathematics Well,\/} Mathematical
 Association of America, 1987.
 
-\item Ashley Reiter, ``Writing a Research Paper in Mathematics,'' \\
-\verb|web.mit.edu/jrickert/www/mathadvice.html|.
+\item Ashley Reiter, ``Writing a Research Paper in Mathematics,''  \url{http://web.mit.edu/jrickert/www/mathadvice.html}.
 
-\item \verb|www.mit.edu/afs/athena.mit.edu/course/other/mathp2/www/piil.html|.
-
-\item For an introduction to formal proofs, see \verb|en.wikipedia.org/wiki/Proof_theory|
-and \verb| www.economist.com/science/displayStory.cfm?story_id=3809661|.
 
 \end{numlist}
 
@@ -1017,13 +1024,13 @@ Let's illustrate this with an example. Suppose
   x = \mbox{min} \{5,6\}. \tag{$\star$}
 \end{equation*}
 Since \( \mbox{min} \{5,6\} = 5\), we could have simply written
-\(\star\) as  \(x = 5 \) instead; \((\star\)) implies {\em two\/}
+\(\star\) as  \(x = 5 \) instead; \((\star)\) implies \emph{two}
 facts
 \[
   x < 5 \mbox{ and } x < 6.
 \]
 Of course if \(x < 5\) then \(x < 6\) is redundant; nevertheless,
-\((\star\)) is a tricky way of writing two inequalities as one.
+\((\star)\) is a tricky way of writing two inequalities as one.
 The full power of this idea is more clear when we have something
 like
 \begin{equation*}
@@ -1036,10 +1043,10 @@ implies
 \]
 Given a {\em specific\/} value for \(\varepsilon\), we could reduce
 these two inequalities into just one; for example, if \(\varepsilon =
-10\), we'd simply have \(x < 1\). And if if \(\varepsilon =
+10\), we'd simply have \(x < 1\). And if \(\varepsilon =
 \frac{1}{2} \), we'd simply have \(x < \frac{1}{2}\).
 
-\ding{43} { \textbf Fact} If \(x < \mbox{min} \{a,b\}\), we have
+\ding{43} \textbf{Fact} If \(x < \mbox{min} \{a,b\}\), we have
 \(x < a\) and \(x < b\).
 
 OK, let's try something more challenging. Given that
