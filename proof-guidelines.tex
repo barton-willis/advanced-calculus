@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{amsmath,pifont,moreverb,enumerate}
 \usepackage{amssymb,url}
-
+\usepackage{upgreek}
 \usepackage[letterpaper,left=0.75in, right=0.75in,top=0.75in,bottom=0.75in]{geometry}
 \newcommand{\reals}{\mathbf{R}}
 
@@ -40,19 +40,17 @@
 \these \,\,}
 
 \usepackage{isomath}
+\renewcommand\thesubsubsection{\arabic{subsubsection}}
+\title{ Guidelines for Writing Proofs}
 
-%\title{ Guidelines for Writing Proofs}
-
-%\author{Barton Willis \\ Professor of Mathematics}
+\author{Barton Willis}
 
 \usepackage{titlesec}
 %\date{\today}                   
 \begin{document}
 
-\begin{flushleft}
-\textbf{Guidelines for Writing Proofs} \\
- Barton Willis
-\end{flushleft}
+\maketitle
+
 
 
 \begin{flushleft}
@@ -72,7 +70,7 @@ but are not required to, imitate the proof style of these resources. As you beco
 more comfortable writing proofs, it's good to develop your own style.
 
 
-\subsubsection*{\ex Write Sentences}
+\subsubsection{Write Sentences}
 
 Write proofs using sentences. Do not write proofs as sentence fragments connected by 
 arrows.
@@ -89,7 +87,7 @@ Let \(n\) and \(m\) be integers. If \(\sqrt{2} = n / m\), then \(2 \, m^2 = n^2\
 
 
 %%----Style rules---------------------------------
-\subsubsection*{\ex  Format proofs as regular text}
+\subsubsection{Format proofs as regular text}
 
 Poets frequently format their work  with centered lines and wide
 margins. Mathematics isn't poetry; don't format mathematics as if it were poetry.
@@ -116,7 +114,7 @@ For \(|x - 1| < \delta \) we have \mbox{\(x<1 + \delta\)}.
 
 
 
-\subsubsection*{\ex  Do not use the first person} 
+\subsubsection{Do not use the first person} 
 
 In a proof, do not  use the first person.  
 
@@ -133,7 +131,7 @@ with
 
 Outside a proof, use the first person when it is natural.
 
-\subsubsection*{\ex  Use ``we''}
+ \subsubsection{  Use ``we''}
 
 In mathematical text, ``we'' means the author and the reader.
 Use ``we'' instead of the passive voice when it makes the 
@@ -154,7 +152,7 @@ Alternatively, write this as
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex  Refer to theorems and axioms by name}  
+ \subsubsection{  Refer to theorems and axioms by name}  
 
 It is usually better to write
 \begin{quote}
@@ -167,7 +165,7 @@ then it is to write
 The meaning of the first is clear, but the second won't be clear
 to most readers until they look up Axiom (A9).
 
-\subsubsection*{\ex  Use consistent terminology}
+ \subsubsection{  Use consistent terminology}
 
 Mathematics is full of synonyms; for example, \emph{set} and 
 \emph{collection}. In a proof, it's best to stay with the
@@ -187,7 +185,7 @@ Let \(A\) be a set and let \(B\) be a nonempty set.
 %%----end style rules---------------------------------
 %%----clarity rules---------------------------------
 
-\subsubsection*{\ex  Use words with clear meanings}
+ \subsubsection{  Use words with clear meanings}
 
 A \mbox{well-written} proof can be hard to follow. Do not make it more
 difficult to understand by using imprecise language.  Informally 
@@ -195,7 +193,7 @@ I might say that a quantity is ``tiny.'' Don't use such language in a proof.
 
 
 
-\subsubsection*{\ex Mathematical writing should be readable}
+ \subsubsection{ Mathematical writing should be readable}
 
 Some mathematical writing looks OK in print, but it is nonsense when read
 aloud.  Read your writing out loud to find such mistakes.
@@ -219,13 +217,13 @@ Spoken,``Let \(k > 0\) be an integer'' is equivalent to
 
 
 
-\subsubsection*{\ex  Write succinctly}  
+ \subsubsection{  Write succinctly}  
 
 Extraneous facts make it difficult for the reader to follow a logical
 argument.  Re-read your work and make certain that each thread of
 reasoning is needed.
 
-\subsubsection*{\ex  Include sufficient detail}  
+ \subsubsection{  Include sufficient detail}  
 
 The proofs you write should contain enough detail so that a 
 classmate could  follow it, but you should omit most purely algebraic 
@@ -243,7 +241,7 @@ Inequality (1) implies that \(x < 1\).
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex Be careful with ``it''}
+ \subsubsection{ Be careful with ``it''}
 
 Make sure the meaning of every pronoun is unambiguous.
 
@@ -258,24 +256,24 @@ Make sure the meaning of every pronoun is unambiguous.
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex Define symbols before you use them}
+ \subsubsection{ Define symbols before you use them}
 
-With few exceptions (\(\pi\), for example), every symbol you use must be defined
+With few exceptions (\(\uppi\), for example), every symbol you use must be defined
 before, or near, the place you first use it.
 
 \begin{quote}
 \textbf{\textbf{Replace}}
 \begin{quote}
-The volume is \(\pi r^2 h\).
+The volume is \(\uppi r^2 h\).
 \end{quote}
 \textbf{with}
 \begin{quote}
 The volume of a right circular cylindrical with height \(h\) and
-radius \(r\) is \(\pi r^2 h\).
+radius \(r\) is \(\uppi r^2 h\).
 
 \end{quote}
 \end{quote}
-\subsubsection*{\ex  Qualify identifiers} 
+ \subsubsection{  Qualify identifiers} 
 
 Some symbols have more than one meaning; for example, $(0,1)$ can
 represent an open interval in $\mathbf{R}$, an element of
@@ -302,12 +300,12 @@ $F$ is a function.
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex Mathematics is case-sensitive}
+ \subsubsection{ Mathematics is case-sensitive}
 
 Lower and upper case identifiers are distinct.  This means, for
 example that \(a\) and \(A\) are different symbols.
 
-\subsubsection*{\ex  Avoid unnecessary notation}
+ \subsubsection{  Avoid unnecessary notation}
 
 Introduce notation and identifiers only when needed. 
 \begin{quote}
@@ -326,7 +324,7 @@ a number, it's an  {\em equation}. Second, only a number can be
 irrational, but the first proposition asserts that an {\em equation\/}
 can be irrational. 
 
-\subsubsection*{\ex  Don't confuse a function with its formula}
+ \subsubsection{  Don't confuse a function with its formula}
 
 If \(F\) is a function, don't write \(F(x)\) when you mean \(F\).
 
@@ -343,7 +341,7 @@ continuous.
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex  Use function signature notation}
+ \subsubsection{  Use function signature notation}
 
 When you introduce a new function, immediately tell the reader its 
 name, domain, and possibly its co-domain. This is the \emph{signature}
@@ -371,7 +369,7 @@ of \(\mathbf{R}^2\), but it doesn't give its actual domain.
 
 %%---end clarity-----------------------------------------
 %%---start word selection--------------------------------
-\subsubsection*{\ex Don't confuse ``let'' with ``therefore''}
+ \subsubsection{ Don't confuse ``let'' with ``therefore''}
 
 To introduce a new object, use ``let.''  Use ``therefore'' to
 state a logical consequence of the facts that precede it.
@@ -390,7 +388,7 @@ Let \(n\) be an integer.  Therefore \(n (n+1)\) is even.
 Alternatives to ``therefore'' are ``so'' and ``thus.''
 
 
-\subsubsection*{\ex  Omit empty words and phrases} 
+ \subsubsection{  Omit empty words and phrases} 
 
 It doesn't help the reader to say that something is 
 ``easy to show'' or ``obvious.'' Omit or replace
@@ -416,7 +414,7 @@ Also, expunge weasel words from your text. For a list of weasel words,  see, for
 
 
 
-\subsubsection*{\ex  Do not be wishy-washy}  
+ \subsubsection{  Do not be wishy-washy}  
 
 A proof is no place to be indefinite.  Do not use  phrases similar 
 to ``I believe,'' ``should be'' or ``I think that.''
@@ -427,14 +425,14 @@ to ``I believe,'' ``should be'' or ``I think that.''
 %-----start structure----------
 
 
-\subsubsection*{\ex  Use related theorems}  
+ \subsubsection{  Use related theorems}  
 
 A short proof that uses several powerful theorems is more likely to be
 correct than is a long proof that starts from scratch.  Whenever
 possible, base your proofs on propositions that have been proved.  Of
 course, your work should only reference theorems we have covered in class.
 
-\subsubsection*{\ex  Let the reader know where the argument is heading} 
+ \subsubsection{  Let the reader know where the argument is heading} 
 
 It often helps the reader to know in advance where a proof is heading.
 Depending on the audience, it may be better to write
@@ -448,7 +446,7 @@ then to write
   Let $x \in A$.  Since, \dots. Thus $x \in B$; therefore $A \subset B$.
 \end{quote}
 
-\subsubsection*{\ex  Use idioms}
+ \subsubsection{  Use idioms}
 
 Some patterns enter into proofs so frequently that we express them
 using an idiom.\footnote{Idiom (noun): A style or manner of expression
@@ -461,7 +459,7 @@ read. We'll learn a few templates for proofs.
 %%---end structure ----------------
 %%---start grammar ----------------
 
-\subsubsection*{\ex  Use correct spelling, punctuation, and grammar}
+ \subsubsection{  Use correct spelling, punctuation, and grammar}
 
 Misspelled words, incorrect punctuation, and poor grammar distract the reader.  
 Always carefully check your work for these errors. Additionally, 
@@ -475,7 +473,7 @@ Repeated use of the  double angle formula gives
 \end{quote}
 The displayed formula ends the sentence; thus it terminates with a period.
 
-\subsubsection*{\ex  Begin each sentence with a word}  
+ \subsubsection{  Begin each sentence with a word}  
 
 
 A sentence that starts with a symbol is difficult to 
@@ -492,7 +490,7 @@ Since $A$ is continuous on $\mathbf{R}$, we have \dots
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex Place a word between adjacent formulas}
+ \subsubsection{ Place a word between adjacent formulas}
 
 When one formula follows another, place a word in between the formulas.
 
@@ -507,7 +505,7 @@ When one formula follows another, place a word in between the formulas.
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex Don't over use the colon}
+ \subsubsection{ Don't over use the colon}
 
 Do not use a colon immediately before a formula when the formula 
 completes the sentence.
@@ -526,7 +524,7 @@ If the phrase that follows a colon is a complete sentence,
 capitalize the first word following a colon; otherwise, do
 not capitalize the first word following a colon.
  
-\subsubsection*{\ex Don't use unnecessary commas}
+ \subsubsection{ Don't use unnecessary commas}
 
 Do not surround an appositive with commas.
 
@@ -544,7 +542,7 @@ Further when a sentence starts with ``further,'' ``therefore,'' or ``thus,''
 a comma isn't needed after the first word.
 
 
-\subsubsection*{\ex If there is a ``first,'' there must be a ``second''}
+ \subsubsection{ If there is a ``first,'' there must be a ``second''}
 
 If you enumerate ideas using starting with ``first,'' you must identify
 the remaining ideas using second, third, etc.
@@ -564,7 +562,7 @@ First, we'll show that \(x \leq 0\).  Second, we'll show that
 
 
 
-\subsubsection*{\ex  Capitalize proper names and theorems}
+ \subsubsection{  Capitalize proper names and theorems}
 
 Capitalize the words {\em axiom, definition, proposition\/}, and {\em theorem\/}
 when they refer to something specific; otherwise, do not
@@ -584,7 +582,7 @@ Also capitalize proper names; for example, \emph{the Euler
 constant}. 
 
 
-\subsubsection*{\ex  Don't confuse it's and its}
+ \subsubsection{  Don't confuse it's and its}
 
 The word ``it's'' always means it is. Don't confuse it's with its.\footnote{I suppose you
 could name your dog ``It.'' Then ``It's doghouse has two stories.'' is correct,
@@ -607,13 +605,13 @@ this term.
 %%---start appearance ---------------------
 
 
-\subsubsection*{\ex Do scratch work}
+ \subsubsection{ Do scratch work}
 
 By all means, if it helps you construct a proof, draw pictures and
 diagrams filled with lines and arrows.  But do not include your scratch
 work in the final copy.
 
-\subsubsection*{\ex Proofread your work}
+ \subsubsection{ Proofread your work}
 
 When you have finished a proof, put it aside for a while.  After that,
 proofread it several more times. Imagine that it is someone else's
@@ -622,7 +620,7 @@ work.  Does it still make sense?  Read your proof one line at a time
 loud. Mistakes that are easy to skip often manifest when spoken.
 
 
-\subsubsection*{\ex Check that you used every hypothesis}
+ \subsubsection{ Check that you used every hypothesis}
 
 After your first draft, check that you have used every hypothesis.
 If you did not, it doesn't mean that your proof is wrong.  But it
@@ -631,13 +629,13 @@ state theorems without unnecessary hypotheses.
 
 %%---end appearance--------------------------------------
 %%---start Logic-----------------------------------------
-\subsubsection*{\ex Prove, show, and demonstrate all mean prove}
+ \subsubsection{ Prove, show, and demonstrate all mean prove}
 
 If you are asked to show that something is true, you need to
 supply a proof.  The words prove, show, and demonstrate all mean the
 same thing. 
 
-\subsubsection*{\ex Prove what is given--not a special case}
+ \subsubsection{ Prove what is given--not a special case}
 
 It's not fair to append additional conditions to a proposition and 
 then use these additional conditions to prove the proposition.  Put
@@ -663,7 +661,7 @@ we've shown that \(A \subset A \cup B\)
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex Prove the conclusion, not the hypothesis}
+ \subsubsection{ Prove the conclusion, not the hypothesis}
 
 Make certain that the logic of your proof flows from the 
 hypothesis to the conclusion. I've seen proofs that
@@ -672,15 +670,14 @@ or with one or more of the hypothesis.
 
 
 
-\subsubsection*{\ex If objects aren't the same type, they aren't
-  equal.}
+ \subsubsection{Don't abuse equality}
 
 In this class, we mostly work with {\em functions, sets}, or {\em
 numbers\/}.  A set can never equal a number and a number can never
 equal a function.  Carefully check your work and make sure that you
 have equality written only between objects with the same type.
 \begin{quote}
-The {\em range\/} of a function is a {\em set\/}; it is not a
+The \emph{range} of a function is a \emph{set}; it is not a
 number. If your proof contains
 \begin{quote}
  \(\mbox{range}(F) = 1\),
@@ -699,10 +696,9 @@ same type that aren't equal; however, this isn't the point that
 is being made here.
 
 
-\subsubsection*{\ex The symbol ``='' means equal}
+ \subsubsection{ The symbol ``='' means equal, not the next step is}
 
-Use ``='' between things that are equal. Do not use ``='' to 
-mean ``the next step is'' or ``implies.''
+Use ``='' between things that are equal. Do not use ``='' to  mean ``the next step is'' or ``implies.''
 
 \begin{quote}
 \textbf{Replace}
@@ -743,7 +739,7 @@ Finally, do not use an arrow when you mean equality.
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex Avoid arrows}
+ \subsubsection{ Avoid arrows}
 The double arrow \(\Rightarrow\) means \emph{therefore}, not
 equal. When you want to express the fact that expressions are
 \emph{equal}, use the equal sign, not the double arrow. Although we do
@@ -758,7 +754,7 @@ x\).  A single arrow (either left or right pointing) generally means
 
 
 
-\subsubsection*{\ex Check for dangling silent variables}
+ \subsubsection{ Check for dangling silent variables}
 
 Nothing should depend in any significant way on a  silent variable. If your
 work has a  silent variable, make sure it is qualified in some way.
@@ -780,7 +776,7 @@ So \(x \notin A_i\) for some \(i \in I\).
 \end{quote}
 \end{quote}
 
-\subsubsection*{\ex A statement must follow ``such that'' }
+ \subsubsection{ A statement must follow ``such that'' }
 
 What follows ``such that'' must be a statement (something that must either
 be true or false).  In 
@@ -794,7 +790,7 @@ One possibility is
 Let \(A\) and \(B\) be sets such that \(A \cap B\) is nonempty.
 \end{quote}
 
-\subsubsection*{\ex Say what you mean }
+ \subsubsection{ Say what you mean}
 
 Consider
 \begin{quote}
@@ -806,13 +802,19 @@ Spoken the last sentence is
 end the proof with \emph{So \(x \in A\).}
 
 
+ \subsubsection{Use correct italics}
+ 
+ Most mathematical text is typeset in italic type, but there are some exceptions. Function names that are two or more characters long are  typeset in upright text; for example \(\sin(x+y)\) is correct, but \(sin(x+y)\) is wrong.  Other
+ exceptions include the circular constant and the Euler number, both  of these symbols should be in upright text, 
+ for example \(\uppi\) and  \(\mathrm{e}\), not \(\pi\) and \(e\).  Another exception is  that differentials should be in 
+ upright text, not italics.  So \(\int x^2 \, \mathrm{d} x\) is correct and \(\int x^2 \, d x\) is nonstandard. But this rule is nearly universally ignored.
 
 
 
 
 
 
-
+\end{document}
 \subsection*{\se Proof idioms}
 
 \subsubsection*{\id The let-choose idiom}
@@ -1042,7 +1044,7 @@ implies
 \[
   x < 1 \mbox{ and } x < \varepsilon.
 \]
-Given a {\em specific\/} value for \(\varepsilon\), we could reduce
+Given a \emph{specific} value for \(\varepsilon\), we could reduce
 these two inequalities into just one; for example, if \(\varepsilon =
 10\), we'd simply have \(x < 1\). And if \(\varepsilon =
 \frac{1}{2} \), we'd simply have \(x < \frac{1}{2}\).
