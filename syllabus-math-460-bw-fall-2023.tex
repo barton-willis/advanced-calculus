@@ -31,10 +31,14 @@
 \setcounter{hw}{\value{hw}+1}
 \textbf{HW \thehw}}
 
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
 \newcounter{ex}\setcounter{ex}{0}
 \newcommand{\ex}{%\
 \setcounter{ex}{\value{ex}+1}
-Exam \theex}
+Exam \rom{\theex}}
 
 \usepackage[T1]{fontenc} 
 \usepackage{fourier}
@@ -114,7 +118,7 @@ Exam \theex}
     \item[Instructor:] Barton Willis, PhD, Professor of Mathematics
     \item[Office:]  Discovery Hall, Room 368
     \item[Office Hours: ] \officehours
- %   \item[Zoom] 616 568 5706
+   % \item[Zoom] 616 568 5706
     \item[\phone:]  \phonenumber[country=US]{3088658868}
     \item[\Email:]  \href{mailto:willisb@unk.edu}{willisb@unk.edu}
     \item[\faGithub]   \url{https://github.com/barton-willis/advanced-calculus}
@@ -128,10 +132,10 @@ Exam \theex}
 
 \begin{mypar}{0.25in}{0.25in} 
 
-  \textbf{First Homework due} \dotfill  \printdate{26/8/\the\year}  \\
-  \textbf{Exam 1} \dotfill \printdate{15/9/\the\year}  \\
-  \textbf{Exam 2} \dotfill  \printdate{13/10/\the\year} \\
-  \textbf{Exam 3} \dotfill \printdate{10/11/\the\year} \\
+  \textbf{First homework due} \dotfill  \printdate{26/8/\the\year}  \\
+  \textbf{Exam \rom{1}} \dotfill \printdate{15/9/\the\year}  \\
+  \textbf{Exam \rom{2}} \dotfill  \printdate{13/10/\the\year} \\
+  \textbf{Exam \rom{3}} \dotfill \printdate{10/11/\the\year} \\
   \textbf{Final exam} \dotfill  \finaldateandtime
 \end{mypar}
 
@@ -142,7 +146,7 @@ final exam; specifically:
 \FPeval{\hwpts}{round(20*12,0)}
 \begin{mypar}{0.25in}{0.25in}
     \textbf{Weekly Homework:}  \emph{12 twenty point assignments}  \dotfill \hwpts\/ (total) \\
-    \textbf{Mid-term exams 1, 2, and 3:} \emph{100 points each} \dotfill 300 (total)\\
+    \textbf{Mid-term exams \rom{1}, \rom{2}, \rom{3}:} \emph{100 points each} \dotfill 300 (total)\\
     \textbf{Comprehensive Final exam} \dotfill 150 (total)
 \end{mypar}
 If we end the term with less than \hwpts\/ points for homework,  
