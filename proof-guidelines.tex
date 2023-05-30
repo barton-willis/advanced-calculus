@@ -104,8 +104,8 @@ Let \(\varepsilon > 0\).  Choose \(\delta = \varepsilon / 3 \).
 For \(|x - 1| < \delta \) we have \mbox{\(x<1 + \delta\)}.
 \end{quote}
 \end{quote}
-When typesetting mathematics using \TeX, use the the end of line command (a double backslash) and other
-sucjh manual formating commands infrequently.
+When typesetting mathematics using \TeX, use the end of line command (a double backslash) and other
+such manual formatting commands infrequently.
 
 \subsubsection{Do not scribble}
 
@@ -394,7 +394,7 @@ the empty words and phrases listed in the following table.
 
 \begin{center}
 \begin{tabular}{| l l |}
-\hline  \textbf {Word or Phrase} &  \textbf {\textbf{Replace}ment} \\ 
+\hline  \textbf {Word or Phrase} &  \textbf{Replacement} \\ 
 \hline
 It is trivial to show    & (omit) \\
 It is easy to show     & (omit) \\   
@@ -815,6 +815,54 @@ end the proof with \emph{So \(x \in A\).}
  for example \(\uppi\) and  \(\mathrm{e}\), not \(\pi\) and \(e\).  Another exception is  that differentials should be in 
  upright text, not italics.  So \(\int x^2 \, \mathrm{d} x\) is correct and \(\int x^2 \, d x\) is nonstandard. But this rule is nearly universally ignored.
 
+ \subsubsection{Don't use note taker shorthand}
+
+ Notetaker shorthand, for example $\because$ for `because,' is  clear and it saves time.  But outside displayed or inline mathematics,  do not use such shorthand.
+
+ \begin{center}
+  \begin{tabular}{| l l |}
+  \hline  \textbf {symbol} &  \textbf{Replacement} \\ 
+  \hline
+  $\because$  & because \\
+  $\therefore$  &  therefore \\
+  s.t.          & such that \\
+  $\forall$     & for all \\
+  $\exists$      & there exists \\
+  iff      & if and only if  \\ \hline 
+ \end{tabular}
+\end{center}
+
+\begin{quote}
+  \textbf{Replace} $f(x) = f(y)$  $\therefore$  $x = y$
+
+  \textbf{With} $f(x) = f(y)$ therefore  $x = y$
+
+\end{quote}
+
+\subsubsection{Use Iverson notation}
+
+If $e$ is a mathematical expression that has a boolean value, enclosing
+$e$ in square brackets means its boolean value; for example, for any
+real number, we have 
+\begin{align*}
+   \left[x^2 \geq 0 \right] &\equiv \mbox{True}, \\
+   \left[x^2 + 2 x + 1 = (x+1)^2 \right] &\equiv \mbox{True}, \\
+   \left[x^2 < 0 \right] &\equiv \mbox{False}.
+\end{align*}
+
+\subsubsection{Be careful with compound inequations}
+
+The expression $a=b=c$ means $a=b$ and $b=c$. And 
+$a=b<c$ means $a=b$ and $b<c$. But following this
+standard $a^2 \geq 0 = \mbox{True}$ would mean
+$a^2 \geq 0$ and $0 = \mbox{True}$. But that is rubbish.
+A good way to fix this is to use Iverson notation; thus
+\begin{equation*}
+ \left[a^2 \geq 0 \right] \equiv \mbox{True}.
+\end{equation*}
+Finally, according to this rule $a>b<c$ means $a>b$ and $b< c$. But
+ it's far to easy to misread $a>b<c$ and incorrectly conclude that
+ $a > c$.  So be careful.
 
 
 \section*{Further Reading}
