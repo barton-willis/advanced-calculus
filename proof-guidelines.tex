@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,fleqn]{article}
 \usepackage{amsmath,pifont,moreverb,enumerate}
 \usepackage{amssymb,url}
 \usepackage{upgreek}
@@ -53,21 +53,17 @@
 
 
 
-\begin{flushleft}
-  \small
-  \emph{I have made this letter longer than usual, only because I have
-  not had the time to make it shorter.} \hfill {\sc Blaise Pascal}
-\end{flushleft}
+\begin{quote}
+  \emph{ “Bad thinking never produces good writing.”} \hfill   {\sc Leslie Lamport}
+\end{quote}
 
 \normalsize
-The proofs you write for this class must be logical and they should be 
-written using standard mathematical notation and expressed as English sentences. Other than 
-logical correctness and using English sentences, you are free to write your proofs
-in a way that makes sense to you and that pleases you.
+The proofs you write for this class must be logical and they should be written using standard mathematical notation and expressed as English sentences. Other than logical correctness and using English sentences, you are free to write your proofs
+in a way that makes sense and pleases you.  I like to keep the focus on logical correctness, not on adherence to a style template. If you have a question that is mostly about style, not content, don't be surprised if my answer is ``It doesn't 
+matter--either way is OK.'' 
 
-Our textbook and class notes provides us with plenty of examples of well-written proofs. You may,
-but are not required to, imitate the proof style of these resources. As you become
-more comfortable writing proofs, it's good to develop your own style.
+Our textbook and class notes provides us with plenty of examples of well-written proofs. You may, but are not required to, imitate the proof style of these resources. As you become more comfortable writing proofs, it's good to develop your own style. Although you are free to develop your own proof style, there are constraints, and this document will give a guide
+to proper style.  Many examples that follow have been gleaned from student papers, so  unless you want to be  immortalized, write carefully.
 
 
 \subsubsection{Write Sentences}
@@ -108,10 +104,12 @@ Let \(\varepsilon > 0\).  Choose \(\delta = \varepsilon / 3 \).
 For \(|x - 1| < \delta \) we have \mbox{\(x<1 + \delta\)}.
 \end{quote}
 \end{quote}
+When typesetting mathematics using \TeX, use the the end of line command (a double backslash) and other
+sucjh manual formating commands infrequently.
 
+\subsubsection{Do not scribble}
 
-
-
+Don’t turn in homework that is scribbled or barely readable.
 
 
 \subsubsection{Do not use the first person} 
@@ -123,7 +121,7 @@ In a proof, do not  use the first person.
 \begin{quote}
 First, I consider the case \(x < 0\).
 \end{quote}
-with
+\textbf{with}
 \begin{quote}
  First, consider \(x < 0\).
 \end{quote}
@@ -189,7 +187,7 @@ Let \(A\) be a set and let \(B\) be a nonempty set.
 
 A \mbox{well-written} proof can be hard to follow. Do not make it more
 difficult to understand by using imprecise language.  Informally 
-I might say that a quantity is ``tiny.'' Don't use such language in a proof.
+we might say that a quantity is ``tiny,'' but don't use such language in a proof.
 
 
 
@@ -309,7 +307,7 @@ example that \(a\) and \(A\) are different symbols.
 
 Introduce notation and identifiers only when needed. 
 \begin{quote}
-For example, \textbf{Replace}
+\textbf{Replace}
 \begin{quote}
  \textbf {Proposition} The number \(x = \sqrt{2}\) is irrational.
 \end{quote}
@@ -540,8 +538,8 @@ Do not surround an appositive with commas.
   The revenue \(R\) is an increasing function of price \(p\).
 \end{quote}
 \end{quote}
-Further when a sentence starts with ``further,'' ``therefore,'' or ``thus,''
-a comma isn't needed after the first word.
+When a sentence starts with ``further,'' ``therefore,'' or ``thus,''
+a do not put a comma after the first word.
 
 
  \subsubsection{ If there is a ``first,'' there must be a ``second''}
@@ -746,10 +744,16 @@ The double arrow \(\Rightarrow\) means \emph{therefore}, not
 equal. When you want to express the fact that expressions are
 \emph{equal}, use the equal sign, not the double arrow. Although we do
 not generally use symbols for logical connectives, a correct usage of
-the double arrow is: \emph{Chocolate is made from the bean of the
-cacao tree \(\Rightarrow\) Chocolate contains caffeine.}  An
-\emph{incorrect} usage is: \(\left(1 + x^2\right)^\prime \Rightarrow 2
-x\).  A single arrow (either left or right pointing) generally means
+the double arrow is
+\begin{equation*}
+  \mbox{Chocolate comes from the bean of the
+cacao tree} \Rightarrow  \mbox{Chocolate contains caffeine.} 
+\end{equation*}
+ An \emph{incorrect} usage is
+ \begin{equation*}
+  \left(1 + x^2\right)^\prime \Rightarrow 2 x. 
+ \end{equation*}
+A single arrow (either left or right pointing) generally means
 ``Replace by.''  A correct usage of the single arrow is:
 \emph{Substituting \(x \to 5\) in \(y = 6 + x\) yields \(y = 11\).} An
 \emph{incorrect} usage is: \(x (1-x) = 0 \to x = 0,1\).
@@ -778,7 +782,7 @@ So \(x \notin A_i\) for some \(i \in I\).
 \end{quote}
 \end{quote}
 
- \subsubsection{ A statement must follow ``such that'' }
+ \subsubsection{ A statement must follow ``such that''}
 
 What follows ``such that'' must be a statement (something that must either
 be true or false).  In 
@@ -807,7 +811,7 @@ end the proof with \emph{So \(x \in A\).}
  \subsubsection{Use correct italics}
  
  Most mathematical text is typeset in italic type, but there are some exceptions. Function names that are two or more characters long are  typeset in upright text; for example \(\sin(x+y)\) is correct, but \(sin(x+y)\) is wrong.  Other
- exceptions include the circular constant and the Euler number, both  of these symbols should be in upright text, 
+ exceptions include the circular constant, the imaginary unit,  and the Euler number, each  of these symbols should be in upright text, 
  for example \(\uppi\) and  \(\mathrm{e}\), not \(\pi\) and \(e\).  Another exception is  that differentials should be in 
  upright text, not italics.  So \(\int x^2 \, \mathrm{d} x\) is correct and \(\int x^2 \, d x\) is nonstandard. But this rule is nearly universally ignored.
 
@@ -827,9 +831,15 @@ Association of America, 1987.
 
 \item Ashley Reiter, ``Writing a Research Paper in Mathematics,''  \url{http://web.mit.edu/jrickert/www/mathadvice.html}.
 
+\item \url{https://sites.math.washington.edu/~lee/Writing/writing-proofs.pdf}
+
+
+\item ``How to write Mathematics,'' Paul Halmos, \url{https://entropiesschool.sciencesconf.org/data/How_to_Write_Mathematics.pdf}
+
+\item ``A Guide to Writing Mathematics,'' Kevin P. Lee,  \url{https://web.cs.ucdavis.edu/~amenta/w10/writingman.pdf}
+
 
 \end{numlist}
-
 
 \end{document}
 \subsection*{\se Proof idioms}
