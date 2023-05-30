@@ -46,6 +46,7 @@
 
 \author{Barton Willis}
 
+\usepackage{fourier}
 \usepackage{titlesec}
 %\date{\today}                   
 \begin{document}
@@ -62,15 +63,15 @@ getting started and finish with suggestions on how to end.
 \subsection{Getting Started}
 
 Getting started, especially on a proof that requires both
-creativity and precision can be daunting.  Sometimes a good first step is to forget about 
+creativity and precision, can be daunting.  Sometimes a good first step is to forget about 
 perfection and to just start. A few more suggestions follow.
 
 \subsubsection{Review definitions} 
 
 Have you ever attempted to translate a 
 document from German to English by looking up the meaning of each 
-word? I have. And let me tell you, even if you know some German grammar
- it is a highly inefficient and frustrating process. The same is true
+word? I have. And let me tell you, even if you understand German grammar
+ it is an inefficient and frustrating process. The same is true
  for starting a proof. Before you start, learn the vocabulary. If you 
  need to look up definitions of the key concepts, do so. But go further than that. 
  Find examples that satisfy and do not satisfy the definition. Write the
@@ -86,13 +87,13 @@ word? I have. And let me tell you, even if you know some German grammar
  \subsubsection{Write the proposition in symbolic form} 
  
  Especially for propositions 
- that involve a string of `for every' and `there exist' qualifies,
+ that involve a string of `for every' and `there exist' qualifiers,
  expressing the proposition in symbolic form provides you with 
  a roadmap.
 
  \subsubsection{Look for related proofs} 
  
- Usually this strategy the go-to 
+ Usually this strategy is the go-to 
  method. And with good reason--it's often successful. But it has its 
  weaknesses. If you don't truly dig in and fully understand the related
  proof and attempt to imitate it, likely you'll become frustrated and 
@@ -112,10 +113,11 @@ word? I have. And let me tell you, even if you know some German grammar
  
  
 
-\subsubsection{Use a  Proof idioms}
+\subsubsection{Use a  Proof idiom}
 
 Often the hypothesis suggests a particular approach to a proof with a standard structure.  In no way does
-the template provide a fill-in-the-blank method, but it is a nice roadmap.  Here are a few of our proof idioms.
+the template provide a fill-in-the-blank method, but it is a nice roadmap.  
+Here are a few of our proof idioms.
 
 \paragraph{The let-choose idiom}
 
@@ -125,7 +127,7 @@ To show that the quantified statement such as
 \left(\exists M \in \reals \right)  \left(|7 + 5 x| \leq M x^2\right),
 \end{equation*}
 use the let-choose idiom. For each \(\forall\), use the word `let,' and for each \(\exists\) use the word `choose.' 
-Each choice, of course, has to be made carefully. Here is an example
+Each choice, of course, has to be made carefully. Here is an example:
 
 \noindent \textbf{Proof} Choose \(x_o = 1\) and let \(x > 1\). Choose \(M = 12\).  We have
 \begin{align*}
@@ -186,7 +188,7 @@ the pick-and-show idiom.  Here's a proof.
 
 
 
-\begin{quote}
+
  \textbf{Proof} First we show that \(A \subset B\). Since \(B\) is
  nonempty, it has at least one element, call it \(b\). If \(x \in A\), we
  have \((x,b) \in A \times B\).  But \mbox{\(A \times B = B \times A\)};
@@ -198,29 +200,6 @@ Second we show that \(B \subset C\).  Since \(A\) is
  have \((a,x) \in A \times B\).  But \(A \times B = B \times A\);
  thus \((a,x) \in B \times A\).  Therefore \(x \in A\); consequently
 \(A \subset B\).
-
-\end{quote}
-
-
-It's tempting to write the proof as
-
-\begin{quote}
- \textbf{Proof} If \((a,b) \in A \times B\), we have \((a,b) \in B \times
- A\). Thus \(a \in B\) and \(b \in A\); therefore \(A \subset B\) and
-\(B \subset A\).
-\end{quote}
-
-What's wrong with this? Plenty: First it uses pick-and-show on \(A
-\times B\) and \(B \times A\); it should use pick-and-show on \(A\)
-and \(B\). Second, the proof never makes any use of the hypothesis
-that \(A\) and \(B\) are nonempty; this doesn't mean that the proof is
-wrong, just highly suspect. Third, and most importantly, the proof is
-illogical. To see the flaw, look at it carefully and decide
-what has really been proved. Since we've used pick-and-show on \(A
-\times B\), we're aiming toward a proof that  \(A \times B = B
-\times A\) implies \(B \times A \subset A \times B\).  We don't need
-to do any work to conclude that! (For any set \(A\), we have \(A
-\times \varnothing = \varnothing\). Think about that.)
 
 \subsubsection{Try to disprove the proposition} 
  
