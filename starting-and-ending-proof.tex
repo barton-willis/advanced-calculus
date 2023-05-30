@@ -1,0 +1,242 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{amsmath,pifont,moreverb,enumerate}
+\usepackage{amssymb,url}
+\usepackage{upgreek}
+\usepackage[letterpaper,left=0.75in, right=0.75in,top=0.75in,bottom=0.75in]{geometry}
+\newcommand{\reals}{\mathbf{R}}
+
+\usepackage[final]{microtype}
+
+\newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{numlist}{
+  \begin{enumerate}[(1)]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{handlist}{
+  \begin{enumerate}[\ding{43}]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\usepackage{fourier,calc}
+
+\newcounter{ex}\setcounter{ex}{0}
+\newcommand{\ex}{%\
+\hspace{-0.2in} \setcounter{ex}{\value{ex}+1}
+\theex \,\,}
+
+\newcounter{id}\setcounter{id}{0}
+\newcommand{\id}{%\
+\hspace{-0.2in} \setcounter{id}{\value{id}+1}
+\theid \,\,}
+
+\newcounter{se}\setcounter{se}{0}
+\newcommand{\se}{%\
+\hspace{-0.2in} \setcounter{se}{\value{se}+1}
+\these \,\,}
+
+\usepackage{isomath}
+\renewcommand\thesubsection{\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+\title{Starting and ending a Proof}
+
+\author{Barton Willis}
+
+\usepackage{titlesec}
+%\date{\today}                   
+\begin{document}
+
+\maketitle
+
+Students often tell me that they don't know how to get started writing a proof. Other times, students tell me that although they know how to prove something, they don't know how to say it. Of the two problems, the second is the most troublesome. It
+might seem harsh, but if you think you know how to prove something, but don't know how to say it in words, it's likely that 
+you need to spend a great deal of time on the basics.
+
+Here are some general suggestions on how to start and to end a proof. We'll start with suggestions on 
+getting started and finish with suggestions on how to end.
+
+\subsection{Getting Started}
+
+Getting started, especially on a proof that requires both
+creativity and precision can be daunting.  Sometimes a good first step is to forget about 
+perfection and to just start. A few more suggestions follow.
+
+\subsubsection{Review definitions} 
+
+Have you ever attempted to translate a 
+document from German to English by looking up the meaning of each 
+word? I have. And let me tell you, even if you know some German grammar
+ it is a highly inefficient and frustrating process. The same is true
+ for starting a proof. Before you start, learn the vocabulary. If you 
+ need to look up definitions of the key concepts, do so. But go further than that. 
+ Find examples that satisfy and do not satisfy the definition. Write the
+ definition multiple times until you have it memorized.
+
+ \subsubsection{List hypotheses and conclusions} 
+
+ Enumerate each hypothesis, and clearly
+ identify the conclusion.  Often the conclusion will tell you something about how
+ to get started; for example if the conclusion is a set inclusion, you will want
+ to write a pick-and-show proof.
+
+ \subsubsection{Write the proposition in symbolic form} 
+ 
+ Especially for propositions 
+ that involve a string of `for every' and `there exist' qualifies,
+ expressing the proposition in symbolic form provides you with 
+ a roadmap.
+
+ \subsubsection{Look for related proofs} 
+ 
+ Usually this strategy the go-to 
+ method. And with good reason--it's often successful. But it has its 
+ weaknesses. If you don't truly dig in and fully understand the related
+ proof and attempt to imitate it, likely you'll become frustrated and 
+ not be successful. 
+
+ \subsubsection{Try proving the contrapositive} 
+ 
+ If the negation of the conclusion is 
+ more pithy than the conclusion, try proving the contrapositive.
+
+
+ \subsubsection{Checked that you have used every hypothesis}
+
+ If you are stuck part way through a proof, check that you have
+ used every hypothesis.  If you have ignored one fact,  it's likely
+ that it holds the key to finishing the proof.
+ 
+ 
+
+\subsubsection{Use a  Proof idioms}
+
+Often the hypothesis suggests a particular approach to a proof with a standard structure.  In no way does
+the template provide a fill-in-the-blank method, but it is a nice roadmap.  Here are a few of our proof idioms.
+
+\paragraph{The let-choose idiom}
+
+To show that the quantified statement such as
+\begin{equation*}
+  \left(\exists x_o \in \reals \right) \left(\forall x > x_o\right) 
+\left(\exists M \in \reals \right)  \left(|7 + 5 x| \leq M x^2\right),
+\end{equation*}
+use the let-choose idiom. For each \(\forall\), use the word `let,' and for each \(\exists\) use the word `choose.' 
+Each choice, of course, has to be made carefully. Here is an example
+
+\noindent \textbf{Proof} Choose \(x_o = 1\) and let \(x > 1\). Choose \(M = 12\).  We have
+\begin{align*}
+  |7 + 5 x| &\leq |7| + 5 |x|, &\mbox{(triangle inequality)} \\
+            &\leq 7 x + 5 x,   &\mbox{(using } x > 1) \\
+            &= 12 x,        &\mbox{(arithmetic)} \\
+            &\leq 12 x^2,   &\mbox{(using } x^2 > x) \\
+            &= M x^2.       &\mbox{(substitution)} 
+\end{align*}
+
+
+
+\paragraph{The one--bad--apple idiom}
+
+You can show that a proposition is false by displaying just
+one example that shows that it is false. You don't need two examples
+or infinitely many examples; just one ``bad apple'' is enough.  
+
+
+
+
+
+\paragraph{The pick-and-show idiom}
+
+Anytime you need to show one set is a subset of another, you should use the
+``pick-and-show'' idiom; it looks like this
+
+\begin{quote}
+
+\textbf{Proposition} Let \(A\) and \(B\) be sets and suppose \(H_1, H_2 , \dots
+,\mbox{ and } H_n\). Then  \(A \subset B\).
+
+\vspace{0.1in}
+
+\textbf{Proof} If \(x \in A\), we have (deductions made using the 
+facts \(H_1\) through \(H_n\)); therefore \(x \in B\).
+
+\end{quote}
+Here, the statements \(H_1\) through \(H_n\) are the hypothesis of the
+proposition. To demonstrate set equality, use the pick-and-show idiom twice. Here
+is and example of using pick-and-show.
+
+\begin{quote}
+\textbf{Proposition} Let \(A\) and \(B\) be nonempty sets and suppose \mbox{\(A \times B
+= B \times A\)}.  Then \(A = B\).
+\end{quote}
+The conclusion of the proposition is \(A = B\); we need to use the 
+pick-and-show idiom twice. The proof starts with
+\begin{quote}
+ \textbf{Proof}  First we show that \(A \subset B\). If \(a \in A\), we have \dots. 
+\end{quote}
+We need a consequence of \(a \in A\) that somehow involves the
+hypothesis \mbox{\(A \times B = B \times A\)}.  Since \(B\) is
+nonempty, it has an element \(b\). Thus we have \((a,b) \in A \times
+B\).  It's downhill from here. For our proof, it might be best to
+explain that \(B\) has an element and give it a name before we start
+the pick-and-show idiom.  Here's a proof.
+
+
+
+\begin{quote}
+ \textbf{Proof} First we show that \(A \subset B\). Since \(B\) is
+ nonempty, it has at least one element, call it \(b\). If \(x \in A\), we
+ have \((x,b) \in A \times B\).  But \mbox{\(A \times B = B \times A\)};
+ thus \((x,b) \in B \times A\).  Therefore \(x \in B\); consequently
+\(A \subset B\).
+
+Second we show that \(B \subset C\).  Since \(A\) is
+ nonempty, it has at least one element, call it \(a\). If \(x \in B\), we
+ have \((a,x) \in A \times B\).  But \(A \times B = B \times A\);
+ thus \((a,x) \in B \times A\).  Therefore \(x \in A\); consequently
+\(A \subset B\).
+
+\end{quote}
+
+
+It's tempting to write the proof as
+
+\begin{quote}
+ \textbf{Proof} If \((a,b) \in A \times B\), we have \((a,b) \in B \times
+ A\). Thus \(a \in B\) and \(b \in A\); therefore \(A \subset B\) and
+\(B \subset A\).
+\end{quote}
+
+What's wrong with this? Plenty: First it uses pick-and-show on \(A
+\times B\) and \(B \times A\); it should use pick-and-show on \(A\)
+and \(B\). Second, the proof never makes any use of the hypothesis
+that \(A\) and \(B\) are nonempty; this doesn't mean that the proof is
+wrong, just highly suspect. Third, and most importantly, the proof is
+illogical. To see the flaw, look at it carefully and decide
+what has really been proved. Since we've used pick-and-show on \(A
+\times B\), we're aiming toward a proof that  \(A \times B = B
+\times A\) implies \(B \times A \subset A \times B\).  We don't need
+to do any work to conclude that! (For any set \(A\), we have \(A
+\times \varnothing = \varnothing\). Think about that.)
+
+\subsubsection{Try to disprove the proposition} 
+ 
+ Sometimes if you try to disprove a proposition, you'll discover why
+ it is true.
+ 
+ \subsubsection{Take a walk}  It's easy to get flustered or stuck on a bad idea.  When that happens,
+ put the work away and do some else for a while. Something boring such as
+ scrubbing the bathtub or vacuuming or vigorous exercise are good choices.
+  When you return, you may be unstuck.
+
+\subsection{How to end}
+
+Actually, ending a proof is harder than starting. To end a proof, you need to proofread it.  Proofreading for grammar 
+errors is hard enough, but our top priority is to check the logic. Emotionally we want to believe that our work is wonderful
+and flawless, so it's terribly easy to skip over faulty logic.  One way to gain some perspective is to put your work aside for 
+a day and look at it with a fresh viewpoint.  And it's hard to do that if you are bumping up to the due date.
+\end{document}
+
