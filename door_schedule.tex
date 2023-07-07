@@ -14,13 +14,13 @@
 \definecolor{light-yellow}{HTML}{FFFFE0}
 \begin{document}
 
-\CellHeight{0.6in}
-\CellWidth{1.25in}
+\CellHeight{0.70in}
+\CellWidth{1.85in}
 \TimeRange{9:05-17:00}
 \SubUnits{15}
 \BeginOn{Monday}
-\TextSize{\tiny}
-\FiveDay %\SevenDay
+\TextSize{\small}
+\FiveDay
 \TwentyFourHour %\TwelveHour
 
 \NewAppointment{myclass}{light-orange}{black}
@@ -43,19 +43,20 @@ to make appointments. Blocks with gray highlights mean not available.
 
 %\normalsize
 \begin{schedule}[Fall \the\year]
-\lunch{\textbf{Lunch}}{}{M,W,F}{11:00-12:20}
-\lunch{\textbf{Lunch}}{}{T,Th}{11:00-12:30}
+\lunch{\textbf{Lunch (not available)}}{}{M,W,F}{11:00-12:20}
+\lunch{\textbf{Lunch (not available)}}{}{T,Th}{11:00-12:30}
 \myclass{\textbf{Advanced Calculus I}}{9:05-9:55, DSCH 386}{M,W,F}{9:05-9:55}
-\myclass{\textbf{Calculus I}}{12:20-13:10, DSCH 383}{M,W,F}{12:20-13:10}
-\myclass{\textbf{Calculus I}}{12:30-13:20, DSCH 383}{T,Th}{12:30-13:20}
+\myclass{\textbf{Calculus II}}{12:20-13:10, DSCH 386}{M,W,F}{12:20-13:10}
+\myclass{\textbf{Calculus I}}{12:30-13:20, DSCH 386}{T,Th}{12:30-13:20}
 \meeting{\textbf{Departental Meeting}}{14:00-15:00}{T}{14:00-15:00}
 \meeting{\textbf{Departental Meeting}}{14:00-15:00}{Th}{14:00-15:00}
 \office{\textbf{Office Hours}}{9:30--11:00, DSCH 368}{T,Th}{9:30-11:00}
 \office{\textbf{Office Hours}}{10:00--11:00, DSCH 368}{M,W,F}{10:00-11:00}
-\notavail{\textbf{Not Available}}{15:15-17:00}{M,W,Th}{15:15-17:00}
+\notavail{\textbf{Not Available}}{15:00-17:00}{M,T,W,Th,F}{15:00-17:00}
 \notavail{\textbf{Not Available}}{9:05-17:00}{Sa,Su}{9:05-17:00}
 \notavail{\textbf{Not Available}}{9:05-9:30}{T,Th}{9:05-9:30}
 \appointment{\textbf{Appointments}}{13:15-15:00, DSCH 368}{M,W,F}{13:15-15:00}
+\appointment{\textbf{Appointments}}{13:20-14:00, DSCH 368}{T,Th}{13:20-14:00}
 \end{schedule}
 \end{document}
 
