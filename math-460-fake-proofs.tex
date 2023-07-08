@@ -116,7 +116,7 @@
 \item We can't prove an ``every'' statement by checking just one out of many cases.
 \item Occasionally, students \textbf{mistakenly} believe that if the instructions are 
 to \emph{show} instead of \emph{prove} that something is true, it's OK to verify the 
-statement is true for one particular case. But no, \\emph{showing} that something is 
+statement is true for one particular case. But no, \emph{showing} that something is 
 true and  \emph{proving} that is true are identical instructions.
 
 
@@ -193,7 +193,7 @@ Blessings of Liberty to ourselves and our Posterity, do ordain and establish thi
 \end{myfakeproof}
 \begin{enumerate}
 
-\item We proved that  \( \left (\forall x \in  \reals_{> 0} \right) \left (\exists m \in \reals_{> 0} \right)  (\left| \frac{x}{x+1} \right| \leq m |x| \right) \).
+\item We proved that  \( \left (\forall x \in  \reals_{> 0} \right) \left (\exists m \in \reals_{> 0} \right)  \left (\left| \frac{x}{x+1} \right| \leq m |x| \right) \).
 
 \item In the actual proposition, the first introduced variable is \(m\) and the second is \(x\).  Since \(m\) comes first, it \textbf{cannot depend} on \(x\).
 
@@ -227,7 +227,6 @@ is often terrible advice.
 
 \begin{frame}{Backwards redux}
 
-
 \begin{myproof}
 We have
 \begin{align*}
@@ -241,13 +240,46 @@ We have
 
 \item Isn't this proof also backwards? It starts with the conclusion!
 
-\item Yes it starts with the conclusion, but it shows that   \(    \left[   3^{1/3} > 5^{1/5} \right]    \equiv  \mbox{true} \).
+\item Yes, the main part of the proof starts with the conclusion, but it shows that   \(    \left[   3^{1/3} > 5^{1/5} \right]    \equiv  \mbox{true} \).
 
 \item And that's fine.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Proof by Haiyu}
+\begin{frame}{Nonreversable backwardness}
+
+  Not all proofs that were constructed by ``working backwards''
+  can be salvaged; an example.
+
+  \begin{myth} We have $0 = 1$. \end{myth}
+
+  \begin{myfakeproof}
+   We have
+   \begin{align*}
+    \left[0 = 1\right] &\implies \left[0 \times 0 = 1 \times 0 \right], & \mbox{(multiply by zero)} \\
+                       &\implies [0 = 0],   &\mbox{(algebra)} \\
+                       &\equiv \mbox{True}.  &\mbox{(syntactic equality)}
+   \end{align*}
+    Thus $0 = 1$.
+  \end{myfakeproof}
+
+  \begin{enumerate}
+    \item Great! We've just proved that if $0 = 1$, then $0=0$. 
+
+    \item Reversing the implication in $\left[0 = 1\right] \implies \left[0 \times 0 = 1 \times 0 \right]$
+    requires \emph{dividing} by zero. And that's rubbish.
+  \end{enumerate}
+    
+
+
+
+
+
+ 
+\end{frame}
+
+
+\begin{frame}{Proof by Haiku }
 
 \begin{myth}  Let \(A,B\), and \(C\) be sets.  Then \( \left (A \setminus B \right ) \subset A\)  \end{myth}
 
@@ -266,7 +298,7 @@ We have
 
 \item Proofs aren't poems, so don't format them as poetry.
 
-\item Using a phrase such as `` takes away from'' is poetic license.  Let's stick to using mathematical terminology.
+\item Using a phrase such as ``takes away from'' is poetic license.  Let's stick to using mathematical terminology.
 \end{enumerate}
 \end{frame}
 
