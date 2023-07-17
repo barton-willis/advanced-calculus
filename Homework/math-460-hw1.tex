@@ -1,0 +1,174 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\usepackage{amsthm}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+  
+\newcommand{\quiz}{1}
+\newcommand{\term}{Fall}
+
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{ \textbf{MATH 460}}
+{\bf Name:}  \\
+\noindent \makebox[3.0truein][l]{\textbf{Homework \quiz, \term \/ \the\year}}
+%{\bf Row:}\hrulefill\
+\vspace{0.1in}
+
+\noindent  Homework \quiz\/  has questions 1 through  \numquestions \/ with a total 
+of  \numpoints\/  points. When I record your grade, I will scale it to twenty points. 
+For details of the grading scheme for this assignment, please see the section 
+`Grading rubric' of our syllabus.
+
+Revise, proofread, revise again (and again), \emph{neatly} 
+hand write your solutions, digitize your work, and 
+up load the converted pdf of your work to Canvas.  
+This work is due \textbf{Saturday 26 August} at 11:59 \PM.
+
+\vspace{0.1in}
+
+
+
+
+\begin{questions}
+
+\question[10] For the statement  \(\left(\exists M \in \reals  \right)
+\left(\forall x \in \reals_{\geq 0} \right) \left(\frac{5 x}{x+1} \leq M \right)\), explain why
+
+\begin{proof} Choose $M = \frac{5 x}{x+1}$. Let  $x \in \reals_{\geq 0}$. We have
+\begin{align*}
+ \left[\frac{5 x}{x+1} \leq M  \right] &\equiv
+ \left[\frac{5 x}{x+1} \leq  \frac{5 x}{x+1}  \right],  &\mbox{(substitution for $M$)} \\
+ &\equiv \mbox{True}. &\mbox{(syntactic equality)}. 
+\end{align*}
+\end{proof}
+is \emph{abject rubbish}.
+
+\question[10] Write a correct proof of \(\left(\exists M \in \reals\right)
+\left(\forall x \in \reals_{\geq 0} \right) \left(\frac{5 x}{x+1} \leq  M \right)\).
+
+\question [10]  Without explicitly using negation (either $\lnot$ or anything equivalent to negation), write the negation of the statement
+\begin{equation*}
+\left(\exists M \in  \reals_{< 5} \right)
+\left(\forall x \in  \reals_{\geq 0} \right) \left(\frac{5 x}{x+1} <  M \right).
+\end{equation*}
+Unlike the previous questions, the number $M$ in this question must be \emph{less} than five. Also,
+the final inequality is now a strict inequality (equality is not allowed). These differences are \emph{not} typos.
+
+\question [10]  Show that the statement 
+\begin{equation*}
+\left(\exists M \in  \reals_{< 5} \right)
+\left(\forall x \in  \reals_{\geq 0} \right) \left(\frac{5 x}{x+1}  < M \right).
+\end{equation*}
+is \emph{false} by showing that its negation is true.
+
+
+ 
+\end{questions}
+\end{document}
+\
+\question [10] Show that for every real number $b$ there is a real number $m$ such that
+\begin{equation*}
+ \{x \in \reals \mid x^2-b^2 = m (x-b) \} = \{b\}.
+ \end{equation*}
+ \textbf{Hint} Solving (either by factoring or by quadratic formula) $ x^2-b^2 = m (x-b)$ for $x$ gives the
+ solution set $\{b,m-b\}$.
+ 
+\question [10] Without explicitly using negation ($\lnot$), write the negation of the statement
+\begin{equation*}
+  \left(\exists M \in \reals\right)
+  \left(\forall x \in \reals_{\neq 0} \right)
+  \left(\frac{1}{x^2} < M \right).
+\end{equation*}
+
+\question[10] Show that the statement 
+\begin{equation*}
+  \left(\exists M \in \reals\right)
+  \left(\forall x \in \reals_{\neq 0} \right)
+  \left(\frac{1}{x^2} < M \right).
+\end{equation*} 
+is false. To do this, show that its negation is true. This shows that the function $x \in \reals_{\neq 0} \mapsto \frac{1}{x^2}$ is
+not bounded above.
+
+
+ 
+ This shows that there is exactly one line of the form $y-b^2 = m (x-b)$ that intersects the curve $y=x^2$ in
+ exactly one point.  The line  $y-b^2 = m (x-b)$ is the tangent line. But in general``touching at one point'' is \emph{not}
+ a characteristic of a tangent line.
+ 
+\question [10] Find functions $P,Q \in \integers \mapsto \{\mbox{false}, \mbox{true}\}$ that makes
+the statement
+\begin{equation*}
+  \left(\forall k \in \integers\right) \left (P(k) \lor Q(k) \right) \equiv 
+  \left(\forall k \in \integers\right) \left (P(k) \right)  \lor 
+  \left(\forall k \in \integers\right) \left (Q(k) \right)  
+\end{equation*}
+false.  This shows that the universal qualifier does not distribute over the disjunction. 
+\textbf{Hint:} Choose $P = k \in \integers \mapsto \left[x \mbox{is even}\right]$
+and $Q = k \in \integers \mapsto \left[x \mbox{ is odd}\right]$. Explain why this choice
+shows that the given statement is false.
+
+
+
+\end{questions}
+\end{document}
