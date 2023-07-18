@@ -1,0 +1,166 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\usepackage{amsthm}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+  
+\newcommand{\quiz}{1}
+\newcommand{\term}{Fall}
+
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{ \textbf{MATH 460}}
+{\bf Name:}  \\
+
+\noindent This past week, I reread a book of my youth: \emph{Introduction
+to Mathematical Logic}, by Flora Dinkines (original copyright 1961).
+(My father, a non-mathematician scientist, regularly patrolled the used book bins
+for dime books.) Here are some fun questions that are adapted from the textbook.
+
+\begin{questions}
+\question Define the predicate 
+\begin{equation*}
+   Q = (x,y) \in \reals^2 \mapsto [x + 2 y = 4].
+\end{equation*}
+For example, we have $Q(1,1) = [3 = 4] = \mbox{False}$
+and $Q(2,1) = [ 4= 4] = \mbox{True}$. Decide on the truth 
+value of each the following statements; if the statement 
+is true, prove it; if the statement is false, prove that 
+its negation is true.
+
+\begin{parts}
+
+    \part $\left(\forall x \in \reals \right)
+           \left(\exists y \in \reals \right)
+           \left(Q(x,y)\right)$.
+
+    \part $\left(\exists x \in \reals \right)
+           \left(\forall y \in \reals \right)
+           \left(Q(x,y)\right)$.
+
+    \part $\left(\forall x \in \reals \right)
+           \left(\exists y \in \reals \right)
+           \left(\lnot Q(x,y)\right)$.  
+
+    \part $\left(\forall x  \in \reals \right)
+           \lnot \left(\forall y \in \reals \right)
+           \left(Q(x,y)\right)$.  
+
+\end{parts}
+
+\question Find examples of predicates $P$ and $Q$ such
+that the statement
+\begin{equation*}
+  \forall x \left(P(x) \land Q(x) \right) \equiv
+    \left(\forall x (P(x)) \right) \land 
+    \left(\forall x (Q(x)) \right)
+\end{equation*}
+false. This shows that the existential qualifier does not 
+distribute over the disjunction.
+
+\question For any predicate $P$, show that
+\begin{equation*}
+  \left(\exists x\right)
+  \left(\exists y \right)
+  \left(P(x,y)\right) \equiv
+  \left(\exists y \right)
+  \left(\exists x \right)
+  \left(P(x,y)\right).
+\end{equation*}
+
+\question For any predicate $P$, show that
+\begin{equation*}
+  \left(\forall x\right)
+  \left(\forall y \right)
+  \left(P(x,y)\right) \equiv
+  \left(\forall y \right)
+  \left(\forall x \right)
+  \left(P(x,y)\right).
+\end{equation*}
+
+
+\question For any predicate $P$, show that
+\begin{equation*}
+    \left(\exists x\right)
+    \left(\forall y \right)
+    \left(P(x,y)\right) \implies 
+    \left(\forall y \right)
+    \left(\exists x \right)
+    \left(P(x,y)\right).
+  \end{equation*}
+
+  \question Show there is a predicate $P$ such that 
+  \begin{equation*}
+    \left(\forall y \right)
+    \left(\exists x \right)
+    \left(P(x,y)\right) \implies 
+      \left(\exists x\right)
+      \left(\forall y \right)
+      \left(P(x,y)\right).
+\end{equation*}
+is false.
+  
+
+
+\end{questions}
+\end{document}
