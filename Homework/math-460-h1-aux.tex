@@ -97,18 +97,57 @@ its negation is true.
            \left(\exists y \in \reals \right)
            \left(Q(x,y)\right)$.
 
+\begin{proof}
+Let $x\in \reals$. Choose $y= \frac{4-x}{2}$; then $y \in \reals$ as 
+required. We have
+\begin{align*}
+\left[x + 2 y = 4 \right] &= \left[x + 2 \times \frac{4-x}{2} = 4\right], &\mbox{(substitution)} \\
+           &= \left[4=4\right], & \mbox{(algebra)} \\
+           &= \mbox{True}.  &\mbox{(syntactic equality)}
+\end{align*}
+\end{proof}
+  
+
     \part $\left(\exists x \in \reals \right)
            \left(\forall y \in \reals \right)
            \left(Q(x,y)\right)$.
 
+   We'll show that the statement is false by showing that 
+  its negation is true; its negation is 
+  \begin{equation*}
+    \left(\forall x \in \reals \right)
+    \left(\exists y \in \reals \right)
+    \left(x + 2 y \neq 4\right)
+  \end{equation*}
+ \begin{proof} 
+  Let $x \in \reals$. Choose $y = -\frac{x}{2}$. Then $y \in \reals$ 
+  as required. We have 
+  \begin{align*}
+    \left[x + 2 y \neq  4 \right] &= \left[x + 2 \times -\frac{x}{2} \neq 4\right], &\mbox{(substitution)} \\
+           &= \left[0 \neq 4\right], & \mbox{(algebra)} \\
+           &= \mbox{True}.  &\mbox{(syntactic inequality)}
+  \end{align*}  
+ \end{proof} 
     \part $\left(\forall x \in \reals \right)
            \left(\exists y \in \reals \right)
-           \left(\lnot Q(x,y)\right)$.  
+           \left(\lnot Q(x,y)\right)$.
+           
+    \begin{proof} (See part`b.')
+
+    \end{proof}
 
     \part $\left(\forall x  \in \reals \right)
            \lnot \left(\forall y \in \reals \right)
            \left(Q(x,y)\right)$.  
+To start, let's rewrite the statement as 
+\begin{equation*}
+  \left(\forall x  \in \reals \right)
+           \left(\exists y \in \reals \right)
+           \left(x + 2 y \neq 4 \right).
+\end{equation*} 
+\begin{proof} (See part`b.')
 
+\end{proof}
 \end{parts}
 
 \question Find examples of predicates $P$ and $Q$ such
@@ -120,6 +159,19 @@ that the statement
 \end{equation*}
 is false. This shows that the existential qualifier does not 
 distribute over the disjunction.
+
+\begin{proof} Define predicates $P$ and $Q$ as
+  \begin{align*}
+    P = k \in \integers \mapsto k \mbox{ is even}, \\
+    Q = k \in \integers \mapsto k \mbox{ is odd}.
+  \end{align*}
+Since $Q = \lnot P$, for all integers $k$, we have 
+$ \left(\forall k \in \integers \right) \left(P(k) \lor Q(k) \right) $
+is true.  But both the statements $ \left(\forall x \right) (P(x))$
+and $\left(\forall x \right) (Q(x))$ are false, so the statement 
+$\left(\forall x \right) (P(x)) \lor 
+\left(\forall x \right) (Q(x))$ is false.
+\end{proof}
 
 \question Does the existential qualifier distribute over the 
 conjunction?
@@ -133,6 +185,24 @@ conjunction?
   \left(\exists x \right)
   \left(P(x,y)\right).
 \end{equation*}
+
+\begin{proof} First, we'll show that $\left(\exists x\right)
+  \left(\exists y \right)
+  \left(P(x,y)\right) \implies
+  \left(\exists y \right)
+  \left(\exists x \right)
+  \left(P(x,y)\right)$.
+  
+  Suppose $\left(\exists y \right) \left(P(x,y)\right)$ Thus there 
+  are $a$ and $b$ such that $P(a,b)$ is true. To show that 
+  $ \left(\exists y \right)
+  \left(\exists x \right)
+  \left(P(x,y)\right)$ is true, we only need to choose $y=a,x=b$.
+  
+
+
+
+\end{proof}
 
 \question For any predicate $P$, show that
 \begin{equation*}
