@@ -1,0 +1,101 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\usepackage{amsthm}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+  
+\newcommand{\quiz}{1}
+\newcommand{\term}{Fall}
+
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+
+\begin{questions}
+\question For each statement, do the following:   (a) Write the statement in symbolic form
+    (b) Without explicitly using negation, write the negation of 
+    the statement in symbolic form.
+    (c) Decide if the statement is true or false.
+    (d) Write a proof of the statement that is true.
+
+
+\begin{parts}
+
+    \part For all $x \in \reals_{>0}$, there is $M \in \reals$ such
+     that $\frac{1}{x} +1 > M$. \hfill (SB)
+
+         \part There is $M \in \reals$ such that for all $x \in \reals_{>0}$,
+     we have $\frac{1}{x} + 1 > M$. \hfill (DD) 
+
+     \part  There is $m \in \reals$ such that for all $x \in \reals$, we 
+     have $1 + m(x-1) \leq x^2$. \hfill (TK)
+
+     \part  For every $a \in \reals$, there is $m \in \reals$ such 
+     that for all $x \in \reals$, we have $a^2 + m(x-a) \leq x^2$. \hfill (AK)
+
+     \part For all $x,y \in \reals$, we have $(x^2 = y^2) \implies (x=y)$. 
+     \hfill (DM) 
+
+    \part For all $x,y \in \reals$, we have $(x^3 = y^3) \implies (x=y)$. 
+    \hfill (CR) 
+
+\end{parts}
+\end{questions}
+\end{document}
