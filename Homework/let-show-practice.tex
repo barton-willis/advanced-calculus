@@ -78,6 +78,43 @@
 
 \begin{parts}
 
+    \part For all $x,y \in \reals$, there is $a \in \reals$ such that
+    $x < y$ implies $x<a<y$
+
+    Symbolically, the statement is 
+    \begin{equation*}
+      \left(\forall x,y \in \reals\right)
+      \left(\exists a \in \reals \right)
+      \left ((x< y) \implies x < a < y\right).
+    \end{equation*}
+     This  statement says that between any two real numbers, there is 
+    a real number. One such number is the arithmetic average. So   let's write a proof.
+    But for completeness, its negation is
+    \begin{equation*}
+      \left(\exists x,y \in \reals\right)
+      \left(\forall a \in \reals \right)
+      \left ((x< y) \land (x \geq a \lor a \geq y \right).
+    \end{equation*}
+   
+    \begin{proof}
+     Let $x,y \in \reals$. Suppose $x < y$. Choose $a = \frac{x+y}{2}$.
+     We have $a \in \reals$ as required. We have
+     \begin{align*}
+       \left[ x < a < y \right] 
+           &\equiv \left[ x < \frac{x+y}{2} < y \right], &\mbox{(substitution)} \\
+           & \equiv \left[ x - \frac{x+y}{2} < 0 < y - \frac{x+y}{2}  \right], &\mbox{(subtraction)} \\
+           & \equiv \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], &\mbox{(algebra)} \\
+           & \equiv \mbox{true} &(y-x > 0 \land x-y < 0).
+     \end{align*}
+     A key ingredient to the proof is the fact that $(\forall a,x,y \in \reals)( (x< y) \equiv (x-a < y-a))$.      \hfill (BW) 
+      \end{proof}
+     
+     \part For all $r \in \reals_{>0}$ there is $x \in [0,1)$ such that $1-r < x$.      \hfill (BW) 
+     
+     \part For all $x \in \reals_{>0}$ there is $y \in \reals_{> 0}$ such that $y < x$. \hfill (BW) 
+     
+     \part There is $y \in \reals_{> 0}$ such that for all $x \in \reals_{>0}$ we have $y < x$.
+       
     \part For all $x \in \reals_{>0}$, there is $M \in \reals$ such
      that $\frac{1}{x} +1 > M$. \hfill (SB)
 
