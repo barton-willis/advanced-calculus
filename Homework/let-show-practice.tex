@@ -39,9 +39,18 @@
 \DeclareMathOperator{\Arg}{\mathrm{Arg}}
 \DeclareMathOperator{\Ln}{\mathrm{Ln}}
 \newcommand{\imag}{\, \mathrm{i}}
+\newcommand{\true}{\, \mathrm{True}}
 \usepackage{amsthm}
+\usepackage{xcolor}
 \newtheorem{Rubbish}{Theorem}
 \usepackage{graphicx}
+
+\usepackage{framed}
+
+\colorlet{shadecolor}{lightgray!15}
+\newenvironment{myproof}
+  {\begin{shaded}\begin{proof}}
+  {\end{proof}\end{shaded}}
 
 %\usepackage{tgschola} %to look retro
 \newenvironment{mypar}[2]
@@ -66,73 +75,169 @@
 \newcommand\AM{\,\maybefakesc{am}\xspace}
 \newcommand\PM{\,\maybefakesc{pm}\xspace}
 
+\usepackage{mdframed}
+\title{Let/Choose/Suppose Proof Examples}
+\author{Fall 2023 Advanced Calculus Class}
 \begin{document}
 
-\begin{questions}
-\question For each statement, do the following:   (a) Write the statement in symbolic form
+\maketitle
+
+Many statements in analysis consist of strings of `for every' and `there exists' statements that end
+with a inequality. The inequality part is either true or false--I call it the \emph{predicate} part. A
+statement is written in logician form gives us a perfect road map to constructing a proof.
+
+For every qualified statement of the form $\forall x \in A$, our proof will state `Let $x \in A$'. Other 
+than assuming that $x \in A$ we cannot make any other assumptions about $x$. A synonym for `let' is
+`allow' and `permit,'  but we'll stick to using `let' for consistency. 
+
+For every qualified statement of the form $\exists x \in A$, it's just like fourth grade show-and-tell. We
+must tell the reader \emph{exactly} what member of $A$ we choose for $A$.  Sometimes there will be
+more than one choice that allows the proof to continue; if so, we stick to exactly one choice instead of 
+\emph{clogging} our logic with extraneous possibilities.   
+
+Moving from left to right, the value $x$ we choose for  $\exists x \in A$ can depend on all previously defined variables (all variables to the left), but it cannot depend on any variables to the right. So it for a  statement fragment
+\begin{equation*}
+    \left(\forall x \in \reals \right) \left(\exists a \in \reals\right) \left(\forall b \in \reals\right) 
+\end{equation*}
+the choice for $a$ can depend on $x$, but it cannot depend on $b$.
+
+
+ \noindent For each statement, do the following:   (a) Write the statement in symbolic form
     (b) Without explicitly using negation, write the negation of 
     the statement in symbolic form.
     (c) Decide if the statement is true or false.
     (d) Write a proof of the statement that is true.
+    
+\begin{questions}
 
 
-\begin{parts}
 
-    \part For all $x,y \in \reals$, there is $a \in \reals$ such that
+
+    \question For all $x,y \in \reals$, there is $a \in \reals$ such that
     $x < y$ implies $x<a<y$
 
-    Symbolically, the statement is 
+    \textbf{Solution} Symbolically, the statement is 
     \begin{equation*}
       \left(\forall x,y \in \reals\right)
       \left(\exists a \in \reals \right)
       \left ((x< y) \implies x < a < y\right).
     \end{equation*}
-     This  statement says that between any two real numbers, there is 
-    a real number. One such number is the arithmetic average. So   let's write a proof.
-    But for completeness, its negation is
-    \begin{equation*}
+    And its negation is 
+     \begin{equation*}
       \left(\exists x,y \in \reals\right)
       \left(\forall a \in \reals \right)
       \left ((x< y) \land (x \geq a \lor a \geq y \right).
     \end{equation*}
-   
-    \begin{proof}
+    We need to decide if the statement or its negation is true. The statement says that between any two real 
+    numbers $x$ and $y$ with $x < y$, there is  a real number $a$ that is between $x$ and $y$. One such number is the arithmetic average. So   let's prove the statement, not its negation.
+     A key ingredient to the proof is the fact that $(\forall a,x,y \in \reals)( (x< y) \equiv (x-a < y-a))$.   
+    \begin{myproof}
      Let $x,y \in \reals$. Suppose $x < y$. Choose $a = \frac{x+y}{2}$.
-     We have $a \in \reals$ as required. We have
+     Then $a \in \reals$ as required. We have
      \begin{align*}
        \left[ x < a < y \right] 
            &\equiv \left[ x < \frac{x+y}{2} < y \right], &\mbox{(substitution)} \\
            & \equiv \left[ x - \frac{x+y}{2} < 0 < y - \frac{x+y}{2}  \right], &\mbox{(subtraction)} \\
            & \equiv \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], &\mbox{(algebra)} \\
-           & \equiv \mbox{true} &(y-x > 0 \land x-y < 0).
-     \end{align*}
-     A key ingredient to the proof is the fact that $(\forall a,x,y \in \reals)( (x< y) \equiv (x-a < y-a))$.      \hfill (BW) 
-      \end{proof}
+           & \equiv \mbox{true} &((y-x > 0) \land (x-y < 0)).
+     \end{align*} 
+      \end{myproof}
+     If the fact that the arithmetic average of two numbers is between the numbers is an allowed fact, the proof
+     could end after the first displayed line.
      
-     \part For all $r \in \reals_{>0}$ there is $x \in [0,1)$ such that $1-r < x$.      \hfill (BW) 
+     \question For all $r \in \reals_{>0}$ there is $x \in [0,1)$ such that $1-r < x$.      \hfill (BW) 
      
-     \part For all $x \in \reals_{>0}$ there is $y \in \reals_{> 0}$ such that $y < x$. \hfill (BW) 
+       \textbf{Solution} Symbolically, the statement is 
+    \begin{equation*}
+      \left(\forall r \in \reals_{>0}\right)\left(\exists x \in [0,1)\right)\left(1-r < x\right).
+    \end{equation*}
+    And its negation is 
+     \begin{equation*}
+       \left(\exists r \in \reals_{>0}\right)\left(\forall x \in [0,1)\right)\left(1-r \geq  x\right).
+    \end{equation*}
+     The statement says that there is a real number $x \in [0,1)$ that is between $1-r$ and $1$. This seems
+     to be true. When $1-r > 0$, we can choose $x$ to be the arithmetic average of $1-r$; when $1-r \leq 0$,
+     we can choose $x$ to be $\frac{1}{2}$.
      
-     \part There is $y \in \reals_{> 0}$ such that for all $x \in \reals_{>0}$ we have $y < x$.
+      \begin{myproof} Let $r \in \reals_{>0}$. Choose $x = \begin{cases} 1 - \frac{r}{2}  & r < 1 \\ \frac{1}{2} & r \geq 1 \end{cases}$. For $r < 1$, we have
+      \begin{align*}
+       \left[1-r < x \right] &\equiv \left[1-r < 1 - \frac{r}{2}  \right], & \mbox{(substitution)} \\
+                                  &\equiv  \left[0 <  \frac{r}{2}  \right], & \mbox{(algebra)} \\
+                                  &\equiv \true.   &(0 < r < 1).
+      \end{align*}
+      And for $r \geq 1$, we have
+       \begin{align*}
+       \left[1-r < x \right] &\equiv \left[1-r < \frac{1}{2}  \right], & \mbox{(substitution)} \\
+                                  &\equiv  \left[\frac{1}{2}  <  r  \right], & \mbox{(algebra)} \\
+                                  &\equiv \true.   &(r \geq 1).
+      \end{align*}
+      \end{myproof}
+     
+     \question For all $x \in \reals_{>0}$ there is $y \in \reals_{> 0}$ such that $y < x$. \hfill (BW) 
+     
+        \textbf{Solution} Symbolically, the statement is 
+      \begin{equation*}
+         \left(\forall x \in \reals_{>0}\right) \left(\exists y \in \reals_{>0}\right)(y < x).
+      \end{equation*}
+      And its negation is
+       \begin{equation*}
+         \left(\exists x \in \reals_{>0}\right) \left(\forall y \in \reals_{>0}\right)(y \geq  x).
+      \end{equation*}
+      The statement says that for every positive number $x$, there is a positive number $y$ that is smaller than $x$. 
+      Surely this is true--we can choose, for example, $y=x/2$.
+      
+      \begin{myproof} Let $x \in \reals_{>0}$. Choose $y = x/2$. Then $y \in \reals_{>0}$ as required. We have
+         \begin{align*}
+         \left[y < x \right] &\equiv \left[\frac{x}{2} < x \right], &\mbox{(substitution)} \\
+                                   &\equiv \left[0 < \frac{x}{2}  \right], &\mbox{(algebra)} \\
+                                   &\equiv \true.  &\mbox{(x > 0)}
+      \end{align*}
+      \end{myproof}
+      
+      
+     \question There is $y \in \reals_{> 0}$ such that for all $x \in \reals_{>0}$ we have $y < x$.
        
-    \part For all $x \in \reals_{>0}$, there is $M \in \reals$ such
+        \textbf{Solution}  Symbolically, the statement is
+       \begin{equation*}
+         \left(\exists y \in \reals_{>0}\right)\left(\forall x \in \reals_{>0}\right) \left(y < x \right).
+       \end{equation*}
+       This statement says that there is a real number $y$ that is smaller than every real number $x$. This
+       is almost surely rubbish. We need a real number that is smaller than $-10^{10}$, smaller than $-10^{10^{10}}$,
+       smaller than $-10^{10^{10^{10}}}$ and on and on.  You might choose $y=-\infty$, but $-\infty$ isn't a real number.
+       Let's hope the negation is true; its negation is
+       \begin{equation*}
+         \left(\forall y \in \reals_{>0}\right)\left(\exists x \in \reals_{>0}\right) \left(y \geq  x \right).
+       \end{equation*}
+       This is almost surely true--it says for every real number $y$ there is a real number $x$ such that
+       $y \geq x$.    Sure, we can choose $x = y$, for example.
+       
+       \begin{myproof} Let $y \in \reals_{>0}$. Choose $x = y$. Then $x \in \reals$, as required. We have
+       \begin{align*}
+         \left[y \geq x  \right] &\equiv \left[y \geq  y \right], & \mbox{(substitution)} \\
+                                      &\equiv \left[0 \geq 0 \right], &\mbox{(algebra)} \\
+                                      &\equiv \true.
+       \end{align*}
+       
+       \end{myproof}
+       
+    \question For all $x \in \reals_{>0}$, there is $M \in \reals$ such
      that $\frac{1}{x} +1 > M$. \hfill (SB)
 
-         \part There is $M \in \reals$ such that for all $x \in \reals_{>0}$,
+         \question There is $M \in \reals$ such that for all $x \in \reals_{>0}$,
      we have $\frac{1}{x} + 1 > M$. \hfill (DD) 
 
-     \part  There is $m \in \reals$ such that for all $x \in \reals$, we 
+     \question  There is $m \in \reals$ such that for all $x \in \reals$, we 
      have $1 + m(x-1) \leq x^2$. \hfill (TK)
 
-     \part  For every $a \in \reals$, there is $m \in \reals$ such 
+     \question  For every $a \in \reals$, there is $m \in \reals$ such 
      that for all $x \in \reals$, we have $a^2 + m(x-a) \leq x^2$. \hfill (AK)
 
-     \part For all $x,y \in \reals$, we have $(x^2 = y^2) \implies (x=y)$. 
+     \question For all $x,y \in \reals$, we have $(x^2 = y^2) \implies (x=y)$. 
      \hfill (DM) 
 
-    \part For all $x,y \in \reals$, we have $(x^3 = y^3) \implies (x=y)$. 
+    \question For all $x,y \in \reals$, we have $(x^3 = y^3) \implies (x=y)$. 
     \hfill (CR) 
 
-\end{parts}
+
 \end{questions}
 \end{document}
