@@ -96,7 +96,7 @@
 Many statements in analysis consist of concatenated `for every' and `there exists' 
 statements that end with an inequality. The inequality part is either true or 
 false--I call it the \emph{predicate} part. We'll see that writing a statement in 
-symbolic form gives us a perfect road map to constructing a proof. So, as the 
+symbolic form gives us a road map to constructing a proof. So, as the 
 first step in constructing a proof, I encourage you to express the proposition 
 symbolically.
 
@@ -114,14 +114,14 @@ a proof is hard--make a bad choice, and you might get stuck.
 
 Moving from left to right, the value $x$ we choose for  $\exists x \in A$ can 
 depend on all previously defined variables (all variables to the left), but 
-it cannot depend on any variables to the right. So it for a  statement fragment
+it cannot depend on any variables to the right. So for a  statement fragment
 \begin{equation*}
     \left(\forall x \in \reals \right) \left(\exists a \in \reals\right) \left(\forall b \in \reals\right) 
 \end{equation*}
 the choice for $a$ can depend on $x$, but it cannot depend on $b$.
 
 Finally, what about `suppose?' To alert the reader that 
-the truth of a statement is directly due to a hypothesis we often
+the truth of a statement is directly due to a hypothesis, we often
 introduce the hypothesis with `suppose.'
 
 \section{Examples}
@@ -166,9 +166,9 @@ statement, do the following:
      \begin{align*}
        \left[ x < a < y \right] 
            &\equiv \left[ x < \frac{x+y}{2} < y \right], &\mbox{(substitution)} \\
-           & \equiv \left[ x - \frac{x+y}{2} < 0 < y - \frac{x+y}{2}  \right], &\mbox{(subtraction)} \\
-           & \equiv \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], &\mbox{(algebra)} \\
-           & \equiv \mbox{true} &((y-x > 0) \land (x-y < 0)).
+           & \equiv \left[ x - \frac{x+y}{2} < 0 < y - \frac{x+y}{2}  \right], &\mbox{(subtract $\frac{x+y}{2}$)} \\
+           & \equiv \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], &\mbox{(simplification)} \\
+           & \equiv \true. &((y-x > 0) \land (x-y < 0))
      \end{align*} 
         \end{myproof}
       \noindent Notice how the proof uses `suppose $x < y$' to 
@@ -224,7 +224,7 @@ statement, do the following:
       \end{equation*}
       The statement says that for every positive number $x$, there is a positive number $y$ that is smaller than $x$. 
       Surely this is true--we can choose, for example, the 
-      arithmetic average of zero and $x$; that is choose     
+      arithmetic average of zero and $x$; that is, we can choose    
       $y=x/2$.
       
       \begin{myproof} (BW) Let $x \in \reals_{>0}$. Choose $y = x/2$. Then $y \in \reals_{>0}$ as required. We have
