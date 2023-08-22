@@ -95,7 +95,7 @@
 \section{Introduction}
 Many statements in analysis consist of concatenated `for every' and `there exists' 
 statements that end with an inequality. The inequality part is either true or 
-false--I call it the \emph{predicate} part. We'll see that writing a statement in 
+false--I call it the \emph{predicate}. We'll see that writing a statement in 
 symbolic form gives us a road map to constructing a proof. So, as the 
 first step in constructing a proof, I encourage you to express the proposition 
 symbolically.
@@ -105,20 +105,25 @@ For every qualification of the form $\forall x \in A$, our proof will state
 assumptions about $x$. A synonym for `let' is `allow' and `permit,'  but we'll 
 stick to using `let' for consistency.  This part of a proof is easy.
 
-For every qualification of the form $\exists x \in A$, it's just like fourth 
+For every qualification of the form $\exists \,\, x \in A$, it's just like fourth 
 grade show-and-tell. We must tell the reader \emph{exactly} what member of $A$ 
 we choose for $x$.  Sometimes there will be more than one choice that allows 
 the proof to continue; if so, we stick to exactly one choice instead of 
 \emph{clogging} our logic with extraneous possibilities.  This part of
 a proof is hard--make a bad choice, and you might get stuck. 
 
-Moving from left to right, the value $x$ we choose for  $\exists x \in A$ can 
-depend on all previously defined variables (all variables to the left), but 
+Moving from left to right, the value $x$ we choose can 
+depend on all previously defined variables (all variables to the left in
+the statement in symbolic form), but 
 it cannot depend on any variables to the right. So for a  statement fragment
 \begin{equation*}
     \left(\forall x \in \reals \right) \left(\exists a \in \reals\right) \left(\forall b \in \reals\right) 
 \end{equation*}
-the choice for $a$ can depend on $x$, but it cannot depend on $b$.
+the choice for $a$ can depend on $x$, but it cannot depend on $b$.  To emphasize
+that $a$ can depend on $x$, you'll sometimes see this expressed as `For all $x \in \reals$,
+there is $a(x) \in \reals$ such that \dots.' This is OK--if it helps 
+you understand, do it.  But I tend to not use this notation because I 
+think it's unneeded clutter.
 
 Finally, what about `suppose?' To alert the reader that 
 the truth of a statement is directly due to a hypothesis, we often
@@ -248,7 +253,9 @@ statement, do the following:
        the order of the qualified statements are switched. Usually,
        order matters in mathematics (and in life), so it's possible 
        that this statement is false. Indeed, we'll show that this 
-       is the case. We might be tempted to prove this proposition as
+       is the case. 
+       
+       We might be tempted to prove this proposition as
 
        \begin{myproof} Choose $y=\frac{x}{2}$. Let $x \in \reals_{>0}$.
         Then $y \in \reals_{>0}$ as required.
