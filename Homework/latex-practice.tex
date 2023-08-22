@@ -1,0 +1,191 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+
+\usepackage{geometry}
+\geometry{letterpaper, margin=0.6in}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\frenchspacing
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\newcommand{\true}{\, \mathrm{True}}
+\newcommand{\false}{\, \mathrm{False}}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+\usepackage{framed}
+
+\colorlet{shadecolor}{lightgray!15}
+\newenvironment{myproof}
+  {\begin{shaded}\begin{proof}}
+  {\end{proof}\end{shaded}}
+
+  \newtheorem{prop}{Proposistion}
+
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+
+  \usepackage{enumerate}
+  \newenvironment{alphalist}{
+  %\vspace{-0.4in}
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-0.50\itemsep}}
+  {\end{enumerate}}
+\newcommand{\quiz}{1}
+\newcommand{\term}{Fall}
+
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+
+\begin{prop}
+  For all $x,y \in \reals$, there is $a \in \reals$ such that
+    $x < y$ implies $x<a<y$.    
+\end{prop}
+
+\begin{myproof} (BW)
+    Let $x,y \in \reals$. Suppose $x < y$. Choose $a = \frac{x+y}{2}$.
+    Then $a \in \reals$ as required. We have
+    \begin{align*}
+      \left[ x < a < y \right] 
+          &\equiv \left[ x < \frac{x+y}{2} < y \right], &\mbox{(substitution)} \\
+          & \equiv \left[ x - \frac{x+y}{2} < 0 < y - \frac{x+y}{2}  \right], &\mbox{(subtract $\frac{x+y}{2}$)} \\
+          & \equiv \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], &\mbox{(simplification)} \\
+          & \equiv \true. &((y-x > 0) \land (x-y < 0))
+    \end{align*} 
+       \end{myproof}
+
+
+     \begin{prop} 
+     For all $r \in \reals_{>0}$ there is $x \in [0,1)$ such that $1-r < x$. 
+     \end{prop}
+
+    
+     
+      \begin{myproof} (BW) Let $r \in \reals_{>0}$. Choose $x = \begin{cases} 1 - \frac{r}{2}  & r < 1 \\ \frac{1}{2} & r \geq 1 \end{cases}$. For $r < 1$, we have
+      \begin{align*}
+       \left[1-r < x \right] &\equiv \left[1-r < 1 - \frac{r}{2}  \right], & \mbox{(substitution)} \\
+                                  &\equiv  \left[0 <  \frac{r}{2}  \right], & \mbox{(algebra)} \\
+                                  &\equiv \true.   &(0 < r < 1).
+      \end{align*}
+      And for $r \geq 1$, we have
+       \begin{align*}
+       \left[1-r < x \right] &\equiv \left[1-r < \frac{1}{2}  \right], & \mbox{(substitution)} \\
+                                  &\equiv  \left[\frac{1}{2}  <  r  \right], & \mbox{(algebra)} \\
+                                  &\equiv \true.   &(r \geq 1).
+      \end{align*}
+      \end{myproof}
+     
+
+    \begin{prop}   For all $x \in \reals_{>0}$ there is 
+      $y \in \reals_{> 0}$ such that $y < x$. 
+    \end{prop}
+     
+    
+      
+      \begin{myproof} (BW) Let $x \in \reals_{>0}$. Choose $y = x/2$. Then $y \in \reals_{>0}$ as required. We have
+         \begin{align*}
+         \left[y < x \right] &\equiv \left[\frac{x}{2} < x \right], &\mbox{(substitution)} \\
+                                   &\equiv \left[0 < \frac{x}{2}  \right], &\mbox{(algebra)} \\
+                                   &\equiv \true.  &\mbox{(x > 0)}
+      \end{align*}
+      \end{myproof}
+
+       
+
+       \begin{prop} For every $y \in \reals_{> 0}$ there is  
+        $x \in \reals_{>0}$ such that $y \geq  x$.
+      \end{prop}
+
+       \begin{myproof} (BW) Let $y \in \reals_{>0}$. Choose $x = y$. Then $x \in \reals_{>0}$, as 
+        required. We have
+       \begin{align*}
+         \left[y \geq x  \right] &\equiv \left[y \geq  y \right], & \mbox{(substitution)} \\
+                                      &\equiv \left[0 \geq 0 \right], &\mbox{(algebra)} \\
+                                      &\equiv \true.
+       \end{align*}
+       
+       \end{myproof}
+
+   
+
+
+       
+    \begin{prop} For all $x \in \reals_{>0}$, there is $M \in \reals$ such
+     that $\frac{1}{x} +1 > M$. \hfill (SB)
+    \end{prop}
+
+    \begin{prop}
+      There is $M \in \reals$ such that for all $x \in \reals_{>0}$,
+     we have $\frac{1}{x} + 1 > M$. \hfill (DD) 
+    \end{prop}
+
+     \begin{prop}
+      There is $m \in \reals$ such that for all $x \in \reals$, we 
+     have $1 + m(x-1) \leq x^2$. \hfill (TK)
+     \end{prop}
+
+     \begin{prop} For every $a \in \reals$, there is $m \in \reals$ such 
+     that for all $x \in \reals$, we have $a^2 + m(x-a) \leq x^2$. \hfill (AK)
+     \end{prop}
+
+     \begin{prop} For all $x,y \in \reals$, we have $(x^2 = y^2) \implies (x=y)$. 
+     \hfill (DM)
+     \end{prop} 
+
+    \begin{prop} For all $x,y \in \reals$, we have $(x^3 = y^3) \implies (x=y)$. 
+    \hfill (CR) 
+    \end{prop}
+
+
+\end{document}
