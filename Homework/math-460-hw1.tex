@@ -29,6 +29,7 @@
 \newcommand{\complex}{\mathbf{C}}
 \newcommand{\dom}{\mbox{dom}}
 \newcommand{\cover}{{\mathcal C}}
+\newcommand{\true}{\mathrm{True}}
 \newcommand{\integers}{\mathbf{Z}}
 \newcommand{\vi}{\, \mathbf{i}}
 \newcommand{\vj}{\, \mathbf{j}}
@@ -100,13 +101,31 @@ This work is due \textbf{Saturday 26 August} at 11:59 \PM.
  \left[\frac{5 x}{x+1} \leq M  \right] &\equiv
  \left[\frac{5 x}{x+1} \leq  \frac{5 x}{x+1}  \right],  &\mbox{(substitution for $M$)} \\
  &\equiv \mbox{True}. &\mbox{(syntactic equality)}. 
+ \qedhere
 \end{align*}
 \end{proof}
 is \emph{abject rubbish}.
 
+\begin{solution} The proof is abject rubbish because it violates
+  the left-to-right rule.  Since $M$ is qualified before $x$,
+  the value we choose for $M$ is not allowed to depend on $x$.
+
+\end{solution}
+
 \question[10] Write a correct proof of \(\left(\exists M \in \reals\right)
 \left(\forall x \in \reals_{\geq 0} \right) \left(\frac{5 x}{x+1} \leq  M \right)\).
 
+\begin{proof} Choose $M = 5$. Let $x \in \reals_{\geq 0}$. 
+  We have
+  \begin{align*}
+     \left[\frac{5 x}{x+1} \leq  M \right] 
+       &\equiv \left[\frac{5 x}{x+1} \leq  5 \right] &&\text{(substitution)} \\
+       &\equiv \left[5 x \leq  5 (x+1) \right] &&\text{(multiply by $x+1$)} \\
+       &\equiv \left[ 0 \leq 5 \right] &&\text{(subtract $5 x$)} \qedhere \\
+       &\equiv \true.
+  \end{align*}
+
+\end{proof}
 \question [10]  Without explicitly using negation (either $\lnot$ or anything equivalent to negation), write the negation of the statement
 \begin{equation*}
 \left(\exists M \in  \reals_{< 5} \right)
@@ -115,6 +134,14 @@ is \emph{abject rubbish}.
 Unlike the previous questions, the number $M$ in this question must be \emph{less} than five. Also,
 the final inequality is now a strict inequality (equality is not allowed). These differences are \emph{not} typos.
 
+\begin{solution}
+  \begin{equation*}
+    \left(\forall M \in  \reals_{< 5} \right)
+    \left(\exists x \in  \reals_{\geq 0} \right) 
+    \left(\frac{5 x}{x+1} \geq   M \right).
+    \end{equation*}  
+\end{solution}
+
 \question [10]  Show that the statement 
 \begin{equation*}
 \left(\exists M \in  \reals_{< 5} \right)
@@ -122,7 +149,24 @@ the final inequality is now a strict inequality (equality is not allowed). These
 \end{equation*}
 is \emph{false} by showing that its negation is true.
 
+\begin{proof} Let $M \in \reals_{< 5}$. Choose 
+  $x = \begin{cases}  0 & M < 0 \\
+                      \frac{M}{5-M} & M \geq 0 
+  \end{cases}$. Then $x \in \reals_{\geq 0}$ as required.
+  For $M < 0$, we have
+  \begin{align*}
+    \left[ \frac{5 x}{x+1}  \geq  M \right] &= \left[0 \geq  M \right], \\
+                                            &\equiv \true
+  \end{align*}
+  And for $M \geq 0$, we have
+  \begin{align*}
+    \left[ \frac{5 x}{x+1}  \geq  M \right] 
+       &= \left[M \geq  M \right], &&\text{(algebra)} \\
+      &\equiv \true
+  \end{align*}
 
+
+\end{proof}
  
 \end{questions}
 \end{document}
