@@ -44,9 +44,10 @@
 \section{Introduction}
 
 Many propositions in analysis consist of concatenated `for all' and `there exist'  qualifiers followed by something that has a boolean value.  
-The part with the boolean value is called the \emph{predicate}. Expressing the proposition in symbolic form gives us a road map 
-for constructing  a proof. To follow the road map, we need to strictly proceed from left to right. Additionally, to successfully follow the road map,
- we to adhere to some rules and follow some traditions.  Following the rules is needed for correctness,  and using the  traditions makes 
+The part with the boolean value is called the \emph{predicate}. We'll see that expressing the proposition in symbolic 
+form gives us a road map for constructing  a proof. To follow the road map, we to 
+adhere to some rules, and it's best to follow some traditions.  Following the rules is 
+needed for correctness,  and using the  traditions makes 
  our work easier to understand.
 
 For every qualification of the form $\forall x \in A$, where $A$ is a set, our proof includes the sentence `Let $x \in A$.'  Synonyms  for  `let' 
@@ -102,20 +103,21 @@ most natural choice for $a$ is almost surely the arithmetic average.  With this,
     Then $a \in \reals$ as required. We have
     \begin{align*}
       \left[ x < a < y \right] 
-          &\equiv \left[ x < \frac{x+y}{2} < y \right], &&\text{(substitution)} \\
+          &\equiv \left[ x < \frac{x+y}{2} < y \right], &&\text{(substitution for $a$)} \\
           & \equiv \left[ x - \frac{x+y}{2} < 0 < y - \frac{x+y}{2}  \right], &&\text{(subtract $\nicefrac{(x+y)}{2}$)} \\
           & \equiv \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], &&\text{(simplification)} \\
           & \equiv \true. && \text{(hypothesis $x < y$)} \qedhere
     \end{align*} 
 \end{myproof}
-\noindent Each step in this series has a parenthetical remark clarifying the reason for the equivalence.  I encourage you all to 
-clarify your work this way. Also, if the fact that the arithmetic average is known to be ``in the middle,'' our proof could end at 
-the second line. It's sometimes a judgment call on whether or not a fact can be used in a proof. When in doubt, include, don't assume.
+\noindent Each step in this series has a parenthetical remark clarifying the reason for the equivalence. 
+Such remarks can make a proof much easier to follow. 
+
+If the fact that the arithmetic average is known to be ``in the middle,'' our proof could end at 
+the second line. It's sometimes a judgment call on whether a fact can be used in a proof. When in doubt, include, don't assume.
 It is, of course, always wrong to use a result in a proof  that is way outside the context of our class.
 
 Notice that starting with the conclusion of Proposition \ref{p1}, we expressed our proof as a series of logical \emph{equivalences.}  Logical
 equivalence has the transitive property, so indeed our proof shows that $x < a < y$ is true.  
-
 When we start with the conclusion as we did in this proof, it's vitally important that we use a series of  logical equivalences, \emph{not}
 logical implications. If we expressed this work as
  \begin{align*}
@@ -125,8 +127,9 @@ logical implications. If we expressed this work as
           & \implies  \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], &&\text{(simplification)} \\
           & \implies \true. && \text{(hypothesis $x < y$)} \qedhere
     \end{align*} 
-we have shown that  $(x < a < y) \implies \true$.  But $P \implies \true$ is a tautology, so $P \implies \true$ is
-true \emph{regardless} of the truth value of $P$. So the above work proves \emph{nothing}. By reversing the order of the statements,
+we have shown that  $(x < a < y) \implies \true$. But $P \implies \true$ is
+true \emph{regardless} of the truth value of $P$ (that is $P \implies \true$ is a 
+tautology). So the above work proves \emph{nothing}. By reversing the order of the statements,
 we could fix this effort; for example,
  \begin{align*}
     x < y  &\implies  \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], && \left((y-x > 0) \land  (x-y < 0) \right) \\
@@ -171,7 +174,7 @@ Our proof breaks into two cases:
                                   &\equiv \true.   &&(r \geq 1) \qedhere
       \end{align*}
       \end{myproof}
-     
+     Another way to discover this proof is to 
 
     \begin{prop}   For all $x \in \reals_{>0}$ there is 
       $y \in \reals_{> 0}$ such that $y < x$.  \label{p3}
