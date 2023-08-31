@@ -52,7 +52,7 @@
 \newtheorem{mybadformproof}{Bad Form Proof}
 
 \newtheorem{hurestic}{Hurestic}
-
+\newtheorem{prop}{Proposition}
 %\usepackage{array}   % for \newcolumntype macro
 %\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
 
@@ -122,9 +122,9 @@
 
 %{
  % \inst{1}%
-%  ``The secret of getting ahead is getting started.'' Mark Twain
-%   }
-  \date{}
+ % ``The secret of getting ahead is getting started.'' Mark Twain
+ %  }
+ % \date{}
 
 
 \usepackage{courier}
@@ -291,6 +291,56 @@ similarly for \(\times\).  The other required conditions are ``inherited'' from 
 \item \((\integers, +, \times)\)  isn't a field because, for example, there is no \(x \in \integers\) such that \(2 x = 1\).
 
 \end{alphalist}
+
+\end{frame}
+
+
+\begin{frame}{It's true: $x  \times \theta  = \theta$}
+
+  \begin{prop} Let $(\mathcal{F},+,  \times)$ be a field and let $\theta$
+    be its additive identity. Then
+    \begin{equation}
+      \left(\forall a \in \mathcal F\right) \left (a \times \theta = \theta \right)
+    \end{equation}
+    \end{prop}
+
+\begin{proof} Let $x \in \mathcal{F}$. We have $x + \theta  = x$. Multiplying this by $x$ and using 
+the distributive property, we have $x^2 + x  \theta = x^2$. Adding $-x^2$ to this yields $x  \times \theta =  \theta$.
+
+\end{proof}
+  
+\end{frame}
+
+\begin{frame}{It's true: $a  \times (-b)  = - (a \times b)$}
+
+  \begin{prop} Let $(\mathcal{F},+,  \times)$ be a field and let $\mathcal O$
+    be its additive identity. Then
+    \begin{equation}
+      \left(\forall a,b \in \mathcal F\right) \left (a  \times (-b)  = - (a \times b) \right).
+    \end{equation}
+    \end{prop}
+
+\begin{proof} Let $a,b \in \mathcal{F}$.  We have 
+\begin{equation*}
+   \theta = a \times  \theta = a \times (b + -b)  = a \times b + a \times (-b).
+\end{equation*}
+So $-(a \times b) = a \times (-b)$
+\end{proof}
+\end{frame}
+
+\begin{frame}{Something for nothing}
+
+We know that $-(a \times b) = a \times (-b)$ is an identity.  Replacing the silent variable $a$ by $-a$ gives
+an syntactically different but semantically equal identity
+\begin{equation*}
+   -((-a) \times b) = (-a) \times (-b)
+\end{equation*}
+But $((-a) \times b) = b \times (-a) = - (a \times b)$. That tells gives us the famous result that
+\begin{equation*}
+   (a \times b) = (-a) \times (-b).
+\end{equation*}
+
+Let's \textbf{not} confuse this mathematical fact with \textbf{rubbish} such as ``Morwenna deposits -\$10 a total of -5 times. What is Morwenna's account value?'' 
 
 \end{frame}
 
