@@ -1,0 +1,131 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+\usepackage{url}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\rat}{\mathbf{Q}}
+
+\newcommand{\curly}[1]{\mathcal #1}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\usepackage{amsthm}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+  
+\newcommand{\quiz}{2}
+\newcommand{\term}{Fall}
+
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{ \textbf{MATH 460}}
+{\bf Name:}  \\
+\noindent \makebox[3.0truein][l]{\textbf{Homework \quiz, \term \/ \the\year}}
+%{\bf Row:}\hrulefill\
+\vspace{0.1in}
+
+\noindent  Homework \quiz\/  has questions 1 through  \numquestions \/ with a total 
+of  \numpoints\/  points. When I record your grade, I will scale it to twenty points. 
+For details of the grading scheme for this assignment, please see the section 
+`Grading rubric' of our syllabus.
+
+Revise, proofread, revise again (and again), typeset your work using Overleaf, and 
+upload the converted pdf of your compiled file work to Canvas.  
+This work is due \textbf{Saturday 9 September} at 11:59 \PM.
+
+\vspace{0.1in}
+
+\begin{questions}
+
+\question [10] Let $(\mathcal{F},+, \times)$ be a field with $\theta$ as its additive identity. And let $a \in \mathcal{F}_{\neq \theta}$ and $b \in \mathcal{F}$. Show that there is a unique $x \in \mathcal{F}$ such that $a \times x = b$.
+
+
+\question Define $\rat$ to be the set of rational numbers. Thus $\frac{2}{3}$ and $\sqrt{2} \notin \rat$, for example.
+
+For $(a,b), (a^\prime, b^\prime) \in \rat \times \rat$, define the binary operators $+$ and $\times$
+on $\rat \times \rat$ by
+\begin{align*}
+  (a,b) +  (a^\prime, b^\prime) &= (a + a^\prime,b + b^\prime), \\
+  (a,b) \times  (a^\prime, b^\prime) &= (a a^\prime + 2 b b^\prime, a b^\prime + b a^\prime).
+\end{align*}
+These definitions make $(\rat \times \rat, +, \times)$ into a field. If you don't believe me, I invite you to check. But
+you can take my word.
+
+\begin{parts}
+
+\part [10] Find the additive identity for this field. You don't need to show the algebra you used to find the
+additive identity, but you do need to prove that your putative answer is correct.
+
+\part [10] Find the multiplicative identity for this field. You don't need to show  the algebra you used to find the
+multiplication identity, but you do need to prove that
+your putative answer is correct.
+
+\part [10] Find the multiplicative inverse of $(1,2)$. You don't need to show the algebra you used to find the answer, but you do need to prove that your putative answer is correct.
+
+\part [10] For $a,b \in     \rat$, a calculation gives
+\begin{equation}
+   (a,b)^{-1} = \left(- \frac{a}{2 b^2 - a^2}, \frac{b}{2 b^2 - a^2}\right)
+\end{equation}
+But wait! What's the story if $2 b^2 - a^2 = 0$?  Either, I flubbed and $(\rat \times \rat, +, \times)$
+isn't a field, or the above formula for the inverse is rubbish, or something else. What is the something else?
+
+
+
+\end{parts}
+
+\end{questions}
+\end{document}
