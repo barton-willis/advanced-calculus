@@ -1,13 +1,5 @@
 \documentclass[12pt,fleqn,answers]{exam}
-\usepackage{pifont}
-\usepackage{dingbat}
-\usepackage{amsmath,amssymb}
-\usepackage{fleqn}
-\usepackage{epsfig}
-%\usepackage{mathptm}
-%\usepackage{euler}
-\usepackage{bbding}
-\usepackage{url}
+\usepackage{amsmath,amssymb,fourier,isomath,upgreek,url,amsthm,xspace}
 \addpoints
 \boxedpoints
 \pointsinmargin
@@ -15,47 +7,16 @@
 
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
 \usepackage[american]{babel}
-%\usepackage[T1]{fontenc}
-\usepackage{fourier}
-\usepackage{isomath}
-\usepackage{upgreek,amsmath}
-\usepackage{amssymb}
-%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
-
-\newcommand{\dotprod}{\, {\scriptzcriptztyle
-    \stackrel{\bullet}{{}}}\,}
-
 \newcommand{\reals}{\mathbf{R}}
 \newcommand{\complex}{\mathbf{C}}
 \newcommand{\dom}{\mbox{dom}}
 \newcommand{\cover}{{\mathcal C}}
 \newcommand{\curly}[1]{\mathcal #1}
 \newcommand{\integers}{\mathbf{Z}}
-\newcommand{\vi}{\, \mathbf{i}}
-\newcommand{\vj}{\, \mathbf{j}}
-\newcommand{\vk}{\, \mathbf{k}}
-\newcommand{\bi}{\, \mathbf{i}}
-\newcommand{\bj}{\, \mathbf{j}}
-\newcommand{\bk}{\, \mathbf{k}}
-\DeclareMathOperator{\Arg}{\mathrm{Arg}}
-\DeclareMathOperator{\Ln}{\mathrm{Ln}}
 \newcommand{\imag}{\, \mathrm{i}}
-\usepackage{amsthm}
-\newtheorem{Rubbish}{Theorem}
-\usepackage{graphicx}
-
-%\usepackage{tgschola} %to look retro
-\newenvironment{mypar}[2]
-  {\begin{list}{}%
-    {\setlength\leftmargin{#1}
-    \setlength\rightmargin{#2}}
-    \item[]}
-  {\end{list}}
-  
 \newcommand{\quiz}{2}
 \newcommand{\term}{Fall}
 
-\usepackage{xspace}
 \makeatletter
 \DeclareRobustCommand{\maybefakesc}[1]{%
   \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
@@ -64,8 +25,8 @@
     \textsc{#1}%
   \fi
 }
-\newcommand\AM{\,\maybefakesc{am}\xspace}
-\newcommand\PM{\,\maybefakesc{pm}\xspace}
+\newcommand\AM{\maybefakesc{am}\xspace}
+\newcommand\PM{\maybefakesc{pm}\xspace}
 
 \begin{document}
 \large
@@ -82,13 +43,14 @@ For details of the grading scheme for this assignment, please see the section
 `Grading rubric' of our syllabus.
 
 Revise, proofread, revise again (and again), typeset your work using Overleaf, and 
-upload the converted pdf of your compiled file work to Canvas.  
+upload the converted PDF of your compiled file work to Canvas.  
 This work is due \textbf{Saturday 2 September} at 11:59 \PM.
 
 \vspace{0.1in}
 
 For Question 1, I will compile the class work into a single document. To allow me to do this without retyping your work,
-copy a link to your Overleaf file (either read only or read and write) here: \url{  } (insert a url for your Overleaf work).
+copy a link to your Overleaf file (either read only or read and write) here: \url{  } 
+(insert an URL for your Overleaf work).
 
 
 \begin{questions}
@@ -127,11 +89,11 @@ copy a link to your Overleaf file (either read only or read and write) here: \ur
 \end{solution}
  \part [10] $ \underset{x \in \curly{C}} {\cup} x  \setminus \underset{x \in \curly{C}}{\cap} x$
 \begin{solution} Using the previous two parts, we have
-  \begin{equation}
+  \begin{equation*}
     \underset{x \in \curly{C}} {\cup} x  \setminus \underset{x \in \curly{C}}{\cap} x
        =  \{\uppi, \infty, \sqrt{3}\} \setminus  \{\uppi\} =
-       \{\infty, \sqrt{3}\}
-  \end{equation}
+       \{\infty, \sqrt{3}\}.
+  \end{equation*}
 
 \end{solution}
 
@@ -147,7 +109,7 @@ of $X$, show that $F(A \cap B) \subset F(A) \cap F(B)$.
     $y \in  F(A) \cap F(B)$. Since $y \in F(A \cap B)$, there 
     is $x \in A \cap B$ such that $y = F(x)$. But $x \in A \cap B$,
     so $x \in A$ and $x \in  \cap B$. So $y \in F(A)$ and 
-    $y \in F(B)$; therefore $y \in F(A) \cap F(B)$.\qedhere   
+    $y \in F(B)$; therefore, $y \in F(A) \cap F(B)$.\qedhere   
   \end{proof}
 
 \end{solution}
@@ -158,7 +120,7 @@ about real numbers and square roots.
 
     \part [10] Show that $F((-\infty,0)) = (0,\infty)$.
 \begin{solution} The conclusion of this proposition is set 
-  equality, so we'll proof two set inclusions. Each proof 
+  equality, so we'll prove two set inclusions. Each proof 
   of a set inclusion requires a pick-and-show proof.
   First, we'll show that  $F((-\infty,0)) \subset (0,\infty)$ 
 
@@ -172,13 +134,28 @@ about real numbers and square roots.
   square root.
   \begin{proof} Suppose $y \in (0,\infty)$. We'll show that 
     $y \in F((-\infty,0))$.  We have $-\sqrt{y} \in (-\infty,0)$
-    and $F(-\sqrt{y}) = y$, so indeed $y \in F((-\infty,0))$.
-  
+    and $F(-\sqrt{y}) = y$, so indeed $y \in F((-\infty,0))$.  
   \end{proof}
   
 \end{solution}
     \part [10] Show that $F \left( \left (0,\infty \right) \right ) = (0,\infty)$.
 \begin{solution}
+  The conclusion of this proposition is set 
+  equality, so we'll prove two set inclusions. Each proof 
+  of a set inclusion requires a pick-and-show proof.
+  First, we'll show that $F \left( \left (0,\infty \right) \right ) \subset (0,\infty)$.
+
+  \begin{proof} Suppose $y \in F \left( \left (0,\infty \right) \right ) $.
+    We'll show that $y \in (0,\infty)$. Since $y \in F \left( \left (0,\infty \right) \right ) $,
+    there is $x \in (0,\infty)$ such that $y = x^2$. But $ x < 0$ implies
+    $0 < x^2$. So $y \in (0,\infty)$
+\end{proof}
+Second, we'll show that $(0,\infty) \subset F \left( \left (0,\infty \right) \right ) $.
+\begin{proof} Suppose $y \in (0,\infty)$. We'll show that
+  $y \in F \left( \left (0,\infty \right) \right )$. We have
+  $\sqrt{y} \in (0,\infty)$ and $F(\sqrt{y}) = y$. So $y \in 
+  F \left( \left (0,\infty \right) \right )$.
+\end{proof}
 
 \end{solution}
     \part [10] Find an example of subsets $A$ and $B$ of $\reals$ such that 
@@ -186,13 +163,33 @@ about real numbers and square roots.
     \begin{solution} Our example is hiding in plain sight. Choose
       $A = (-\infty,0)$ and $B = (0,\infty)$. We have
       \begin{equation*}
-        F(A \cap B) = F(\varnothing) = \varnothing.
+        F(A \cap B) = F((-\infty,0)) \cap F((0,\infty)) =         
+        F(\varnothing) = \varnothing.
       \end{equation*}
       And we have
       \begin{equation*}
         F(A) \cap F(B) = (0,\infty) \cap  (0,\infty) =  (0,\infty).
       \end{equation*}
       Certainly, $ (0,\infty) \not \subset \varnothing$.
+
+      \quad How can it be the case that $F(A \cap B)$ is ``bigger'' 
+      than is \mbox{$F(A) \cap F(B)$}? Here is how: we have
+      \begin{equation*}
+        \left[y \in F(A) \cap F(B) \right] \equiv
+          \left(\exists a \in A\right)
+          \left(\exists b \in B \right)
+          \left(y = F(a) \land y = F(b)\right).
+      \end{equation*}
+    And 
+    \begin{equation*}
+      \left[y \in F(A \cap B) \right] \equiv
+        \left(\exists p \in A \cap B \right)
+        \left(y = F(p) \right).
+    \end{equation*}
+    For this condition, we might have, for example $p \in A$ such
+    that $y = F(p)$, but there is no member $b$ in $B$ such
+    that $y = F(b)$.
+
 
 
 \end{solution}

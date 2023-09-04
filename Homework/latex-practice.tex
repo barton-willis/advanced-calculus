@@ -60,7 +60,7 @@ we made the choice.
 
 For proofs in analysis, often the choice isn't unique, but when there is more than one possible choice,
 we still give the reader exactly one choice that allows the proof to proceed, we don't clog the logic by giving more than one.
-Additionally, when multiple choices, we use the most natural choice we can think of. For example if we need to chose a number that is between
+Additionally, when there are multiple choices, we use the most natural choice we can think of. For example, if we need to choose a number that is between
 given numbers, a natural choice is to use the arithmetic average. Don't complicate your work by making a correct, but obscure choice.
 
 The final thing we need to know about our symbolic road map is that when we 
@@ -93,14 +93,14 @@ Now we give some fairly simple examples of what we will call a `let/show/suppose
 \end{prop}
 \noindent In symbolic form, the Proposition \ref{p1} is
 $\left(\forall x,y \in \reals \right) 
-\left(\exists a \in \reals \right)
-\left(x < a < y \right)$.  Since $a$ follows both $x$ and $y$, what we choose for $a$ is allowed to depend on both $x$ and $y$. The 
-most natural choice for $a$ is almost surely the arithmetic average.  With this, our proof is:
-
-
-\begin{myproof} (BW)
+\left(  x < y \implies \exists a \in \reals \right)
+\left(x < a < y \right)$.  Since $\left(\exists a \in \reals \right)$ follows 
+$\left(\forall x,y \in \reals \right)$, what we choose for $a$ is allowed to 
+depend on both $x$ and $y$. The most natural choice for $a$ is the
+arithmetic average.  With this, our proof is:
+\begin{myproof}
     Let $x,y \in \reals$. Suppose $x < y$. Choose $a = \frac{x+y}{2}$.
-    Then $a \in \reals$ as required. We have
+    Then $a \in \reals$, as required. We have
     \begin{align*}
       \left[ x < a < y \right] 
           &\equiv \left[ x < \frac{x+y}{2} < y \right], &&\text{(substitution for $a$)} \\
@@ -109,12 +109,15 @@ most natural choice for $a$ is almost surely the arithmetic average.  With this,
           & \equiv \true. && \text{(hypothesis $x < y$)} \qedhere
     \end{align*} 
 \end{myproof}
-\noindent Each step in this series has a parenthetical remark clarifying the reason for the equivalence. 
-Such remarks can make a proof much easier to follow. 
+\noindent In our proof, the `Suppose` in  `Suppose $x < y$' alerts the reader that what follows is a hypothesis.
+
+Each step in this series has a parenthetical remark clarifying the reason for the equivalence. 
+Such remarks can make a proof easier to follow. You are encouraged
+to include such remarks in your proofs.
 
 If the fact that the arithmetic average is known to be ``in the middle,'' our proof could end at 
 the second line. It's sometimes a judgment call on whether a fact can be used in a proof. When in doubt, include, don't assume.
-It is, of course, always wrong to use a result in a proof  that is way outside the context of our class.
+But it is, of course, always wrong to use a result in a proof  that is way outside the context of our class.
 
 Notice that starting with the conclusion of Proposition \ref{p1}, we expressed our proof as a series of logical \emph{equivalences.}  Logical
 equivalence has the transitive property, so indeed our proof shows that $x < a < y$ is true.  
@@ -161,7 +164,7 @@ One way to fix this is to choose $x$ to be the arithmetic average of $1-r$ and $
 Actually, when $r \geq 1$, we could choose $x$ to be any member of $[0,1)$, but choosing the midpoint is arguably the most natural.
 Our proof breaks into two cases:
      
-      \begin{myproof} (BW) Let $r \in \reals_{>0}$. Choose $x = \begin{cases} 1 - \frac{r}{2}  & r < 1 \\ \frac{1}{2} & r \geq 1 \end{cases}$. For $r < 1$, we have
+      \begin{myproof} Let $r \in \reals_{>0}$. Choose $x = \begin{cases} 1 - \frac{r}{2}  & r < 1 \\ \frac{1}{2} & r \geq 1 \end{cases}$. For $r < 1$, we have
       \begin{align*}
        \left[1-r < x \right] &\equiv \left[1-r < 1 - \frac{r}{2}  \right], && \text{(substitution for $x$)} \\
                                   &\equiv  \left[0 <  \frac{r}{2}  \right], && \text{(add $r-1$)} \\
@@ -174,7 +177,7 @@ Our proof breaks into two cases:
                                   &\equiv \true.   &&(r \geq 1) \qedhere
       \end{align*}
       \end{myproof}
-     Another way to discover this proof is to 
+ \noindent If you prefer to condense this proof into one case, try choosing $r = \max(\frac{1}{2}, 1-\frac{1}{2})$.
 
     \begin{prop}   For all $x \in \reals_{>0}$ there is 
       $y \in \reals_{> 0}$ such that $y < x$.  \label{p3}
@@ -215,34 +218,127 @@ positive number that is smaller.  This is an important property of the field of 
 
        
     \begin{prop} For all $x \in \reals_{>0}$, there is $M \in \reals$ such
-     that $\frac{1}{x} +1 > M$. \hfill (SB)
+     that $\frac{1}{x} +1 > M$. 
     \end{prop}
+
+    \begin{myproof} (SB)
+      Let $x \in \reals_{>0}$. Choose $M = 1$. We have
+          \begin{align*}
+          \left[\frac{1}{x}+1>M \right] &\equiv \left[\frac{1}{x}+1>1\right], &&\text{(substitution for $M$)} \\
+                                  &\equiv \left [\frac{1}{x}>0 \right],
+                                  &&\text {(subtract 1)}\\
+                                  &\equiv \true. &&\text {(Ordered Field Axioms)} \qedhere
+      \end{align*}
+\end{myproof}
 
     \begin{prop}
       There is $M \in \reals$ such that for all $x \in \reals_{>0}$,
-     we have $\frac{1}{x} + 1 > M$. \hfill (DD) 
+     we have $\frac{1}{x} + 1 > M$. 
     \end{prop}
+    A quick graph of $ y = \frac{1}{x} + 1 $ for  $x \in \reals_{>0}$ shows that its graph is above the horizontal line $y = 1$. For $M$, 
+    we can choose any number that is one or less.
+    
+    \begin{myproof} Choose $M=1$. Let $x  \in \reals_{>0}$, we have
+    \begin{align*}
+      \left [ \frac{1}{x} + 1 > M \right] &\equiv    \left [ \frac{1}{x} + 1 > 1 \right], &&(\text{substitution}) \\
+                                                               &\equiv    \left [ \frac{1}{x}  > 0 \right], &&(\text{subtract one}) \\
+                                                               &\equiv \true.    &&  (x > 0) \qedhere
+  \end{align*} 
+    
+    
+    \end{myproof}
 
-     \begin{prop}
+
+
+        \begin{prop}
       There is $m \in \reals$ such that for all $x \in \reals$, we 
-     have $1 + m(x-1) \leq x^2$. \hfill (TK)
+     have $1 + m(x-1) \leq x^2$. 
      \end{prop}
-
+     
+      A good way of thinking about this proposition is geometrically as two graphs. In the x-y plane, the graph of  $y = 1 + m(x-1)$, is a line  and the
+      graph of $y = x^2$  is a parabola.   Both the line  and the parabola contain the point $(x=1,y=1)$. And the 
+      condition $1 + m(x-1) \leq x^2$ tells
+      us that the line $y = 1 + m(x-1)$ must be below or touching the parabola $y=x^2$.  How can this be? A few quick sketches of lines that
+      contain the point $(x=1,y=1)$  shows that the line $y = 1 + m(x-1)$ must be a tangent line to the parabola at the point $(x=1,y=1)$.  If 
+      the line isn't tangent to the parabola, the line will be below the parbola on one side of $x=1$ and above on the other.   We need the
+      line to be on or below the parabola.  So   elementary calculus tells us that the slope of the line must be two. With that choice
+      our proof is      
+       \begin{myproof} Choose $m$ = 2. Let $x\in \reals$. We have
+       \begin{align*}
+         \left[1 + m(x-1) \leq x^2  \right] &\equiv \left[1+2(x-1) \leq  x^2 \right], && \text{(substitution for $m$)} \\
+                                      &\equiv \left[2x-1 \leq x^2 \right], 
+                                       &&\text{(Algebra)} \\
+                                    &\equiv \left[0 \leq x^2 -2x+1 \right], 
+                                       &&\text{(Algebra)} \\
+                                    &\equiv \left[0 \leq (x-1)^2 \right], 
+                                       &&\text{(Factor)} \\
+                                      &\equiv \true. &&\text{(Ordered field axioms} \qedhere
+       \end{align*}
+       \end{myproof}
+       \noindent If you enjoy crabbed proofs, you can rearrange this as a sequence of implications starting from $0 \leq (x-1)^2$. 
+   
      \begin{prop} For every $a \in \reals$, there is $m \in \reals$ such 
-     that for all $x \in \reals$, we have $a^2 + m(x-a) \leq x^2$. \hfill (AK)
+     that for all $x \in \reals$, we have $a^2 + m(x-a) \leq x^2$.
      \end{prop}
+     This proposition generalizes the previous proposition to a point of tangency $(x=a,y=a^2)$. Given that we choose $m=2a$. 
+
+      \begin{myproof} 
+      Let $a \in \reals$. Choose $m=2a$. We have
+      \begin{align*}
+       \left[{a^2+m(x-a) \le x^2} \right]   
+       &\equiv \left[a^2+2a(x-a)\le x^2\right] &&\text{(substitution)}\\
+      &\equiv \left[0 \le x^2-2ax+a^2\right] &&\text{(algebra)}\\
+      &\equiv \left[0 \le (x-a)^2\right] &&\text{factor}  \qedhere
+      \end{align*}
+  \end{myproof}
 
      \begin{prop} For all $x,y \in \reals$, we have $(x^2 = y^2) \implies (x=y)$. 
-     \hfill (DM)
      \end{prop} 
+    \noindent This says that the function that squares is one-to-one. We know this is false. It's certainly possible for outputs of 
+    the squaring function to be equal and the inputs distinct. An example is $(-1)^2 = 1^2$ and $-1 \neq 1$. Although this example
+    is a counterexample to the proposition, for  practice negating qualified statements and conditionals,  we'll explicitly negate the proposition and write a let/show/suppose  proof that it's negation is true.
+    To do this we need to remember the tautology
+    \begin{equation*}
+       \left(P \implies Q\right) \equiv \left(P \land \lnot Q\right)
+ \end{equation*}
+   This we will prove
+    \begin{prop} There are $x,y \in \reals$ such that  $(x^2 = y^2)$ and $x\neq y)$. 
+     \end{prop} 
+     
+     \begin{myproof} Choose $x=-1$ and $y=1$. We have $(-1)^2 = 1^2$ and $-1 \neq 1$.      \end{myproof}
 
     \begin{prop} For all $x,y \in \reals$, we have $(x^3 = y^3) \implies (x=y)$. 
-    \hfill (CR) 
-    \end{prop}
-
+      \end{prop}
+\noindent Distilled, this proposition says that the real-valued cubing function is one-to-one. Graphically this is easy to verify, but algebraically, it
+requires the tricky factorization
+\begin{equation*}
+  x^3 - y^3 = (x-y) (x^2+xy+y^2) =  (x-y) \left(x + y/2)^2 + 3 y^2 /4\right).
+\end{equation*}
+The factor $\left(x + y/2\right)^2 + 3 y^2 /4$ is a sum of squares (SOS) that only vanishes when $x=0$ and $y=0$.  This fact is the core of
+our proof.
+\begin{myproof}
+Let $x,y \in \reals$. Suppose $x^3 = y^3$; we'll show that $x=y$. We have
+\begin{align*}
+ \left[x^3 = y^3 \right] &\equiv \left [x^3 - y^2 = 0 \right],   &&(\mbox{algebra}) \\
+                                        &\equiv \left [(x-y)  \left((x + y/2)^2 + 3 y^2 /4 \right)  = 0 \right],   &&(\mbox{tricky algebra}) \\
+                                        &\equiv \left [(x-y) = 0   \lor  (x + y/2)^2 + 3 y^2 /4)  = 0 \right],   &&(\text{ordered field properties}) \\
+                                         &\equiv \left [x = y    \lor  \left(x=0 \land y = 0 \right) \right],   &&(\text{SOS fact}) \\
+                                         &\equiv \left[x=y\right].  &&(\text{disjunction condense})
+\end{align*}
+\end{myproof}
     \begin{prop} For all $r \in \reals_{>0}$ there is $x \in \reals$
-      such that $1 < x < 1+r$. \hfill (AA)
+      such that $1 < x < 1+r$. 
     \end{prop} 
 
+To prove this, we only need to choose a number that is between 1 and $1+r$. Again, we can choose the arithmetic average.
+\begin{myproof} Let $r \in \reals_{>0}$.  Choose $x= 1+r/2$. Then indeed $x \in \reals_{> 0}$ as required. We have
+
+\begin{align*}
+  \left[1 < x < 1+r \right] &\equiv \left[1 < 1+r/2 < 1+r \right],   && (\text{substitution for } x )\\
+                                          & \equiv \left[-r/2 < 0  < r/2 \right],  && (\text{subtraction})  \\
+                                          &\equiv \true.                                      && (r > 0).
+\end{align*}
+
+\end{myproof}
 
 \end{document}
