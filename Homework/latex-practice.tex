@@ -13,7 +13,9 @@
 \newcommand{\true}{\mathrm{True}}
 \newcommand{\false}{\mathrm{False}}
 
-
+\usepackage{centernot}
+\newcommand{\notimplies}{\centernot\implies}
+% Let's put a proof inside a shaded box
 \usepackage{framed}
 
 \colorlet{shadecolor}{lightgray!15}
@@ -23,28 +25,28 @@
 
 \newtheorem{prop}{Proposition}
 
-\newenvironment{mypar}[2]
-  {\begin{list}{}%
-    {\setlength\leftmargin{#1}
-    \setlength\rightmargin{#2}}
-    \item[]}
-  {\end{list}}
-
   \usepackage{enumerate}
   \newenvironment{alphalist}{
   \begin{enumerate}[(a)]
     \addtolength{\itemsep}{-0.50\itemsep}}
   {\end{enumerate}}
 
-\title{Let/Show/Suppose Proof Examples}
+\usepackage{calc}
+\newcounter{ex}\setcounter{ex}{0}
+\newcommand{\ex}{%\
+\setcounter{ex}{\value{ex}+1}
+\paragraph{Example \theex}}
+
+\title{Let/show/suppose proof examples}
 \author{Fall 2023, Advanced Calculus Class}
 \begin{document}
 \maketitle
 
 \section{Introduction}
 
-Many propositions in analysis consist of concatenated `for all' and `there exist'  qualifiers followed by something that has a boolean value.  
-The part with the boolean value is called the \emph{predicate}. We'll see that expressing the proposition in symbolic 
+
+Many propositions in analysis consist of concatenated `for all' and `there exist'  qualifiers followed by something that has a Boolean value.  
+The part with the Boolean value is called the \emph{predicate}. We'll see that expressing the proposition in symbolic 
 form gives a road map for constructing  a proof. To follow the road map, we to 
 adhere to some rules, and it's best to follow some traditions.  Following rules is 
 needed for correctness,  and using the  traditions makes 
@@ -62,7 +64,8 @@ we made the bad choice.
 For proofs in analysis, often the choice isn't unique, but when there is more than one possible choice,
 we still give the reader exactly one choice that allows the proof to proceed; we don't clog the logic by giving more than one.
 Additionally, when there are multiple choices, we use the most natural choice we can think of. For example, if we need to choose a number that is between
-given numbers, a natural choice is to use the arithmetic average. Don't complicate your work by making a correct but obscure choice.
+given numbers, a natural choice is to use the arithmetic average. Do not make your work harder for the reader to understand 
+by making a correct but obscure choice.
 
 The final thing we need to know about our road map is that when we 
 make a choice for a variable, our choice can depend on all previously
@@ -87,19 +90,22 @@ introduce each case.
 Now we give examples of what we will call a `let/show/suppose' proof.
 
 \section{Examples}
-
-                          
+            
+\ex We start with a fairly simple example that says that there is a 
+real number that is between any two distinct numbers. Specifically
+the proposition is
 \begin{prop}
   For all $x,y \in \reals$, there is $a \in \reals$ such that
     $x < y$ implies $x<a<y$. \label{p1}   
 \end{prop}
-\noindent In symbolic form, the Proposition \ref{p1} is
+In symbolic form, Proposition \ref{p1} is
 $\left(\forall x,y \in \reals \right) 
  \left( \exists a \in \reals \right)
-\left(  x < y \implies \left(x < a < y \right) \right)$.  Since $\left(\exists a \in \reals \right)$ follows 
+\left(  x < y \implies \left(x < a < y \right) \right)$.  The symbolic form 
+of the proposition is our roadmap. Since $\left(\exists a \in \reals \right)$ follows 
 $\left(\forall x,y \in \reals \right)$, what we choose for $a$ is allowed to 
 depend on both $x$ and $y$. The most natural choice for $a$ is the
-arithmetic average.  With this, our proof is:
+arithmetic average. With this, our proof is:
 \begin{myproof}
     Let $x,y \in \reals$. Suppose $x < y$. Choose $a = \frac{x+y}{2}$.
     Then $a \in \reals$, as required. We have
@@ -111,8 +117,7 @@ arithmetic average.  With this, our proof is:
           & \equiv \true. && \text{(hypothesis $x < y$)} \qedhere
     \end{align*} 
 \end{myproof}
-\noindent In our proof, the `Suppose` in  `Suppose $x < y$' alerts the reader that a hypothesis follows.
-
+In the first line of our proof, the `Suppose` in  `Suppose $x < y$' alerts the reader that a hypothesis follows.
 Each step in this series has a parenthetical remark clarifying the reason for the equivalence. 
 Such remarks can make a proof easier to follow. You are encouraged
 to include such remarks in your proofs.
@@ -128,21 +133,26 @@ logical implications. If we expressed this work as
  \begin{align*}
       \left[ x < a < y \right] 
           &\implies \left[ x < \frac{x+y}{2} < y \right], &&\text{(substitution)} \\
-          & \implies  \left[ x - \frac{x+y}{2} < 0 < y - \frac{x+y}{2}  \right], &&\text{(subtract $\nicefrac{(x+y)}{2}$)} \\
-          & \implies  \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], &&\text{(simplification)} \\
-          & \implies \true. && \text{(hypothesis $x < y$)} \qedhere
+          &\implies  \left[ x - \frac{x+y}{2} < 0 < y - \frac{x+y}{2}  \right], &&\text{(subtract $\nicefrac{(x+y)}{2}$)} \\
+          &\implies  \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], &&\text{(simplification)} \\
+          &\implies \true. && \text{(hypothesis $x < y$)} \qedhere
     \end{align*} 
 we have shown that  $(x < a < y) \implies \true$. But $P \implies \true$ is
 true \emph{regardless} of the truth value of $P$ (that is $P \implies \true$ is a 
-tautology). So the above work proves \emph{nothing}. By reversing the order of the statements,
-we could fix this effort; for example,
+tautology). So the above work proves \emph{nothing}. 
+
+But we know that in the above work, each implication can be replaced by logical
+equivalence and our work would still be correct. In general, this isn't true 
+because we know that $P \implies Q$ is not logically equivalent to $Q \implies P$.
+But for the above work, we can reverse the order of the 
+statements and generate a proof of what was intended:
  \begin{align*}
     x < y  &\implies  \left[ \frac{x-y}{2} < 0 < \frac{y-x}{2}  \right], && \left((y-x > 0) \land  (x-y < 0) \right) \\
              &\implies   \left[ x - \frac{x+y}{2} < 0 < y - \frac{x+y}{2}  \right], &&\text{(algebraic equivalence)} \\
              &\implies \left[ x < \frac{x+y}{2} < y  \right], &&\text{(add $\nicefrac{(x+y)}{2}$)} \\
              &\implies \left[ x < a < y  \right].  &&\text{(substitution for $a$)}.
  \end{align*} 
-Now we have proved that $x < y \implies x < a < y  $. And since $x < y$ is a hypothesis, we've indeed shown that $ x < a < y $ is true,
+ Using the transitive property of implication, we have proved that $x < y \implies x < a < y  $. And since $x < y$ is a hypothesis, we've indeed shown that $ x < a < y $ is true,
 as we intended to do. Compared to our proof that used a series of logical equivalences,  the first logical implication in this proof 
 (that is $x < y \implies 
  \frac{x-y}{2} < 0 < \frac{y-x}{2} $) seems a bit like a rabbit pulled out of a magician's hat, making the proof somewhat mysterious.
@@ -150,13 +160,51 @@ as we intended to do. Compared to our proof that used a series of logical equiva
  the clearest way to write the proof. 
 
 
+ \ex In life, order usually matters, and it's certainly true in logic too.
+ Let's reverse the order of the qualified statements in Proposition 
+ (\ref{p1}) and examine its truth value. We have 
 
+ \begin{prop}
+  There is $a \in \reals$ such that for all $x,y \in \reals$ we have
+    $x < y$ implies $x<a<y$. \label{p2}   
+\end{prop}
+This is almost surely false. There is no number that is between 
+any two given distinct numbers. So no, this is false. To show that its false,
+let's prove that it's negation is true. The negation is
 
+\begin{prop}
+  For all $a \in \reals$ there are  $x,y \in \reals$ such that
+    $x < y$ and  $x \geq a$ or $a \geq y$. \label{p3} 
+\end{prop}
+To write the negation of the predicate, remember that
+$P \notimplies Q \equiv P \land \lnot Q$. And negating $x<a<y$ is 
+a bit tricky too, but remember that 
+$x<a<y$ is logically equivalent to $(x \leq a) \lor (a \leq y)$. After that 
+we can find the negation by applying the De Morgan law.
+
+The conclusion of the Proposition (\ref{p3}) is a disjunction.
+To write a proof, we can either choose $a$ such that $x \leq a$
+or $a \leq y$. Let's choose $x$ to make  $x \leq a$. The most
+natural choice is $x = a$. We still need to choose a value for $y$.
+Our choice for $y$ needs to be consistent with $x < y$. Our proof is
+
+\begin{myproof} Let $a \in \reals$.  Choose $x=a$ and $y=a+1$.
+  Then $x < y$ as required. We have
+  \begin{equation*}
+    \left[x \geq a \lor  a \geq y \right] 
+    \equiv \left[a \geq a \lor  a \geq a+1 \right]
+    \equiv \left[\true  \lor  \false  \right]
+    \equiv \true. \qedhere
+  \end{equation*}
+\end{myproof}
+
+\ex Our next example looks a great deal like the previous example, 
+but it has an extra twist.
 \begin{prop} 
-     For all $r \in \reals_{>0}$ there is $x \in [0,1)$ such that $1-r < x$.  \label{p2}
+     For all $r \in \reals_{>0}$ there is $x \in [0,1)$ such that $1-r < x$.  \label{p4}
 \end{prop}
 
-\noindent In symbolic form, Proposition \ref{p2} is $\left(\forall r  \in \reals_{>0} \right) \left(\exists x \in [0,1)\right) \left (1-r  < x \right)$.
+In symbolic form, Proposition \ref{p2} is $\left(\forall r  \in \reals_{>0} \right) \left(\exists x \in [0,1)\right) \left (1-r  < x \right)$.
 And since $x \in [0,1)$, additionally we know that $x < 1$.  So the predicate $1-r  < x$ is equivalent to $1-r  < x  < 1$. Now Proposition \ref{p2}
 looks a great deal like  Proposition \ref{p1}. Maybe we can simply choose $x$ to be the arithmetic average of $1-r$ and $1$. That is
 choose $x = 1 - \frac{r}{2}$.  But the requirement that $0 < x$ spoils this choice. If $r = 4$, for example, we are choosing $x = -1$. And that's 
@@ -179,14 +227,16 @@ Our proof breaks into two cases:
                                   &\equiv \true.   &&(r \geq 1) \qedhere
       \end{align*}
       \end{myproof}
- \noindent If you prefer to condense this proof into one case, try choosing $x = \max(\frac{1}{2}, 1-\frac{1}{2})$.
+ If you prefer to condense this proof into one case, try choosing $x = \max(\frac{1}{2}, 1-\frac{1}{2})$.
 
-    \begin{prop}   For all $x \in \reals_{>0}$ there is 
-      $y \in \reals_{> 0}$ such that $y < x$.  \label{p3}
-    \end{prop}
-     
-    \noindent Generically, Proposition \ref{p3} looks like another choose the arithmetic average proof: we need to choose a number between zero and $y$. Our proof is
+ \ex   Generically, our next proposition looks like another choose 
+ the arithmetic average proof. 
       
+    \begin{prop}   For all $x \in \reals_{>0}$ there is 
+      $y \in \reals_{> 0}$ such that $y < x$.  \label{p5}
+    \end{prop}
+   
+    For this proof,  we need to choose a  number between  zero and $y$. Our proof is
       \begin{myproof}  Let $x \in \reals_{>0}$. Choose $y = x/2$. Then $y \in \reals_{>0}$ as required. We have
          \begin{align*}
          \left[y < x \right] &\equiv \left[\frac{x}{2} < x \right], &&\text{(substitution for $y$)} \\
@@ -194,15 +244,18 @@ Our proof breaks into two cases:
                                    &\equiv \true.  &&\text{(x > 0)} \qedhere
       \end{align*}
       \end{myproof}
-\noindent Abstracted, Proposition \ref{p3} says that there is no smallest positive number. That is, given any positive number, there is a 
+Abstracted, Proposition \ref{p3} says that there is no smallest positive number. That is, given any positive number, there is a 
 positive number that is smaller.  This is an important property of the field of real numbers.
        
-
+\ex Our next proposition is the well known fact that there is
+no largest positive number. Specifically
        \begin{prop} For every $y \in \reals_{> 0}$ there is  
-        $x \in \reals_{>0}$ such that $y \geq  x$. \label{p4}
+        $x \in \reals_{>0}$ such that $y \geq  x$. \label{p6}
       \end{prop}
-      \noindent Paraphrased, Proposition \ref{p4} says that given any positive number, there is a positive number that is greater. Alternatively, we
-      might say that there is no largest positive number. Adding one is a good strategy for constructing a larger number, but this proposition
+      Paraphrased, Proposition \ref{p4} says that given any positive number, there is a positive number that is greater. Alternatively, we
+      might say that there is no largest positive number. 
+      
+      Adding one is a good strategy for constructing a larger number, but this proposition
       allows equality, not strict inequality.  When possible, choose equality. Our proof
       
        \begin{myproof} Let $y \in \reals_{>0}$. Choose $x = y$. Then $x \in \reals_{>0}$, as 
@@ -218,11 +271,14 @@ positive number that is smaller.  This is an important property of the field of 
    
 
 
-       
+       \ex The next example possibly encourages us to carefully 
+       consider the left to right rule and to make our choices 
+       as naturally as possible.
+
     \begin{prop} For all $x \in \reals_{>0}$ there is $M \in \reals$ such
      that $\frac{1}{x} +1 > M$. 
     \end{prop}
-    \noindent Remember our road map? Since $M$ follows $x$, we can choose $M$ to depend on $x$. We could, for example, 
+    Remember our road map? Since $M$ follows $x$, we can choose $M$ to depend on $x$. We could, for example, 
     choose $M = \frac{1}{x}$. That gives our first proof:
          \begin{myproof} 
       Let $x \in \reals_{>0}$. Choose $M = \frac{1}{x}$. We have
@@ -232,22 +288,23 @@ positive number that is smaller.  This is an important property of the field of 
                                   &\equiv \true.   \qedhere
       \end{align*}
 \end{myproof}
-\noindent And if you like, we can choose $M$ that is independent of $x$; for example    
+And if you like, we can choose $M$ that is independent of $x$; for example    
     \begin{myproof} 
       Let $x \in \reals_{>0}$. Choose $M = 1$. We have
           \begin{align*}
           \left[\frac{1}{x}+1>M \right] &\equiv \left[\frac{1}{x}+1>1\right], &&\text{(substitution for $M$)} \\
                                   &\equiv \left [\frac{1}{x}>0 \right],
-                                  &&\text {(subtract 1)}\\
+                                  &&\text {(subtract 1)} \\
                                   &\equiv \true. &&\text {(Ordered Field Axioms)} \qedhere
       \end{align*}
 \end{myproof}
 
+\ex The next proposition has to do with a function being bounded.
     \begin{prop}
       There is $M \in \reals$ such that for all $x \in \reals_{>0}$,
      we have $\frac{1}{x} + 1 > M$. 
     \end{prop}
-    \noindent In function language, this proposition  says that the function $x \in \reals_{>0} \mapsto 1+\frac{1}{x}$ is bounded below.
+    In function language, this proposition  says that the function $x \in \reals_{>0} \mapsto 1+\frac{1}{x}$ is bounded below.
         A quick graph of $ y = \frac{1}{x} + 1 $ for  $x \in \reals_{>0}$ shows that its graph is above the horizontal line $y = 1$. For $M$, 
     we can choose any number that is one or less.
     
@@ -265,7 +322,8 @@ positive number that is smaller.  This is an important property of the field of 
     \end{myproof}
 
 
-
+    \ex Here is a bit of a mysterious proposition. A key to coming 
+    up with a proof is to think graphically (and that's G from GNAT).
         \begin{prop}
       There is $m \in \reals$ such that for all $x \in \reals$, we 
      have $1 + m(x-1) \leq x^2$. 
@@ -293,6 +351,8 @@ positive number that is smaller.  This is an important property of the field of 
        \end{myproof}
        \noindent If you enjoy crabbed proofs, you can rearrange this as a sequence of implications starting from $0 \leq (x-1)^2$. 
    
+       \ex And just a tiny generalization of the previous proposition.
+
      \begin{prop} For every $a \in \reals$, there is $m \in \reals$ such 
      that for all $x \in \reals$, we have $a^2 + m(x-a) \leq x^2$.
      \end{prop}
@@ -307,6 +367,9 @@ positive number that is smaller.  This is an important property of the field of 
       &\equiv \left[0 \le (x-a)^2\right]. &&\text{factor}  \qedhere
       \end{align*}
   \end{myproof}
+
+  \ex One-to-oneness is a familiar concept. The next proposition 
+  involves this concept.
 
      \begin{prop} For all $x,y \in \reals$, we have $(x^2 = y^2) \implies (x=y)$. 
      \end{prop} 
@@ -323,12 +386,15 @@ positive number that is smaller.  This is an important property of the field of 
      
      \begin{myproof} Choose $x=-1$ and $y=1$. We have $(-1)^2 = 1^2$ and $-1 \neq 1$.      \end{myproof}
 
+     \ex The function that cubes is a well known example of a nonlinear 
+     function that is one-to-one. Let's prove that it is.
+
     \begin{prop} For all $x,y \in \reals$, we have $(x^3 = y^3) \implies (x=y)$. 
       \end{prop}
 \noindent Distilled, this proposition says that the real-valued cubing function is one-to-one. Graphically this is easy to verify, but algebraically, it
 requires the tricky factorization
 \begin{equation*}
-  x^3 - y^3 = (x-y) (x^2+xy+y^2) =  (x-y) \left(x + y/2)^2 + 3 y^2 /4\right).
+  x^3 - y^3 = (x-y) (x^2+x y+y^2) =  (x-y) \left(x + y/2)^2 + 3 y^2 /4\right).
 \end{equation*}
 The factor $\left(x + y/2\right)^2 + 3 y^2 /4$ is a sum of squares (SOS) that only vanishes when $x=0$ and $y=0$.  This fact is the core of
 our proof.
@@ -357,7 +423,7 @@ To prove this, we only need to choose a number that is between 1 and $1+r$. Agai
 
 \end{myproof}
 
-Our next example  shows that when we violate the left-to-right rule, we can generate an  argument that might look OK, but 
+\ex Our next example  shows that when we violate the left-to-right rule, we can generate an  argument that might look OK, but 
 is logically faulty.  Here is an example
 
 \begin{prop} There is $M \in \reals$ such that for all $x \in \reals_{>0}$ we have  $\frac{1}{x} \leq M$.  
@@ -378,7 +444,7 @@ we can construct a faulty proof of this false proposition:
   the value we choose for $M$ is not allowed to depend on $x$. Not only is the proof faulty, but proposition is false.  To show that the 
   truth value of this proposition is false, let's write a correct proof of its negation.  The negation  is 
 
-\begin{prop} For all $M \in \reals$  there is $x \in \reals_{>0}$ such that $\frac{1}{x} >  M$.  \label{px14} \end{prop}
+\begin{prop} For all $M \in \reals$  there is $x \in \reals_{>0}$ such that $\frac{1}{x} >  M$.  \label{p7} \end{prop}
 
 Let's write a proof of  Proposition (\ref{px14}).
 
