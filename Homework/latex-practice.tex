@@ -102,7 +102,7 @@ In symbolic form, Proposition \ref{p1} is
 $\left(\forall x,y \in \reals \right) 
  \left( \exists a \in \reals \right)
 \left(  x < y \implies \left(x < a < y \right) \right)$.  The symbolic form 
-of the proposition is our roadmap. Since $\left(\exists a \in \reals \right)$ follows 
+of the proposition is our road map. Since $\left(\exists a \in \reals \right)$ follows 
 $\left(\forall x,y \in \reals \right)$, what we choose for $a$ is allowed to 
 depend on both $x$ and $y$. The most natural choice for $a$ is the
 arithmetic average. With this, our proof is:
@@ -117,10 +117,9 @@ arithmetic average. With this, our proof is:
           & \equiv \true. && \text{(hypothesis $x < y$)} \qedhere
     \end{align*} 
 \end{myproof}
-In the first line of our proof, the `Suppose` in  `Suppose $x < y$' alerts the reader that a hypothesis follows.
-Each step in this series has a parenthetical remark clarifying the reason for the equivalence. 
-Such remarks can make a proof easier to follow. You are encouraged
-to include such remarks in your proofs.
+In the first line of our proof, the `Suppose' in  `Suppose $x < y$' alerts the reader that a hypothesis follows.
+Each step in the proof has a parenthetical remark clarifying the reason for the equivalence. Such remarks make 
+a proof easier to follow.  You are encouraged to include such remarks in your proofs.
 
 If the fact that the arithmetic average is known to be ``in the middle,'' our proof could end at 
 the second line. It's sometimes a judgment call on whether a fact can be used in a proof. When in doubt, include, don't assume.
@@ -160,8 +159,7 @@ as we intended to do. Compared to our proof that used a series of logical equiva
  the clearest way to write the proof. 
 
 
- \ex In life, order usually matters, and it's certainly true in logic too.
- Let's reverse the order of the qualified statements in Proposition 
+ \ex In life order usually matters, and it's certainly true in logic.  Let's reverse the order of the qualified statements in Proposition 
  (\ref{p1}) and examine its truth value. We have 
 
  \begin{prop}
@@ -198,14 +196,14 @@ Our choice for $y$ needs to be consistent with $x < y$. Our proof is
   \end{equation*}
 \end{myproof}
 
-\ex Our next example looks a great deal like the previous example, 
-but it has an extra twist.
+\ex Our next example looks a great deal like Proposition  (\ref{p1}) where we used the arithmetic average to choose
+a number that was between two given numbers,  but we'll see that this proposition has an extra twist.
 \begin{prop} 
      For all $r \in \reals_{>0}$ there is $x \in [0,1)$ such that $1-r < x$.  \label{p4}
 \end{prop}
 
-In symbolic form, Proposition \ref{p2} is $\left(\forall r  \in \reals_{>0} \right) \left(\exists x \in [0,1)\right) \left (1-r  < x \right)$.
-And since $x \in [0,1)$, additionally we know that $x < 1$.  So the predicate $1-r  < x$ is equivalent to $1-r  < x  < 1$. Now Proposition \ref{p2}
+In symbolic form, Proposition \ref{p4} is $\left(\forall r  \in \reals_{>0} \right) \left(\exists x \in [0,1)\right) \left (1-r  < x \right)$.
+And since $x \in [0,1)$, additionally we know that $x < 1$.  So the predicate $1-r  < x$ is equivalent to $1-r  < x  < 1$. Now Proposition \ref{p4}
 looks a great deal like  Proposition \ref{p1}. Maybe we can simply choose $x$ to be the arithmetic average of $1-r$ and $1$. That is
 choose $x = 1 - \frac{r}{2}$.  But the requirement that $0 < x$ spoils this choice. If $r = 4$, for example, we are choosing $x = -1$. And that's 
 not allowed.    
@@ -227,7 +225,22 @@ Our proof breaks into two cases:
                                   &\equiv \true.   &&(r \geq 1) \qedhere
       \end{align*}
       \end{myproof}
- If you prefer to condense this proof into one case, try choosing $x = \max(\frac{1}{2}, 1-\frac{1}{2})$.
+ If you prefer to condense this proof into one case, we can choose  $x = \max(\frac{1}{2}, 1-\frac{r}{2})$. 
+ 
+     \begin{myproof} Let $r \in \reals_{>0}$. Choose $x = \max(\frac{1}{2}, 1-\frac{r}{2})$.  Then
+     $\frac{1}{2} \leq x$ and  $x  \leq 1-\frac{r}{2}$. But $ r > 0$, so $x \leq 1$. Thus $x \in [0,1)$ as required. We have     
+      \begin{align*}
+       \left[1-r < x \right] &\equiv \left[1-r <  \max \left(\frac{1}{2}, 1-\frac{r}{2} \right)  \right], && \text{(substitution for $x$)} \\
+                                 &\equiv  \left[0 <  \max \left (r - \frac{1}{2}, \frac{r}{2} \right)  \right], && \text{(add $r-1$)} \\
+                                  &\equiv \true.   &&(0 < \nicefrac{r}{2}) \qedhere
+      \end{align*}
+ \end{myproof}
+ \noindent This proof uses the true, but possibly obscure, fact that for all $x,y,z \in \reals$, the equation 
+ \begin{equation*}
+    \max(x,y) - z = \max(x-z, y-z)
+\end{equation*}
+ is an identity.  Additionally, it uses the facts that $\max(x,y) \leq x$ and $\max(x,y) \leq y$.
+ 
 
  \ex   Generically, our next proposition looks like another choose 
  the arithmetic average proof. 
@@ -244,7 +257,7 @@ Our proof breaks into two cases:
                                    &\equiv \true.  &&\text{(x > 0)} \qedhere
       \end{align*}
       \end{myproof}
-Abstracted, Proposition \ref{p3} says that there is no smallest positive number. That is, given any positive number, there is a 
+Abstracted, Proposition \ref{p5} says that there is no smallest positive number. That is, given any positive number, there is a 
 positive number that is smaller.  This is an important property of the field of real numbers.
        
 \ex Our next proposition is the well known fact that there is
@@ -252,7 +265,7 @@ no largest positive number. Specifically
        \begin{prop} For every $y \in \reals_{> 0}$ there is  
         $x \in \reals_{>0}$ such that $y \geq  x$. \label{p6}
       \end{prop}
-      Paraphrased, Proposition \ref{p4} says that given any positive number, there is a positive number that is greater. Alternatively, we
+      Paraphrased, Proposition \ref{p6} says that given any positive number, there is a positive number that is greater. Alternatively, we
       might say that there is no largest positive number. 
       
       Adding one is a good strategy for constructing a larger number, but this proposition
@@ -281,11 +294,11 @@ no largest positive number. Specifically
     Remember our road map? Since $M$ follows $x$, we can choose $M$ to depend on $x$. We could, for example, 
     choose $M = \frac{1}{x}$. That gives our first proof:
          \begin{myproof} 
-      Let $x \in \reals_{>0}$. Choose $M = \frac{1}{x}$. We have
+      Let $x \in \reals_{>0}$. Choose $M = \frac{1}{x}$.  Then $x  \in \reals_{>0}$ as required. We have
           \begin{align*}
           \left[\frac{1}{x}+1>M \right] &\equiv \left[\frac{1}{x}+1> \frac{1}{x} \right], &&\text{(substitution for $M$)} \\
                                   &\equiv \left [1 >0 \right], && \text{(subtract $x$)} \\
-                                  &\equiv \true.   \qedhere
+                                  &\equiv \true.  &&  \qedhere
       \end{align*}
 \end{myproof}
 And if you like, we can choose $M$ that is independent of $x$; for example    
@@ -308,7 +321,7 @@ And if you like, we can choose $M$ that is independent of $x$; for example
         A quick graph of $ y = \frac{1}{x} + 1 $ for  $x \in \reals_{>0}$ shows that its graph is above the horizontal line $y = 1$. For $M$, 
     we can choose any number that is one or less.
     
-    This prostitution is just like the previous one, but with a switched order of the variables.  Order almost always matters, but in this case, it 
+    This proposition  is just like the previous one, but with a switched order of the variables.  Order almost always matters, but in this case, it 
     doesn't. Our proof
     
     \begin{myproof} Choose $M=1$. Let $x  \in \reals_{>0}$, we have
@@ -329,7 +342,7 @@ And if you like, we can choose $M$ that is independent of $x$; for example
      have $1 + m(x-1) \leq x^2$. 
      \end{prop}
      
-      A good way of thinking about this proposition geometrically is to view it as two graphs. In the x-y plane, the graph of  $y = 1 + m(x-1)$, is a line  and the
+      A good way of thinking about this proposition geometrically is to view it as two graphs. In the $xy$ plane, the graph of  $y = 1 + m(x-1)$, is a line  and the
       graph of $y = x^2$  is a parabola.   Both the line  and the parabola contain the point $(x=1,y=1)$. And the 
       condition $1 + m(x-1) \leq x^2$ tells
       us that the line $y = 1 + m(x-1)$ must be below or touching the parabola $y=x^2$.  How can this be? A few quick sketches of lines that
@@ -444,13 +457,13 @@ we can construct a faulty proof of this false proposition:
   the value we choose for $M$ is not allowed to depend on $x$. Not only is the proof faulty, but proposition is false.  To show that the 
   truth value of this proposition is false, let's write a correct proof of its negation.  The negation  is 
 
-\begin{prop} For all $M \in \reals$  there is $x \in \reals_{>0}$ such that $\frac{1}{x} >  M$.  \label{p7} \end{prop}
+\begin{prop} For all $M \in \reals$  there is $x \in \reals_{>0}$ such that $\frac{1}{x} >  M$.  \label{px14} \end{prop}
 
 Let's write a proof of  Proposition (\ref{px14}).
 
 \begin{myproof} Let $M \in \reals$.  Choose $x  = \frac{1}{|M| + 1 }$. Then  $x \in \reals_{>0}$ as required.  We have
 \begin{align*}
-  \left [ \frac{1}{x} < M \right] &\equiv \left[  \frac{1}{\frac{1}{|M| + 1|} } > M   \right], &&\text{(substitution)} \\
+  \left [ \frac{1}{x} > M \right] &\equiv \left[  \frac{1}{\frac{1}{|M| + 1|} } > M   \right], &&\text{(substitution)} \\
                                                       &\equiv \left[|M| + 1 > M \right], &&\text{(algebra)} \\
                                                       &\equiv \true.  &&( M \leq |M|) \qedhere
 \end{align*}
