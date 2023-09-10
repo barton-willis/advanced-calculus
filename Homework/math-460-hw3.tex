@@ -109,11 +109,48 @@ you can take my word.
 \part [10] Find the additive identity for this field. You don't need to show the algebra you used to find the
 additive identity, but you do need to prove that your putative answer is correct.
 
+\begin{solution} We'll show that the additive identity for this 
+  field is $(0,0)$.
+
+  \begin{proof} Let $(a,b) \in \mathcal{F}$, We have
+    \begin{equation*}
+       (a,b) + (0,0) = (a+0, b+0) = (a,b).
+    \end{equation*}
+    So $(0,0)$ is the additive identity for $\mathcal{F}$.
+  \end{proof}
+
+  
+\end{solution}
 \part [10] Find the multiplicative identity for this field. You don't need to show  the algebra you used to find the
 multiplication identity, but you do need to prove that
 your putative answer is correct.
 
-\part [10] Find the multiplicative inverse of $(1,2)$. You don't need to show the algebra you used to find the answer, but you do need to prove that your putative answer is correct.
+\begin{solution}
+We'll show that the multiplicative identity for this 
+  field is $(1,0)$.
+
+  \begin{proof} Let $(a,b) \in \mathcal{F}$, We have
+    \begin{equation*}
+       (a,b) \times (1,0) = (a \times 1 + b \times 0, a \times 0 + b \times 1)
+               = (a,b).
+    \end{equation*}
+    So $(1,0)$ is the multiplicative  identity for $\mathcal{F}$.
+  \end{proof}
+\end{solution}
+\part [10] Find the multiplicative inverse of $(1,2)$. You don't 
+need to show the algebra you used to find the answer, but you do need to prove that your putative answer is correct.
+
+\begin{solution} We'll show that $(1,2)^{-1} = \left( -\frac{1}{7},  \frac{2}{7} \right)$. 
+
+\begin{proof} We have
+\begin{equation*}
+  (1,2) \times \left( -\frac{1}{7},  \frac{2}{7} \right) =
+   \left(-\frac{1}{7} + \frac{8}{7}, \frac{2}{7}  - \frac{2}{7}\right) = (1,0).
+\end{equation*}
+So $(1,2)^{-1} = \left(-\frac{1}{7},  \frac{2}{7} \right)$. \qedhere
+\end{proof}
+\end{solution}
+
 
 \part [10] For $a,b \in     \rat$, a calculation gives
 \begin{equation}
@@ -122,7 +159,10 @@ your putative answer is correct.
 But wait! What's the story if $2 b^2 - a^2 = 0$?  Either, I flubbed and $(\rat \times \rat, +, \times)$
 isn't a field, or the above formula for the inverse is rubbish, or something else. What is the something else?
 
+\begin{solution} Since $\sqrt{2} \notin \rat$, for $a,b \in \rat$, we have $2 b^2 - a^2 = 0$ iff $a=0$ and $b=0$.
+Although the denominator looks like it might vanish, it doesn't vanish unless both $a=0$ and $b=0$.
 
+\end{solution}
 
 \end{parts}
 
