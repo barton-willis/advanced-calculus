@@ -48,8 +48,8 @@
 Many propositions in analysis consist of concatenated `for all' and `there exist'  qualifiers followed by something that has a Boolean value.  
 The part with the Boolean value is called the \emph{predicate}. We'll see that expressing the proposition in symbolic 
 form gives a road map for constructing  a proof. To follow the road map, we to 
-adhere to some rules, and it's best to follow some traditions.  Following rules is 
-needed for correctness,  and using the  traditions makes 
+adhere to some rules, and it's best to follow some traditions.  Following the rules is 
+needed for correctness,  and using the traditions makes 
  our work easier to understand.
 
 For every qualification of the form $\forall x \in A$, our proof includes the sentence `Let $x \in A$.'  Synonyms  for  `let' 
@@ -159,7 +159,7 @@ as we intended to do. Compared to our proof that used a series of logical equiva
  the clearest way to write the proof. 
 
 
- \ex In life order usually matters, and it's certainly true in logic.  Let's reverse the order of the qualified statements in Proposition 
+ \ex In life, order usually matters, and it's certainly true in logic.  Let's reverse the order of the qualified statements in Proposition 
  (\ref{p1}) and examine its truth value. We have 
 
  \begin{prop}
@@ -168,7 +168,7 @@ as we intended to do. Compared to our proof that used a series of logical equiva
 \end{prop}
 This is almost surely false. There is no number that is between 
 any two given distinct numbers. So no, this is false. To show that its false,
-let's prove that it's negation is true. The negation is
+let's prove that its negation is true. The negation is
 
 \begin{prop}
   For all $a \in \reals$ there are  $x,y \in \reals$ such that
@@ -204,8 +204,9 @@ a number that was between two given numbers,  but we'll see that this propositio
 
 In symbolic form, Proposition \ref{p4} is $\left(\forall r  \in \reals_{>0} \right) \left(\exists x \in [0,1)\right) \left (1-r  < x \right)$.
 And since $x \in [0,1)$, additionally we know that $x < 1$.  So the predicate $1-r  < x$ is equivalent to $1-r  < x  < 1$. Now Proposition \ref{p4}
-looks a great deal like  Proposition \ref{p1}. Maybe we can simply choose $x$ to be the arithmetic average of $1-r$ and $1$. That is
-choose $x = 1 - \frac{r}{2}$.  But the requirement that $0 < x$ spoils this choice. If $r = 4$, for example, we are choosing $x = -1$. And that's 
+looks a great deal like  Proposition \ref{p1}. Maybe we can simply 
+choose $x$ to be the arithmetic average of $1-r$ and $1$. That is,
+$x = 1 - \frac{r}{2}$.  But the requirement that $0 < x$ spoils this choice. If $r = 4$, for example, we are choosing $x = -1$. And that's 
 not allowed.    
 
 One way to fix this is to choose $x$ to be the arithmetic average of $1-r$ and $1$ when $r < 1$ and choose $x = \frac{1}{2}$ when $r \geq 1$. 
@@ -228,7 +229,7 @@ Our proof breaks into two cases:
  If you prefer to condense this proof into one case, we can choose  $x = \max(\frac{1}{2}, 1-\frac{r}{2})$. 
  
      \begin{myproof} Let $r \in \reals_{>0}$. Choose $x = \max(\frac{1}{2}, 1-\frac{r}{2})$.  Then
-     $\frac{1}{2} \leq x$ and  $x  \leq 1-\frac{r}{2}$. But $ r > 0$, so $x \leq 1$. Thus $x \in [0,1)$ as required. We have     
+     $\frac{1}{2} \leq x$ and  $x  \leq 1-\frac{r}{2}$. But $ r > 0$, so $x \leq 1$. Thus, $x \in [0,1)$ as required. We have     
       \begin{align*}
        \left[1-r < x \right] &\equiv \left[1-r <  \max \left(\frac{1}{2}, 1-\frac{r}{2} \right)  \right], && \text{(substitution for $x$)} \\
                                  &\equiv  \left[0 <  \max \left (r - \frac{1}{2}, \frac{r}{2} \right)  \right], && \text{(add $r-1$)} \\
