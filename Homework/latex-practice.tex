@@ -464,6 +464,28 @@ Let's write a proof of  Proposition (\ref{px14}).
                                                       &\equiv \left[|M| + 1 > M \right], &&\text{(algebra)} \\
                                                       &\equiv \true.  &&( M \leq |M|) \qedhere
 \end{align*}
-\end{myproof}                                   
+\end{myproof} 
 
+Your teacher has a long history with the final proposition--in the wee hours my second week of graduate school, it defeated me. I took a
+zero on this problem and I thought that maybe I needed to pack my bags and return to a life of manual labor. The proposition is 
+
+\begin{prop} For all $x,y \in \reals$, we have $\displaystyle \frac{|x|}{1 + |x|} +     \frac{|y|}{1 + |y|}  \geq   \frac{|x+y|}{1 + |x+y|}    $.  \end{prop}            
+
+\begin{myproof} Let  $x,y \in \reals$.  We have
+\begin{align*}
+  \left[\frac{|x|}{1 + |x|} +     \frac{|y|}{1 + |y|}  \geq   \frac{|x+y|}{1 + |x+y|}   \right] &\equiv 
+       \left[\frac{|x|}{1 + |x|} +     \frac{|y|}{1 + |y|}  -  \frac{|x+y|}{1 + |x+y|}   \geq 0  \right],  && \mbox{(subtract right from left)} \\
+        &\equiv \left[  \frac{\left( \left| x\right| \, \left| y\right| -1\right) \, \left| y+x\right| +\left( 2 \left| x\right| +1\right) \, \left| y\right| +\left| x\right| }{\left( \left| x\right| +1\right) \, \left( \left| y\right| +1\right) \, \left( \left| y+x\right| +1\right) }\mbox{>  =}0 \right], 
+        && \mbox{(common denominator)}      \\
+        &\equiv \left[ \left( \left| x\right| \, \left| y\right| -1\right) \, \left| y+x\right| +\left( 2 \left| x\right| +1\right) \, \left| y\right| +\left| x\right|  \right], &&\mbox{(denominator is positive)} \\
+        &\equiv \left[  |x y| (2 + |x+y|) + |x| + |y| - |x + y|  \geq 0  \right],  && \mbox{(factor into sum of positive terms)} \\
+        &\equiv \true. \qedhere
+ \end{align*}
+\end{myproof}
+\noindent You should try it, but I think it's terrifically difficult to arrange this proof in the form 
+\begin{equation*} 
+   \frac{|x|}{1 + |x|} +     \frac{|y|}{1 + |y|} \geq \mbox{blob}_1 
+\geq \mbox{blob}_2 \geq \cdots  \geq \mbox{blob}_n  \geq  \frac{|x+y|}{1 + |x+y|}.
+\end{equation*}
+In part, I struggled with this problem because arranging the proof this was the only tool in my toolbox.
 \end{document}
