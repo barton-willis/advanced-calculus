@@ -1,10 +1,11 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage{epsfig}
 \usepackage[]{hyperref}
 \usepackage{geometry}
+
 \geometry{letterpaper, margin=0.5in}
 \addpoints
 \boxedpoints
@@ -76,19 +77,54 @@
 then $A \cup B$ is bounded above.  You may use the fact that for real numbers $a$ and $b$, we have
 $a \leq \max(a,b)$ and $b \leq \max(a,b)$.
 
+\begin{solution}
+\begin{proof} Let  $A$ and $B$ be subsets of $\reals$ that are bounded above. We'll show that $A \cup B$ 
+is bounded above. Since $A$ and $B$ are bounded above, there are $p,q \in \reals$ such that
+for all $a \in A$, we have $a \leq p$ and for all $b \in A$, we have $b \leq q$.  Define $M = \max(p,q)$. 
+We'll show that $M$ is an upper bound for $A \cup B$. Let $x \in A \cup B$. Either $x \in A$ or $x \in B$.
+If $x \in A$, we have $x \leq p \leq M$. Similarly, if If $x \in B$, we have $x \leq q \leq M$. \qedhere
+
+\end{proof}
+\end{solution}
+
 \question Give an example of a subset of $\reals$ that does not have a least upper bound.
 
+\begin{solution} The set $\reals$ is a subset of $\reals$ that does not have a least upper bound.
+\end{solution}
+
 \question Give an example of a subset $A$ of $\reals$ such that $\lub(A) \in A$.
+\begin{solution} We have $\lub((0,1]) = 1$ and $1 \in (0,1])$.
+\end{solution}
 
 \question Give an example of a subset $A$ of $\reals$ such that $\lub(A) \notin A$.
+\begin{solution} We have $\lub((0,1)) = 1$ and $1 \notin (0,1])$.
+\end{solution}
 
 \question Show that $\lub((-\infty, 2)) = 2$.
+
+\begin{solution} We'll show that 2 is an upper bound for $(-\infty, 2)$ and that for all $r \in \reals_{>0}$, 
+there is $a \in (-\infty, 2)$ such that $2 - r < a$.
+
+The fact that 2 is an upper bound for $(-\infty, 2)$ is apparent.  Let $r \in \reals_{>0}$. Choose
+$a = 2 - r/2$. Then $a \in (-\infty, 2)$ as required.  Further since $r >0$, we have $2 - r < 2 - r/2$.
+\end{solution}
 
 
 \question Show that $\lub([0, 2)) = 2$.
 
+\begin{solution} We'll show that 2 is an upper bound for $([0, 2)$ and that for all $r \in \reals_{>0}$, 
+there is $a \in ([0, 2)$ such that $2 - r < a$.
+
+The fact that 2 is an upper bound for $[0, 2)$ is apparent.  Let $r \in \reals_{>0}$. Choose
+$a = \max(1, 2- r/2)$. Then $a \in [0, 2)$ as required.  For $r < 2$, we have $a = 2 - r/2$.
+Since $r > 0$, we have $a < 2$, For $r \geq 2$, we have $a=1$. We have $1 < 2$ as required.
+
+\end{solution}
 \question Let $A$ be a subset of $\reals$. Show that $A$ has at most one least upper bound.
 
+\begin{solution}  See class notes.
+
+\end{solution}
 
 \question Write a proof for
 
@@ -97,11 +133,18 @@ $a \leq \max(a,b)$ and $b \leq \max(a,b)$.
     $x < y$ implies $x<a<y$. \label{p1}   
 \end{prop}
 
+\begin{solution}  See class notes.
+
+\end{solution}
+
 \question Write a proof for
     \begin{prop}   For all $x \in \reals_{>0}$ there is 
       $y \in \reals_{> 0}$ such that $y < x$.  \label{p5}
     \end{prop}
     
+    \begin{solution}  See class notes.
+
+\end{solution}
     
 \question Without explicitly using negation, write the negation of 
         \begin{prop} There are $x,y \in \reals$ such that  $\sin(x) = \sin(y) \implies x = y$. 
@@ -115,10 +158,20 @@ or write a proof of its negation.
 \question Let $(\mathcal{F},+, \times)$ be a field and let $O$ be the additive identity and $I$ be the multiplicative
 identity. Given that $O = I$, show that $\mathcal{F} = \{O\}$.
 
+\begin{solution}  See class notes.
+
+\end{solution}
+
 \question Let $(\mathcal{F},+, \times)$ be a field. Show that for all $a,b \in \mathcal{F}$, we have $a \times b = a \times (-b)$.
 
+\begin{solution}  See class notes.
+
+\end{solution}
 \question Let $(\mathcal{F},+, \times)$ be an ordered  field. For all $a,b,c \in \mathcal{F}$, show that $a < b$ and $c < 0$
 implies $a \times c > b \times c$.
+\begin{solution}  See class notes.
+
+\end{solution}
 
 \question Show that 
 \[
