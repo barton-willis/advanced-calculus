@@ -80,7 +80,7 @@ For example, for the statement
  use functional notion, for example `there is $M(x) \in \reals$.'  If this functional notation helps you, use it. But arguably  
  $M(x) \in \reals$ conflates a real number (in this case $M$) with a function.
 
-We've covered the rules and traditions for `let` and `choose.' What about `suppose'?  When a proof involves `suppose,' generally 
+We've covered the rules and traditions for `let' and `choose.' What about `suppose'?  When a proof involves `suppose,' generally 
 it means that a hypothesis follows the `suppose.' For example, if we are proving a conditional `if $x > 0$, then $x > -1$,' our proof will start with 
 `Suppose $x > 0$.' This language alerts the reader that what follows `suppose' is a hypothesis.  When a proof involves special cases, 
 a proof might also use `suppose' to introduce each case.
@@ -89,7 +89,7 @@ Now we give examples of what we will call a `let/show/suppose' proof.
 
 \section{Examples}
             
-\ex We start with a fairly simple example that says that there is a 
+\ex We start with an example that says that there is a 
 real number that is between any two distinct numbers. Specifically
 the proposition is
 \begin{prop}
@@ -175,7 +175,7 @@ let's prove that its negation is true. The negation is
 To write the negation of the predicate, remember that
 $P \notimplies Q \equiv P \land \lnot Q$. And negating $x<a<y$ is 
 a bit tricky too, but remember that 
-$x<a<y$ is logically equivalent to $(x \leq a) \lor (a \leq y)$. After that 
+$x<a<y$ is logically equivalent to $(x \leq a) \land (a \leq y)$. After that 
 we can find the negation by applying the De Morgan law.
 
 The conclusion of the Proposition (\ref{p3}) is a disjunction.
@@ -224,7 +224,9 @@ Our proof breaks into two cases:
                                   &\equiv \true.   &&(r \geq 1) \qedhere
       \end{align*}
       \end{myproof}
- If you prefer to condense this proof into one case, we can choose  $x = \max(\frac{1}{2}, 1-\frac{r}{2})$. 
+ If you prefer to condense this proof into one case, we can choose  
+ $x = \max(\frac{1}{2}, 1-\frac{r}{2})$. Here is a proof that uses this idea:
+
  
      \begin{myproof} Let $r \in \reals_{>0}$. Choose $x = \max(\frac{1}{2}, 1-\frac{r}{2})$.  Then
      $\frac{1}{2} \leq x$ and  $x  \leq 1-\frac{r}{2}$. But $ r > 0$, so $x \leq 1$. Thus, $x \in [0,1)$ as required. We have     
@@ -239,6 +241,7 @@ Our proof breaks into two cases:
     \max(x,y) - z = \max(x-z, y-z)
 \end{equation*}
  is an identity.  Additionally, it uses the facts that $\max(x,y) \leq x$ and $\max(x,y) \leq y$.
+ 
  
 
  \ex   Generically, our next proposition looks like another choose 
@@ -260,7 +263,7 @@ Abstracted, Proposition \ref{p5} says that there is no smallest positive number.
 positive number that is smaller.  This is an important property of the field of real numbers.
        
 \ex Our next proposition is the well known fact that there is
-no largest positive number. Specifically
+no largest positive number. Specifically, the proposition is
        \begin{prop} For every $y \in \reals_{> 0}$ there is  
         $x \in \reals_{>0}$ such that $y \geq  x$. \label{p6}
       \end{prop}
@@ -321,7 +324,7 @@ And if you like, we can choose $M$ that is independent of $x$; for example
     we can choose any number that is one or less.
     
     This proposition  is just like the previous one, but with a switched order of the variables.  Order almost always matters, but in this case, it 
-    doesn't. Our proof
+    doesn't. Our proof is
     
     \begin{myproof} Choose $M=1$. Let $x  \in \reals_{>0}$, we have
     \begin{align*}
@@ -468,8 +471,9 @@ Let's write a proof of  Proposition (\ref{px14}).
 \end{align*}
 \end{myproof} 
 
-Your teacher has a long history with the final proposition--in the wee hours my second week of graduate school, it defeated me. I took a
-zero on this problem and I thought that maybe I needed to pack my bags and return to a life of manual labor. The proposition is 
+Your teacher has a long history with the final proposition---in the wee hours my second week of graduate school, it defeated me. I took a
+zero on this problem and I thought that maybe I needed to pack my 
+bags and return to my former life doing manual labor. The proposition is 
 
 \begin{prop} For all $x,y \in \reals$, we have $\displaystyle \frac{|x|}{1 + |x|} +     \frac{|y|}{1 + |y|}  \geq   \frac{|x+y|}{1 + |x+y|}    $.  \end{prop}            
 
@@ -479,10 +483,12 @@ zero on this problem and I thought that maybe I needed to pack my bags and retur
        \left[\frac{|x|}{1 + |x|} +     \frac{|y|}{1 + |y|}  -  \frac{|x+y|}{1 + |x+y|}   \geq 0  \right],  && \mbox{(subtract right from left)} \\
         &\equiv \left[  \frac{\left( \left| x\right| \, \left| y\right| -1\right) \, \left| y+x\right| +\left( 2 \left| x\right| +1\right) \, \left| y\right| +\left| x\right| }{\left( \left| x\right| +1\right) \, \left( \left| y\right| +1\right) \, \left( \left| y+x\right| +1\right) }\mbox{>  =}0 \right], 
         && \mbox{(common denominator)}      \\
-        &\equiv \left[ \left( \left| x\right| \, \left| y\right| -1\right) \, \left| y+x\right| +\left( 2 \left| x\right| +1\right) \, \left| y\right| +\left| x\right|  \right], &&\mbox{(denominator is positive)} \\
+        &\equiv \left[ \left( \left| x\right| \, \left| y\right| -1\right) \, \left| y+x\right| +\left( 2 \left| x\right| +1\right) \, \left| y\right| +\left| x\right|  \geq 0 \right], &&\mbox{(denominator is positive)} \\
         &\equiv \left[  |x y| (2 + |x+y|) + |x| + |y| - |x + y|  \geq 0  \right],  && \mbox{(factor into sum of positive terms)} \\
         &\equiv \true. \qedhere
  \end{align*}
+ In the final step, we used the fact that $|x y| (2 + |x+y|) \geq 0$
+ and $|x| + |y| - |x + y| \geq 0$.
 \end{myproof}
 \noindent You should try it, but I think it's terrifically difficult to arrange this proof in the form 
 \begin{equation*} 
