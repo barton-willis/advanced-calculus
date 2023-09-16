@@ -1,0 +1,171 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+\usepackage{url}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{lightgray!15}
+\newenvironment{myproof}
+  {\begin{shaded}\begin{proof}}
+  {\end{proof}\end{shaded}}
+
+\usepackage{amsthm}
+\newtheorem{prop}{Proposition}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\rat}{\mathbf{Q}}
+
+\newcommand{\curly}[1]{\mathcal #1}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\newcommand{\true}{\mathrm{True}}
+
+\usepackage{amsthm}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+  
+\newcommand{\quiz}{4}
+\newcommand{\term}{Fall}
+
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{ \textbf{MATH 460}}
+{\bf Name:}  \\
+\noindent \makebox[3.0truein][l]{\textbf{Homework \quiz, \term \/ \the\year}}
+%{\bf Row:}\hrulefill\
+\vspace{0.1in}
+
+\noindent  Homework \quiz\/  has questions 1 through  \numquestions \/ with a total 
+of  \numpoints\/  points. When I record your grade, I will scale it to twenty points. 
+For details of the grading scheme for this assignment, please see the section 
+`Grading rubric' of our syllabus.
+
+Revise, proofread, revise again (and again), typeset your work using Overleaf, and 
+upload the converted pdf of your compiled file work to Canvas.  
+This work is due \textbf{Saturday 23 September} at 11:59 \PM.
+
+\vspace{0.1in}
+
+\begin{questions}
+
+\question [10] Show that $\left(\forall a,b \in \reals \right)
+\left(\max(a,b) = \frac{a+b+|a-b|}{2}\right)$. One approach is 
+to separately consider the cases $a<b$ and $a \geq b$.
+
+\begin{solution}
+
+\end{solution}
+
+\question [10] Consider the proposition
+
+\begin{prop} For all $a,b \in \reals$, we have $ a < b \implies a^2 < b^2 $. \end{prop}
+
+If the proposition is true, prove it; if not prove that its negation is true.
+
+
+\begin{solution}
+
+\end{solution}
+
+
+
+\question [10] Let $\phi \in \integers_{\geq 0} \mapsto \integers_{\geq 0} $ be strictly increasing. This means that for all
+$k \in \integers_{\geq 0}$, we have $\phi_{k+1} >  \phi_k$.  Show that for all $k \in \integers_{\geq 0}$, we have $\phi_k \geq k$.
+
+\quad To do this, you will need to use induction.  The predicate is
+\begin{equation*}
+   P = k \in \integers_{\geq 0} \mapsto \left[\phi_k \geq k \right].
+\end{equation*}
+The base case is $P(0)$, or  equivalently $\phi_0 \geq 0$.   Once you prove the base case, you need to prove that for all $k \in \integers_{\geq 0}$
+that $P(k) \implies P(k+1)$; equivalently $\left(\phi_k \geq k \right) \implies \left(\phi_{k+1} \geq k+1 \right)$.  
+You might like to use the fact that for integers $k$ and $\ell$, that $ k > \ell \implies k \geq \ell+1$.
+
+\begin{solution}
+
+\end{solution}
+
+\question [10] Show that the sequence 
+    $k \in \integers_{\geq 0} \mapsto \frac{1}{k+1}$.
+converges.
+
+\begin{solution}
+
+\end{solution}
+    
+
+\question [10] Show that the sequence 
+$k \in \integers_{\geq 0} \mapsto \begin{cases}
+k! & k <  10^9 \\ \frac{1}{k+1} & k \geq   10^9 \end{cases}$ converges.
+
+\begin{solution}
+
+\end{solution}
+
+
+
+\question [10] Let $f$ and $g$ be convergent sequences. Show that the sequence
+\begin{equation*}
+   k \in \integers_{\geq 0} \mapsto \max(f_k, g_k)
+\end{equation*}
+converges.  You may use the facts that (a) a sum or difference of convergent
+sequences converges (b) the absolute value of a convergent sequence converges.
+
+
+\end{questions}
+\end{document}
