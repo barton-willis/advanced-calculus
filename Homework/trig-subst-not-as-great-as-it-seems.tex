@@ -1,0 +1,124 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{amssymb,upgreek,isomath,xcolor,amsthm,nicefrac}
+\usepackage[letterpaper, margin=0.7in]{geometry}
+\usepackage[final]{microtype}
+\usepackage[american]{babel}
+\usepackage{fourier}
+\usepackage{fleqn}
+\usepackage[intlimits]{amsmath}
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\true}{\mathrm{True}}
+\newcommand{\false}{\mathrm{False}}
+
+\usepackage{centernot}
+\newcommand{\notimplies}{\centernot\implies}
+% Let's put a proof inside a shaded box
+\usepackage{framed}
+
+\colorlet{shadecolor}{lightgray!15}
+\newenvironment{myproof}
+  {\begin{shaded}\begin{proof}}
+  {\end{proof}\end{shaded}}
+
+\newtheorem{prop}{Proposition}
+
+  \usepackage{enumerate}
+  \newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-0.50\itemsep}}
+  {\end{enumerate}}
+
+\usepackage{calc}
+\newcounter{ex}\setcounter{ex}{0}
+\newcommand{\ex}{%\
+\setcounter{ex}{\value{ex}+1}
+\paragraph{Example \theex}}
+
+\title{What your calculus textbook doesn't tell you about trigonometric substitution}
+
+\author{Barton Willis}
+\begin{document}
+\maketitle
+
+After making multiple bad starts, wasting ten sheets of engineering paper, 
+ and erasing more  than you would like to admit, finally you are confident 
+ that you have correctly used integration by trigonometric substitution and have
+ deduced an impressive looking answer to your first homework question. Your answer
+ is
+ \begin{equation*}
+    \int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}=\frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{9}{2}}}}{2 {{x}^{2}}}-\frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{2}+\frac{7 {{\left( {{x}^{2}}-1\right) }^{\nicefrac{5}{2}}}}{10}-\frac{7 {{\left( {{x}^{2}}-1\right) }^{\nicefrac{3}{2}}}}{6}+\frac{7 (x^2-1)^{\nicefrac{1}{2}}}{2}+\frac{7 \operatorname{arcsin}\left( \frac{1}{x}\right) }{2}.
+\end{equation*}
+But wait! There's more. To add to the punishment, your teacher askes for the value of  
+the definite integral $\int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}$. Easy-peasy, you think.
+Surely after the tortuous trigonometric substitution problem, this should be easy. 
+All you need to do is evaluate
+\begin{equation*}
+  \frac{{{\left( {{10}^{18}}-1\right) }^{\nicefrac{9}{2}}}}{2 {{10}^{18}}}-\frac{{{\left( {{10}^{18}}-1\right) }^{\nicefrac{7}{2}}}}{2}+\frac{7 {{\left( {{10}^{18}}-1\right) }^{\nicefrac{5}{2}}}}{10}-\frac{7 {{\left( {{10}^{18}}-1\right) }^{\nicefrac{3}{2}}}}{6}+\frac{7 (10^{18}-1)^{\nicefrac{1}{2}}}{2}+\frac{7 \operatorname{arcsin}\left( 10^{-18}\right) }{2}
+    - \frac{7 \operatorname{arcsin}\left( 1 \right) }{2}
+\end{equation*}
+You tap this into your nearest computing device and out  pops the answer to an 
+impressive sixteen decimal places; your final answer is
+\begin{equation*}
+    \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
+       \approx 9.204385233318143 \times {{10}^{46}}.
+\end{equation*}
+So you circle this answer and turn it in. Good job, you think--let's very quickly move on to the 
+next question.
+
+Not so fast. Your ten sheets of wasted engineering paper rewarded
+you with full credit for your antiderivative, but your
+decimal approximation earns zero. Although your teacher says that 
+your numerical value isn't \emph{manifestly wrong}, its 
+just shy of being \emph{obviously wrong}. Some thought 
+shows that $0 < \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}}
+< \frac{(x^2)^{\nicefrac{7}{2}}} {x^3} = x^4$. So it must be true that
+\begin{equation*}
+   0 <  \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
+       < \int_1^{10^9} x^4 \, \mathrm{d}x =  \frac{10^{45} - 1 }{5} < 2  \times 10^{44}
+\end{equation*}
+Yikes! Using an exact calculation and some arithmetic, your value 
+for the definite integral is nearly one thousand times larger than
+an easily found upper bound.
+
+What's the story?  Pasting in the upper limit of $10^9$ into our 
+painstakingly determined antiderivative, we need to sum
+\begin{align*}
+&5.000000000000003 \times  {{10}^{62}} - 5.000000000000002  \times 
+{{10}^{62}} + 7.000000000000003 \times {{10}^{44}}  \\
+&-1.1666666666666669 \times {{10}^{27}} + 
+3.5000000000000005 \times {{10}^{9}} + 3.5000000000000003 \times {{10}^{-9}}.
+\end{align*}
+This is an example of what is known as an \emph{ill conditioned sum}, and 
+it's primarily  the first two terms of the sum that are the 
+troublemakers. Each term in this sum is properly rounded to sixteen 
+decimal digits. This means that the relative difference between 
+each term in the sum and its true value is no more than about 
+$10^{-16}$. Specifically, the true value of the first term 
+can be as small as $5.000000000000003 \times  {{10}^{62}} \times
+(1 - 10^{-16})$ or as large as $5.000000000000003 \times  {{10}^{62}} 
+\times (1 + 10^{-16})$. And similarly for the second term.
+
+Putting this together, the sum of the first terms might be as small
+as 
+\begin{equation*}
+  5.000000000000003 \times 10^{62} \times (1 -  10^{-16}) - 5
+   .000000000000002 \times 10^{62} \times  (1  + 10^{-16})
+   \approx -1.1182158029987521 \times 10^{46},
+\end{equation*}
+and as large as 
+\begin{equation*}
+  5.000000000000003 \times 10^{62} \times (1 + 10^{-16}) - 5
+   .000000000000002 \times 10^{62} \times  (1  - 10^{-16})
+   \approx 1.888178419700126 \times {{10}^{47}}
+\end{equation*}
+We don't even know if the sum of the first two terms is negative or 
+positive.
+
+Surely
+
+
+\end{document}
