@@ -64,7 +64,7 @@ You tap this into your nearest computing device and out  pops the answer to an
 impressive sixteen decimal places; your final answer is
 \begin{equation*}
     \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
-       \approx 9.204385233318143 \times {{10}^{46}}.
+       \approx 9.134385233318144 \times {{10}^{46}}.
 \end{equation*}
 So you circle this answer and turn it in. Good job, you think--let's very quickly move on to the 
 next question.
@@ -77,7 +77,7 @@ just shy of being \emph{obviously wrong}. Some thought
 shows that $0 < \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}}
 < \frac{(x^2)^{\nicefrac{7}{2}}} {x^3} = x^4$. So it must be true that
 \begin{equation*}
-   0 <  \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
+   0 <  \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
        < \int_1^{10^9} x^4 \, \mathrm{d}x =  \frac{10^{45} - 1 }{5} < 2  \times 10^{44}
 \end{equation*}
 Yikes! Using an exact calculation and some arithmetic, your value 
@@ -116,9 +116,8 @@ and as large as
    \approx 1.888178419700126 \times {{10}^{47}}
 \end{equation*}
 We don't even know if the sum of the first two terms is negative or 
-positive.
-
-Surely
+positive. We've shown that tiny relative errors two numbers to be
+summed can lead to an large error in their difference.
 
 
 \end{document}
