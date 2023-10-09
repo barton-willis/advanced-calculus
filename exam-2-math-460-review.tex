@@ -1,0 +1,223 @@
+\documentclass[12pt, fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath}
+\usepackage{fleqn}
+\usepackage{epsfig}
+\usepackage{fourier} %{mathptm}
+\usepackage{amssymb, wasysym}
+
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage{color}\shadedsolutions
+\definecolor{SolutionColor}{rgb}{1,1,0.7}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\bp}{\mathrm{bp}}
+\newcommand{\lp}{\mathrm{lp}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\True}{\mathrm{True}}
+\newenvironment{handlist}{
+  \begin{enumerate}[\leftthumbsup]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle \stackrel{\bullet}{{}}}\,}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{{\bf Advanced Calculus}}
+{\bf Name:}\hrulefill\
+\noindent \makebox[3.0truein][l]{\bf Exam II Review, \today}
+{\bf Row and Seat:}\hrulefill\
+%\normalsize
+
+\vspace{0.1in}
+
+\small
+\noindent \emph{``All students are enjoined in the strongest possible terms to eschew proofs by contradition!} \hfill \mbox{{\sc H.L Royden} \emph{Real Analysis}}
+\normalsize
+\begin{questions}
+
+\question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto 8 - \frac{1}{k}$ is
+bounded above.
+\begin{solution}We'll show that $F$ is bounded above by 8. Let $k \in \integers_{\geq 1} $. We have
+\begin{align*}
+ \left[ 8 - \frac{1}{k} < 8 \right] &\equiv \left[  0 <  \frac{1}{k} \right], && \mbox{(add $ \frac{1}{k} -8$)} \\
+                                               & \equiv \left[  0 < 1 \right], && \mbox{(multiply by $k$)} \\
+  &\equiv \True.
+\end{align*}
+
+\end{solution}
+\question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto \frac{(-1)^k}{k^2}$ converges.
+\begin{solution} We'll show that
+\begin{equation}
+ \left(\exists L \in \reals \right)
+ \left(\forall \varepsilon \in \reals\right)
+ \left(\exists N \in \integers\right)
+ \left(\forall k \in \integers_{>N} \right)
+ \left(|F_k - L | < \varepsilon\right).
+\end{equation}
+Choose $L = 0$. Let  $\varepsilon \in \reals$. Choose $N =  \lceil \sqrt{\frac{1}{\varepsilon}} \rceil $. 
+Then $N \in \integers$ as required.  Let $k \in \integers_{> N}$. We have
+\begin{align*}
+   |F_k -L | &= |\frac{(-1)^k}{k^2}|, \\
+                 &= \frac{1}{k^2}, \\
+                 &< \frac{1}{N^2}, \\
+                 &=  \frac{1}{\lceil \sqrt{\frac{1}{\varepsilon}} \rceil^2}, \\
+                 &\leq \frac{1}{\sqrt{\frac{1}{\varepsilon}}^2}, 
+                 &= \varepsilon.
+\end{align*}
+\end{solution}
+\question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto \begin{cases} k! & k < 10^9 \\
+\frac{(-1)^k}{k^2} & k \geq 10^9 \end{cases}$ converges.
+
+\begin{solution} This is just like the previous problem, but we need to choose $N = \max(10^9,  \lceil \sqrt{\frac{1}{\varepsilon}} \rceil)$.
+
+\end{solution}
+
+\question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto \frac{3 k+ 1}{2 k + 8}$ converges.
+
+
+\question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto k - 3 \lfloor \frac{k}{3} \rfloor $ does 
+not converge to $1$.
+
+
+\question Using the definition from the QRS, show that the interval $(-\infty, 8)$ is open.
+
+\question Let $A \subset \reals$.  Using the definition of an open set in the QRS, write
+the undefintion of an open set. That is, complete the statement:
+\begin{equation*}
+  A \text{ is not open} \equiv 
+\end{equation*}
+
+\question Using the undefition from the previous question, show that the set \mbox{$(-\infty, 8) \cup \{9 \}$} is
+not open.
+
+\question Let $A \subset \reals$.  Using the definition of a limit point in the QRS, write
+the undefintion of limit point. That is, complete the statement:
+\begin{equation*}
+  x \not \in \lp(A) \equiv 
+\end{equation*}
+\question  Use your undefinition from the previous question to show that \(5 \notin  \lp (\integers)\).
+
+
+\begin{solution}%[1.5in]
+
+\end{solution}
+
+\question  Use the QRS defintion of a \emph{boundary point} to show that $12 \in \bp((0,12))$.
+
+
+\begin{solution}%[2.5in]
+Let \(\delta\) be a positive number, and let \(x^\star = \begin{cases} 12 - \delta/2 & \delta < 24 \\
+                                                                      6  & \delta \geq 24 
+\end{cases}\). Then \(x^\star \in (12-\delta, 12+ \delta)\) and \(x^\star \in (0,12)\). Further
+we have \(12 + \delta /2 \notin (0,12)\) and \(12 + \delta/2 \in (12-\delta, 12+ \delta)\).
+
+\textbf{Alternative} For every positive number \(\delta\), we have
+\( (0,12) \cap B(12, \delta)  = (\mbox{max} \{0, 12 - \delta \}, 12) \neq \varnothing\). 
+Further \( (0,12)^C \cap B(12, \delta)  = (12, 12 + \delta) \neq \varnothing\). 
+
+\end{solution}
+
+\question  Use the result of the previous question to show that \((0,12)\) is not
+closed.
+
+\begin{solution}%[1.0in]
+A closed set contains all of its boundry points. We showed that 12 is a boundry point \((0,12)\), but
+\(12 \notin (0,12)\); therefore \((0,12)\) is not closed.
+\end{solution}
+
+
+\question  Show that the set \(\reals\) is not compact by 
+showing that there is an open cover of \( \reals \) that has no
+finite subcover.
+
+
+\question  Show that the set \(\mathbf{Z}\) is not compact by 
+showing that there is an open cover of \( \mathbf{Z} \) that has no
+finite subcover.
+
+\begin{solution}%[3.5in]
+  Define \(\mathcal{C} = \{(0,k) \subset \reals \, | \, k \in \mathbf{N}\). Since 
+  \(\underset{x \in \mathcal{C}}{\cap} x = (0,\infty)\), the set \(\mathcal{C}\)
+is a cover for  \(\mathbf{N}\). Let  \(\mathcal{C}^\prime\) be any finite subset
+of  \(\mathcal{C}\). Then \(\underset{x \in \mathcal{C}^\prime}{\cap} x\) is
+bounded because it's a finite union of bounded sets.  But \(\mathbf{N}\) isn't
+bounded, so \(\mathbf{N} \not \subset \underset{x \in \mathcal{C}^\prime}{\cap} x\);
+therefore \(\mathbf{N}\) isn't compact.
+\end{solution}
+
+%\newpage
+
+\question Let \(F\) be a convergent sequence, and let \(\alpha \in
+\reals\).  Show that \(\alpha F\) is a convergent sequence.
+
+
+
+\begin{solution}%[3.0in]
+Let \(\varepsilon > 0\). Since \(f\) converges, there is a number \(L\) and 
+\(M \in \mathbf{N}\) such that for all \(k > M\), we have \(|f_k - L| < \frac{\varepsilon}{1 + |\alpha|}\).
+For all \(k > M\), we have
+\[
+  |\alpha f_k - \alpha L| = |\alpha| |f_k - L|
+                          < \frac{ |\alpha|}{1 + |\alpha|} \varepsilon
+                          < \varepsilon.
+\]
+
+\end{solution}
+
+\question Let $F$ be a convergent sequence and suppose $\range(F) \subset([0,\infty))$. Show that $\sqrt{F}$ converges.
+You may use the fact that $\left(\forall x,y \in \reals_{\geq 0}\right)  (| \sqrt{x} - \sqrt{y} | \leq \sqrt{|x - y|} )$
+
+\begin{solution}
+Let \(\varepsilon > 0\). Define \(\delta = \mbox{min}\{1, \varepsilon^2 / 5\}\). 
+For \(x \in B^\prime(2, \delta)\), we
+have \(x - 2 \in [-1,1]\). Thus \(x + 2 \in [3,5]\); consequently
+\(|x+2| \leq 5\). Again, for \(x \in B^\prime(2, \delta)\), we have
+\begin{align*}
+  |\sqrt{1+x^2} - \sqrt{5} | &\leq \sqrt{|x^2 - 4|}, \\ 
+                             &= \sqrt{|x + 2|} \sqrt{|x - 2|}, \\
+                             &< \sqrt{5 \delta}, \\
+                             &< \varepsilon.
+\end{align*}
+\end{solution}
+
+\question For the sequence $F  = k \in \integers_{\geq 0} \mapsto k - 3 \lfloor \frac{k}{3} \rfloor $, give three examples of
+a convergent subsequence.
+
+\question Give an example of a sequence $F$ and a real number $\alpha$ such that $\alpha F$ converges and $F$ diverges.
+\begin{solution} Choose $F = k \in \integers_{\geq 0} \mapsto k$ and choose $\alpha = 0$. Then $F$ diverges but $0F$ 
+converges.
+\end{solution}
+ \question Give an example of sequences $F$ and $G$ such that both $F$ and $G$ diverge, but $F+ G$ converges.
+ \begin{solution} Choose $F = k \in \integers_{\geq 0} \mapsto k$ and $F = k \in \integers_{\geq 0} \mapsto -k$.
+ Both $F$ and $G$ diverge, but $F+G$ converges.
+ \end{solution}
+ 
+  \question Give an example of sequences $F$ and $G$ such that both $F$ and $G$ diverge, but $F G$ converges.
+ \begin{solution} Choose $F = k \in \integers_{\geq 0} \mapsto (-1)^k$ and $G = k \in \integers_{\geq 0} \mapsto (-1)^k$.
+ Both $F$ and $G$ diverge, but $F G =  k \in \integers_{\geq 0} \mapsto 1$ converges.
+ \end{solution}
+\question Show that $\left(\forall x,y \in \reals_{\geq 0}\right)(\sqrt{x+y} \leq \sqrt{x} +\sqrt{y})$.
+
+\begin{solution} We begin by proving that $\left(\forall x,y \in \reals_{\geq 0}\right)(\sqrt{x^2 + y^2} \leq x + y) $.
+Let $x,y \in \reals_{\geq 0}$. We have
+\begin{align*}
+\sqrt{x^2 + y^2} &= \sqrt{x^2 + 2 x y  y^2 - 2 x y}, &&\mbox{(add and subtract)} \\
+                           &= \sqrt{(x + y)^2 - 2 x y}, &&\mbox{(algebra)} \\
+                           &\leq \sqrt{(x + y)^2}, &&\mbox{(squre root function is increasing} \\
+                           &= x + y.  &&\mbox{(algebra)} 
+\end{align*}
+To finish the proof, we replace $x \to \sqrt{x}$ and  $y \to \sqrt{y}$ in the above. This yields
+$\sqrt{x+y} \leq \sqrt{x} + \sqrt{y}$.
+
+\end{solution}
+\end{questions}
+\end{document}

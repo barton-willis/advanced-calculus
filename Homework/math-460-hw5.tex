@@ -1,0 +1,180 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+\usepackage{url}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{lightgray!15}
+\newenvironment{myproof}
+  {\begin{shaded}\begin{proof}}
+  {\end{proof}\end{shaded}}
+
+\usepackage{amsthm}
+\newtheorem{prop}{Proposition}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\rat}{\mathbf{Q}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\curly}[1]{\mathcal #1}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\newcommand{\true}{\mathrm{True}}
+
+\usepackage{amsthm}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+  
+\newcommand{\quiz}{5}
+\newcommand{\term}{Fall}
+
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{ \textbf{MATH 460}}
+{\bf Name:}  \\
+\noindent \makebox[3.0truein][l]{\textbf{Homework \quiz, \term \/ \the\year}}
+%{\bf Row:}\hrulefill\
+\vspace{0.1in}
+
+\noindent  Homework \quiz\/  has questions 1 through  \numquestions \/ with a total 
+of  \numpoints\/  points. When I record your grade, I will scale it to twenty points. 
+For details of the grading scheme for this assignment, please see the section 
+`Grading rubric' of our syllabus.
+
+Revise, proofread, revise again (and again), typeset your work using Overleaf, and 
+upload the converted pdf of your compiled file work to Canvas.  
+This work is due \textbf{Saturday 30 September} at 11:59 \PM.
+
+\vspace{0.1in}
+
+\begin{questions}
+
+
+\question [10] Let $F$ and $G$ be sequences each with
+domain $\integers_{\geq 0}$ and suppose that 
+\begin{equation*}
+     \left(\forall k \in \integers_{\geq 0}\right) \left(F_k < G_k\right)
+\end{equation*}
+Show that if $G$ is bounded above, then $F$ is bounded above.
+
+\begin{solution}
+
+    
+\end{solution}
+
+\question [10] Let $F$ and $G$ be sequences each with
+domain $\integers_{\geq 0}$ and suppose that 
+\begin{equation*}
+     \left(\forall k \in \integers_{\geq 0}\right) \left(F_k < G_k\right)
+\end{equation*}
+Show that if $F$ is not bounded above, then $G$ is not bounded above.
+
+\begin{solution}
+\end{solution}
+ \question [10] Show that the sequence $n \in \integers_{\geq 1} \mapsto 
+ \sum_{k=1}^n \left(\ln(k+1) - \ln(k)\right)$ is not bounded above.
+You may freely use the fact that the sequence $k \in \integers_{\geq 1} \mapsto \ln(k+1)$
+is not bounded above.
+\begin{solution}
+\end{solution}
+\question[10] Use Desmos to draw  graphs of both $y=1/x$ and $y = \ln(x+1) - \ln(x)$ for 
+$1 \leq x \leq 5$. Use your graph to conjecture whether $1/x > \ln(x+1) - \ln(x)$
+or $1/x < \ln(x+1) - \ln(x)$ for all $x \in [1, \infty]$. Include
+your graph along with your conjecture.
+
+Notice: One way to prove this is to use a MVT (mean value theorem). 
+Since we're not there yet, for now, we'll use graphical evidence as 
+a fairly convincing argument.
+
+\begin{solution}
+% Use  Desmos to create and export a graph, save as a png file 
+% (its name will % be something like desmos-graph(1).png. Upload 
+% the graph to overleaf, and change the name of "imagefile" to 
+% the name of  the desmos graph. You might need to adjust the
+% scale from 0.2 to something else.
+%\includegraphics[scale=0.2]{imagefile}
+\end{solution}
+
+\question[10] Show that the sequence 
+$n \in \integers_{\geq 1} \mapsto 
+\sum_{k=1}^n \frac{1}{k}$ is not bounded above. Use the result from 
+the previous question.
+
+You may freely use the fact: Let $F$ and $G$ be sequences and suppose 
+that for all $k \in \integers_{\geq 0}$ we have $F_k < G_k$, then
+for all $n \in \integers_{\geq 0}$ we have 
+$\sum_{k=1}^n F_k < \sum_{k=1}^n G_k$. 
+
+\begin{solution}
+
+    
+\end{solution}
+\question[10] Show that the sequence $n \in \integers_{\geq 1} \mapsto 
+\sum_{k=1}^n \frac{1}{k}$ does not converge.
+\begin{solution}
+\end{solution}
+
+\question[10] Let $F$ be a sequence that converges to zero; 
+further suppose that $\range(F) \subset [0,\infty]$. Show that $\sqrt{F}$
+converges to zero. We define $\sqrt{F} = k \in \integers_{\geq 0} 
+\mapsto \sqrt{F_k}$.
+\begin{solution}
+\end{solution}
+
+\end{questions}
+\end{document}
