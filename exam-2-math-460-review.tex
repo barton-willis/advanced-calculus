@@ -1,7 +1,7 @@
 \documentclass[12pt, fleqn, answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
-\usepackage{amsmath}
+\usepackage{amsmath,amsthm}
 \usepackage{fleqn}
 \usepackage{epsfig}
 \usepackage{fourier} %{mathptm}
@@ -21,6 +21,7 @@
 \newcommand{\lp}{\mathrm{lp}}
 \newcommand{\range}{\mathrm{range}}
 \newcommand{\True}{\mathrm{True}}
+\newcommand{\ball}{\mathrm{ball}}
 \newenvironment{handlist}{
   \begin{enumerate}[\leftthumbsup]
     \addtolength{\itemsep}{-1.0\itemsep}}
@@ -83,12 +84,60 @@ Then $N \in \integers$ as required.  Let $k \in \integers_{> N}$. We have
 
 \question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto \frac{3 k+ 1}{2 k + 8}$ converges.
 
+\begin{solution}
+\begin{proof} We'll show that $F$ converges to $\frac{3}{2}$. Specifically,
+  we'll show that 
+  \begin{equation*}
+    \left(\varepsilon \in \reals_{> 0} \right)
+    \left(\exists N \in \integers_{> 0} \right)
+    \left(\forall k \in \integers_{> N} \right)
+   \left( \left| \frac{ 3k+1}{2 k + 8} - \frac{3}{2} \right| < \varepsilon \right).
+  \end{equation*}
+Let $\varepsilon \in \reals_{> 0}$. Choose $N = \lceil \frac{11}{2 \varepsilon} \rceil$.
+Then as required, $N \in \integers_{> 0}$. Let $k \in \integers_{>N}$. 
+We have
+\begin{align*}
+ \left| \frac{ 3k+1}{2 k + 8} - \frac{3}{2} \right| &= \frac{11}{2 \left( k\operatorname{+}4\right) }, 
+                &&\mbox{(\text{ algebra})},\\
+                &< \frac{11}{2 N}, && (k > N) \\
+                &=  \frac{11}{2 \lceil \frac{11}{2} \rceil}, && \mbox{(substitution)} \\
+                &\leq \frac{11}{2 \frac{11}{2 \varepsilon}},  && \mbox{(ceiling function property)} \\
+                &=  \varepsilon. &&\mbox{(\text{ algebra})},
+\end{align*}
 
+\end{proof}
+\end{solution}
 \question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto k - 3 \lfloor \frac{k}{3} \rfloor $ does 
 not converge to $1$.
 
+\begin{solution}
+\begin{proof}  We'll show that
+\begin{equation*}
+  \left(\exists \varepsilon \in \reals_{> 0} \right)
+  \left(\forall  N \in \integers_{> 0} \right)
+   \left(\exists  k \in \integers_{> N} \right)
+   \left(  | F_k - 1 | \geq \varepsilon \right)
+\end{equation*}
+Choose $\varepsilon = \frac{1}{2}$. Let $N \in \integers_{>0}$. Choose $k = 3 N$. Then $k \in \in \integers_{> N}$
+as required. We have $|F_k - 1| = |F_{3 N} -1 | = 1 > \varepsilon$
+\end{proof}
+\end{solution}
 
 \question Using the definition from the QRS, show that the interval $(-\infty, 8)$ is open.
+
+\begin{solution}
+\begin{proof} We'll show that 
+\begin{equation*}
+   \left(\forall x \in (-\infty, 8)\right) \left(\exists r \in \reals_{>0}\right)(\ball(x,r)  \subset (-\infty, 8))
+\end{equation*}
+Let $x \in   (-\infty, 8)$. Choose $r = 4 - \frac{x}{2}$. Since $x < 8$, we have $r > 0$, as required.  
+We have 
+\begin{equation*}
+x + r = x + 4  - \frac{x}{2} = \frac{x}{2} + 4 < \frac{8}{2} + 4 = 8.
+\end{equation*}
+So $\ball(x,r)  \subset (-\infty, 8)$.
+\end{proof}
+\end{solution}
 
 \question Let $A \subset \reals$.  Using the definition of an open set in the QRS, write
 the undefintion of an open set. That is, complete the statement:
@@ -96,9 +145,19 @@ the undefintion of an open set. That is, complete the statement:
   A \text{ is not open} \equiv 
 \end{equation*}
 
+\begin{solution}
+\begin{equation*}
+  A \text{ is not open} \equiv \left(\exists a \in A\right) \left(\forall r \in \reals_{>0}\right) \left(\ball(a,r) \not \subset A \right).
+ \end{equation*}
+\end{solution}
 \question Using the undefition from the previous question, show that the set \mbox{$(-\infty, 8) \cup \{9 \}$} is
 not open.
 
+\begin{solution}
+\begin{proof}
+Choose $a = 9$. Let $r \in \reals_{>0}$. Then $\ball(9,r) \not \subset (-\infty, 8) \cup \{9 \}$.
+\end{proof}
+\end{solution}
 \question Let $A \subset \reals$.  Using the definition of a limit point in the QRS, write
 the undefintion of limit point. That is, complete the statement:
 \begin{equation*}
@@ -139,6 +198,9 @@ A closed set contains all of its boundary points. We showed that 12 is a boundar
 showing that there is an open cover of \( \reals \) that has no
 finite subcover.
 
+\begin{solution} See classnotes for Monday 9 October.
+
+\end{solution}
 
 \question  Show that the set \(\mathbf{Z}\) is not compact by 
 showing that there is an open cover of \( \mathbf{Z} \) that has no
