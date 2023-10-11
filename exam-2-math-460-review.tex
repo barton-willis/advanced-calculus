@@ -6,7 +6,7 @@
 \usepackage{epsfig}
 \usepackage{fourier} %{mathptm}
 \usepackage{amssymb, wasysym}
-
+\usepackage{nicefrac}
 \addpoints
 \boxedpoints
 \pointsinmargin
@@ -47,38 +47,47 @@
 
 \question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto 8 - \frac{1}{k}$ is
 bounded above.
-\begin{solution}We'll show that $F$ is bounded above by 8. Let $k \in \integers_{\geq 1} $. We have
+\begin{solution} 
+  \begin{proof}
+  To show that $F$ is bounded, we need to show that 
+  \begin{equation*}
+     \left(\exists M \in \reals\right)
+     \left(\forall k \in \integers_{\geq 1} \right)
+     \left(F_k < M\right).
+  \end{equation*}
+  Choose $M = 8$. Let $k \in \integers_{\geq 1} $. We have
 \begin{align*}
- \left[ 8 - \frac{1}{k} < 8 \right] &\equiv \left[  0 <  \frac{1}{k} \right], && \mbox{(add $ \frac{1}{k} -8$)} \\
+ \left[ 8 - \frac{1}{k} < 8 \right] &\equiv \left[  0 <  \frac{1}{k} \right], && \mbox{(add $ \nicefrac{1}{k} -8$)} \\
                                                & \equiv \left[  0 < 1 \right], && \mbox{(multiply by $k$)} \\
-  &\equiv \True.
+  &\equiv \True. \qedhere
 \end{align*}
-
+\end{proof}
 \end{solution}
 \question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto \frac{(-1)^k}{k^2}$ converges.
 \begin{solution} We'll show that
-\begin{equation}
+\begin{equation*}
  \left(\exists L \in \reals \right)
  \left(\forall \varepsilon \in \reals\right)
- \left(\exists N \in \integers\right)
+ \left(\exists N \in \integers_{>0}\right)
  \left(\forall k \in \integers_{>N} \right)
  \left(|F_k - L | < \varepsilon\right).
-\end{equation}
-Choose $L = 0$. Let  $\varepsilon \in \reals$. Choose $N =  \lceil \sqrt{\frac{1}{\varepsilon}} \rceil $. 
-Then $N \in \integers$ as required.  Let $k \in \integers_{> N}$. We have
+\end{equation*}
+Choose $L = 0$. Let  $\varepsilon \in \reals$. Choose $N =  \left \lceil 
+\sqrt{\frac{1}{\varepsilon}} \right \rceil $. 
+Then $N \in \integers_{>0}$ as required.  Let $k \in \integers_{> N}$. We have
 \begin{align*}
-   |F_k -L | &= |\frac{(-1)^k}{k^2}|, \\
+   |F_k -L | &= \left|\frac{(-1)^k}{k^2} \right|, \\
                  &= \frac{1}{k^2}, \\
                  &< \frac{1}{N^2}, \\
-                 &=  \frac{1}{\lceil \sqrt{\frac{1}{\varepsilon}} \rceil^2}, \\
-                 &\leq \frac{1}{\sqrt{\frac{1}{\varepsilon}}^2}, 
+                 &=  \frac{1}{\left \lceil \sqrt{\frac{1}{\varepsilon}} \right \rceil^2}, \\
+                 &\leq \frac{1}{\sqrt{\frac{1}{\varepsilon}}^2}, \\
                  &= \varepsilon.
 \end{align*}
 \end{solution}
 \question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto \begin{cases} k! & k < 10^9 \\
 \frac{(-1)^k}{k^2} & k \geq 10^9 \end{cases}$ converges.
 
-\begin{solution} This is just like the previous problem, but we need to choose $N = \max(10^9,  \lceil \sqrt{\frac{1}{\varepsilon}} \rceil)$.
+\begin{solution} This is just like the previous problem, but we need to choose $N = \max(10^9,  \left \lceil \sqrt{\frac{1}{\varepsilon}} \right \rceil)$.
 
 \end{solution}
 
@@ -88,21 +97,21 @@ Then $N \in \integers$ as required.  Let $k \in \integers_{> N}$. We have
 \begin{proof} We'll show that $F$ converges to $\frac{3}{2}$. Specifically,
   we'll show that 
   \begin{equation*}
-    \left(\varepsilon \in \reals_{> 0} \right)
+    \left(\forall \varepsilon \in \reals_{> 0} \right)
     \left(\exists N \in \integers_{> 0} \right)
     \left(\forall k \in \integers_{> N} \right)
    \left( \left| \frac{ 3k+1}{2 k + 8} - \frac{3}{2} \right| < \varepsilon \right).
   \end{equation*}
-Let $\varepsilon \in \reals_{> 0}$. Choose $N = \lceil \frac{11}{2 \varepsilon} \rceil$.
+Let $\varepsilon \in \reals_{> 0}$. Choose $N = \left \lceil \frac{11}{2 \varepsilon} \right \rceil$.
 Then as required, $N \in \integers_{> 0}$. Let $k \in \integers_{>N}$. 
 We have
 \begin{align*}
  \left| \frac{ 3k+1}{2 k + 8} - \frac{3}{2} \right| &= \frac{11}{2 \left( k\operatorname{+}4\right) }, 
-                &&\mbox{(\text{ algebra})},\\
-                &< \frac{11}{2 N}, && (k > N) \\
-                &=  \frac{11}{2 \lceil \frac{11}{2} \rceil}, && \mbox{(substitution)} \\
+                &&\mbox{(\text{ algebra})}\\
+                &< \frac{11}{2 N}, && (k + 4 > N) \\
+                &=  \frac{11}{2 \lceil \frac{11}{2} \rceil}, && \mbox{(substitution for $N$)} \\
                 &\leq \frac{11}{2 \frac{11}{2 \varepsilon}},  && \mbox{(ceiling function property)} \\
-                &=  \varepsilon. &&\mbox{(\text{ algebra})},
+                &=  \varepsilon. &&\mbox{(\text{ algebra})} \qedhere
 \end{align*}
 
 \end{proof}
@@ -116,9 +125,9 @@ not converge to $1$.
   \left(\exists \varepsilon \in \reals_{> 0} \right)
   \left(\forall  N \in \integers_{> 0} \right)
    \left(\exists  k \in \integers_{> N} \right)
-   \left(  | F_k - 1 | \geq \varepsilon \right)
+   \left(  | F_k - 1 | \geq \varepsilon \right).
 \end{equation*}
-Choose $\varepsilon = \frac{1}{2}$. Let $N \in \integers_{>0}$. Choose $k = 3 N$. Then $k \in \in \integers_{> N}$
+Choose $\varepsilon = \frac{1}{2}$. Let $N \in \integers_{>0}$. Choose $k = 3 N$. Then $k  \in \integers_{> N}$
 as required. We have $|F_k - 1| = |F_{3 N} -1 | = 1 > \varepsilon$
 \end{proof}
 \end{solution}
@@ -163,10 +172,26 @@ the undefintion of limit point. That is, complete the statement:
 \begin{equation*}
   x \not \in \lp(A) \equiv 
 \end{equation*}
+
+\begin{solution}
+  \begin{equation*}
+    x \not \in \lp(A) \equiv  \left(\exists r \in \reals_{>0} \right)
+    \left(\ball^\prime(x,r) \cap A = \varnothing \right).
+  \end{equation*}
+\end{solution}
 \question  Use your undefinition from the previous question to show that \(5 \notin  \lp (\integers)\).
 
 
-\begin{solution}%[1.5in]
+\begin{solution}%[1.5in] 
+  We'll show that
+  \begin{equation*}
+  \left(\exists r \in \reals_{>0} \right)
+  \left(\ball^\prime(5,r) \cap \integers = \varnothing \right).
+  \end{equation*}
+  Choose $r = \frac{1}{2}$. We have $\ball^\prime(5,r) = \ball^\prime(5,1/5) 
+  = (5-\frac{1}{2}, 5) \cup (5, 5+\frac{1}{2})$. So $\ball^\prime(5,1/2)
+  \cap \integers = \varnothing$.
+  
 
 \end{solution}
 
@@ -174,14 +199,10 @@ the undefintion of limit point. That is, complete the statement:
 
 
 \begin{solution}%[2.5in]
-Let \(\delta\) be a positive number, and let \(x^\star = \begin{cases} 12 - \delta/2 & \delta < 24 \\
-                                                                      6  & \delta \geq 24 
-\end{cases}\). Then \(x^\star \in (12-\delta, 12+ \delta)\) and \(x^\star \in (0,12)\). Further
-we have \(12 + \delta /2 \notin (0,12)\) and \(12 + \delta/2 \in (12-\delta, 12+ \delta)\).
-
-\textbf{Alternative} For every positive number \(\delta\), we have
-\( (0,12) \cap B(12, \delta)  = (\mbox{max} \{0, 12 - \delta \}, 12) \neq \varnothing\). 
-Further \( (0,12)^C \cap B(12, \delta)  = (12, 12 + \delta) \neq \varnothing\). 
+Let \(r\) be a positive number, and let \(x^\star = \begin{cases} 12 - r/2 & r < 24 \\
+                                                                      6  & r \geq 24 
+\end{cases}\). Then \(x^\star \in (12-r, 12+ r)\) and \(x^\star \in (0,12)\). Further
+we have \(12 + r /2 \notin (0,12)\) and \(12 + r/2 \in (12-r, 12+ r)\).
 
 \end{solution}
 
@@ -207,13 +228,13 @@ showing that there is an open cover of \( \mathbf{Z} \) that has no
 finite subcover.
 
 \begin{solution}%[3.5in]
-  Define \(\mathcal{C} = \{(0,k) \subset \reals \, | \, k \in \mathbf{N}\). Since 
-  \(\underset{x \in \mathcal{C}}{\cap} x = (0,\infty)\), the set \(\mathcal{C}\)
+  Define \(\mathcal{C} = \{(-k,k) \subset \reals \, | \, k \in \mathbf{\integers_{>0}}\). Since 
+  \(\underset{x \in \mathcal{C}}{\cup} x = (0,\infty)\), the set \(\mathcal{C}\)
 is a cover for  \(\mathbf{N}\). Let  \(\mathcal{C}^\prime\) be any finite subset
-of  \(\mathcal{C}\). Then \(\underset{x \in \mathcal{C}^\prime}{\cap} x\) is
-bounded because it's a finite union of bounded sets.  But \(\mathbf{N}\) isn't
-bounded, so \(\mathbf{N} \not \subset \underset{x \in \mathcal{C}^\prime}{\cap} x\);
-therefore \(\mathbf{N}\) isn't compact.
+of  \(\mathcal{C}\). Then \(\underset{x \in \mathcal{C}^\prime}{\cup} x\) is
+bounded because it's a finite union of bounded sets.  But \(\mathbf{\integers}\) isn't
+bounded, so \(\mathbf{\integers} \not \subset \underset{x \in \mathcal{C}^\prime}{\cup} x\);
+therefore \(\mathbf{\integers}\) isn't compact.
 \end{solution}
 
 %\newpage
@@ -239,20 +260,23 @@ For all \(k > M\), we have
 You may use the fact that $\left(\forall x,y \in \reals_{\geq 0}\right)  (| \sqrt{x} - \sqrt{y} | \leq \sqrt{|x - y|} )$
 
 \begin{solution}
-Let \(\varepsilon > 0\). Define \(\delta = \mbox{min}\{1, \varepsilon^2 / 5\}\). 
-For \(x \in B^\prime(2, \delta)\), we
-have \(x - 2 \in [-1,1]\). Thus \(x + 2 \in [3,5]\); consequently
-\(|x+2| \leq 5\). Again, for \(x \in B^\prime(2, \delta)\), we have
-\begin{align*}
-  |\sqrt{1+x^2} - \sqrt{5} | &\leq \sqrt{|x^2 - 4|}, \\ 
-                             &= \sqrt{|x + 2|} \sqrt{|x - 2|}, \\
-                             &< \sqrt{5 \delta}, \\
-                             &< \varepsilon.
-\end{align*}
+See classnotes for Monday 9 October.
 \end{solution}
 
 \question For the sequence $F  = k \in \integers_{\geq 0} \mapsto k - 3 \lfloor \frac{k}{3} \rfloor $, give three examples of
 a convergent subsequence.
+
+\begin{solution}  Define $\phi = \integers_{\geq 0} k \mapsto  3 k$.
+  Then $F \circ \phi = k \in \integers_{\geq 0} \mapsto 0$.
+
+  Define $\phi = \integers_{\geq 0} k \mapsto  3 k + 1$.
+  Then $F \circ \phi = k \in \integers_{\geq 0} \mapsto 1$.
+
+  Define $\phi = \integers_{\geq 0} k \mapsto  3 k + 2$.
+  Then $F \circ \phi = k \in \integers_{\geq 0} \mapsto 2$.
+
+  
+\end{solution}
 
 \question Give an example of a sequence $F$ and a real number $\alpha$ such that $\alpha F$ converges and $F$ diverges.
 \begin{solution} Choose $F = k \in \integers_{\geq 0} \mapsto k$ and choose $\alpha = 0$. Then $F$ diverges but $0F$ 
@@ -272,7 +296,7 @@ converges.
 \begin{solution} We begin by proving that $\left(\forall x,y \in \reals_{\geq 0}\right)(\sqrt{x^2 + y^2} \leq x + y) $.
 Let $x,y \in \reals_{\geq 0}$. We have
 \begin{align*}
-\sqrt{x^2 + y^2} &= \sqrt{x^2 + 2 x y  y^2 - 2 x y}, &&\mbox{(add and subtract)} \\
+\sqrt{x^2 + y^2} &= \sqrt{x^2 + 2 x y + y^2 - 2 x y}, &&\mbox{(add and subtract)} \\
                            &= \sqrt{(x + y)^2 - 2 x y}, &&\mbox{(algebra)} \\
                            &\leq \sqrt{(x + y)^2}, &&\mbox{(squre root function is increasing} \\
                            &= x + y.  &&\mbox{(algebra)} 
