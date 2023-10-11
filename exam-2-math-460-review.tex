@@ -5,7 +5,7 @@
 \usepackage{fleqn}
 \usepackage{epsfig}
 \usepackage{fourier} %{mathptm}
-\usepackage{amssymb, wasysym}
+\usepackage{amssymb}
 \usepackage{nicefrac}
 \addpoints
 \boxedpoints
@@ -59,9 +59,13 @@ bounded above.
 \begin{align*}
  \left[ 8 - \frac{1}{k} < 8 \right] &\equiv \left[  0 <  \frac{1}{k} \right], && \mbox{(add $ \nicefrac{1}{k} -8$)} \\
                                                & \equiv \left[  0 < 1 \right], && \mbox{(multiply by $k$)} \\
-  &\equiv \True. \qedhere
+  &\equiv \True. &&\qedhere
 \end{align*}
 \end{proof}
+Of course, when they exist, upper bounds are never unique. To complete
+this proof, you could choose $M$ to be any real number greater than eight.
+But if you choose $M$ to be less than eight, you will not be able to
+complete the proof.
 \end{solution}
 \question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto \frac{(-1)^k}{k^2}$ converges.
 \begin{solution} We'll show that
@@ -76,12 +80,12 @@ Choose $L = 0$. Let  $\varepsilon \in \reals$. Choose $N =  \left \lceil
 \sqrt{\frac{1}{\varepsilon}} \right \rceil $. 
 Then $N \in \integers_{>0}$ as required.  Let $k \in \integers_{> N}$. We have
 \begin{align*}
-   |F_k -L | &= \left|\frac{(-1)^k}{k^2} \right|, \\
-                 &= \frac{1}{k^2}, \\
-                 &< \frac{1}{N^2}, \\
-                 &=  \frac{1}{\left \lceil \sqrt{\frac{1}{\varepsilon}} \right \rceil^2}, \\
-                 &\leq \frac{1}{\sqrt{\frac{1}{\varepsilon}}^2}, \\
-                 &= \varepsilon.
+   |F_k -L | &= \left|\frac{(-1)^k}{k^2} \right|,&& \text{(substitute for $F$ and $L$)} \\
+                 &= \frac{1}{k^2}, &&\text{(algebra)}\\
+                 &< \frac{1}{N^2}, &&(k < N) \\
+                 &=  \frac{1}{\left \lceil \sqrt{\frac{1}{\varepsilon}} \right \rceil^2}, && \text{(ceiling property)}\\
+                 &\leq \frac{1}{\sqrt{\frac{1}{\varepsilon}}^2}, && \text{(substitute for $N$)}\\
+                 &= \varepsilon. &&\text{(algebra)}
 \end{align*}
 \end{solution}
 \question Show that the sequence $F = k \in \integers_{\geq 1} \mapsto \begin{cases} k! & k < 10^9 \\
@@ -107,11 +111,11 @@ Then as required, $N \in \integers_{> 0}$. Let $k \in \integers_{>N}$.
 We have
 \begin{align*}
  \left| \frac{ 3k+1}{2 k + 8} - \frac{3}{2} \right| &= \frac{11}{2 \left( k\operatorname{+}4\right) }, 
-                &&\mbox{(\text{ algebra})}\\
+                &&\mbox{(\text{algebra})}\\
                 &< \frac{11}{2 N}, && (k + 4 > N) \\
-                &=  \frac{11}{2 \lceil \frac{11}{2} \rceil}, && \mbox{(substitution for $N$)} \\
+                &=  \frac{11}{2 \lceil \frac{11}{2 \varepsilon} \rceil}, && \mbox{(substitution for $N$)} \\
                 &\leq \frac{11}{2 \frac{11}{2 \varepsilon}},  && \mbox{(ceiling function property)} \\
-                &=  \varepsilon. &&\mbox{(\text{ algebra})} \qedhere
+                &=  \varepsilon. &&\mbox{(\text{algebra})} \qedhere
 \end{align*}
 
 \end{proof}
@@ -128,7 +132,7 @@ not converge to $1$.
    \left(  | F_k - 1 | \geq \varepsilon \right).
 \end{equation*}
 Choose $\varepsilon = \frac{1}{2}$. Let $N \in \integers_{>0}$. Choose $k = 3 N$. Then $k  \in \integers_{> N}$
-as required. We have $|F_k - 1| = |F_{3 N} -1 | = 1 > \varepsilon$
+as required. We have $|F_k - 1| = |F_{3 N} -1 | = 1 > \varepsilon$.
 \end{proof}
 \end{solution}
 
@@ -137,7 +141,7 @@ as required. We have $|F_k - 1| = |F_{3 N} -1 | = 1 > \varepsilon$
 \begin{solution}
 \begin{proof} We'll show that 
 \begin{equation*}
-   \left(\forall x \in (-\infty, 8)\right) \left(\exists r \in \reals_{>0}\right)(\ball(x,r)  \subset (-\infty, 8))
+   \left(\forall x \in (-\infty, 8)\right) \left(\exists r \in \reals_{>0}\right)(\ball(x,r)  \subset (-\infty, 8)).
 \end{equation*}
 Let $x \in   (-\infty, 8)$. Choose $r = 4 - \frac{x}{2}$. Since $x < 8$, we have $r > 0$, as required.  
 We have 
@@ -246,10 +250,10 @@ therefore \(\mathbf{\integers}\) isn't compact.
 
 \begin{solution}%[3.0in]
 Let \(\varepsilon > 0\). Since \(f\) converges, there is a number \(L\) and 
-\(M \in \mathbf{N}\) such that for all \(k > M\), we have \(|f_k - L| < \frac{\varepsilon}{1 + |\alpha|}\).
+\(M \in \mathbf{N}\) such that for all \(k > M\), we have \(|F_k - L| < \frac{\varepsilon}{1 + |\alpha|}\).
 For all \(k > M\), we have
 \[
-  |\alpha f_k - \alpha L| = |\alpha| |f_k - L|
+  |\alpha F_k - \alpha L| = |\alpha| |F_k - L|
                           < \frac{ |\alpha|}{1 + |\alpha|} \varepsilon
                           < \varepsilon.
 \]
