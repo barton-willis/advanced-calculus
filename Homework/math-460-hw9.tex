@@ -1,0 +1,183 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+\usepackage{url}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{lightgray!15}
+\newenvironment{myproof}
+  {\begin{shaded}\begin{proof}}
+  {\end{proof}\end{shaded}}
+
+\usepackage{amsthm}
+\newtheorem{prop}{Proposition}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\rat}{\mathbf{Q}}
+
+\newcommand{\curly}[1]{\mathcal #1}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\true}{\mathrm{True}}
+\newcommand{\saw}{\mathrm{saw}}
+\usepackage{enumerate}
+\newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-0.5\itemsep}}
+  {\end{enumerate}}
+ 
+\usepackage{amsthm}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+  
+\newcommand{\quiz}{9}
+\newcommand{\term}{Fall}
+
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{ \textbf{MATH 460}}
+{\bf Name:}  \\
+\noindent \makebox[3.0truein][l]{\textbf{Homework \quiz, \term \/ \the\year}}
+%{\bf Row:}\hrulefill\
+\vspace{0.1in}
+
+\noindent  Homework \quiz\/  has questions 1 through  \numquestions \/ with a total 
+of  \numpoints\/  points. 
+This work is due \textbf{Saturday 4 November} at 11:59 \PM.
+
+\vspace{0.1in}
+
+
+\begin{questions}
+
+\question [10] Use the fact that the absolute value function is continous
+on $\reals$ to show that the function $x \in \reals \mapsto x |x|$ 
+is differentiable at zero. 
+
+\quad The product rule fails us for the derivative
+of $x \in \reals \mapsto x |x|$ at zero. That's because 
+the absolute value function is not differentiable at zero.
+Away from zero, the product rule gives
+\begin{equation*}
+    \frac{\mathrm{d}}{\mathrm{d} x}
+     \left(x |x| \right) = 
+     \frac{\mathrm{d}}{\mathrm{d} x}
+     \left(x \right) |x| + x \frac{\mathrm{d}}{\mathrm{d} x}
+     \left(|x|  \right) =
+       |x| + x \begin{cases} -1 & x < 0 \\ 1 & x > 0 \end{cases}
+       = |x| + |x| = 2 |x|.
+\end{equation*}
+It's a happy coincidence that $\frac{\mathrm{d}}{\mathrm{d} x}
+\left(x |x| \right) = 2 |x|$ for all real $x$. But the product 
+rule is not sufficient for this calcuation.
+
+
+
+\question [10] Show that the function $F = x \in \reals \mapsto \begin{cases}
+    x \sin(\frac{1}{x}) & x \neq 0 \\
+    0 & x = 0
+\end{cases}$ has a limit toward zero.  To do this, use the 
+fact that for all $x \in \reals_{\neq 0}$, we have $|x \sin(\frac{1}{x})| \leq |x|$.
+From this work, show that $F$ is continuous at zero.
+
+
+\question [10] Show that the function 
+$G = x \in \reals \mapsto \begin{cases}
+    x^2 \sin(\frac{1}{x}) & x \neq 0 \\ 0 & x = 0
+\end{cases}$ 
+is differentiable at zero.
+
+
+\question 
+    \question [10] Let $f$ and $g$ be smooth functions.  That means that these 
+    functions have as many derivatives as we like. Then repeated use of
+    the product rule gives the identities
+    \begin{align*}
+       (f g)^{(1)} &= f g^{(1)} + f^{(1)} g, \\
+       (f g)^{(2)} &= f g^{(2)} + 2 f^{(1)} g^{(1)} + f^{(2)} g, \\
+       (f g)^{(3)} &= f g^{(3)} + 3 f^{(1)} g^{(2)} +  3 f^{(2)} g^{(1)} + f^{(3)} g.        
+    \end{align*}
+    It's not too much of a stretch to guess that for any positive integer $n$ that
+    \begin{equation*}
+        (f g)^{(n)} = \sum_{k=0}^n \binom{n}{k} f^{(k)} g^{(n-k)}.
+    \end{equation*}
+    The pattern of the first three derivatives is pretty compelling, but we 
+    need a proof. Your task is it proof it. To do this, you'll need a few
+    facts about the binomial coefficients. These facts are 
+    \begin{itemize}
+        \item For all $n \in \integers_{\geq 0}$, we have 
+              $ \binom{n}{-1} = 0 $.
+
+        \item For all $n \in \integers_{\geq 0}$, we have
+                $\binom{n+1}{n} = 0$.
+
+        \item For all integers $n$ and $k$, we have 
+        $\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$.
+
+    \end{itemize}
+ Finally, you'll likely need to use the underappreciated
+ facts that $\displaystyle \sum_{k=0}^n  a_{k+1} =  \sum_{k=1}^{n+1}  a_k$
+ and that $\displaystyle \sum_{k=0}^n  a_{k-1} =  \sum_{k=-1}^{n-1}  a_k$
+
+
+ \item Let $F \in \reals \to \reals_{\geq 0}$ have a limit
+ toward $5$. Use the QRS definition of a limit to 
+ show that $\sqrt{F}$ has a limit toward $5$.
+\end{questions}
+\end{document}
