@@ -106,28 +106,30 @@ This work is due \textbf{Saturday 4 November} at 11:59 \PM.
 
 \begin{questions}
 
-\question [10] Use the fact that the absolute value function is continous
-on $\reals$ to show that the function $x \in \reals \mapsto x |x|$ 
-is differentiable at zero. 
+ \question [10] Let $F \in \reals \to \reals_{\geq 0}$ have a limit  toward $5$. Use the QRS definition of a limit to 
+ show that $\sqrt{F}$ has a limit toward $5$.  Almost surely, you will want to use the fact that the 
+ square root function is subadditive; that is
+ \begin{equation*}
+ \left(\forall x, y \in \reals_{>0} \right)(|\sqrt{x} - \sqrt{y}| \leq \sqrt{|x - y|}).
+ \end{equation*}
+ \begin{solution}
 
-\quad The product rule fails us for the derivative
-of $x \in \reals \mapsto x |x|$ at zero. That's because 
-the absolute value function is not differentiable at zero.
-Away from zero, the product rule gives
-\begin{equation*}
-    \frac{\mathrm{d}}{\mathrm{d} x}
-     \left(x |x| \right) = 
-     \frac{\mathrm{d}}{\mathrm{d} x}
-     \left(x \right) |x| + x \frac{\mathrm{d}}{\mathrm{d} x}
-     \left(|x|  \right) =
-       |x| + x \begin{cases} -1 & x < 0 \\ 1 & x > 0 \end{cases}
-       = |x| + |x| = 2 |x|.
-\end{equation*}
-It's a happy coincidence that $\frac{\mathrm{d}}{\mathrm{d} x}
-\left(x |x| \right) = 2 |x|$ for all real $x$. But the product 
-rule is not sufficient for this calcuation.
+\begin{proof}
 
+\end{proof}
+\end{solution}
+ 
+\question [10] Use the fact that the absolute value function is continuous
+on $\reals$ to show that the function $F = x \in \reals \mapsto x |x|$ 
+is differentiable at zero.   (Actually, you'll only use the fact that the absolute value function is continuous
+at zero. But it's true that it is continuous on $\reals$.)
 
+\begin{solution}
+
+\begin{proof}
+
+\end{proof}
+\end{solution}
 
 \question [10] Show that the function $F = x \in \reals \mapsto \begin{cases}
     x \sin(\frac{1}{x}) & x \neq 0 \\
@@ -135,16 +137,51 @@ rule is not sufficient for this calcuation.
 \end{cases}$ has a limit toward zero.  To do this, use the 
 fact that for all $x \in \reals_{\neq 0}$, we have $|x \sin(\frac{1}{x})| \leq |x|$.
 From this work, show that $F$ is continuous at zero.
+\begin{solution}
 
+\begin{proof}
+
+\end{proof}
+\end{solution}
 
 \question [10] Show that the function 
 $G = x \in \reals \mapsto \begin{cases}
     x^2 \sin(\frac{1}{x}) & x \neq 0 \\ 0 & x = 0
-\end{cases}$ 
-is differentiable at zero.
+\end{cases}$ is differentiable at zero. One way to proceed is to use the result of the previous question.
+\begin{solution}
 
+\begin{proof}
 
-\question 
+\end{proof}
+\end{solution}
+\question [10] Again, define $G = x \in \reals \mapsto \begin{cases}
+    x^2 \sin(\frac{1}{x}) & x \neq 0 \\ 0 & x = 0 \end{cases}$. Away from zero, the product rule, the 
+    chain rule, and the rule for the derivative of sine, gives 
+    $G^\prime(x) = 2 x \sin{\left( \frac{1}{x}\right) }  - \cos{\left( \frac{1}{x}\right) }\); and
+    at zero, we know that $G^\prime(0) = 0$. Thus $G$ is differentiable on $\reals$ and 
+    \begin{equation*}
+     G^\prime = x \in \reals \mapsto \begin{cases} 
+      2 x  \sin{\left( \frac{1}{x}\right) } - \cos{\left( \frac{1}{x}\right) } & x \neq 0 \\
+      0 & x = 0
+      \end{cases}.
+     \end{equation*}
+    Show that $G^\prime$ does not have a limit toward 0.  Consequently, $\displaystyle G^\prime (0) \neq \lim_{0} G^\prime$ 
+     
+     \textbf{Hints}  Let $\delta \in \reals_{>0}$.
+     Archimedes tells us that there is a positive integer $n$ such that $ \frac{1}{n} < \delta$. Also
+     for all positive integers $n$, we have
+    $G^\prime(\frac{1}{2 \uppi n}) = -1$ and $G^\prime(\frac{1}{ \uppi (2 n + 1)}) = 1$. 
+     
+     \begin{solution}
+
+\begin{proof}
+
+\end{proof}
+\end{solution}
+
+\end{questions}
+\end{document}
+
     \question [10] Let $f$ and $g$ be smooth functions.  That means that these 
     functions have as many derivatives as we like. Then repeated use of
     the product rule gives the identities
@@ -176,8 +213,6 @@ is differentiable at zero.
  and that $\displaystyle \sum_{k=0}^n  a_{k-1} =  \sum_{k=-1}^{n-1}  a_k$
 
 
- \item Let $F \in \reals \to \reals_{\geq 0}$ have a limit
- toward $5$. Use the QRS definition of a limit to 
- show that $\sqrt{F}$ has a limit toward $5$.
+
 \end{questions}
 \end{document}
