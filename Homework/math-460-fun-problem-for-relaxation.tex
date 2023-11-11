@@ -105,7 +105,7 @@ This work is never due
 \begin{questions}
 
  \question For first term calculus students, an intimidating function is $F(x) = \sqrt{x + \sqrt{x + \sqrt{x}}}$. Finding the derivative of 
- this function will strike fear many students. Repeatably using the chain rule and not ``simplifying'' between applications of the chain rule, 
+ this function will strike fear many students. Using the chain rule twice and not ``simplifying'' between applications, 
   I claim that a formula for the derivative is
 \begin{equation*}
 F^\prime(x) = \frac{\frac{\frac{1}{2 \sqrt{x}}+1}{2 \sqrt{x+\sqrt{x}}}+1}{2 \sqrt{\sqrt{x+\sqrt{x}}+x}}.
@@ -128,14 +128,14 @@ but with no clue of how to define ``most natural.''
 \quad Can we give meaning to the putative function $Q$ without using an ellipsis?  Oh, sure.  Let's define a sequence of functions whose limit
 is $Q$.  We can do this recursively
 \begin{equation*}
-   G_{n}(x) = \begin{cases}  \sqrt{x}  & n = 0 \\ \sqrt{x + G_{n-1}(x)}  & n \in \integers_{\geq 0} \end{cases}.
+   G_{n}(x) = \begin{cases}  \sqrt{x}  & n = 0 \\ \sqrt{x + G_{n-1}(x)}  & n \in \integers_{> 0} \end{cases}.
 \end{equation*}
 Then, for example $G_1(x) = \sqrt{x+\sqrt{x}}$ and $G_2(x) = \sqrt{x+\sqrt{x + \sqrt{x}}}$.   And it seems like
 the sequence $k \in \integers_{\geq 0} \mapsto G_k$ converges to $Q$.
 
-So our question now is does the sequence $k \in \integers_{\geq 0} \mapsto G_k$ converge?  Immediately, we have a problem; we're asking a 
+\quad So our question now is does the sequence $k \in \integers_{\geq 0} \mapsto G_k$ converge?  Immediately, we have a problem; we're asking a 
 question about the convergence of a function-valued function, not a real-valued function.  And we don't know what that means.  But one 
-possible meaning is the question. For $x \in \reals_{\geq 0}$, does the limit
+possible meaning is the question:  For $x \in \reals_{\geq 0}$, does the limit
 \begin{equation*}
       \lim_{n \to \infty} G_n(x) 
 \end{equation*}
@@ -149,7 +149,7 @@ of such convergence (weak convergence and norm convergence, to name a few).
 Amusingly, the natural domain of $\frac{1 + \sqrt{1 + 4 x}}{2}$ is $[-1/4, \infty)$, but the domain of each function in the sequence is $[0,\infty)$.
 This doesn't mean that my answer is rubbish, but it does mean that it's amusing. 
 
-\quad If you accept this challenge, don't forget GNAT.  Try graphing $y = G_2(x), y = G_3(x), \dots$ and $y = \frac{1 + \sqrt{1 + 4 x}}{2}$.
+\quad If you accept this challenge, don't forget GNAT.  Try graphing $y = G_2(x), y = G_3(x), \dots$, and $y = \frac{1 + \sqrt{1 + 4 x}}{2}$.
 
 
   
