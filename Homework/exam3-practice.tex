@@ -1,0 +1,528 @@
+\documentclass[12pt,answers,fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amsthm}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+\usepackage{amssymb,enumerate}
+\usepackage{fourier}
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\lp}{\mathrm{LP}}
+\newcommand{\ball}{\mathrm{ball}} 
+\newenvironment{numlist}{
+  \begin{enumerate}[(1)]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\newenvironment{handlist}{
+  \begin{enumerate}[\leftthumbsup]
+    \addtolength{\itemsep}{-1.0\itemsep}}
+  {\end{enumerate}}
+
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle \stackrel{\bullet}{{}}}\,}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{{\bf Advanced Calculus, Fall \the\year}}
+{\bf Name:}\hrulefill\
+\noindent \makebox[3.0truein][l]{\bf Practice Exam 3}
+{\bf Row and Seat:}\hrulefill\
+%\normalsize
+
+
+\begin{questions}
+
+\question [10] \label{q1} Define the \emph{derivative} as the limit of a \emph{Newton
+quotient}.
+
+\begin{solution}
+Let \(F  \in  \reals \to \reals\).  We say a function $F$ is \emph{differentiable at} $a$ provided (i) \(a \in
+\dom(F)\), (ii) $a \in \lp(\dom(F))$, (iii)   and \(\displaystyle \lim_{x \to a} \frac{F(x) -
+  F(a)}{x-a}\) is a real number.
+\end{solution}
+
+\question [10] Show that the function $x \in (-\infty, 0) \cup {5} \mapsto x$ is not differentiable at $5$.
+\begin{solution}
+Since $5 \notin \lp((-\infty, 0) \cup {5})$, the given function isn't differentiable at 5.
+\end{solution}
+
+\question [10] Use the definition you gave in question \ref{q1} to find
+the derivative of \mbox{\(x \in \reals \mapsto x^2 + x\)} at 2.
+
+\begin{solution}
+ We have
+\begin{align*}
+  \lim_{x \to 2} \frac{x^2 + x - 6}{x-2} &= \lim_{x \to 2}
+  \frac{(x-2)(x+3)}{x-2}, \\
+   &= \lim_{x \to 2} (x+3), \\
+   &= 5.
+\end{align*}
+\end{solution}
+
+\question [10] Use the definition you gave in question \ref{q1} to find
+the derivative of \mbox{\(x \in \reals \mapsto x^2 + x\)} at \(a\), where
+\(a\) is any real number.
+
+\question [10] Use the definition you gave in question \ref{q1} to find
+the derivative of \mbox{\(x \in \reals \mapsto \sqrt{x}\)} at \(3\).
+
+
+\question [10] Use the QRS definition of uniformly continuity to show that  that \(x \in [-1,1] \mapsto x^2 \)
+is {\em uniformly continuous} on its domain.
+
+\begin{solution}
+\begin{proof}
+Let \(\varepsilon\) be a positive number, and let \(x,y \in
+[-1,1]\). If \(|x - y| < \varepsilon/2\), we have
+\begin{align*}
+  |x^2 - y^2| &= |x - y| |x + y|, \\
+              &< \frac{\varepsilon}{2} \left(|x| + |y|\right), \\
+              &= \frac{\varepsilon}{2} \left(1 + 1 \right),\\
+              &= \varepsilon.
+\end{align*}
+\end{proof}
+\end{solution}
+
+\question [10]  Use the undefinition of uniformly continuity to
+show that the function \(x \in \reals \mapsto 8 x^2\) is
+not uniformly continuous on its domain.
+
+\begin{solution}
+\begin{proof} For every positive number \(\delta\) we'll find \(x,y
+\in \reals\) such that \(|x - y| < \delta\) yet 
+\(|8 x^2  -  8 y^2 | > 1/2\).
+
+
+Choose \(x = \frac{1}{8 \delta} - \frac{\delta}{4}\) and
+  \(y = \frac{1}{8 \delta} + \frac{\delta}{4}\).  Then
+\(\displaystyle
+   |x - y| = \frac{\delta}{2} < \delta
+\). Further
+\begin{align*}
+  |8 x^2 - 8 y^2| &= 8 |x - y||x + y|, \\
+                  &< 8  \times  \frac{\delta}{2} \times  \frac{1}{4 \delta}, \\
+                  &= 1, \\
+                  &> \frac{1}{2}.
+\end{align*}
+\end{proof}
+\end{solution}
+
+
+\question [10] Show that the function \(x \in \reals \mapsto \begin{cases} x
+  \cos(1/x) & x \neq 0 \\ 0 & x = 0 \end{cases}\) is {\em continuous\/}
+at 0. You may use the fact that \(|\cos(x)| \leq 1\) for all real
+\(x\) without proving it.
+
+
+\begin{solution}
+  \begin{proof}
+Let \(F\) be the given function, and let 
+\(\varepsilon\) be a positive number.  For \mbox{\(x \in \ball^\prime(0, \varepsilon)\)} we have
+\[ 
+  |F(x) - F(0)| = |x \cos(1/x) - 0| = |x| |\cos(1/x)| \leq |x| < \varepsilon.
+\] 
+Also,
+\(
+  |F(0) - F(0)| = 0 < \varepsilon.
+\)
+So for all  \(x \in \ball(0, \varepsilon)\) we have
+\(|F(x) - F(0)| < \varepsilon\).
+\end{proof}
+\end{solution}
+
+
+\question [10] Show that the function \(x \in \reals \mapsto \begin{cases} x^2
+  \cos(1/x) & x \neq 0 \\ 0 & x = 0 \end{cases}\) is differentiable
+at 0. Depending on your method, the result of the previous question
+might be useful.
+
+\begin{solution}
+\begin{proof} Define functions \(F\) and \(G\) by
+\(\displaystyle
+   F(x) = \begin{cases} x^2
+  \cos(1/x) & x \neq 0 \\ 0 & x = 0 \end{cases}
+\)
+and\\
+\mbox{\(\displaystyle
+   G(x) = \begin{cases} x
+  \cos(1/x) & x \neq 0 \\ 0 & x = 0 \end{cases}
+\)}.  The function \(G\) is continuous at 0; further we have
+\(F(x) = F(0) + (x-0) G(x)\).   This shows that \(F\) is
+differentiable at 0.
+   \end{proof}
+\end{solution}
+%\vspace{2.5in}
+
+
+
+
+%\vfill
+
+
+\question [10] Let \(F : \reals \to \reals\) be continuous at \(a\).
+If \(F(a) > 0\), show that there is a positive number \(\delta\)
+such that \(F(x) > 0\) for all \(x \in \ball(a, \delta) \cap \dom(F)\).
+
+\question [10] Show that the function \(x \in \reals_{> 0} \mapsto
+\frac{1}{x}\) is not uniformly continuous on its domain.
+
+\question [10]  Let \(F : \reals \to \reals\) be differentiable at
+\(a\) and suppose \(F^\prime(a) > 0\). Is it true that \(F\) is
+increasing on a neighborhood of \(a\)?  If so, prove it.
+
+
+\question [10] Give an example of a function \(F : [-1,1] \to \reals\)
+such that \mbox{\(\mbox{sup} \left(\mbox{range}(F)\right) \not \in
+\mbox{range}(F) \)}.
+
+\begin{solution}
+$F = x \in [-1,1] \mapsto \begin{cases} x & x \neq 1 \\ 0 & x = 1 \end{cases}$.
+\end{solution}
+\question [10] Give an example of a function \(F : (-1,1) \to \reals\)
+such that \mbox{\(\mbox{sup} \left(\mbox{range}(F)\right) \not \in
+\mbox{range}(F) \)} and \(F\) is continuous on \((-1,1)\).
+\begin{solution}
+$F = x \in (-1,1) \mapsto x$.
+\end{solution}
+
+
+\question Let \(F : \mathbf{R} \to \mathbf{R}\) satisfy
+the inequality
+\(
+   | F(x) - F(y) | \leq |x - y|
+\)
+for all \(x, y \in \mathbf{R} \).
+
+\begin{parts}
+
+\part [10] Show that \(F\) is {\em continuous at zero}.
+
+\part [10] Show that \(F\) is {\em uniformly continuous} on \(\reals\).
+
+
+
+
+\end{parts}
+
+
+\question [10] Show that \(x \in \reals \mapsto x^3\) is continuous at 10.
+
+\begin{solution}
+  \begin{proof}
+Let \(\varepsilon\) be a positive number. Define
+\(\delta = \min \left(1, \frac{\varepsilon}{331} \right) \).  For
+\(x \in \ball(10; \delta)\), we have \(9 \leq x \leq 11\). Further, we have
+\begin{align*}
+  |x^3 - 10^3| &= |x - 10| |x^2 + 10 x + 100|, \\
+               &< |x - 10| \left(|x|^2 + 10 |x| + 100 \right), \\
+               &\leq |x-10| \left(11^2 + 110 + 100 \right), \\
+               &= 331 \, |x-10|, \\
+               &\leq \varepsilon.
+\end{align*}
+\end{proof}
+\end{solution}
+
+\question [10] \label{q0} Show that the function with signature  \(F : \reals \to \reals\) 
+and formula \(F(x) = \begin{cases} \sin \left(\frac{1}{x} \right) & x \neq 0 \\
+                                   0  & x = 0 \end{cases} \)
+is not continuous at 0.
+
+\begin{solution}
+  \begin{proof}
+ We'll show that for every positive number \(\delta\)
+there is \(x \in \ball(0; \delta)\) such that \( |F(x) - F(0)| >
+\frac{1}{2}\).
+Let \(\delta\) be a positive real number.  There is an integer \(n\)
+such that \(\displaystyle 0 < \frac{2}{(n+1) \pi} < \delta\). Further
+we have
+\[
+  \left|F \left (\frac{2}{(n+1) \pi} \right) - F(0) \right | = |1 - 0| > \frac{1}{2}.
+\]
+  \end{proof}
+\end{solution}
+
+\question [10] Either prove or disprove:  Let \(F, G : \reals \to
+\reals\), and let \(a \in \mbox{dom}(F G)\).  
+If \(F G\) is continuous at \(a\), then both \(F\) and \(G\) are
+continuous at \(a\).
+
+\begin{solution}
+The statement is false. Let \(F(x) = \begin{cases} \sin \left(\frac{1}{x} \right) & x \neq 0 \\
+                                   0  & x = 0 \end{cases} \) and let \(G(x) = x\).
+In question \ref{q1}, we showed that \(F G\) is continuous at 0, but in question \ref{q0}, we
+showed that \(F\) is \emph{not} continuous at 0.
+
+
+\end{solution}
+
+\question [10] Let  \(F : \reals  \to \reals\) be continuous at
+\(a\). Show that \(|F|\) is continuous at \(a\). 
+
+\begin{solution}
+  \begin{proof}
+ Let \(\varepsilon\) be a positive number.  Since
+\(F\) is continuous at \(a\), there is a positive number \(\delta\)
+such that for all \(x \in \ball(a,  \delta) \cap \mbox{dom}(F)\), we have
+\[
+  \left|F(x) - F(a) \right| < \varepsilon.
+\]
+For all \(x \in \ball(a, \delta) \cap \mbox{dom}(F)\), we have
+\[
+ \big \vert |F(x)| - |F(a)|  \big \vert \leq  \left|F(x) - F(a) \right| < \varepsilon.
+\] 
+Therefore \(|F|\) is continuous at \(a\).
+  \end{proof}
+\end{solution}
+
+\question [10] Use the inequality
+\(
+   | \sqrt{a} - \sqrt{b} | \leq \sqrt{|a -b|},\mbox{ for } a,b > 0
+\)
+to show that the square root function is uniformly continuous on
+\([0,\infty)\).
+
+\begin{solution}
+  \begin{proof}
+ Let \(\varepsilon\) be a positive number.  For
+\(x,y \in  [0,\infty)\) with \(|x - y| < \varepsilon^2\), we have
+\(
+  \big \vert \sqrt{x} - \sqrt{y} \big \vert \leq \sqrt{|x - y|} < \varepsilon.
+\)
+  \end{proof}
+\end{solution}
+
+\question [10] Show that the function \(x \in \reals \mapsto x^2\) is not
+uniformly continuous on \(\reals\).
+
+\begin{solution}
+ Let \(\delta\) be a positive number.  Define
+\(x = \frac{1}{\delta} + \frac{\delta}{4}\) and \(y = \frac{1}{\delta} -
+\frac{\delta}{4}\). Then \(|x - y| < \delta\); however,
+\[
+  |x^2 - y^2| = |x - y| |x + y| = \frac{\delta}{2} \,\, \frac{2}{\delta} = 1.
+\]
+
+The definition of uniform continuity: Let \(F : E \to \reals\) . We say
+\(F\) is \emph{uniformly} continuous on \(E\) provided
+
+\begin{quote}
+\begin{alphalist}
+\item For \emph{every} \(\varepsilon > 0\)
+\item \emph{there is} a \(\delta > 0\)
+\item for \emph{all} \(x,y \in \dom(F)\) such that \(|x - y| < \delta\)
+\item we have \(|F(x) - F(y) | < \varepsilon\). 
+\end{alphalist}
+\end{quote}
+
+And the ``undefinition'' of uniform continuity:
+\begin{quote}
+\begin{alphalist}
+\item For \emph{some} \(\varepsilon > 0\)
+\item and \emph{every} \(\delta > 0\)
+\item \emph{there are}  \(x,y \in \dom(F)\) and \(|x - y| < \delta\)
+\item such that \(|F(x) - F(y) | > \varepsilon\). 
+\end{alphalist}
+\end{quote}
+
+
+\end{solution}
+
+\question [10] Show that \(x \in \reals  \mapsto  x^2 |x|\) is differentiable at 0. (The
+absolute value function isn't differentiable at 0, so the product rule \emph{isn't} an
+option!)
+
+
+\question [10] Use the MVT to show that for all \(x,y \in \reals\), we
+have
+\(
+  | \cos(x) - \cos(y) | \leq |x - y|.
+\)
+You may use the facts (i) \(\cos^\prime = \sin\) and (ii) \(|\sin(x)|
+\leq 1\) for all real \(x\).
+
+
+\end{questions}
+\end{document}
+
+\question  Write the correct spelling of the word I usually write as
+``sim--scribble-scribble-scribble'' (one point bonus).
+
+\textbf{Solution} A dictionary spelling is ``similarly.''  Creative
+folks sometimes spell it with a double `m.'  Really bad spellers
+can make a true mess: ``simiarly'' or worse.
+
+\question [10] Let \(F : \reals \to \reals\) be the \(F(x)  = |x|\).
+Either find an open set \(\mathcal{G}\) such that \(F({\mathcal G})\) is 
+not open, or prove that \(F({\mathcal G})\) is always open
+when  \(\mathcal{G}\) is open. If you choose to give an example of
+an open set \(\mathcal{G}\) such that  \(F({\mathcal G})\) is 
+not open, you needn't prove all your assertions, but you must 
+clearly define \(\mathcal{G}\) and you must give a correct
+value for  \(F({\mathcal G})\). \textbf{Notice:} The question does
+\textbf{not} say open relative to the range of \(F\).
+
+\textbf{Solution} There are lots of answers--I think any open interval
+such that 0 is an interior point will work; for example
+\(
+  F(\reals) = [0,\infty)
+\).  A more popular answer was the interval \((-1,1)\); we have
+\(F(-1,1) = [0,1)\).
+
+
+\question [10] Show that the function with signature \(F : \reals \to \reals\) 
+and formula \(F(x) = x^3\) is continuous at 10.
+
+\question [10] Use the inequality
+\(
+   | \sqrt{a} - \sqrt{b} | \leq \sqrt{|a -b|},\mbox{ for } a,b > 0
+\)
+to show that the function
+\(\displaystyle
+   F(x) = \sqrt{1+x}, \,\, \mbox{dom}(F) = \mathbf{R}
+\)
+is continuous at 1.
+
+
+\question [10] Show that 
+\(
+   | \sqrt{a} - \sqrt{b} | \leq \sqrt{|a -b|},
+\)
+for all positive numbers \(a\) and \(b\).
+
+\question [10] Let \(F : \mathbf{R} \to \mathbf{R}\) satisfy
+the inequality
+\(
+   | F(x) - F(y) | < |x - y|
+\)
+for all \(x, y \in \mathbf{R} \).
+
+\begin{parts}
+
+\part [10] Show that \(F\) is {\em continuous at zero}.
+
+\part [10] Show that \(F\) is {\em uniformly continuous} on \(\reals\).
+
+\vspace*{1.5in}
+
+
+
+\end{parts}\(
+   F(x) = x^2, \,\, \mbox{dom}(F) = (-1,1).
+\)
+
+
+
+\question [10] Show that the function with signature \(F : \reals \to \reals\) 
+and formula \(F(x) = x (x-1)\) is continuous at 2.
+
+\vspace*{2.0in}
+
+
+
+\question [10] Define the {\em derivative\/} as the limit of a {\em Newton
+quotient}.\(
+   F(x) = x^2, \,\, \mbox{dom}(F) = (-1,1).
+\)
+
+
+
+\question [10] Show that the function with signature \(F : \reals \to \reals\) 
+and formula \(F(x) = x (x-1)\) is continuous at 2.
+
+\vspace*{2.0in}
+
+
+
+%\vspace*{1.5in}
+
+
+\question [10] Use the Newton quotient to find the derivative
+of the function
+\mbox{\(
+  x  \in \reals \mapsto (x-1) \, |x-1|
+\)}
+at 1.
+
+
+%\vspace*{2.5in}
+
+%\newpage
+
+\question [10] Use a Newton quotient to show that the function
+\(
+   x \in \reals \mapsto x^2 + 5 x + 12
+\)
+is {\em differentiable at 1}.
+
+%\vspace*{2.5in}
+
+\question [10] Prove the {\em product rule\/} for derivatives.  Use
+either of the two definitions for the derivative.
+
+\question [10] Use the MVT to show that for all \(x,y \in \reals\), we
+have
+\(
+  | \cos(x) - \cos(y) | \leq |x - y|.
+\)
+You may use the facts (i) \(\cos^\prime = \sin\) and (ii) \(|\sin(x)|
+\leq 1\) for all real \(x\).
+
+
+\question [10] Let \(F : \reals \to \reals\) be continuous at \(a\).
+If \(F(a) > 0\), show that there is a positive number \(\delta\)
+such that \(F(x) > 0\) for all \(x \in \ball(a, \delta) \cap \dom(F)\).
+
+\question [10] Show that the function \(x \in \reals_{> 0} \mapsto
+\frac{1}{x}\) is not uniformly continuous on its domain.
+
+\question [10]  Let \(F : \reals \to \reals\) be differentiable at
+\(x_o\) and suppose \(F^\prime(x_o) > 0\). Is it true that \(F\) is
+increasing on a neighborhood of \(x_o\)?  If so, prove it.
+
+\question [10] Let \(F(x) = \begin{cases} 1 & \,\mbox{ if } x \in
+  \mathbf{Q} \\  0 & \,\mbox{ if } x \notin \mathbf{Q} \end{cases}\),
+where \(\mathbf{Q}\) is the set of rational numbers.
+Show that \(F\) is discontinuous on \(\reals\).  You may use the fact
+that for any two real numbers \(a\) and \(b\) with \(a < b\), we have
+\mbox{\((a,b) \cap \mathbf{Q} \neq \varnothing\)} and 
+\mbox{\((a,b) \cap \left(\reals - \mathbf{Q} \right) \neq \varnothing\)}.
+    
+
+\question [10] Let \(F : \reals \to \reals\) be continuous on
+\(\reals\) and let \(\mathcal{G}\) be an open subset of \(\reals\).
+Show that \(F(\mathcal{G}\) needn't be open relative to 
+\(\mbox{range}(F)\).
+
+\question [10] Give an example of a function \(F : [-1,1] \to \reals\)
+such that \mbox{\(\mbox{sup} \left(\mbox{range}(F)\right) \not \in
+\mbox{range}(F) \)}.
+
+\question [10] Give an example of a function \(F : (-1,1) \to \reals\)
+such that \mbox{\(\mbox{sup} \left(\mbox{range}(F)\right) \not \in
+\mbox{range}(F) \)} and \(F\) is continuous on \((-1,1)\).
+
+\question [10] Show that the function \(x \mapsto \begin{cases} x^2
+  \cos(1/x) & x \neq 0 \\ 0 & x = 0 \end{cases}\) is differentiable
+at 0. You may use the fact that \(|cos(x)| \leq 1\) for all real
+\(x\) without proving it.
+
+\question [10] Let \(F : \reals \to \reals\) be continuous on
+\(\reals\) and let \(\mathcal{G}\) be an open subset of \(\reals\).
+Show that \(F(\mathcal{G}\) needn't be open relative to 
+\(\mbox{range}(F)\).
+\end{questions}
+\end{document}
