@@ -105,8 +105,7 @@ This work is never due.
 \begin{questions}
 
  \question For first term calculus students, an intimidating function is $F(x) = \sqrt{x + \sqrt{x + \sqrt{x}}}$. Finding the derivative of 
- this function will strike fear many students. Using the chain rule twice and not ``simplifying'' between applications, 
-  I claim that a formula for the derivative is
+ this function will strike fear in many students, but the process is actually algorithmic  and fairly straightforward.  Using the chain rule twice and not ``simplifying'' between applications,   a formula for the derivative is
 \begin{equation*}
 F^\prime(x) = \frac{\frac{\frac{1}{2 \sqrt{x}}+1}{2 \sqrt{x+\sqrt{x}}}+1}{2 \sqrt{\sqrt{x+\sqrt{x}}+x}}.
 \end{equation*}
@@ -114,8 +113,7 @@ Opinions might vary on a ``proper'' simplification, but likely most would say th
 \begin{equation*}
 F^\prime(x) = \frac{4 \sqrt{x} \sqrt{x+\sqrt{x}}+2 \sqrt{x}+1}{8 \sqrt{x} \sqrt{x+\sqrt{x}} \sqrt{\sqrt{x+\sqrt{x}}+x}}.
   \end{equation*}
-  Although all this calculation is frightening for many calculus students, it's an algorithmic process and fairly straightforward.  Teachers need to push
-  the boundaries of the comfort zone of students, and this is a good problem to do that.  And just for fun the derivative of 
+Teachers should push   the boundaries of the comfort zone of students, and this is a good problem to do that.  And just for fun, the derivative of 
   $F(x) = \sqrt{x+\sqrt{x + \sqrt{x + \sqrt{x}}}}$ is the monstrous   
   \begin{equation*}
  F^\prime(x) =  \frac{\frac{\frac{\frac{1}{2 \sqrt{x}}+1}{2 \sqrt{x+\sqrt{x}}}+1}{2 \sqrt{\sqrt{x+\sqrt{x}}+x}}+1}{2 \sqrt{\sqrt{\sqrt{x+\sqrt{x}}+x}+x}}.
@@ -125,7 +123,7 @@ F^\prime(x) = \frac{4 \sqrt{x} \sqrt{x+\sqrt{x}}+2 \sqrt{x}+1}{8 \sqrt{x} \sqrt{
   \begin{equation*}
  Q(x) = \sqrt{x + \sqrt{x + \sqrt{x + \cdots}}}.
 \end{equation*}
-In mathematics, using an ellipsis is like waving a white flag--use your imagination to continue something in the most natural way, 
+In mathematics, using an ellipsis this way is like waving a white flag--use your imagination to continue something in the most natural way, 
 but with no clue of how to define ``most natural.''  
 
 \quad Can we give meaning to the putative function $Q$ without using an ellipsis?  Oh, sure.  Let's define a sequence of functions whose limit
@@ -150,7 +148,7 @@ of such convergence (weak convergence and norm convergence, to name a few).
       \lim_{n \to \infty} G_n(x)  = \frac{1 + \sqrt{1 + 4 x}}{2}.
 \end{equation*}
 Amusingly, the natural domain of $\frac{1 + \sqrt{1 + 4 x}}{2}$ is $[-1/4, \infty)$, but the domain of each function in the sequence is $[0,\infty)$.
-This doesn't mean that my answer is rubbish, but it does mean that it's amusing. 
+This doesn't mean that $\displaystyle \lim_{n \to \infty} G_n(x)  = \frac{1 + \sqrt{1 + 4 x}}{2}$   is rubbish, but it does mean that it's amusing. 
 
 \quad If you accept this challenge, don't forget GNAT.  Try graphing $y = G_2(x), y = G_3(x), \dots$, and $y = \frac{1 + \sqrt{1 + 4 x}}{2}$.
 
