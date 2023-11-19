@@ -1,0 +1,157 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+\usepackage{url}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{lightgray!15}
+\newenvironment{myproof}
+  {\begin{shaded}\begin{proof}}
+  {\end{proof}\end{shaded}}
+
+\usepackage{amsthm}
+\newtheorem{prop}{Proposition}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\rat}{\mathbf{Q}}
+
+\newcommand{\curly}[1]{\mathcal #1}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\true}{\mathrm{True}}
+\newcommand{\saw}{\mathrm{saw}}
+\usepackage{enumerate}
+\newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-0.5\itemsep}}
+  {\end{enumerate}}
+ 
+\usepackage{amsthm}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+  
+\newcommand{\quiz}{11}
+\newcommand{\term}{Fall}
+\usepackage{units}
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{ \textbf{MATH 460}}
+{\bf Name:}  \\
+\noindent \makebox[3.0truein][l]{\textbf{Homework \quiz, \term \/ \the\year}}
+%{\bf Row:}\hrulefill\
+\vspace{0.1in}
+
+\noindent  Homework \quiz\/  has questions 1 through  \numquestions \/ with a total 
+of  \numpoints\/  points. 
+This work is due \textbf{Saturday 25 November} at 11:59 \PM.
+\textbf{For this assignment, neatly handwrite your solutions and submit
+a digitized version to Canvas.}
+
+\vspace{0.1in}
+
+
+\begin{questions}
+
+ \question Let $F = \in [0,1] \mapsto x^2$. For any $n \in \integers_{>0}$,
+ define a partition $P_n$ of $[0,1]$, by 
+ $ \left \{\nicefrac{k}{n} \, | \, k \in \integers_{\geq 0, \leq n} \right \}$.
+ For this partition, the length of each subinterval is $1/n$.
+ So a general Riemann sum has the form
+ \begin{equation*}
+     \frac{1}{n }\sum_{k=0}^{n-1}  F(c_k),
+ \end{equation*}
+where $c_k \in [\nicefrac{k}{n},\nicefrac{(k+1)}{n} ]$.
+Choosing $c_k = \nicefrac{k}{n}$ gives the left point Riemann sum 
+$L_n$. Specifically
+ \begin{equation*}
+    L_n = \frac{1}{n} \sum_{k=0}^{n-1} F(k/n)
+ \end{equation*}
+ And choosing $c_k = \nicefrac{(k+1)}{n}$ gives the right point Riemann sum 
+ $L_n$. Specifically
+  \begin{equation*}
+     R_n = \frac{1}{n} \sum_{k=0}^{n-1} F(k+1/n)
+  \end{equation*}
+Changing the sum index $k$ to $k-1$ gives an alternative
+formula for $R_n$. It is
+\begin{equation*}
+    R_n = \frac{1}{n} \sum_{k=1}^{n} F(k/n)
+ \end{equation*}
+
+
+ \begin{parts}
+
+    \part [10] Find a simple, and I mean simple representation for 
+    $R_n - L_n$.  \textbf{Hint:} When I'm overwhelmed, I go to my 
+    happy place. For sums, my happy place is to list a few terms:
+    \begin{align*}
+        L_n &= \frac{1}{n} \left(F(0/n) + F(1/n) + F(2/n) + \cdots + F((n-1)/n) \right), \\
+        R_n &= \frac{1}{n} \left(F(1/n) + F(2/n) + F(3/n) + \cdots + F(1) \right).
+    \end{align*}
+
+    \part [10] Let $\varepsilon \in \reals_{>0}$.  Show that there is 
+    $n \in \integers_{>0}$ such that $|R_n - L_n| < \varepsilon$.
+
+ \end{parts}
+
+
+
+
+
+\end{questions}
+\end{document}
