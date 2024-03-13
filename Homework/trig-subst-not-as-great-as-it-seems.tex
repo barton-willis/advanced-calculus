@@ -100,7 +100,7 @@ painstakingly determined antiderivative, we need to sum
 3.5000000000000005 \times {{10}^{9}} + 3.5000000000000003 \times {{10}^{-9}}.
 \end{align*}
 This is an example of what is known as an \emph{ill conditioned sum}, and 
-it is primarily  the first two terms of the sum that are the 
+it is the first two terms of the sum that are the 
 troublemakers. Each term in this sum is properly rounded to sixteen 
 decimal digits. This means that the relative difference between 
 each term in the sum and its true value are no more than about 
@@ -123,6 +123,23 @@ and as large as
    \approx 1.888178419700126 \times {{10}^{47}}
 \end{equation*}
 We don't even know if the sum of the first two terms is negative 
-or positive. 
+or positive.  Using sixteen decimal digits, we cannot accurately
+evaluate this expression.
 
+Is there a cure?  Well, yes there is. It is tedious to show, but 
+an algebraically equivalent form for the antiderivative is
+\begin{equation*}
+  \int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
+  = \frac{\sqrt{{{x}^{2}}-1}\, \left( 6 {{x}^{6}}-32 {{x}^{4}}+116 {{x}^{2}}+15\right) +105 \operatorname{asin}\left( \frac{1}{x}\right)  {{x}^{2}}}{30 {{x}^{2}}}.
+\end{equation*}
+Numerically evaluating this expression at $10^9$ does not involve
+subtracting two numbers that are nearly equal.  Unlike, our first
+expression, this form of the answer is well-conditioned. Typing this 
+into the nearest calculator yields
+\begin{equation*}
+\int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.} 
+\approx 1.9999999999999998 \times 10^{44}.
+\end{equation*}
+This approximation is accurate and it is smaller than the 
+upper bound of $2 \times 10^{44}$.
 \end{document}
