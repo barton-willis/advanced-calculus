@@ -89,22 +89,23 @@ impressive sixteen decimal places. Your final answer is
     \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
        \approx 9.134385233318144 \times {{10}^{46}}.
 \end{equation*}
-So you circle this answer and turn it in. Good job, you think---let's very quickly move on to the 
-next question.
+So you circle this answer and turn it in. Good job, you think, and you
+quickly move on to the next question.
 
-Not so fast. Your ten sheets of wasted engineering paper rewarded
-you with full credit for your antiderivative, but your
+Not so fast. Your ten sheets of wasted engineering paper earned
+you full credit for your antiderivative, but your
 decimal approximation earns you a score of zero. Although your teacher says that 
 your numerical value isn't \emph{manifestly wrong}, its 
-just shy of being \emph{obviously wrong}. Some thought 
+just shy of being \emph{obviously wrong}. To see that the 
+numerical value is close to being obviously wrong, some thought 
 shows that for all $x \in \reals_{\geq 1}$, we have $0 < \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}}
 < \frac{(x^2)^{\nicefrac{7}{2}}} {x^3} = x^4$. So it must be true that
 \begin{equation*}
    0 <  \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
-       < \int_1^{10^9} x^4 \, \mathrm{d}x =  \frac{10^{45} - 1 }{5} < 2  \times 10^{44}
+       < \int_1^{10^9} x^4 \, \mathrm{d}x =  \frac{10^{45} - 1 }{5} < 2  \times 10^{44}.
 \end{equation*}
-Yikes! Using an exact calculation and some arithmetic, your value 
-for the definite integral is nearly one thousand times larger than
+Yikes! Using an exact calculation and some arithmetic, you got a
+value for the definite integral that is nearly one thousand times larger than
 an easily found upper bound.
 
 What's the story?  Pasting in the upper limit of $10^9$ into our 
@@ -156,7 +157,7 @@ into the nearest calculator yields
 \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.} 
 \approx 1.9999999999999998 \times 10^{44}.
 \end{equation*}
-This approximation is accurate and it is smaller than the 
+This approximation is accurate, and it is smaller than the 
 upper bound of $2 \times 10^{44}$.
 
 
