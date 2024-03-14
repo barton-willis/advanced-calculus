@@ -77,11 +77,11 @@ After making multiple bad starts, wasting ten sheets of engineering paper,
 \end{equation*}
 But wait! There's more. To add to the punishment, your teacher asks for the value of  
 the definite integral $\int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}$. Easy-peasy, you think.
-Surely after the tortuous trigonometric substitution problem, this should be easy. 
+Surely after the tortuous trigonometric substitution problem, this should be a breeze. 
 All you need to do is evaluate
 \begin{equation*}
   \frac{{{\left( {{10}^{18}}-1\right) }^{\nicefrac{9}{2}}}}{2 {{10}^{18}}}-\frac{{{\left( {{10}^{18}}-1\right) }^{\nicefrac{7}{2}}}}{2}+\frac{7 {{\left( {{10}^{18}}-1\right) }^{\nicefrac{5}{2}}}}{10}-\frac{7 {{\left( {{10}^{18}}-1\right) }^{\nicefrac{3}{2}}}}{6}+\frac{7 (10^{18}-1)^{\nicefrac{1}{2}}}{2}+\frac{7 \operatorname{arcsin}\left( 10^{-18}\right) }{2}
-    - \frac{7 \operatorname{arcsin}\left( 1 \right) }{2}
+    - \frac{7 \operatorname{arcsin}\left( 1 \right) }{2}.
 \end{equation*}
 You tap this into your nearest computing device, and out  pops the answer to an 
 impressive sixteen decimal places. Your final answer is
@@ -97,7 +97,7 @@ you with full credit for your antiderivative, but your
 decimal approximation earns you a score of zero. Although your teacher says that 
 your numerical value isn't \emph{manifestly wrong}, its 
 just shy of being \emph{obviously wrong}. Some thought 
-shows that $0 < \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}}
+shows that for all $x \in \reals_{\geq 1}$, we have $0 < \frac{{{\left( {{x}^{2}}-1\right) }^{\frac{7}{2}}}}{{{x}^{3}}}
 < \frac{(x^2)^{\nicefrac{7}{2}}} {x^3} = x^4$. So it must be true that
 \begin{equation*}
    0 <  \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
@@ -136,7 +136,7 @@ and as large as
 \begin{equation*}
   5.000000000000003 \times 10^{62} \times (1 + 10^{-16}) - 5
    .000000000000002 \times 10^{62} \times  (1  - 10^{-16})
-   \approx 1.888178419700126 \times {{10}^{47}}
+   \approx 1.888178419700126 \times {{10}^{47}}.
 \end{equation*}
 We don't even know if the sum of the first two terms is negative 
 or positive.  Using sixteen decimal digits, we cannot accurately
@@ -149,11 +149,11 @@ an algebraically equivalent form for the antiderivative is
   = \frac{\sqrt{{{x}^{2}}-1}\, \left( 6 {{x}^{6}}-32 {{x}^{4}}+116 {{x}^{2}}+15\right) +105 \operatorname{asin}\left( \frac{1}{x}\right)  {{x}^{2}}}{30 {{x}^{2}}}.
 \end{equation*}
 Numerically evaluating this expression at $10^9$ does not involve
-subtracting two numbers that are nearly equal.  Unlike, our first
+subtracting two numbers that are nearly equal.  Unlike our first
 expression, this form of the answer is well-conditioned. Typing this 
 into the nearest calculator yields
 \begin{equation*}
-\int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.} 
+\int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.} 
 \approx 1.9999999999999998 \times 10^{44}.
 \end{equation*}
 This approximation is accurate and it is smaller than the 
@@ -166,10 +166,11 @@ another cure. In terms of the Gauss hypergeometric function, we have
   \int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}=
  \pFq{2}{1}{2,9/2}{11/2}{1-x^2} \frac{(x^2-1)^{9/2}}{9}.
 \end{equation*}
-Any worthy computer algebra system will give
+Using this form of the antiderivative, any worthy computer algebra system will give
 \begin{equation*}
-  \pFq{2}{1}{2,9/2}{11/2}{1-10^{18}} \frac{(10^{18}-1)^{9/2}}{9}
-  = 1.999999999999999988 \dots \times 10^{44}
+  \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.} =
+    \pFq{2}{1}{2,9/2}{11/2}{1-10^{18}} \frac{(10^{18}-1)^{9/2}}{9}
+  = 1.999999999999999988 \dots \times 10^{44}.
 \end{equation*}
 
 \end{document}
