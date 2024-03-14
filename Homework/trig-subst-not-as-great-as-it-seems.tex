@@ -64,7 +64,9 @@
 \begin{shaded}
   \noindent \textbf{Abstract} The method of trigonometric substitution for indefinite
   integration can give impressive looking results, but these results 
-  are sometimes poorly suited for numerical evaluation.
+  are sometimes poorly suited for numerical evaluation (ill-conditioned sums).  
+  We give two workarounds for ill-conditioned sum, one that involves algebraically 
+  altering the antiderivative, and the other using the Gauss hypergeometric function.
 \end{shaded}
 
 After making multiple bad starts, wasting ten sheets of engineering paper, 
@@ -162,7 +164,17 @@ upper bound of $2 \times 10^{44}$.
 
 
 If you are willing to dip into hypergeometric functions, there is 
-another cure. In terms of the Gauss hypergeometric function, we have
+another cure. The name ``hypergeometric'' puts some people 
+off, but if you invest some time learning about them, you'll 
+discover that the hypergeometric functions are useful and not so
+difficult to understand. As an added bonus, if you know a bit 
+about the hypergeometric functions, you can forget the rules for
+trigonometric substitution, and use rules such as
+\begin{equation*}
+  \int x^{a} (x-1)^{b} \, \mathrm{d} x = \pFq{2}{1}{-a, b+1}{b+2}{1-x} \, \frac{(x-1)^{b+1}}{b+1}.
+\end{equation*}
+Back to our specific problem,  making the substitution $z = x^2$, 
+in terms of the Gauss hypergeometric function, we have
 \begin{equation*}
   \int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}=
  \pFq{2}{1}{2,9/2}{11/2}{1-x^2} \frac{(x^2-1)^{9/2}}{9}.
