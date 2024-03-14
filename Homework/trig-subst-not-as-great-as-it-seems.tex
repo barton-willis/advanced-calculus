@@ -38,6 +38,22 @@
 \setcounter{ex}{\value{ex}+1}
 \paragraph{Example \theex}}
 
+\newmuskip\pFqmuskip
+
+\newcommand*\pFq[6][8]{%
+  \begingroup % only local assignments
+  \pFqmuskip=#1mu\relax
+  \mathchardef\normalcomma=\mathcode`,
+  % make the comma math active
+  \mathcode`\,=\string"8000
+  % and define it to be \pFqcomma
+  \begingroup\lccode`\~=`\,
+  \lowercase{\endgroup\let~}\pFqcomma
+  % typeset the formula
+  {}_{#2}\mathrm{F}_{#3}{\left[\genfrac..{0pt}{}{#4}{#5};#6\right]}%
+  \endgroup
+}
+\newcommand{\pFqcomma}{{\normalcomma}\mskip\pFqmuskip}
 
 \title{What your calculus textbook doesn't tell you about trigonometric substitution}
 
@@ -142,4 +158,18 @@ into the nearest calculator yields
 \end{equation*}
 This approximation is accurate and it is smaller than the 
 upper bound of $2 \times 10^{44}$.
+
+
+If you are willing to dip into hypergeometric functions, there is 
+another cure. In terms of the Gauss hypergeometric function, we have
+\begin{equation*}
+  \int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}=
+ \pFq{2}{1}{2,9/2}{11/2}{1-x^2} \frac{(x^2-1)^{9/2}}{9}.
+\end{equation*}
+Any worthy computer algebra system will give
+\begin{equation*}
+  \pFq{2}{1}{2,9/2}{11/2}{1-10^{18}} \frac{(10^{18}-1)^{9/2}}{9}
+  = 1.999999999999999988 \dots \times 10^{44}
+\end{equation*}
+
 \end{document}
