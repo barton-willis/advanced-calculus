@@ -4,7 +4,6 @@
 \usepackage[final]{microtype}
 \usepackage[american]{babel}
 \usepackage{fourier}
-\usepackage{fleqn}
 \usepackage[intlimits]{amsmath}
 \newcommand{\reals}{\mathbf{R}}
 \newcommand{\complex}{\mathbf{C}}
@@ -14,29 +13,12 @@
 \newcommand{\true}{\mathrm{True}}
 \newcommand{\false}{\mathrm{False}}
 
-\usepackage{centernot}
-\newcommand{\notimplies}{\centernot\implies}
-% Let's put a proof inside a shaded box
 \usepackage{framed}
 
 \colorlet{shadecolor}{lightgray!15}
 \newenvironment{myproof}
   {\begin{shaded}\begin{proof}}
   {\end{proof}\end{shaded}}
-
-\newtheorem{prop}{Proposition}
-
-  \usepackage{enumerate}
-  \newenvironment{alphalist}{
-  \begin{enumerate}[(a)]
-    \addtolength{\itemsep}{-0.50\itemsep}}
-  {\end{enumerate}}
-
-\usepackage{calc}
-\newcounter{ex}\setcounter{ex}{0}
-\newcommand{\ex}{%\
-\setcounter{ex}{\value{ex}+1}
-\paragraph{Example \theex}}
 
 \newmuskip\pFqmuskip
 
@@ -190,4 +172,4 @@ Using this form of the antiderivative, any worthy computer algebra system will g
 
 For other alternatives to standard calculus textbook methods, see
 1. Tangent half-angle substitution https://en.wikipedia.org/wiki/Tangent_half-angle_substitution 
-2. Euler substitution https://en.wikipedia.org/wiki/Euler_substitution 
+2. Euler's substitution https://en.wikipedia.org/wiki/Euler_substitution 
