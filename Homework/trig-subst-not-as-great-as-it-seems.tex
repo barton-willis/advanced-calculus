@@ -65,7 +65,7 @@
   \noindent \textbf{Abstract} The method of trigonometric substitution for indefinite
   integration can give impressive looking results, but these results 
   are sometimes poorly suited for numerical evaluation (ill-conditioned sums).  
-  We give two workarounds for the ill-conditioned sum problem, one that involves algebraically 
+  For one particular example, we give two workarounds for the ill-conditioned sum problem, one that involves algebraically 
   altering the antiderivative, and the other using the Gauss hypergeometric function.
 \end{shaded}
 
@@ -177,12 +177,12 @@ Back to our specific problem,  making the substitution $z = x^2$,
 in terms of the Gauss hypergeometric function, we have
 \begin{equation*}
   \int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}=
- \pFq{2}{1}{2,9/2}{11/2}{1-x^2} \frac{(x^2-1)^{9/2}}{9}.
+ \pFq{2}{1}{2,\nicefrac{9}{2}}{\nicefrac{11}{2}}{1-x^2} \frac{(x^2-1)^{\nicefrac{9}{2}}}{9}.
 \end{equation*}
 Using this form of the antiderivative, any worthy computer algebra system will give
 \begin{equation*}
   \int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.} =
-    \pFq{2}{1}{2,9/2}{11/2}{1-10^{18}} \frac{(10^{18}-1)^{9/2}}{9}
+    \pFq{2}{1}{2,\nicefrac{9}{2}}{\nicefrac{11}{2}}{1-10^{18}} \frac{(10^{18}-1)^{\nicefrac{9}{2}}}{9}
   = 1.999999999999999988 \dots \times 10^{44}.
 \end{equation*}
 
