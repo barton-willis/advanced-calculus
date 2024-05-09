@@ -45,7 +45,7 @@
 
 \begin{shaded}
   \noindent \textbf{Abstract} The method of trigonometric substitution for indefinite
-  integration can give impressive looking results, but these results 
+  integration can give results that appear impressive, but these results 
   are sometimes poorly suited for numerical evaluation (ill-conditioned sums).  
   For one particular example, we give two workarounds for the ill-conditioned sum problem, one that involves algebraically 
   altering the antiderivative, and the other using the Gauss hypergeometric function.
@@ -59,10 +59,10 @@ After making multiple bad starts, wasting ten sheets of engineering paper,
  \begin{equation*}
     \int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}=\frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{9}{2}}}}{2 {{x}^{2}}}-\frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{2}+\frac{7 {{\left( {{x}^{2}}-1\right) }^{\nicefrac{5}{2}}}}{10}-\frac{7 {{\left( {{x}^{2}}-1\right) }^{\nicefrac{3}{2}}}}{6}+\frac{7 (x^2-1)^{\nicefrac{1}{2}}}{2}+\frac{7 \operatorname{arcsin}\left( \frac{1}{x}\right) }{2}.
 \end{equation*}
-But wait! There's more. To add to the punishment, your teacher asks for the value of  
-the definite integral $\int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}$. Easy-peasy, you think.
-Surely after the tortuous trigonometric substitution problem, this should be a breeze. 
-All you need to do is evaluate
+But wait! There's more! To add to the punishment, your teacher asks for the value of  
+the definite integral $\int_1^{10^9} {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}$. 
+Surely after the tortuous trigonometric substitution problem, this numerical calculation
+should be a breeze. All you need to do is evaluate
 \begin{equation*}
   \frac{{{\left( {{10}^{18}}-1\right) }^{\nicefrac{9}{2}}}}{2 {{10}^{18}}}-\frac{{{\left( {{10}^{18}}-1\right) }^{\nicefrac{7}{2}}}}{2}+\frac{7 {{\left( {{10}^{18}}-1\right) }^{\nicefrac{5}{2}}}}{10}-\frac{7 {{\left( {{10}^{18}}-1\right) }^{\nicefrac{3}{2}}}}{6}+\frac{7 (10^{18}-1)^{\nicefrac{1}{2}}}{2}+\frac{7 \operatorname{arcsin}\left( 10^{-18}\right) }{2}
     - \frac{7 \operatorname{arcsin}\left( 1 \right) }{2}.
@@ -92,18 +92,19 @@ Yikes! Using an exact calculation and some arithmetic, you got a
 value for the definite integral that is nearly one thousand times larger than
 an easily found upper bound.
 
-What's the story?  Pasting in the upper limit of $10^9$ into our 
+What's the story? We can discover what went wrong by examining each 
+term in the sum individually. Pasting in the upper limit of $10^9$ into our 
 painstakingly determined antiderivative, we need to sum
 \begin{align*}
 &5.000000000000003 \times  {{10}^{62}} - 5.000000000000002  \times 
 {{10}^{62}} + 7.000000000000003 \times {{10}^{44}}  \\
 &-1.1666666666666669 \times {{10}^{27}} + 
-3.5000000000000005 \times {{10}^{9}} + 3.5000000000000003 \times {{10}^{-9}}.
+3.5000000000000005 \times {{10}^{9}} + 3.5000000000000003 \times {{10}^{-9}},
 \end{align*}
-This is an example of what is known as an \emph{ill conditioned sum}, and 
+where each term in this sum is properly rounded to sixteen 
+decimal digits. This is an example of what is known as an \emph{ill conditioned sum}, and 
 it is the first two terms of the sum that are the 
-troublemakers. Each term in this sum is properly rounded to sixteen 
-decimal digits. This means that the relative difference between 
+troublemakers. This means that the relative difference between 
 each term in the sum and its true value are no more than about 
 $10^{-16}$. Specifically, the true value of the first term 
 can be as small as $5.000000000000003 \times  {{10}^{62}} \times
@@ -127,7 +128,7 @@ We don't even know if the sum of the first two terms is negative
 or positive.  Using sixteen decimal digits, we cannot accurately
 evaluate this expression.
 
-Is there a cure?  Well, yes there is. It is tedious to show, but 
+Is there a cure to avoid this ill-conditioned sum? Well, yes there is. It is tedious to show, but 
 an algebraically equivalent form for the antiderivative is
 \begin{equation*}
   \int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}
@@ -155,7 +156,7 @@ trigonometric substitution, and use rules such as
 \begin{equation*}
   \int x^{a} (x-1)^{b} \, \mathrm{d} x = \pFq{2}{1}{-a, b+1}{b+2}{1-x} \, \frac{(x-1)^{b+1}}{b+1}.
 \end{equation*}
-Back to our specific problem,  making the substitution $z = x^2$, 
+Returning to our initial problem, making the substitution $z = x^2$, 
 in terms of the Gauss hypergeometric function, we have
 \begin{equation*}
   \int {\left. \frac{{{\left( {{x}^{2}}-1\right) }^{\nicefrac{7}{2}}}}{{{x}^{3}}} \, \mathrm{d}x\right.}=
