@@ -1,0 +1,154 @@
+\documentclass[12pt,fleqn,answers]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{fleqn}
+\usepackage{epsfig}
+%\usepackage{mathptm}
+%\usepackage{euler}
+\usepackage{bbding}
+\usepackage{url}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{lightgray!15}
+\newenvironment{myproof}
+  {\begin{shaded}\begin{proof}}
+  {\end{proof}\end{shaded}}
+
+\usepackage{amsthm}
+\newtheorem{prop}{Proposition}
+\usepackage[letterpaper, portrait, margin=0.75in]{geometry}
+\usepackage[final]{microtype}
+\usepackage[american]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+%\usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\rat}{\mathbf{Q}}
+
+\newcommand{\curly}[1]{\mathcal #1}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\true}{\mathrm{True}}
+\newcommand{\saw}{\mathrm{saw}}
+\newcommand{\fl}{\mathrm{Fl}}
+\newcommand{\mach}{\varepsilon_m}
+
+\usepackage{enumerate}
+\newenvironment{alphalist}{
+  \begin{enumerate}[(a)]
+    \addtolength{\itemsep}{-0.5\itemsep}}
+  {\end{enumerate}}
+ 
+\usepackage{amsthm}
+\newtheorem{Rubbish}{Theorem}
+\usepackage{graphicx}
+
+%\usepackage{tgschola} %to look retro
+\newenvironment{mypar}[2]
+  {\begin{list}{}%
+    {\setlength\leftmargin{#1}
+    \setlength\rightmargin{#2}}
+    \item[]}
+  {\end{list}}
+  
+\newcommand{\quiz}{1}
+\newcommand{\term}{Spring}
+\usepackage{units}
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand{\maybefakesc}[1]{%
+  \ifnum\pdfstrcmp{\f@series}{\bfdefault}=\z@
+    {\fontsize{\dimexpr0.8\dimexpr\f@size pt\relax}{0}\selectfont\uppercase{#1}}%
+  \else
+    \textsc{#1}%
+  \fi
+}
+\newcommand\AM{\,\maybefakesc{am}\xspace}
+\newcommand\PM{\,\maybefakesc{pm}\xspace}
+
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{ \textbf{CYRR 304}}
+{\bf Name:}  \\
+\noindent \makebox[3.0truein][l]{\textbf{Homework \quiz, \term \/ \the\year}}
+%{\bf Row:}\hrulefill\
+\vspace{0.1in}
+
+\begin{quote}
+``\emph{The purpose of computing is insight, not numbers.}''  \hfill {\sc Richard Hamming}
+\end{quote}
+\noindent  Homework \quiz\/  has questions 1 through  \numquestions \/ with a total of of  \numpoints\/  points. 
+Your recorded score will be scaled to twenty points. 
+
+The point
+value for each question or part of a question is in the box following each question or part of a question.
+Neatly write your answers on your own paper, being careful to clearly label each part of each question. Digitize your work as a pdf, and turn it into Canvas. This work is due \textbf{Saturday 27 January } at 11:59 \PM.
+
+
+\vspace{0.1in}
+
+
+\begin{questions}  
+
+\question An IEEE number of the type binary16 has the form
+\begin{equation*}
+   (-1)^s (b_0 . b_1 b_2 \cdots b_{10})_2 \times 2^e,
+\end{equation*}
+where the sign bit $s \in \{0,1 \}$,  the exponent $e \in \{-14, -13, \cdots, 14, 15 \}$ and each bit $b_k \in \{0,1\}$.
+There are ten bits in the fractional part of the number, and just like for binary64 numbers,  the leading bit $b_0$ is
+not stored and defaults to one. 
+
+\quad The exponent range of -14 to 15 contains 30 integers. And just like for a binary64 number, there are two values  of the exponent reserved for special conditions, including the number zero, overflow, and the like. That makes for a total  of 32 distinct values for the exponent. 
+
+ \begin{parts}
+ 
+ \part[1]  How many bits must be used to store the exponent in computer memory? Explain.  
+ 
+ \part[1] How many bits must be used to store the entire binary16 number in computer memory? Explain.
+ 
+ \part[1] Find the \emph{largest} number of the type binary16.
+ 
+ \part[1] Find the \emph{smallest} positive normalized number of the type binary16. Remember that 
+ the leading bit of a normalized number is one. 
+ 
+ \part[1] Find the \emph{smallest} positive  denormalized   number of the type binary16. Remember that 
+ the leading bit of a denormalized number is zero.  Also, the exponent of a denormalized binary16 is -14.
+ 
+ \part[1] Find the \emph{machine epsilon}  $\mach$ for a number of the type binary16.
+ 
+ \part[1] We have  $\fl(1/10) = (-1)^0 (1.1001100110)_2 \times 2^{-4}$.  Express  $\fl(1/10)$ as a rational number
+ (that is, as a quotient of integers).
+
+\part[1] Show that $|\fl(1/10)  - 1/10| \leq \mach$.
+
+
+ \end{parts}
+
+\end{questions}
+\end{document}
