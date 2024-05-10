@@ -104,8 +104,9 @@ painstakingly determined antiderivative, we need to sum
 where each term in this sum is properly rounded to sixteen 
 decimal digits. This is an example of what is known as an \emph{ill conditioned sum}, and 
 it is the first two terms of the sum that are the 
-troublemakers. This means that the relative difference between 
-each term in the sum and its true value are no more than about 
+troublemakers. Since each term is properly rounded to sixteen 
+decimal digits, the relative difference between 
+each rounded term in the sum and its true value are no more than about 
 $10^{-16}$. Specifically, the true value of the first term 
 can be as small as $5.000000000000003 \times  {{10}^{62}} \times
 (1 - 10^{-16})$ or as large as $5.000000000000003 \times  {{10}^{62}} 
@@ -125,7 +126,7 @@ and as large as
    \approx 1.888178419700126 \times {{10}^{47}}.
 \end{equation*}
 We don't even know if the sum of the first two terms is negative 
-or positive.  Using sixteen decimal digits, we cannot accurately
+or positive. Consequently, using sixteen decimal digits, we cannot accurately
 evaluate this expression.
 
 Is there a cure to avoid this ill-conditioned sum? Well, yes there is. It is tedious to show, but 
