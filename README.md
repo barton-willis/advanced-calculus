@@ -1,7 +1,9 @@
 # Advanced calculus resources
-Class notes, homework,  and resources for MATH 460, fall 2023
 
-These are some resources that I might use for my fall 2023 course in elementary real analysis at the University of Nebraska at Kearney.
+
+For two decades, I taught undergraduate advanced calculus MATH 460 (real analysis) at the 
+University of Nebraska at Kearney. This depository contains class notes, homework, and 
+other resources that I used in the fall 2023 term.
 
 
 ### License
