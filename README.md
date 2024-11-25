@@ -4,8 +4,8 @@ For two decades, I regularly taught undergraduate advanced calculus MATH 460 (re
 
 For many years, I used the textbook _An introduction to analysis_, 2nd edition by James Kirkwood, but for the most part, I invented my own problem sets. In August 2024, I retired from UNK, but from time-to-time, I will work on extending my solutions to homework sets and tidying my class notes.
 
-Since I last taught this class in fall 2023, the ability of generative AI systems to solve analysis homework has greatly increased. My homework sets were mostly intended to be learning
-opportunities, not so much evaluative. 
+Since I last taught this class in fall 2023, the ability of generative AI systems to solve analysis homework has greatly increased. I will leave it to my junior colleagues to find ways
+to navigate the use of AI in analysis classes. 
 
 ### License
 
