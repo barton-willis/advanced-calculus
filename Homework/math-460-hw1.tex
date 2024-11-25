@@ -67,6 +67,15 @@
 \newcommand\AM{\,\maybefakesc{am}\xspace}
 \newcommand\PM{\,\maybefakesc{pm}\xspace}
 
+\usepackage{framed}
+\usepackage{xcolor}
+
+% Define light grey shading for solutions
+\colorlet{shadecolor}{gray!20} % Set the light grey color
+\renewenvironment{solution}
+  {\begin{shaded*}} % Start a shaded box
+  {\end{shaded*}}   % End the shaded box
+
 \begin{document}
 \large
 \vspace{0.1in}
@@ -83,7 +92,7 @@ For details of the grading scheme for this assignment, please see the section
 
 Revise, proofread, revise again (and again), \emph{neatly} 
 hand write your solutions, digitize your work, and 
-up load the converted pdf of your work to Canvas.  
+upload the converted PDF of your work to Canvas.  
 This work is due \textbf{Saturday 26 August} at 11:59 \PM.
 
 \vspace{0.1in}
@@ -95,37 +104,70 @@ This work is due \textbf{Saturday 26 August} at 11:59 \PM.
 
 \question[10] For the statement  \(\left(\exists M \in \reals  \right)
 \left(\forall x \in \reals_{\geq 0} \right) \left(\frac{5 x}{x+1} \leq M \right)\), explain why
-
+the following proof is abject rubbish:
 \begin{proof} Choose $M = \frac{5 x}{x+1}$. Let  $x \in \reals_{\geq 0}$. We have
 \begin{align*}
  \left[\frac{5 x}{x+1} \leq M  \right] &\equiv
  \left[\frac{5 x}{x+1} \leq  \frac{5 x}{x+1}  \right],  &\mbox{(substitution for $M$)} \\
  &\equiv \mbox{True}. &\mbox{(syntactic equality)}. 
- \qedhere
-\end{align*}
+\end{align*}  \qedhere
 \end{proof}
-is \emph{abject rubbish}.
+
 
 \begin{solution} The proof is abject rubbish because it violates
-  the left-to-right rule.  Since $M$ is qualified before $x$,
+  what I call the \emph{left-to-right rule for quantified statements}. 
+  Specifically, since $M$ is qualified before $x$,
   the value we choose for $M$ is not allowed to depend on $x$.
+  But the value we choose for $M$ does depend on $x$, so the proof
+  is not valid.
 
+  \quad Our work is a \emph{correct} proof of the statement 
+  \begin{equation}
+  \left(\forall x \in \reals_{\geq 0} \right) \left(\exists M \in \reals  \right)
+ \left(\frac{5 x}{x+1} \leq M \right),
+\end{equation}
+but these two statements are \emph{not} logically equivalent.
+ 
 \end{solution}
+
+
 
 \question[10] Write a correct proof of \(\left(\exists M \in \reals\right)
 \left(\forall x \in \reals_{\geq 0} \right) \left(\frac{5 x}{x+1} \leq  M \right)\).
 
+\begin{solution} 
+
 \begin{proof} Choose $M = 5$. Let $x \in \reals_{\geq 0}$. 
   We have
   \begin{align*}
-     \left[\frac{5 x}{x+1} \leq  M \right] 
-       &\equiv \left[\frac{5 x}{x+1} \leq  5 \right] &&\text{(substitution)} \\
-       &\equiv \left[5 x \leq  5 (x+1) \right] &&\text{(multiply by $x+1$)} \\
-       &\equiv \left[ 0 \leq 5 \right] &&\text{(subtract $5 x$)} \qedhere \\
+     \left[\frac{5 x}{x+1} \leq  M \right]
+       &\equiv \left[\frac{5 x}{x+1} \leq  5 \right], &&\text{(substitution for $M$)} \\
+       &\equiv \left[5 x \leq  5 (x+1) \right], &&\text{(multiply by $x+1$)} \\
+       &\equiv \left[ 0 \leq 5 \right], &&\text{(subtract $5 x$)} \qedhere \\
        &\equiv \true.
   \end{align*}
-
 \end{proof}
+\textbf{Notes:}
+\begin{itemize}
+\item Since $M$ is qualified before $x$, what we choose for $M$ cannot depend
+on $x$. Our choice of $M = 5$ satisfies this requirement.
+
+\item Instead of making the choice $M = 5$, we could choose $M$ to 
+be any real number that is greater than $5$.
+
+\item We've expressed the proof as a sequence of logical equivalences.
+ A more traditional way to write the proof is a sequence of inequalities of
+that start with $\frac{5 x}{x+1}$ and that ends with $5$. Each
+inequality must be either $<, \leq$, or $=$. You might like to write the
+proof this way. Which is more natural? Which proof is easier to invent?
+Why?
+
+\item In the third line, we multiplied an inequality by a variable 
+(specifically $x+1$). We need to be careful with such operations, but
+it is justified because $x \in \reals_{\geq 0}$.
+\end{itemize}
+\end{solution}
+
 \question [10]  Without explicitly using negation (either $\lnot$ or anything equivalent to negation), write the negation of the statement
 \begin{equation*}
 \left(\exists M \in  \reals_{< 5} \right)
@@ -134,7 +176,9 @@ is \emph{abject rubbish}.
 Unlike the previous questions, the number $M$ in this question must be \emph{less} than five. Also,
 the final inequality is now a strict inequality (equality is not allowed). These differences are \emph{not} typos.
 
-\begin{solution}
+\begin{solution} For a refresher course on how to negate qualified
+  statements, please see our course quick reference sheet. Using these
+  rules, we have:
   \begin{equation*}
     \left(\forall M \in  \reals_{< 5} \right)
     \left(\exists x \in  \reals_{\geq 0} \right) 
@@ -149,34 +193,92 @@ the final inequality is now a strict inequality (equality is not allowed). These
 \end{equation*}
 is \emph{false} by showing that its negation is true.
 
-\begin{proof} Let $M \in \reals_{< 5}$. Choose 
+\begin{solution}
+
+\begin{proof} We need to show that 
+  \begin{equation*}
+    \left(\forall M \in  \reals_{< 5} \right)
+    \left(\exists x \in  \reals_{\geq 0} \right) 
+    \left(\frac{5 x}{x+1} \geq   M \right).
+    \end{equation*}
+    Let $M \in \reals_{< 5}$. Choose 
   $x = \begin{cases}  0 & M < 0 \\
                       \frac{M}{5-M} & M \geq 0 
   \end{cases}$. Then $x \in \reals_{\geq 0}$ as required.
-  For $M < 0$, we have
+  We will consider the cases $M < 0$ and $M \geq 0$ separately.
+  First, for $M < 0$, we have
   \begin{align*}
     \left[ \frac{5 x}{x+1}  \geq  M \right] &= \left[0 \geq  M \right], \\
-                                            &\equiv \true
+                                            &\equiv \true.
   \end{align*}
-  And for $M \geq 0$, we have
+  And second for $M \geq 0$, we have
   \begin{align*}
     \left[ \frac{5 x}{x+1}  \geq  M \right] 
        &= \left[M \geq  M \right], &&\text{(algebra)} \\
-      &\equiv \true
+      &\equiv \true.
   \end{align*}
 
 
 \end{proof}
+  
+\end{solution}
  
 \end{questions}
-\end{document}
-\
+
+\subsection*{Unassigned questions}
+
+\begin{questions}
 \question [10] Show that for every real number $b$ there is a real number $m$ such that
 \begin{equation*}
  \{x \in \reals \mid x^2-b^2 = m (x-b) \} = \{b\}.
  \end{equation*}
- \textbf{Hint} Solving (either by factoring or by quadratic formula) $ x^2-b^2 = m (x-b)$ for $x$ gives the
+ This shows that there is exactly one line of the form $y-b^2 = m (x-b)$ that intersects the curve $y=x^2$ in
+ exactly one point. Apparently, the line  $y-b^2 = m (x-b)$ is the tangent line. But ``touching at one point'' is \emph{not}
+ a requirement of a tangent line.
+
+ \textbf{Hint} Solving (either by factoring or by quadratic formula) 
+ $ x^2-b^2 = m (x-b)$ for $x$ gives the
  solution set $\{b,m-b\}$.
+
+ \begin{solution} Our proof can either include or exclude the way we
+  discover a correct value for $m$. Either way is correct.  If you can find the value of $m$
+  by divine intervention and then write a proof that chooses the value
+  of $m$ from thin air, that's fine--a proof doesn't need to explain
+  the logic of how we make choices.
+
+  \quad For this solution, let's exclude the method we use for discovering
+  the value of $m$ in the body of the proof, but instead include this logic outside the 
+  proof. To find $m$, we solve the equation $ x^2-b^2 = m (x-b)$ for $x$.
+  The solution(s) are $x =b$ and $x = m-b$.  But the statement says 
+  there is only one solution, so we must choose $m = 2 b$.
+  With this choice, our proof is:
+
+  \begin{proof} Let $b \in \reals$. Choose $m = 2 b$. We have
+    \begin{align*}
+      \{x \in \reals \mid x^2-b^2 = m (x-b) \} &= 
+      \{x \in \reals \mid x^2-b^2 = 2 b (x-b) \}, \\
+      &= \{x \in \reals \mid x^2 - 2 b x + b^2 = 0\},\\
+      &= \{x \in \reals \mid (x-b)^2 = 0\},\\
+      &= \{b\}.
+      \end{align*}
+    \end{proof}
+\noindent \textbf{Notes:}
+
+\begin{itemize}
+\item The problem statement allows $m$ to depend on $b$. That is
+because the qualification on $m$ follows the qualification on $b$.
+
+\item Our initial work in determining the value of $m$ shows that the
+choice is actually unique. So if you flub and choose $m$ to not equal 
+$2 b$, you will not be able to write a proof.
+
+\item Tangent lines are often described as ``touching in one spot,''
+but that's not true. The tangent line to $y=\cos(x)$ at the point 
+$(x=0,y=1)$ is $y = 1$. But the curves $y=\cos(x)$ and $y=1$ touch in
+infinitely many locations.
+
+\end{itemize}
+ \end{solution}
  
 \question [10] Without explicitly using negation ($\lnot$), write the negation of the statement
 \begin{equation*}
@@ -184,6 +286,14 @@ is \emph{false} by showing that its negation is true.
   \left(\forall x \in \reals_{\neq 0} \right)
   \left(\frac{1}{x^2} < M \right).
 \end{equation*}
+
+\begin{solution} We have
+  \begin{equation*}
+    \left(\forall M \in \reals\right)
+    \left(\exists x \in \reals_{\neq 0} \right)
+    \left(\frac{1}{x^2} \geq  M \right).
+  \end{equation*}
+\end{solution}
 
 \question[10] Show that the statement 
 \begin{equation*}
@@ -194,11 +304,32 @@ is \emph{false} by showing that its negation is true.
 is false. To do this, show that its negation is true. This shows that the function $x \in \reals_{\neq 0} \mapsto \frac{1}{x^2}$ is
 not bounded above.
 
+\begin{solution}
+  \begin{proof} We will show that
+    \begin{equation*}
+      \left(\forall M \in \reals\right)
+      \left(\exists x \in \reals_{\neq 0} \right)
+      \left(\frac{1}{x^2} \geq  M \right).
+    \end{equation*}
+  Let $M \in \reals$. Choose $x = 
+    \begin{cases} 1 & M \leq 0 \\ \sqrt{\frac{1}{M}} & M > 0 
+    \end{cases}.$ Then $x  \in \reals_{\neq 0}$ as required.
+    We consider the cases $M \leq 0$ and $M > 0$ separately.
+    For $M \leq 0$, we have
+    \begin{equation*}
+      \left[\frac{1}{x^2} \geq  M \right] \equiv \left[1 \geq M \right]
+      \equiv \text{True}.
+    \end{equation*}
+    And for $M > 0$, we have
+    \begin{equation*}
+      \left[\frac{1}{x^2} \geq  M \right] \equiv 
+      \left[M \geq M \right]
+      \equiv \text{True}.
+    \end{equation*}
+  \end{proof}
+\end{solution}
 
- 
- This shows that there is exactly one line of the form $y-b^2 = m (x-b)$ that intersects the curve $y=x^2$ in
- exactly one point.  The line  $y-b^2 = m (x-b)$ is the tangent line. But in general``touching at one point'' is \emph{not}
- a characteristic of a tangent line.
+
  
 \question [10] Find functions $P,Q \in \integers \mapsto \{\mbox{false}, \mbox{true}\}$ that makes
 the statement
@@ -208,11 +339,29 @@ the statement
   \left(\forall k \in \integers\right) \left (Q(k) \right)  
 \end{equation*}
 false.  This shows that the universal qualifier does not distribute over the disjunction. 
-\textbf{Hint:} Choose $P = k \in \integers \mapsto \left[x \mbox{is even}\right]$
+\textbf{Hint:} Choose $P = k \in \integers \mapsto \left[x \mbox{ is even}\right]$
 and $Q = k \in \integers \mapsto \left[x \mbox{ is odd}\right]$. Explain why this choice
 shows that the given statement is false.
 
-
+\begin{solution} 
+  \begin{proof} 
+    Choose $P = k \in \integers \mapsto \left[x \mbox{ is even}\right]$
+    and $Q = k \in \integers \mapsto \left[x \mbox{ is odd}\right]$.
+    Since every integer is either even or odd, the statement
+  $ \left(\forall k \in \integers\right) \left (P(k) \lor Q(k) \right)$
+  is true. But both of the statements $\left(\forall k \in \integers\right) \left (P(k) \right)$
+  and $\left(\forall k \in \integers\right) \left (Q(k) \right)$ are 
+  false. So 
+  \begin{equation*}
+    \left(\forall k \in \integers\right) \left (P(k) \lor Q(k) \right) \equiv 
+    \left(\forall k \in \integers\right) \left (P(k) \right)  \lor 
+    \left(\forall k \in \integers\right) \left (Q(k) \right)  
+  \end{equation*}
+  is false.    
+  \end{proof}
+  
+ 
+\end{solution}
 
 \end{questions}
 \end{document}
