@@ -6,12 +6,13 @@ was traditional. By that, I mean that it wasn't inquiry based or historically ba
 This depository contains class notes, homework, and other resources that I used for this 
 class in the fall 2023 term. 
 
-Some of the handouts were refined over many years, others were new. So the quality of the class notes might vary. Public humiliation is a great motivator for me. Once I started putting class materials on GitHub instead of squirreling them away on Canvas, possibly I started taking more time to proofread my work. If you find errors or have suggestions, please put a message on the 
-discussion board.
+Some of the handouts were refined over many years, others were new. So the quality of the class notes might vary; however, public humiliation is a great motivator for me, and once I started putting class materials on GitHub instead of squirreling them away on Canvas, I took more time  proofreading my work. If you find errors or have suggestions, please put a message on the discussion board.
 
 For many years, I used the textbook _An introduction to analysis_, 2nd edition, by James Kirkwood, but generally, I invented my own problem sets and I did not assign problems
 from the textbook. Although I retired from UNK in August 2024, from time-to-time, I will 
-work on extending my solutions to homework sets and tidying my class notes.
+work on extending my solutions to homework sets and tidying my class notes. If you all
+find these notes useful, send me a note and maybe it will motivate me to make further
+improvements.
 
 Since I last taught this class in fall 2023, the ability of generative AI systems to solve analysis homework (and typeset the work in LaTeX) has greatly increased. I will leave it to my junior colleagues to find ways to navigate the use of AI in analysis classes. 
 
