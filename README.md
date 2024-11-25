@@ -4,15 +4,18 @@ For twenty-five years, I regularly taught undergraduate advanced calculus MATH 4
 mathematics education majors, and occasionally a science major. I would say that my class
 was traditional. By that, I mean that it wasn't inquiry based or historically based.
 This depository contains class notes, homework, and other resources that I used for this 
-class in the fall 2023 term. Some of the handouts were refined over many years, others
-were new. So the quality of the class notes might vary.
+class in the fall 2023 term. 
+
+Some of the handouts were refined over many years, others were new. So the quality of the class notes might vary. Public humiliation is a great motivator for me. Once I started putting class materials on GitHub instead of squirreling them away on Canvas, possibly I started taking more time to proofread my work. If you find errors or have suggestions, please put a message on the 
+discussion board.
 
 For many years, I used the textbook _An introduction to analysis_, 2nd edition, by James Kirkwood, but generally, I invented my own problem sets and I did not assign problems
 from the textbook. Although I retired from UNK in August 2024, from time-to-time, I will 
 work on extending my solutions to homework sets and tidying my class notes.
 
-Since I last taught this class in fall 2023, the ability of generative AI systems to solve analysis homework (and typeset the work in LaTeX) has greatly increased. I will leave it to my junior colleagues to find ways
-to navigate the use of AI in analysis classes. 
+Since I last taught this class in fall 2023, the ability of generative AI systems to solve analysis homework (and typeset the work in LaTeX) has greatly increased. I will leave it to my junior colleagues to find ways to navigate the use of AI in analysis classes. 
+
+
 
 ### License
 
