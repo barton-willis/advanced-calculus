@@ -1,1 +1,2 @@
 {"rule":"PASSIVE_VOICE","sentence":"^\\QUsually binary operators are expressed in infix notation; that is, the operator is in between its arguments.\\E$"}
+{"rule":"EN_UNPAIRED_QUOTES","sentence":"^\\QFor details of the grading scheme for this assignment, please see the section `Grading rubric' of our syllabus.\\E$"}

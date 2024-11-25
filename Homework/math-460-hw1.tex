@@ -30,6 +30,7 @@
 \newcommand{\dom}{\mbox{dom}}
 \newcommand{\cover}{{\mathcal C}}
 \newcommand{\true}{\mathrm{True}}
+\newcommand{\false}{\mathrm{False}}
 \newcommand{\integers}{\mathbf{Z}}
 \newcommand{\vi}{\, \mathbf{i}}
 \newcommand{\vj}{\, \mathbf{j}}
@@ -117,11 +118,12 @@ the following proof is abject rubbish:
 \begin{solution} The proof is abject rubbish because it violates
   what I call the \emph{left-to-right rule for quantified statements}. 
   Specifically, since $M$ is qualified before $x$,
-  the value we choose for $M$ is not allowed to depend on $x$.
-  But the value we choose for $M$ does depend on $x$, so the proof
-  is not valid.
+  the value we choose for $M$ is not allowed to depend on $x$. From the first 
+  sentence, ``Choose $M = \frac{5 x}{x+1}$,''   the proof is wrong, and the only
+  cure is to start from scratch.
+ 
 
-  \quad Our work is a \emph{correct} proof of the statement 
+  \quad Our work is, however, a \emph{correct} proof of the statement 
   \begin{equation}
   \left(\forall x \in \reals_{\geq 0} \right) \left(\exists M \in \reals  \right)
  \left(\frac{5 x}{x+1} \leq M \right),
@@ -143,8 +145,8 @@ but these two statements are \emph{not} logically equivalent.
      \left[\frac{5 x}{x+1} \leq  M \right]
        &\equiv \left[\frac{5 x}{x+1} \leq  5 \right], &&\text{(substitution for $M$)} \\
        &\equiv \left[5 x \leq  5 (x+1) \right], &&\text{(multiply by $x+1$)} \\
-       &\equiv \left[ 0 \leq 5 \right], &&\text{(subtract $5 x$)} \qedhere \\
-       &\equiv \true.
+       &\equiv \left[ 0 \leq 5 \right], &&\text{(subtract $5 x$)} \\
+       &\equiv \true. \qedhere 
   \end{align*}
 \end{proof}
 \textbf{Notes:}
@@ -152,14 +154,19 @@ but these two statements are \emph{not} logically equivalent.
 \item Since $M$ is qualified before $x$, what we choose for $M$ cannot depend
 on $x$. Our choice of $M = 5$ satisfies this requirement.
 
+\item How did I know to choose $M = 5$? One approach is to sketch a graph (try Desmos)
+of the equation $y = \frac{5 x}{x+1}$ for $x > 0$. You will see that the maximum of 
+$y$ coordinate on the graph is $5$. That's how.
+
 \item Instead of making the choice $M = 5$, we could choose $M$ to 
 be any real number that is greater than $5$.
 
 \item We've expressed the proof as a sequence of logical equivalences.
- A more traditional way to write the proof is a sequence of inequalities of
-that start with $\frac{5 x}{x+1}$ and that ends with $5$. Each
+ A more traditional way to write the proof is a sequence of inequalities 
+that starts with $\frac{5 x}{x+1}$ and that ends with $5$. Each
 inequality must be either $<, \leq$, or $=$. You might like to write the
-proof this way. Which is more natural? Which proof is easier to invent?
+proof this way. Which is more natural? Which proof is easier to understand? 
+Which proof is easier to invent?
 Why?
 
 \item In the third line, we multiplied an inequality by a variable 
@@ -208,14 +215,14 @@ is \emph{false} by showing that its negation is true.
   We will consider the cases $M < 0$ and $M \geq 0$ separately.
   First, for $M < 0$, we have
   \begin{align*}
-    \left[ \frac{5 x}{x+1}  \geq  M \right] &= \left[0 \geq  M \right], \\
+    \left[ \frac{5 x}{x+1}  \geq  M \right] &\equiv \left[0 \geq  M \right], \\
                                             &\equiv \true.
   \end{align*}
   And second for $M \geq 0$, we have
   \begin{align*}
     \left[ \frac{5 x}{x+1}  \geq  M \right] 
-       &= \left[M \geq  M \right], &&\text{(algebra)} \\
-      &\equiv \true.
+       &\equiv \left[M \geq  M \right], &&\text{(algebra)} \\
+      &\equiv \true. \qedhere
   \end{align*}
 
 
@@ -250,7 +257,7 @@ is \emph{false} by showing that its negation is true.
   the value of $m$ in the body of the proof, but instead include this logic outside the 
   proof. To find $m$, we solve the equation $ x^2-b^2 = m (x-b)$ for $x$.
   The solution(s) are $x =b$ and $x = m-b$.  But the statement says 
-  there is only one solution, so we must choose $m = 2 b$.
+  there is only one solution, so we must choose $m = 2 b$, making each solution $x = b$.
   With this choice, our proof is:
 
   \begin{proof} Let $b \in \reals$. Choose $m = 2 b$. We have
@@ -259,7 +266,7 @@ is \emph{false} by showing that its negation is true.
       \{x \in \reals \mid x^2-b^2 = 2 b (x-b) \}, \\
       &= \{x \in \reals \mid x^2 - 2 b x + b^2 = 0\},\\
       &= \{x \in \reals \mid (x-b)^2 = 0\},\\
-      &= \{b\}.
+      &= \{b\}. \qedhere
       \end{align*}
     \end{proof}
 \noindent \textbf{Notes:}
@@ -338,7 +345,18 @@ the statement
   \left(\forall k \in \integers\right) \left (P(k) \right)  \lor 
   \left(\forall k \in \integers\right) \left (Q(k) \right)  
 \end{equation*}
-false.  This shows that the universal qualifier does not distribute over the disjunction. 
+false.  This shows that the universal qualifier does not distribute over 
+the disjunction. One notational subtly is the fact that the various
+variables $k$ on the left and right sides of this equivalence are
+actually different.  This means that the given statement is logically
+equivalent to 
+\begin{equation*}
+  \left(\forall k \in \integers\right) \left (P(k) \lor Q(k) \right) \equiv 
+  \left(\forall \ell \in \integers\right) \left (P(\ell) \right)  \lor 
+  \left(\forall m \in \integers\right) \left (Q(m) \right).  
+\end{equation*}
+
+
 \textbf{Hint:} Choose $P = k \in \integers \mapsto \left[x \mbox{ is even}\right]$
 and $Q = k \in \integers \mapsto \left[x \mbox{ is odd}\right]$. Explain why this choice
 shows that the given statement is false.
@@ -347,18 +365,21 @@ shows that the given statement is false.
   \begin{proof} 
     Choose $P = k \in \integers \mapsto \left[x \mbox{ is even}\right]$
     and $Q = k \in \integers \mapsto \left[x \mbox{ is odd}\right]$.
-    Since every integer is either even or odd, the statement
-  $ \left(\forall k \in \integers\right) \left (P(k) \lor Q(k) \right)$
-  is true. But both of the statements $\left(\forall k \in \integers\right) \left (P(k) \right)$
-  and $\left(\forall k \in \integers\right) \left (Q(k) \right)$ are 
-  false. So 
-  \begin{equation*}
-    \left(\forall k \in \integers\right) \left (P(k) \lor Q(k) \right) \equiv 
-    \left(\forall k \in \integers\right) \left (P(k) \right)  \lor 
-    \left(\forall k \in \integers\right) \left (Q(k) \right)  
-  \end{equation*}
-  is false.    
-  \end{proof}
+    We will choose integers $k,\ell$, and $m$ such that
+    \begin{equation*}
+      P(k) \lor Q(k) \neq P(\ell) \lor Q(m).
+    \end{equation*}
+    Choose $k = 1, \ell = 1$ and $m = 2$. We have
+    \begin{equation*}
+      \left[P(k) \lor Q(k) \right] \equiv \left[P(1) \lor Q(1)\right]
+      \equiv \true.
+    \end{equation*}
+    But
+    \begin{equation*}
+      \left[P(\ell) \lor Q(m) \right] \equiv \left[P(1) \lor Q(2)\right]
+      \equiv \false.
+    \end{equation*}
+     \end{proof}
   
  
 \end{solution}
